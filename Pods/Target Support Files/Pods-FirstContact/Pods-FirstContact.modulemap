@@ -1,0 +1,6 @@
+framework module Pods_FirstContact {
+  umbrella header "Pods-FirstContact-umbrella.h"
+
+  export *
+  module * { export * }
+}
