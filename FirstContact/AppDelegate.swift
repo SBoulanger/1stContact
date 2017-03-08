@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var dataHub: DataHub!
     
+    var container: ContainerViewController!
+    
     var window: UIWindow?
     //var rootController: UINavigationController?
 
@@ -50,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                                               bottomVC: bottom)
         
         self.window?.rootViewController = snapContainer
+        self.container = snapContainer
         self.window?.makeKeyAndVisible()
         
         

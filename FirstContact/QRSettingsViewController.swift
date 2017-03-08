@@ -46,6 +46,11 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
             ([NSFontAttributeName: UIFont(name: "KohinoorBangla-Light", size: 23)!,
                 NSForegroundColorAttributeName: UIColor.green])
         
+        
+        let homebutton = FCNavigationButton(x: Int(self.view.frame.size.width) - FCNavigationButton.SIZE/2, y: Int(self.view.frame.size.height) - FCNavigationButton.SIZE/2, image: UIImage(named:"QR_right.png")!)
+        homebutton.setUpRightButton()
+        self.view.addSubview(homebutton)
+        
         /*for i in dataHub.share {
             selectRow(tableView: mainTableView, at: IndexPath(row: i, section: 1))
         }*/

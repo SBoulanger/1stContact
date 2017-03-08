@@ -125,11 +125,18 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.initialContentOffset = scrollView.contentOffset
     }
+    func moveRight(){
+        self.scrollView.setContentOffset(CGPoint(x:self.scrollView.contentOffset.x + 375.0,y:self.scrollView.contentOffset.y), animated: true)
+    }
+    func moveLeft(){
+        self.scrollView.setContentOffset(CGPoint(x:self.scrollView.contentOffset.x - 375.0,y:self.scrollView.contentOffset.y), animated: true)
+    }
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //print(self.initialContentOffset.x)
         if self.initialContentOffset.x == 0.0 || self.initialContentOffset.x == 750.0 {
-            
+            print(self.initialContentOffset)
         }
         if delegate != nil && !delegate!.outerScrollViewShouldScroll() && !directionLockDisabled {
             let newOffset = CGPoint(x: self.initialContentOffset.x, y: self.initialContentOffset.y)

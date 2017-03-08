@@ -103,9 +103,9 @@ class WelcomeViewController: UIViewController, CNContactPickerDelegate,CNContact
     //prepare the view controller before segueing there
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         //pass the contact
-        let destinationVC = segue.destination as! VerifyViewController
-        destinationVC.contact = contact
-        print(contact.phoneNumbers)
+        //let destinationVC = segue.destination as! VerifyViewController
+        //destinationVC.contact = contact
+        //print(contact.phoneNumbers)
     }
     
     //presents the picker controller

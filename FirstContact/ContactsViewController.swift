@@ -75,6 +75,12 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         //historyTableView.tableFooterView = UIView()
         print("View Did Load")
         
+        let homebutton = FCNavigationButton(x: -FCNavigationButton.SIZE/2, y: Int(self.view.frame.size.height) - FCNavigationButton.SIZE/2, image: UIImage(named:"QR_left.png")!)
+        homebutton.setUpLeftButton()
+        print("CONTACTS")
+        print(self.view.frame.size.height)
+        self.view.addSubview(homebutton)
+        
         //view.addSubview(historyTableView)
         //view.bringSubview(toFront: historyTableView)
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q2A-pK-EiY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="q2A-pK-EiY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -280,7 +280,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4JQ-7y-mKn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LkI-Q4-MRK">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QPm-kR-7de">
@@ -308,7 +308,7 @@
         <!--Contacts View Controller-->
         <scene sceneID="jvP-KV-RIs">
             <objects>
-                <viewController storyboardIdentifier="settings" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="RwN-t1-lJF" customClass="ContactsViewController" customModule="FirstContact" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settings" automaticallyAdjustsScrollViewInsets="NO" id="RwN-t1-lJF" customClass="ContactsViewController" customModule="FirstContact" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YAZ-EP-V4p"/>
                         <viewControllerLayoutGuide type="bottom" id="JlP-Ph-D6c"/>
@@ -1141,11 +1141,15 @@
         <scene sceneID="eIJ-5h-elD">
             <objects>
                 <navigationController storyboardIdentifier="middle" automaticallyAdjustsScrollViewInsets="NO" id="q2A-pK-EiY" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="ecA-xc-N1I"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Y2D-6P-S2b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Y2D-6P-S2b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1154,7 +1158,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4G-1x-5Kd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2417" y="1154"/>
+            <point key="canvasLocation" x="2433" y="1621"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oaj-EP-Xrr">

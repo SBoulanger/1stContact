@@ -39,13 +39,24 @@ class QRViewController: UIViewController  {
         
         print("QRViewController viewDidLoad() entered...")
         
+        
+        let rightButton = FCNavigationButton(x: Int(self.view.bounds.width) - FCNavigationButton.SIZE/2, y: Int(self.view.frame.size.height) - FCNavigationButton.SIZE/2, image: UIImage(named: "User.png")! )
+        print(Int((self.navigationController?.navigationBar.frame.size.height)!))
+        //var button = FCNavigationButton(x: 0, y: 0)
+        rightButton.setUpRightButton()
         self.contact = self.dataHub.getContact()
+        
+        let leftButton = FCNavigationButton(x: -FCNavigationButton.SIZE/2, y: Int(self.view.bounds.height) - FCNavigationButton.SIZE/2, image: UIImage(named:"List.png")!)
+        leftButton.setUpLeftButton()
         
         //if the qrcode has not been loaded yet
         if qrCodeImage == nil {
             print("qrCodeImage NIL")
             generateNewImage()
         }
+        self.view.addSubview(rightButton)
+        self.view.addSubview(leftButton)
+
     }
     
     func generateNewImage(){
