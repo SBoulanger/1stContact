@@ -31,6 +31,8 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
     var qrcodedone = false
     
     @IBOutlet weak var ufoImageView: UIImageView!
+    @IBOutlet weak var ufoButton: UIButton!
+    
     let defaults = UserDefaults.standard
     var info : String!
     
@@ -38,6 +40,10 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
         super.viewDidLoad()
         print("Reader LOAD ---------")
         initQRCaptureCamera()
+        //let button = UIButton(frame: ufoImageView.frame)
+        //ufoButton.backgroundColor = UIColor.clear
+        ufoButton.addTarget(nil, action: #selector(AppDelegate.getAppDelegate().container.moveUp), for: UIControlEvents.touchUpInside)
+        //self.view.addSubview(button)
     }
     
     func initQRCaptureCamera(){

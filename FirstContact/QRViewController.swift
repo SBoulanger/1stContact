@@ -31,10 +31,26 @@ class QRViewController: UIViewController  {
         super.viewDidLoad()
         
         let logo = UIImage(named: "FC_logo_white.png")
-        let newim = ResizeImage(logo!, targetSize: CGSize(width: 50,height: 45))
-        let imageView = UIImageView(image:newim)
-        self.navigationItem.titleView = imageView
+        let newim = ResizeImage(logo!, targetSize: CGSize(width: 40,height: 50))
+        //let imageView = UIImageView(image:newim)
+        let camButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 50))
+        camButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -2, bottom: 0, right: -2)
+        camButton.setImage(newim, for: .normal)
         
+        self.navigationItem.titleView = camButton
+        //let camButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
+        //camButton.setImage(UIImage(named:"camera_clear.png"), for: .normal)
+        //camButton.layer.cornerRadius = 3.5
+        //camButton.layer.borderWidth = 0.25
+        //camButton.layer.borderColor = UIColor.lightGray.cgColor
+        //camButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 1.5, bottom: 1, right: 1.5)
+        camButton.addTarget(nil, action: #selector(AppDelegate.getAppDelegate().container.moveDown), for: .touchUpInside)
+        
+        //let camBarButton = UIBarButtonItem(customView: camButton)
+        //self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(17.0, 17.0, 55.0, 55.0)
+
+        //let camButton = UIBarButtonItem(image: ResizeImage(UIImage(named:"camera.png")!,targetSize: CGSize(width: 10,height:10)), style: UIBarButtonItemStyle.plain, target: nil, action: #selector(AppDelegate.getAppDelegate().container.moveDown))
+        //self.navigationItem.rightBarButtonItem = camBarButton
         self.dataHub =  AppDelegate.getAppDelegate().dataHub
         
         print("QRViewController viewDidLoad() entered...")
@@ -42,8 +58,8 @@ class QRViewController: UIViewController  {
         
         let rightButton = FCNavigationButton(x: Int(self.view.bounds.width) - FCNavigationButton.SIZE/2, y: Int(self.view.frame.size.height) - FCNavigationButton.SIZE/2, image: UIImage(named: "User.png")! )
         print(Int((self.navigationController?.navigationBar.frame.size.height)!))
-        //var button = FCNavigationButton(x: 0, y: 0)
         rightButton.setUpRightButton()
+        
         self.contact = self.dataHub.getContact()
         
         let leftButton = FCNavigationButton(x: -FCNavigationButton.SIZE/2, y: Int(self.view.bounds.height) - FCNavigationButton.SIZE/2, image: UIImage(named:"List.png")!)

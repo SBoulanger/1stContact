@@ -325,11 +325,11 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LWJ-iq-2YJ" id="hrX-In-QQo">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C76-Al-9D4">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="54.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="54"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -377,24 +377,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="FC_icon_clear_empty.png" translatesAutoresizingMaskIntoConstraints="NO" id="gW0-iK-ggn">
-                                <rect key="frame" x="278" y="72" width="45" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLS-IK-Fay">
+                                <rect key="frame" x="167" y="28" width="40" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="3k1-bn-Mmx"/>
-                                    <constraint firstAttribute="height" constant="50" id="FQf-38-9Rq"/>
+                                    <constraint firstAttribute="width" constant="40" id="1My-BD-hzF"/>
+                                    <constraint firstAttribute="height" constant="50" id="Kik-Oa-OPF"/>
                                 </constraints>
-                            </imageView>
+                                <inset key="imageEdgeInsets" minX="-3" minY="0.0" maxX="-3" maxY="0.0"/>
+                                <state key="normal" image="FC_icon_clear_empty.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gW0-iK-ggn" firstAttribute="centerX" secondItem="dom-7c-S8X" secondAttribute="centerX" id="89H-39-kN3"/>
-                            <constraint firstItem="gW0-iK-ggn" firstAttribute="top" secondItem="dai-bB-Hm0" secondAttribute="bottom" constant="8" id="ihG-80-7Kk"/>
+                            <constraint firstItem="DLS-IK-Fay" firstAttribute="top" secondItem="dai-bB-Hm0" secondAttribute="bottom" constant="8" id="hsG-pr-tvb"/>
+                            <constraint firstItem="DLS-IK-Fay" firstAttribute="centerX" secondItem="dom-7c-S8X" secondAttribute="centerX" id="lAC-Un-IId"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="XXW-gt-6fD"/>
                     <navigationItem key="navigationItem" id="XxQ-jP-C7A"/>
                     <connections>
-                        <outlet property="ufoImageView" destination="gW0-iK-ggn" id="P3C-3C-dqt"/>
+                        <outlet property="ufoButton" destination="DLS-IK-Fay" id="zmq-Or-tdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcj-Tf-psj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1039,7 +1041,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sSX-zJ-j44" id="r1l-F3-h71">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-d7-BgZ">
@@ -1144,7 +1146,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="ecA-xc-N1I"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Y2D-6P-S2b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y2D-6P-S2b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

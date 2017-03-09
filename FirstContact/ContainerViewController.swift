@@ -126,10 +126,16 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         self.initialContentOffset = scrollView.contentOffset
     }
     func moveRight(){
-        self.scrollView.setContentOffset(CGPoint(x:self.scrollView.contentOffset.x + 375.0,y:self.scrollView.contentOffset.y), animated: true)
+        self.scrollView.setContentOffset(CGPoint(x:self.scrollView.contentOffset.x + self.view.frame.width,y:self.scrollView.contentOffset.y), animated: true)
     }
     func moveLeft(){
-        self.scrollView.setContentOffset(CGPoint(x:self.scrollView.contentOffset.x - 375.0,y:self.scrollView.contentOffset.y), animated: true)
+        self.scrollView.setContentOffset(CGPoint(x:self.scrollView.contentOffset.x - self.view.frame.width,y:self.scrollView.contentOffset.y), animated: true)
+    }
+    func moveDown(){
+        self.middleVertScrollVc.scrollView.setContentOffset(CGPoint(x:self.middleVertScrollVc.scrollView.contentOffset.x,y:self.middleVertScrollVc.scrollView.contentOffset.y + self.view.frame.height), animated: true)
+    }
+    func moveUp(){
+        self.middleVertScrollVc.scrollView.setContentOffset(CGPoint(x:self.middleVertScrollVc.scrollView.contentOffset.x,y:self.middleVertScrollVc.scrollView.contentOffset.y - self.view.frame.height), animated: true)
     }
     
     
@@ -144,6 +150,7 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
             // directional lock, that allows you to scroll in only one direction at any given time
             self.scrollView!.setContentOffset(newOffset, animated:  false)
         }
+        print(self.initialContentOffset.y)
     }
     
 }

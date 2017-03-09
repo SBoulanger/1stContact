@@ -47,5 +47,8 @@ class FCNavigationButton : UIButton {
     func moveLeft(){
         AppDelegate.getAppDelegate().container.moveLeft()
     }
+    func moveDown(){
+        
+    }
     
 }
