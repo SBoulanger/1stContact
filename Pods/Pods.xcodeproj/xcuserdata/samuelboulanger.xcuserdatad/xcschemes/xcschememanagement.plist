@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BEMCheckBox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MMCardView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-FirstContact.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>45910756E15C7A0E00ED208F67069553</key>
+		<key>06BC965EF4C48784033999EDE435BFD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DA5DE9D2030133A569EAF285E50023F</key>
+		<key>1BE7CE7307A4D614DE548F245CF00519</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A2EB8F389FB1DC6706A3A9E383125D6</key>
+		<key>830F5B292AF7D2ACC46412937329E310</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A808058B4D42F340C28D8484C8930BB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BC19A72FB7D1DB0B2CC5F6C5CF2400F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

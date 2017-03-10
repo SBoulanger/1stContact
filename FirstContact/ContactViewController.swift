@@ -14,7 +14,7 @@ import FBSDKLoginKit
 import FBSDKShareKit
 import TwitterKit
 import Fabric
-
+import MMCardView
 /*
  First name
  Last name
@@ -126,9 +126,11 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
+    @IBOutlet weak var card: CardView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         print("viewdidload")
         
         print("self.frame = \(self.view.frame.width)")
