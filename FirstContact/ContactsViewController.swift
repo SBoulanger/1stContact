@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Contacts
 import ContactsUI
+import AWSMobileHubHelper
 
 class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CNContactViewControllerDelegate {
     
@@ -35,6 +36,9 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     var infoAnimated: Bool?
     var skipTutorial: Bool?
     
+    var signInObserver: AnyObject!
+    var signOutObserver: AnyObject!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         //self.navigationController?.navigationBarHidden = true
@@ -51,12 +55,26 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         //clearData()
         
+        signInObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.default(), queue: OperationQueue.main, using: {[weak self] (note: Notification) -> Void in
+            guard let strongSelf = self else { return }
+            print("Sign In Observer observed sign in.")
+            strongSelf.setUpLogButton()
+            // You need to call `updateTheme` here in case the sign-in happens after `- viewWillAppear:` is called.
+            //strongSelf.updateTheme()
+        })
         
+        signOutObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignOut, object: AWSIdentityManager.default(), queue: OperationQueue.main, using: {[weak self](note: Notification) -> Void in
+            guard let strongSelf = self else { return }
+            print("Sign Out Observer observed sign out.")
+            strongSelf.setUpLogButton()
+            //strongSelf.updateTheme()
+        })
+
         self.dataHub =  AppDelegate.getAppDelegate().dataHub
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
 
-        self.title = "Scanned Contacts"
+        self.title = "Contacts"
         navigationController!.navigationBar.titleTextAttributes =
             ([NSFontAttributeName: UIFont(name: "KohinoorBangla-Light", size: 23)!,
                 NSForegroundColorAttributeName: UIColor.green])
@@ -84,7 +102,21 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         //view.addSubview(historyTableView)
         //view.bringSubview(toFront: historyTableView)
     }
-    
+    func handleLogout() {
+        if (AWSIdentityManager.default().isLoggedIn) {
+            
+            
+            
+            AWSIdentityManager.default().logout(completionHandler: {(result: Any?, error: Error?) in
+                //self.navigationController!.popToRootViewController(animated: false)
+                self.setUpLogButton()
+                print("LOGGED OUT")
+            })
+            // print("Logout Successful: \(signInProvider.getDisplayName)");
+        } else {
+            assert(false)
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -141,6 +173,14 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         return cell
     }
+    func setUpLogButton(){
+        if !AWSIdentityManager.default().isLoggedIn{
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign In", style: .plain, target: self, action: #selector(showSignInViewController))
+        }
+        if AWSIdentityManager.default().isLoggedIn{
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(handleLogout))
+        }
+    }
     
     //gets the first last name from a contact
     func getContactNameLabel(_ contact:FCContact)->String{
@@ -169,19 +209,28 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
             rowcontact = self.dataHub.getContacts()[getIndexOfContact(section: indexPath.section, row: indexPath.row)]
         }
         //create the controller with the contact
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "contactviewcontroller") as! ContactViewController
-        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "contactcardviewcontroller") as! ContactCardViewController
+//NOTE::
+
         if (indexPath.row == 0 && indexPath.section == 0){
             rowcontact.me = true
         }else {
-            controller.dictionaryIndex = getIndexOfContact(section: indexPath.section, row: indexPath.row)
+            controller.contactIndex = getIndexOfContact(section: indexPath.section, row: indexPath.row)
         }
+        showSignInViewController()
         controller.contact = rowcontact
         //desect row to rid the grey tone
         tableView.deselectRow(at: indexPath, animated: false)
         //presents the view controller and shows the navigation bar so they can return back
         //self.navigationController?.show(controller, sender: nil)
-        self.navigationController?.pushViewController(controller, animated: false)
+ 
+        //self.navigationController?.pushViewController(controller, animated: false)
+    }
+    func showSignInViewController() {
+        let signInSB = UIStoryboard(name: "SignIn", bundle: nil)
+        let signinVC = signInSB.instantiateInitialViewController()! as UIViewController
+        signinVC.modalPresentationStyle = .overFullScreen
+        self.navigationController?.present(signinVC, animated: false, completion: nil)
     }
 
     //adds the delete action for the table view cells (delete contact from table)
@@ -251,8 +300,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         }*/
         let data = NSKeyedArchiver.archivedData(withRootObject: contacts)
         return data
-    }
-    
+    }    
     
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "contactView" {

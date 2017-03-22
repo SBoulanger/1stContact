@@ -8,34 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		0032708B84278EC2E042BF3E1DDD10A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		01CCB575222AEACF2D61D18C6E3CA70F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E86ABC510F6050286443CFD7CAAAD3F /* UIViewControllerExtension.swift */; };
+		01CCB575222AEACF2D61D18C6E3CA70F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CC19655A3D4605A9249B79C94DF09 /* UIViewControllerExtension.swift */; };
 		02F5383F3F17761DFD79A2DF60E7DA77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		03BC7C44A0DD8215B92B20511FEABCE1 /* BEMCheckBox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA2DB88182726B46FE46D671D332C9BA /* BEMCheckBox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03BC7C44A0DD8215B92B20511FEABCE1 /* BEMCheckBox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FAAB58AF17716DF728BD7ECF34F7AC37 /* BEMCheckBox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0825964D22E4D9D15EB6EBD9549FC2B5 /* Pods-FirstContactUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E639CE38A507E76C2BA80F10430B3F7B /* Pods-FirstContactUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		18F57873BAE949F334DA9D57D020B121 /* BEMAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B72AE7CEBE3433B63E53E6CB73494427 /* BEMAnimationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20909B18A454E0797F343764AD7FCA11 /* BEMCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BE35AC4412CB7181188829776D3F5B5B /* BEMCheckBoxGroup.m */; };
+		18F57873BAE949F334DA9D57D020B121 /* BEMAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 51DEE1B7500D21AF4261C78B2C5ACA85 /* BEMAnimationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20909B18A454E0797F343764AD7FCA11 /* BEMCheckBoxGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E8BE74E8DF76D3694C81FDDC12E002 /* BEMCheckBoxGroup.m */; };
 		2CB0B1E1702AA372A5F6CE0D72069917 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		3533512842FEC5930283BB5698140722 /* Pods-FirstContact-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9810B7CB3A7006235F4BBC2274F6B935 /* Pods-FirstContact-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F4B331558094E9EBADCB4BBE25519C0 /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 857F2FF457099E605A14567F9B5F5F1B /* BEMPathManager.m */; };
+		3F4B331558094E9EBADCB4BBE25519C0 /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B89E6E87CE88EBA183B003A390F61480 /* BEMPathManager.m */; };
 		435E19011F97381E6DC80AC2DB727234 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		46B9F6754AC04DC1AA3EF8432BEAC0D9 /* MMCardView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB39E38E9543A7EA83E592BF0573EC5 /* MMCardView-dummy.m */; };
+		46B9F6754AC04DC1AA3EF8432BEAC0D9 /* MMCardView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8593679FE2B553EDAC0A51F0738313D2 /* MMCardView-dummy.m */; };
 		54D27B3733DE931C30C66BBA55C37506 /* Pods-FirstContactTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D504FEB957B702BC0A19A51A209A18 /* Pods-FirstContactTests-dummy.m */; };
-		55CF856B8BA12BB2472B08B6D5D9125A /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C05BCA7A81385B4CFA64FDE4B6AA3A /* BEMCheckBox.m */; };
+		55CF856B8BA12BB2472B08B6D5D9125A /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA96C004B83D51855C671043C4B74C6 /* BEMCheckBox.m */; };
 		56E1934647306D6D96D77CFB86C9425F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		5AEE60159A293412CB3F61FE3EDDD02B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C81EF89C7E74413B4E6EF393267C22 /* UIViewExtension.swift */; };
-		5FA73B4C5D2A6273B5CBDB672E22A891 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2F36FFF3275579943CB785235D45A /* CardCell.swift */; };
-		806B4565C288FE1783CE229586CCF582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30594F91813DE2B92F2E5F4B5383C55 /* CardView.swift */; };
-		8A6B44636886520707544BC52CCD2ABF /* BEMPathManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BAD684D90F7E8AF07671F6AEFC182E8 /* BEMPathManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B490C837B72D07BDBCAE2877734B992 /* CustomCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD1415820F75DF54506BA9B013A53EC /* CustomCardLayout.swift */; };
+		5AEE60159A293412CB3F61FE3EDDD02B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596CC0AA6D2B8F89CADF99BF58DCE7C /* UIViewExtension.swift */; };
+		5FA73B4C5D2A6273B5CBDB672E22A891 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6056F57DBA4A87C58283D93715A30F5 /* CardCell.swift */; };
+		806B4565C288FE1783CE229586CCF582 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313C5FA4AA14D3E7EBBB97B118624DD2 /* CardView.swift */; };
+		8A6B44636886520707544BC52CCD2ABF /* BEMPathManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 254CC29046A25714E7DE2951699A5882 /* BEMPathManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B490C837B72D07BDBCAE2877734B992 /* CustomCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C6113F1EECFBF97D6BA10F2AA5EC6F /* CustomCardLayout.swift */; };
 		999A0CA863B15DD49363F90C320D91AA /* Pods-FirstContactUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FCF71A17E7D7A3D4A954AF6FF5F12 /* Pods-FirstContactUITests-dummy.m */; };
-		9A8BC36CCD3769C0DCEB4213A5019BB7 /* BEMCheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E8E6E3F0E93C103AFFA59B4FC400F36 /* BEMCheckBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A80BA46B97BD1273DAA97821F4DFB963 /* BEMCheckBox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D8601CA171384F8720A6F702EB9CA /* BEMCheckBox-dummy.m */; };
-		AB3DE83A7791B5C9B03A71D33C744752 /* CustomFlipTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6C17F7C4E5BE251E73D9512E8FA45 /* CustomFlipTransition.swift */; };
-		AC08ACC8E35090E01239B8163297A0EA /* BEMCheckBoxGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 45668CB48B7BA75D830E4FD929958BAC /* BEMCheckBoxGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF5BB6C5CBF58128AE6C9AA5950F2AB1 /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BADB8042FAC3C5A8FD0FEF85F325CA6B /* BEMAnimationManager.m */; };
+		9A8BC36CCD3769C0DCEB4213A5019BB7 /* BEMCheckBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 9884A1802F04D65A268F7F81B48448DD /* BEMCheckBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A80BA46B97BD1273DAA97821F4DFB963 /* BEMCheckBox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEC8263A0D8D3958981C123B07BF929 /* BEMCheckBox-dummy.m */; };
+		AB3DE83A7791B5C9B03A71D33C744752 /* CustomFlipTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459C56C5F4FD8522E60A87C386CAA954 /* CustomFlipTransition.swift */; };
+		AC08ACC8E35090E01239B8163297A0EA /* BEMCheckBoxGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3599A1C54B6E24ADA6BC7405FB9D85 /* BEMCheckBoxGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF5BB6C5CBF58128AE6C9AA5950F2AB1 /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CE3A9C11A223267C3FBBD543342E1 /* BEMAnimationManager.m */; };
 		C7977669647974E43C6BE70FE55CB8E3 /* Pods-FirstContact-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F03F696678D0C530ABD94024BE7B37E /* Pods-FirstContact-dummy.m */; };
 		EB73531A292B6DB053EBACA4BEA3DB9A /* Pods-FirstContactTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 64A0B15FD92FB93962392DF7BE190156 /* Pods-FirstContactTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F3F7F78587FE0BEBDC3AC876F69FE669 /* MMCardView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C071DC8D34CDCAEC3E85BDDA0A88E9B /* MMCardView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F3F7F78587FE0BEBDC3AC876F69FE669 /* MMCardView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7653FE799C4BBF4683A8D7BB0534281 /* MMCardView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,75 +56,69 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05DF0D59DEB6809C9D263942E9EF41B3 /* BEMCheckBox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BEMCheckBox.modulemap; sourceTree = "<group>"; };
-		0E86ABC510F6050286443CFD7CAAAD3F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = MMCardView/Classes/UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		0FD4E9F546D7E9BF9A59E9B9FF5D34C8 /* MMCardView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MMCardView.modulemap; sourceTree = "<group>"; };
+		06E8BE74E8DF76D3694C81FDDC12E002 /* BEMCheckBoxGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMCheckBoxGroup.m; path = Classes/BEMCheckBoxGroup.m; sourceTree = "<group>"; };
 		0FFD192320989EE4E71809732544D3DD /* Pods-FirstContactTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FirstContactTests-frameworks.sh"; sourceTree = "<group>"; };
-		1D11D3AA45F789A216D008A77254D7A0 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = iOS/TwitterKit.framework; sourceTree = "<group>"; };
+		1C2CC19655A3D4605A9249B79C94DF09 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = MMCardView/Classes/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		1EA0841349E0B0BE03FDEBAC11853800 /* Pods-FirstContactUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FirstContactUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		219915FB81EED187570D7A9546AC73D6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2297EA69DEA14C09A891F7491881972D /* MMCardView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMCardView.xcconfig; sourceTree = "<group>"; };
+		254CC29046A25714E7DE2951699A5882 /* BEMPathManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMPathManager.h; path = Classes/BEMPathManager.h; sourceTree = "<group>"; };
 		282B36D767410E78FF65758410025773 /* Pods-FirstContactUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FirstContactUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		29E439DD7B192898AB00799D9554C051 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A444E7085FDEFFBE9BAB29B96120E4D /* Pods-FirstContactTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FirstContactTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		326D8601CA171384F8720A6F702EB9CA /* BEMCheckBox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BEMCheckBox-dummy.m"; sourceTree = "<group>"; };
-		3BAD684D90F7E8AF07671F6AEFC182E8 /* BEMPathManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMPathManager.h; path = Classes/BEMPathManager.h; sourceTree = "<group>"; };
+		2BA96C004B83D51855C671043C4B74C6 /* BEMCheckBox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMCheckBox.m; path = Classes/BEMCheckBox.m; sourceTree = "<group>"; };
+		304D43D33F0AF59359B568D64197949F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		313C5FA4AA14D3E7EBBB97B118624DD2 /* CardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = MMCardView/Classes/CardView.swift; sourceTree = "<group>"; };
 		40D504FEB957B702BC0A19A51A209A18 /* Pods-FirstContactTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FirstContactTests-dummy.m"; sourceTree = "<group>"; };
 		435D5C157C7D48251B402E30E0EC160C /* Pods-FirstContactUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FirstContactUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		45668CB48B7BA75D830E4FD929958BAC /* BEMCheckBoxGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMCheckBoxGroup.h; path = Classes/BEMCheckBoxGroup.h; sourceTree = "<group>"; };
-		4C071DC8D34CDCAEC3E85BDDA0A88E9B /* MMCardView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMCardView-umbrella.h"; sourceTree = "<group>"; };
+		4596CC0AA6D2B8F89CADF99BF58DCE7C /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = MMCardView/Classes/UIViewExtension.swift; sourceTree = "<group>"; };
+		459C56C5F4FD8522E60A87C386CAA954 /* CustomFlipTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomFlipTransition.swift; path = MMCardView/Classes/CustomFlipTransition.swift; sourceTree = "<group>"; };
+		47C6113F1EECFBF97D6BA10F2AA5EC6F /* CustomCardLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomCardLayout.swift; path = MMCardView/Classes/CustomCardLayout.swift; sourceTree = "<group>"; };
 		4E14E83492BDD03D9E52364C9E22301B /* Pods_FirstContactTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FirstContactTests.framework; path = "Pods-FirstContactTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E431BE051E5D071CF155BE585D8FCDF /* Pods-FirstContactUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FirstContactUITests-resources.sh"; sourceTree = "<group>"; };
-		4FC73B3811803EDA702D9D1D481D5410 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
-		55E2F36FFF3275579943CB785235D45A /* CardCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardCell.swift; path = MMCardView/Classes/CardCell.swift; sourceTree = "<group>"; };
-		578D4ABD8E2547CFF51953032361E72D /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = iOS/TwitterCore.framework; sourceTree = "<group>"; };
-		57FDD75EF574FE883407E92D43DC21D2 /* MMCardView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMCardView-prefix.pch"; sourceTree = "<group>"; };
+		4EAE2D0F5529DC4C7D3C9CF0E20807CC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51DEE1B7500D21AF4261C78B2C5ACA85 /* BEMAnimationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMAnimationManager.h; path = Classes/BEMAnimationManager.h; sourceTree = "<group>"; };
 		58167D795A7C3D997754CA575A072D3F /* Pods-FirstContact-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FirstContact-resources.sh"; sourceTree = "<group>"; };
-		5D25185E44E2D34EF971930F7EF04F01 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = iOS/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		5AB558BE12C23EF020FA7BEC545D4B30 /* BEMCheckBox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BEMCheckBox-prefix.pch"; sourceTree = "<group>"; };
+		5B8CE3A9C11A223267C3FBBD543342E1 /* BEMAnimationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMAnimationManager.m; path = Classes/BEMAnimationManager.m; sourceTree = "<group>"; };
+		5CE068858B8B73916C97BE07D50B3F4F /* BEMCheckBox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BEMCheckBox.xcconfig; sourceTree = "<group>"; };
 		5E2DC36213313FFD0B85CFFB0A5068F2 /* Pods_FirstContactUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FirstContactUITests.framework; path = "Pods-FirstContactUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB7BEE5ED47EDD8779BED4345AF9585 /* Pods-FirstContact-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FirstContact-acknowledgements.plist"; sourceTree = "<group>"; };
+		5FEC8263A0D8D3958981C123B07BF929 /* BEMCheckBox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BEMCheckBox-dummy.m"; sourceTree = "<group>"; };
 		60FB71A3F93B9362D64FB6AEF4EA1ECE /* Pods-FirstContactUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FirstContactUITests.modulemap"; sourceTree = "<group>"; };
-		62EE539C1847D8B3D1069C0ED7728566 /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
-		63F7923EB3FD4458EA8A8FE9314D5FA8 /* BEMCheckBox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BEMCheckBox-prefix.pch"; sourceTree = "<group>"; };
+		6237827FE63D5B618370491680E4CC02 /* MMCardView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MMCardView.modulemap; sourceTree = "<group>"; };
 		64A0B15FD92FB93962392DF7BE190156 /* Pods-FirstContactTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FirstContactTests-umbrella.h"; sourceTree = "<group>"; };
-		65C81EF89C7E74413B4E6EF393267C22 /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = MMCardView/Classes/UIViewExtension.swift; sourceTree = "<group>"; };
 		68F66B7B9B83E11294F65E348536799C /* Pods-FirstContact-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FirstContact-frameworks.sh"; sourceTree = "<group>"; };
 		6A5FCF71A17E7D7A3D4A954AF6FF5F12 /* Pods-FirstContactUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FirstContactUITests-dummy.m"; sourceTree = "<group>"; };
 		6E521569DD0A303BD36EC70B674B1646 /* Pods-FirstContactTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FirstContactTests-resources.sh"; sourceTree = "<group>"; };
+		6F3599A1C54B6E24ADA6BC7405FB9D85 /* BEMCheckBoxGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMCheckBoxGroup.h; path = Classes/BEMCheckBoxGroup.h; sourceTree = "<group>"; };
 		6F8F245FA9C37DC0A51E8DD2BF2A6A80 /* MMCardView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MMCardView.framework; path = MMCardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C1074CE35369FBA5E763372ACB6C7D /* Pods-FirstContact-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FirstContact-acknowledgements.markdown"; sourceTree = "<group>"; };
-		78670050B9005DECB9C5D90D95F51662 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81C05BCA7A81385B4CFA64FDE4B6AA3A /* BEMCheckBox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMCheckBox.m; path = Classes/BEMCheckBox.m; sourceTree = "<group>"; };
 		84EB1ED2725C3D86D9C03A86C03153C9 /* Pods-FirstContact.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FirstContact.modulemap"; sourceTree = "<group>"; };
-		8527F7345D5DD31168E87826AE54775C /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
-		857F2FF457099E605A14567F9B5F5F1B /* BEMPathManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMPathManager.m; path = Classes/BEMPathManager.m; sourceTree = "<group>"; };
+		8593679FE2B553EDAC0A51F0738313D2 /* MMCardView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMCardView-dummy.m"; sourceTree = "<group>"; };
+		8964C298F2CA294EEF15309EB021F1D2 /* MMCardView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMCardView-prefix.pch"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		941AE8F1798B7C01D233A38D68221B67 /* Pods_FirstContact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FirstContact.framework; path = "Pods-FirstContact.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97252E0B7201B55F3CA1A0E1EA3F33CF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9810B7CB3A7006235F4BBC2274F6B935 /* Pods-FirstContact-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FirstContact-umbrella.h"; sourceTree = "<group>"; };
+		9884A1802F04D65A268F7F81B48448DD /* BEMCheckBox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMCheckBox.h; path = Classes/BEMCheckBox.h; sourceTree = "<group>"; };
+		9AAA2C491DC9E7A78D732952BF161B38 /* MMCardView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMCardView.xcconfig; sourceTree = "<group>"; };
 		9D38E91A474D70B5B7D6CCF67CA0FD3B /* BEMCheckBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BEMCheckBox.framework; path = BEMCheckBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E8E6E3F0E93C103AFFA59B4FC400F36 /* BEMCheckBox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMCheckBox.h; path = Classes/BEMCheckBox.h; sourceTree = "<group>"; };
 		9F03F696678D0C530ABD94024BE7B37E /* Pods-FirstContact-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FirstContact-dummy.m"; sourceTree = "<group>"; };
 		9F96BB9DF9D7627FCE8263904303D42F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A07C21F3455A7A29DC006E5786DC7BA1 /* Pods-FirstContactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FirstContactTests.release.xcconfig"; sourceTree = "<group>"; };
 		A81845262560F4265162E130C2CE4F77 /* Pods-FirstContact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FirstContact.debug.xcconfig"; sourceTree = "<group>"; };
-		B72AE7CEBE3433B63E53E6CB73494427 /* BEMAnimationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BEMAnimationManager.h; path = Classes/BEMAnimationManager.h; sourceTree = "<group>"; };
-		BADB8042FAC3C5A8FD0FEF85F325CA6B /* BEMAnimationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMAnimationManager.m; path = Classes/BEMAnimationManager.m; sourceTree = "<group>"; };
-		BCB39E38E9543A7EA83E592BF0573EC5 /* MMCardView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMCardView-dummy.m"; sourceTree = "<group>"; };
-		BE35AC4412CB7181188829776D3F5B5B /* BEMCheckBoxGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMCheckBoxGroup.m; path = Classes/BEMCheckBoxGroup.m; sourceTree = "<group>"; };
+		B6056F57DBA4A87C58283D93715A30F5 /* CardCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardCell.swift; path = MMCardView/Classes/CardCell.swift; sourceTree = "<group>"; };
+		B89E6E87CE88EBA183B003A390F61480 /* BEMPathManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BEMPathManager.m; path = Classes/BEMPathManager.m; sourceTree = "<group>"; };
+		C7653FE799C4BBF4683A8D7BB0534281 /* MMCardView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMCardView-umbrella.h"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D08AB14873B23582D77A1AD19065643E /* Pods-FirstContactUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FirstContactUITests.release.xcconfig"; sourceTree = "<group>"; };
-		D32577AABD4D0FC6B0DE43CB1D0AD168 /* BEMCheckBox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BEMCheckBox.xcconfig; sourceTree = "<group>"; };
 		D69C4C04FD16B9BB7BE8D3903EBD35F1 /* Pods-FirstContactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FirstContactTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D70B3FFC8C7B3EFE9FD29136ACC3A70B /* Pods-FirstContactUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FirstContactUITests-frameworks.sh"; sourceTree = "<group>"; };
 		D84D714E64AEE58CE50380BD7C23FA21 /* Pods-FirstContactTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FirstContactTests.modulemap"; sourceTree = "<group>"; };
-		D9F6C17F7C4E5BE251E73D9512E8FA45 /* CustomFlipTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomFlipTransition.swift; path = MMCardView/Classes/CustomFlipTransition.swift; sourceTree = "<group>"; };
-		DA2DB88182726B46FE46D671D332C9BA /* BEMCheckBox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BEMCheckBox-umbrella.h"; sourceTree = "<group>"; };
-		DCD1415820F75DF54506BA9B013A53EC /* CustomCardLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomCardLayout.swift; path = MMCardView/Classes/CustomCardLayout.swift; sourceTree = "<group>"; };
-		E30594F91813DE2B92F2E5F4B5383C55 /* CardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = MMCardView/Classes/CardView.swift; sourceTree = "<group>"; };
 		E639CE38A507E76C2BA80F10430B3F7B /* Pods-FirstContactUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FirstContactUITests-umbrella.h"; sourceTree = "<group>"; };
 		E652A7ABEE0004A3A3882D73818C4CED /* Pods-FirstContact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FirstContact.release.xcconfig"; sourceTree = "<group>"; };
 		F7E865F96C0D7436C8DFFC4FF7792E0A /* Pods-FirstContactTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FirstContactTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		FAAB58AF17716DF728BD7ECF34F7AC37 /* BEMCheckBox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BEMCheckBox-umbrella.h"; sourceTree = "<group>"; };
+		FEB6625C6F429B636F065B17F5FE52C2 /* BEMCheckBox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BEMCheckBox.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,29 +183,21 @@
 			path = "Target Support Files/Pods-FirstContact";
 			sourceTree = "<group>";
 		};
-		0F4427A199B15707F7E736B6F3E24B87 /* Fabric */ = {
+		3D211DEC4240D1A3C1007D6A667694F3 /* BEMCheckBox */ = {
 			isa = PBXGroup;
 			children = (
-				62EE539C1847D8B3D1069C0ED7728566 /* FABAttributes.h */,
-				8527F7345D5DD31168E87826AE54775C /* Fabric.h */,
-				6E0CDC956D02DBC9461A35DDD963C63F /* Frameworks */,
+				51DEE1B7500D21AF4261C78B2C5ACA85 /* BEMAnimationManager.h */,
+				5B8CE3A9C11A223267C3FBBD543342E1 /* BEMAnimationManager.m */,
+				9884A1802F04D65A268F7F81B48448DD /* BEMCheckBox.h */,
+				2BA96C004B83D51855C671043C4B74C6 /* BEMCheckBox.m */,
+				6F3599A1C54B6E24ADA6BC7405FB9D85 /* BEMCheckBoxGroup.h */,
+				06E8BE74E8DF76D3694C81FDDC12E002 /* BEMCheckBoxGroup.m */,
+				254CC29046A25714E7DE2951699A5882 /* BEMPathManager.h */,
+				B89E6E87CE88EBA183B003A390F61480 /* BEMPathManager.m */,
+				8072263B17AA69AE544B100A409AC990 /* Support Files */,
 			);
-			name = Fabric;
-			path = Fabric;
-			sourceTree = "<group>";
-		};
-		1ADAF9841BC21C4162337183980B39A6 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				05DF0D59DEB6809C9D263942E9EF41B3 /* BEMCheckBox.modulemap */,
-				D32577AABD4D0FC6B0DE43CB1D0AD168 /* BEMCheckBox.xcconfig */,
-				326D8601CA171384F8720A6F702EB9CA /* BEMCheckBox-dummy.m */,
-				63F7923EB3FD4458EA8A8FE9314D5FA8 /* BEMCheckBox-prefix.pch */,
-				DA2DB88182726B46FE46D671D332C9BA /* BEMCheckBox-umbrella.h */,
-				78670050B9005DECB9C5D90D95F51662 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/BEMCheckBox";
+			name = BEMCheckBox;
+			path = BEMCheckBox;
 			sourceTree = "<group>";
 		};
 		3D6F18021C45271F4A3083DD90ECBC1B /* Pods-FirstContactUITests */ = {
@@ -250,24 +236,6 @@
 			path = "Target Support Files/Pods-FirstContactTests";
 			sourceTree = "<group>";
 		};
-		452472C23BB748BD986F8B44F1942A7E /* TwitterKit */ = {
-			isa = PBXGroup;
-			children = (
-				9FD96A4E9B528DFDA0816BC338A72EA0 /* Frameworks */,
-				D996108C420DBE1D0B27EE70B7877138 /* Resources */,
-			);
-			name = TwitterKit;
-			path = TwitterKit;
-			sourceTree = "<group>";
-		};
-		6E0CDC956D02DBC9461A35DDD963C63F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4FC73B3811803EDA702D9D1D481D5410 /* Fabric.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,27 +244,53 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		778156DAD112CCA17BB8CA9B32F9D98E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D211DEC4240D1A3C1007D6A667694F3 /* BEMCheckBox */,
+				80FD27F9B914D02DAE8D32EA2639655E /* MMCardView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				80A7EDCA375C0C7C715A7735124E1A5F /* Pods */,
+				778156DAD112CCA17BB8CA9B32F9D98E /* Pods */,
 				8AA92F472471A605309DBB2BF8D765A4 /* Products */,
 				A9298A4CD37D00F5B9B7F054D64D64A5 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		80A7EDCA375C0C7C715A7735124E1A5F /* Pods */ = {
+		8072263B17AA69AE544B100A409AC990 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				EB170F610A07FDC4164C6825228EAD12 /* BEMCheckBox */,
-				0F4427A199B15707F7E736B6F3E24B87 /* Fabric */,
-				B3FD097DCFFA7165D32F36AFBA98CC5F /* MMCardView */,
-				B58F63181BDE502E288967F84A277099 /* TwitterCore */,
-				452472C23BB748BD986F8B44F1942A7E /* TwitterKit */,
+				FEB6625C6F429B636F065B17F5FE52C2 /* BEMCheckBox.modulemap */,
+				5CE068858B8B73916C97BE07D50B3F4F /* BEMCheckBox.xcconfig */,
+				5FEC8263A0D8D3958981C123B07BF929 /* BEMCheckBox-dummy.m */,
+				5AB558BE12C23EF020FA7BEC545D4B30 /* BEMCheckBox-prefix.pch */,
+				FAAB58AF17716DF728BD7ECF34F7AC37 /* BEMCheckBox-umbrella.h */,
+				4EAE2D0F5529DC4C7D3C9CF0E20807CC /* Info.plist */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/BEMCheckBox";
+			sourceTree = "<group>";
+		};
+		80FD27F9B914D02DAE8D32EA2639655E /* MMCardView */ = {
+			isa = PBXGroup;
+			children = (
+				B6056F57DBA4A87C58283D93715A30F5 /* CardCell.swift */,
+				313C5FA4AA14D3E7EBBB97B118624DD2 /* CardView.swift */,
+				47C6113F1EECFBF97D6BA10F2AA5EC6F /* CustomCardLayout.swift */,
+				459C56C5F4FD8522E60A87C386CAA954 /* CustomFlipTransition.swift */,
+				1C2CC19655A3D4605A9249B79C94DF09 /* UIViewControllerExtension.swift */,
+				4596CC0AA6D2B8F89CADF99BF58DCE7C /* UIViewExtension.swift */,
+				FD6BE0D6201060020D4620AEAA6B5B79 /* Support Files */,
+			);
+			name = MMCardView;
+			path = MMCardView;
 			sourceTree = "<group>";
 		};
 		8AA92F472471A605309DBB2BF8D765A4 /* Products */ = {
@@ -311,22 +305,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		99057E51289973CFE428C71C7A8FECEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				578D4ABD8E2547CFF51953032361E72D /* TwitterCore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9FD96A4E9B528DFDA0816BC338A72EA0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1D11D3AA45F789A216D008A77254D7A0 /* TwitterKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		A9298A4CD37D00F5B9B7F054D64D64A5 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,30 +315,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B3FD097DCFFA7165D32F36AFBA98CC5F /* MMCardView */ = {
-			isa = PBXGroup;
-			children = (
-				55E2F36FFF3275579943CB785235D45A /* CardCell.swift */,
-				E30594F91813DE2B92F2E5F4B5383C55 /* CardView.swift */,
-				DCD1415820F75DF54506BA9B013A53EC /* CustomCardLayout.swift */,
-				D9F6C17F7C4E5BE251E73D9512E8FA45 /* CustomFlipTransition.swift */,
-				0E86ABC510F6050286443CFD7CAAAD3F /* UIViewControllerExtension.swift */,
-				65C81EF89C7E74413B4E6EF393267C22 /* UIViewExtension.swift */,
-				BD3E85D4F840F4C4FBDE09F5EC2AC0FE /* Support Files */,
-			);
-			name = MMCardView;
-			path = MMCardView;
-			sourceTree = "<group>";
-		};
-		B58F63181BDE502E288967F84A277099 /* TwitterCore */ = {
-			isa = PBXGroup;
-			children = (
-				99057E51289973CFE428C71C7A8FECEA /* Frameworks */,
-			);
-			name = TwitterCore;
-			path = TwitterCore;
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,43 +323,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BD3E85D4F840F4C4FBDE09F5EC2AC0FE /* Support Files */ = {
+		FD6BE0D6201060020D4620AEAA6B5B79 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				29E439DD7B192898AB00799D9554C051 /* Info.plist */,
-				0FD4E9F546D7E9BF9A59E9B9FF5D34C8 /* MMCardView.modulemap */,
-				2297EA69DEA14C09A891F7491881972D /* MMCardView.xcconfig */,
-				BCB39E38E9543A7EA83E592BF0573EC5 /* MMCardView-dummy.m */,
-				57FDD75EF574FE883407E92D43DC21D2 /* MMCardView-prefix.pch */,
-				4C071DC8D34CDCAEC3E85BDDA0A88E9B /* MMCardView-umbrella.h */,
+				304D43D33F0AF59359B568D64197949F /* Info.plist */,
+				6237827FE63D5B618370491680E4CC02 /* MMCardView.modulemap */,
+				9AAA2C491DC9E7A78D732952BF161B38 /* MMCardView.xcconfig */,
+				8593679FE2B553EDAC0A51F0738313D2 /* MMCardView-dummy.m */,
+				8964C298F2CA294EEF15309EB021F1D2 /* MMCardView-prefix.pch */,
+				C7653FE799C4BBF4683A8D7BB0534281 /* MMCardView-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/MMCardView";
-			sourceTree = "<group>";
-		};
-		D996108C420DBE1D0B27EE70B7877138 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5D25185E44E2D34EF971930F7EF04F01 /* TwitterKitResources.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		EB170F610A07FDC4164C6825228EAD12 /* BEMCheckBox */ = {
-			isa = PBXGroup;
-			children = (
-				B72AE7CEBE3433B63E53E6CB73494427 /* BEMAnimationManager.h */,
-				BADB8042FAC3C5A8FD0FEF85F325CA6B /* BEMAnimationManager.m */,
-				9E8E6E3F0E93C103AFFA59B4FC400F36 /* BEMCheckBox.h */,
-				81C05BCA7A81385B4CFA64FDE4B6AA3A /* BEMCheckBox.m */,
-				45668CB48B7BA75D830E4FD929958BAC /* BEMCheckBoxGroup.h */,
-				BE35AC4412CB7181188829776D3F5B5B /* BEMCheckBoxGroup.m */,
-				3BAD684D90F7E8AF07671F6AEFC182E8 /* BEMPathManager.h */,
-				857F2FF457099E605A14567F9B5F5F1B /* BEMPathManager.m */,
-				1ADAF9841BC21C4162337183980B39A6 /* Support Files */,
-			);
-			name = BEMCheckBox;
-			path = BEMCheckBox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -646,7 +575,7 @@
 /* Begin XCBuildConfiguration section */
 		0F8A5B5F03642BBED81E4709C6DADEE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2297EA69DEA14C09A891F7491881972D /* MMCardView.xcconfig */;
+			baseConfigurationReference = 9AAA2C491DC9E7A78D732952BF161B38 /* MMCardView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -793,7 +722,7 @@
 		};
 		6586863D24A9C3525429C5CC72E99E23 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D32577AABD4D0FC6B0DE43CB1D0AD168 /* BEMCheckBox.xcconfig */;
+			baseConfigurationReference = 5CE068858B8B73916C97BE07D50B3F4F /* BEMCheckBox.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -860,7 +789,7 @@
 		};
 		A4BC5A1FA87BB55B4896865D593986EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D32577AABD4D0FC6B0DE43CB1D0AD168 /* BEMCheckBox.xcconfig */;
+			baseConfigurationReference = 5CE068858B8B73916C97BE07D50B3F4F /* BEMCheckBox.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -963,7 +892,7 @@
 		};
 		D2B596786F9D666263E391D43204B256 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2297EA69DEA14C09A891F7491881972D /* MMCardView.xcconfig */;
+			baseConfigurationReference = 9AAA2C491DC9E7A78D732952BF161B38 /* MMCardView.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Vhn-C0-G6S" customClass="InstagramCardCell" customModule="FirstContact" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="357"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="290" height="357"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Instagram-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="W5Y-u8-WUC">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="JPv-hr-V8d"/>
+                            <constraint firstAttribute="width" constant="50" id="t88-9j-qSe"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX3-sD-vhK">
+                        <rect key="frame" x="124" y="25" width="42" height="21"/>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88m-iV-Lzo">
+                        <rect key="frame" x="14" y="83" width="65" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9D-I0-bVF">
+                        <rect key="frame" x="29" y="135" width="233" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="GuJ-Gm-dXJ"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="25"/>
+                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-Yl-gLx">
+                        <rect key="frame" x="40" y="177" width="206" height="38"/>
+                        <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Save">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="saveButtonPress:" destination="Vhn-C0-G6S" eventType="touchUpInside" id="gtO-PN-rLH"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajB-QL-Edw">
+                        <rect key="frame" x="40" y="234" width="206" height="40"/>
+                        <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="lun-6K-UC0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Go">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="goButtonPressed:" destination="Vhn-C0-G6S" eventType="touchUpInside" id="bZ4-qE-n2p"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="AUT-Yl-gLx" firstAttribute="top" secondItem="l9D-I0-bVF" secondAttribute="bottom" constant="15" id="2Jw-yT-SS6"/>
+                <constraint firstItem="ajB-QL-Edw" firstAttribute="centerX" secondItem="Vhn-C0-G6S" secondAttribute="centerX" id="4fd-mX-vrG"/>
+                <constraint firstItem="88m-iV-Lzo" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="8" id="58u-Fc-DOt"/>
+                <constraint firstItem="ajB-QL-Edw" firstAttribute="top" secondItem="AUT-Yl-gLx" secondAttribute="bottom" constant="10" id="EHh-Le-xjC"/>
+                <constraint firstItem="AUT-Yl-gLx" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="30" id="Jcu-0T-prv"/>
+                <constraint firstItem="88m-iV-Lzo" firstAttribute="top" secondItem="W5Y-u8-WUC" secondAttribute="bottom" constant="25" id="KnJ-8r-Pj8"/>
+                <constraint firstItem="W5Y-u8-WUC" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="5" id="MX9-hH-hh5"/>
+                <constraint firstItem="l9D-I0-bVF" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="8" id="QVx-Oc-I5z"/>
+                <constraint firstAttribute="trailing" secondItem="AUT-Yl-gLx" secondAttribute="trailing" constant="30" id="aRF-So-BB3"/>
+                <constraint firstItem="W5Y-u8-WUC" firstAttribute="top" secondItem="Vhn-C0-G6S" secondAttribute="top" constant="5" id="bdZ-3W-yLO"/>
+                <constraint firstItem="AUT-Yl-gLx" firstAttribute="centerX" secondItem="Vhn-C0-G6S" secondAttribute="centerX" id="erK-t6-qIL"/>
+                <constraint firstItem="ajB-QL-Edw" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="30" id="gkw-EO-SQz"/>
+                <constraint firstItem="l9D-I0-bVF" firstAttribute="top" secondItem="88m-iV-Lzo" secondAttribute="bottom" constant="10" id="h45-GB-rrX"/>
+                <constraint firstAttribute="trailing" secondItem="l9D-I0-bVF" secondAttribute="trailing" constant="8" id="kuT-I5-fO9"/>
+                <constraint firstAttribute="trailing" secondItem="ajB-QL-Edw" secondAttribute="trailing" constant="30" id="mmz-6T-a47"/>
+                <constraint firstItem="gX3-sD-vhK" firstAttribute="top" secondItem="Vhn-C0-G6S" secondAttribute="top" constant="10" id="sco-ad-F3m"/>
+                <constraint firstAttribute="trailing" secondItem="gX3-sD-vhK" secondAttribute="trailing" constant="20" id="vFs-2T-cz8"/>
+            </constraints>
+            <size key="customSize" width="95" height="158"/>
+            <connections>
+                <outlet property="instagramTextField" destination="l9D-I0-bVF" id="Wdq-pW-g3R"/>
+                <outlet property="logoView" destination="W5Y-u8-WUC" id="zdb-1B-u3O"/>
+                <outlet property="saveButton" destination="AUT-Yl-gLx" id="DoZ-6h-cZy"/>
+                <outlet property="titleLabel" destination="gX3-sD-vhK" id="nTP-Pp-pzp"/>
+            </connections>
+            <point key="canvasLocation" x="156" y="67.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Instagram-logo.png" width="512" height="512"/>
+    </resources>
+</document>

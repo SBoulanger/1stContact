@@ -1,25 +1,15 @@
 PODS:
   - BEMCheckBox (1.4.0)
-  - Fabric (1.6.11)
   - MMCardView (0.3.2)
-  - TwitterCore (2.8.0):
-    - Fabric
-  - TwitterKit (2.8.1):
-    - TwitterCore (>= 2.8)
 
 DEPENDENCIES:
   - BEMCheckBox
-  - Fabric
   - MMCardView
-  - TwitterKit
 
 SPEC CHECKSUMS:
   BEMCheckBox: e18e4a148905b290bd03d98b767651c104f4eda3
-  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   MMCardView: 81470780ffa5fd6501ffadfc67d47e9ef446a9c0
-  TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
-  TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
 
-PODFILE CHECKSUM: fbb1146b923541be04173fb9afb586b499d15c67
+PODFILE CHECKSUM: 80fb69499118fa2da7c61d4e71b0cfea9f1d2269
 
 COCOAPODS: 1.2.0

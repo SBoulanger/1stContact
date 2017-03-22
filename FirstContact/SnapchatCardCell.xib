@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Q42-r3-T3W" customClass="SnapchatCardCell" customModule="FirstContact" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="357"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="290" height="357"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="snapchat_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ZU-5X-f9A">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="2iC-jL-8yY"/>
+                            <constraint firstAttribute="width" constant="50" id="DvR-SK-fVq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gK4-Fj-blk">
+                        <rect key="frame" x="124" y="25" width="42" height="21"/>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Snapchat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpz-1Z-G6w">
+                        <rect key="frame" x="14" y="83" width="62" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMp-Qo-sEy">
+                        <rect key="frame" x="8" y="106" width="265" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="E0C-Ah-HoW"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="25"/>
+                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-HA-QVH">
+                        <rect key="frame" x="22" y="158" width="251" height="40"/>
+                        <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="cA8-YI-rWD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Save">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="saveButtonPress:" destination="Q42-r3-T3W" eventType="touchUpInside" id="YJv-sB-jmG"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKr-RE-LMw">
+                        <rect key="frame" x="20" y="207" width="251" height="40"/>
+                        <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="23G-9R-Mqh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Go">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="goButtonPressed:" destination="Q42-r3-T3W" eventType="touchUpInside" id="5Pa-eH-GIq"/>
+                            <action selector="saveButtonPress:" destination="Q42-r3-T3W" eventType="touchUpInside" id="DYB-eF-Ni3"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="0ZU-5X-f9A" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="5" id="BFb-ym-Rgb"/>
+                <constraint firstItem="vpz-1Z-G6w" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="8" id="H5R-x6-eof"/>
+                <constraint firstAttribute="trailing" secondItem="DMp-Qo-sEy" secondAttribute="trailing" constant="8" id="L7Q-aN-6So"/>
+                <constraint firstItem="vpz-1Z-G6w" firstAttribute="top" secondItem="0ZU-5X-f9A" secondAttribute="bottom" constant="25" id="Loe-Fy-NQu"/>
+                <constraint firstItem="8sS-HA-QVH" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="30" id="NaT-H2-pIJ"/>
+                <constraint firstItem="DMp-Qo-sEy" firstAttribute="top" secondItem="vpz-1Z-G6w" secondAttribute="bottom" constant="10" id="Pdd-cJ-Rx9"/>
+                <constraint firstItem="DMp-Qo-sEy" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="8" id="Y8m-pr-WNr"/>
+                <constraint firstAttribute="trailing" secondItem="XKr-RE-LMw" secondAttribute="trailing" constant="30" id="cCV-G3-bZn"/>
+                <constraint firstItem="0ZU-5X-f9A" firstAttribute="top" secondItem="Q42-r3-T3W" secondAttribute="top" constant="5" id="eQn-jo-ZQY"/>
+                <constraint firstItem="XKr-RE-LMw" firstAttribute="top" secondItem="8sS-HA-QVH" secondAttribute="bottom" constant="10" id="fP4-li-M33"/>
+                <constraint firstItem="XKr-RE-LMw" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="30" id="hs5-w1-qtd"/>
+                <constraint firstAttribute="trailing" secondItem="gK4-Fj-blk" secondAttribute="trailing" constant="20" id="iRp-d0-MoC"/>
+                <constraint firstAttribute="trailing" secondItem="8sS-HA-QVH" secondAttribute="trailing" constant="30" id="j7h-dv-wAu"/>
+                <constraint firstItem="gK4-Fj-blk" firstAttribute="top" secondItem="Q42-r3-T3W" secondAttribute="top" constant="10" id="nCd-92-ft9"/>
+                <constraint firstItem="8sS-HA-QVH" firstAttribute="top" secondItem="DMp-Qo-sEy" secondAttribute="bottom" constant="15" id="xUv-M6-2ML"/>
+                <constraint firstItem="8sS-HA-QVH" firstAttribute="centerX" secondItem="Q42-r3-T3W" secondAttribute="centerX" id="yyN-ha-MSq"/>
+            </constraints>
+            <size key="customSize" width="95" height="158"/>
+            <connections>
+                <outlet property="logoView" destination="0ZU-5X-f9A" id="S9a-PG-aLk"/>
+                <outlet property="saveButton" destination="8sS-HA-QVH" id="w3F-x0-rh6"/>
+                <outlet property="snapchatTextField" destination="DMp-Qo-sEy" id="aj3-nQ-QWc"/>
+                <outlet property="titleLabel" destination="gK4-Fj-blk" id="kdq-lD-SYs"/>
+            </connections>
+            <point key="canvasLocation" x="156" y="67.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="snapchat_logo.png" width="231" height="218"/>
+    </resources>
+</document>

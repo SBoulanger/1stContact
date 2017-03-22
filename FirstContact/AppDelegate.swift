@@ -10,8 +10,8 @@ import UIKit
 import Contacts
 import FBSDKLoginKit
 import FBSDKCoreKit
-import Fabric
-import TwitterKit
+//import Fabric
+//import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //var rootController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        Fabric.with([Twitter.self])
+        //Fabric.with([Twitter.self])
         // Override point for customization after application launch.
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         //let twitter = Twitter.sharedInstance()
@@ -97,8 +97,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.makeKeyAndVisible()
             }
         }*/
-
-        return true
+        return AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
+        //return true
     }
     
     
@@ -106,16 +106,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FBSDKApplicationDelegate.sharedInstance().application(app, didFinishLaunchingWithOptions: options)
     }*/
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-    }
-    func application(app: UIApplication, openURL url: URL, options: [String : AnyObject]) -> Bool {
-        if Twitter.sharedInstance().application(app, open:url, options: options) {
-            return true
+        if (url.scheme == "fb1095985637117757"){
+            return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        } else {
+            return AWSMobileClient.sharedInstance.withApplication(application, withURL: url, withSourceApplication: sourceApplication, withAnnotation: annotation)
         }
+    }
+    /*func application(app: UIApplication, openURL url: URL, options: [String : AnyObject]) -> Bool {
+        /*if Twitter.sharedInstance().application(app, open:url, options: options) {
+            return true
+        }*/
         
         // If you handle other (non Twitter Kit) URLs elsewhere in your app, return true. Otherwise
         return true
-    }
+    }*/
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -133,6 +137,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        AWSMobileClient.sharedInstance.applicationDidBecomeActive(application)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

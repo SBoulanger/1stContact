@@ -92,5 +92,49 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-</dict>
+    <key>AWS</key>
+    <dict>
+        <key>UserFileManager</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>S3Bucket</key>
+                <string>firstcontact-userfiles-mobilehub-834365698</string>
+                <key>Region</key>
+                <string>us-east-1</string>
+            </dict>
+        </dict>
+        <key>Cognito</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>Region</key>
+                <string>us-east-1</string>
+            </dict>
+        </dict>
+        <key>IdentityManager</key>
+        <dict>
+            <key>Default</key>
+            <dict/>
+        </dict>
+        <key>CredentialsProvider</key>
+        <dict>
+            <key>CognitoIdentity</key>
+            <dict>
+                <key>Default</key>
+                <dict>
+                    <key>PoolId</key>
+                    <string>us-east-1:c8e429fd-702b-449b-86fd-1625a2cdba10</string>
+                    <key>Region</key>
+                    <string>us-east-1</string>
+                </dict>
+            </dict>
+        </dict>
+        <key>MobileHub</key>
+        <dict>
+            <key>ProjectClientId</key>
+            <string>MobileHub 2892eab9-94b1-4229-920d-5128d9457d85 aws-my-sample-app-ios-swift-v0.12</string>
+        </dict>
+    </dict>
+    </dict>
 </plist>

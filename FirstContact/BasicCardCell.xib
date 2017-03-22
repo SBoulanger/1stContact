@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pfN-Gt-27O" customClass="BasicCardCell" customModule="FirstContact" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="196" height="246"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="196" height="246"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC_icon_clear_empty.png" translatesAutoresizingMaskIntoConstraints="NO" id="MQA-j6-H8S">
+                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="IOa-wV-qgc"/>
+                            <constraint firstAttribute="height" constant="50" id="xMF-uO-w9X"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glo-4l-Lls">
+                        <rect key="frame" x="75" y="163" width="46" height="30"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQS-GZ-BNU">
+                        <rect key="frame" x="77" y="18" width="42" height="21"/>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e5x-CO-qfD">
+                        <rect key="frame" x="50" y="108" width="97" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="4cu-pf-7d7"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="e5x-CO-qfD" firstAttribute="centerY" secondItem="pfN-Gt-27O" secondAttribute="centerY" id="3pE-B7-pmi"/>
+                <constraint firstAttribute="trailing" secondItem="EQS-GZ-BNU" secondAttribute="trailing" constant="10" id="6Z4-uz-rUd"/>
+                <constraint firstAttribute="bottom" secondItem="glo-4l-Lls" secondAttribute="bottom" constant="53" id="8Dl-EZ-nnt"/>
+                <constraint firstItem="EQS-GZ-BNU" firstAttribute="top" secondItem="pfN-Gt-27O" secondAttribute="top" constant="20" id="FfO-iC-36a"/>
+                <constraint firstItem="e5x-CO-qfD" firstAttribute="leading" secondItem="pfN-Gt-27O" secondAttribute="leading" constant="10" id="GKj-16-xdc"/>
+                <constraint firstItem="glo-4l-Lls" firstAttribute="centerX" secondItem="pfN-Gt-27O" secondAttribute="centerX" id="MET-Iu-6WO"/>
+                <constraint firstItem="MQA-j6-H8S" firstAttribute="top" secondItem="pfN-Gt-27O" secondAttribute="top" constant="5" id="PkT-nm-KkK"/>
+                <constraint firstItem="MQA-j6-H8S" firstAttribute="leading" secondItem="pfN-Gt-27O" secondAttribute="leading" constant="5" id="WLX-4d-z27"/>
+                <constraint firstAttribute="trailing" secondItem="e5x-CO-qfD" secondAttribute="trailing" constant="10" id="pXe-lG-YOu"/>
+            </constraints>
+            <size key="customSize" width="141" height="291"/>
+            <connections>
+                <outlet property="contentTextField" destination="e5x-CO-qfD" id="sMM-QX-cZb"/>
+                <outlet property="editButton" destination="glo-4l-Lls" id="KrU-fk-ecT"/>
+                <outlet property="logoView" destination="MQA-j6-H8S" id="bjL-Dk-08H"/>
+                <outlet property="titleLabel" destination="EQS-GZ-BNU" id="NWL-te-TZ5"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="-174"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="FC_icon_clear_empty.png" width="1248" height="1248"/>
+    </resources>
+</document>

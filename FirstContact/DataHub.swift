@@ -26,6 +26,7 @@ class DataHub {
         print("INIT DATAHUB")
         self.contacts = []
         let contactDictionaryData = defaults.data(forKey: "contactDictionary")
+        print(contactDictionaryData)
         if contactDictionaryData == nil {
             self.contact = FCContact()
             saveContact()

@@ -97,7 +97,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
             //make the view in front of the camera view
             view.bringSubview(toFront: qrCodeFrameView!)
             //logo to front
-            view.bringSubview(toFront: ufoImageView)
+            //view.bringSubview(toFront: ufoButton)
             //back button to front
         }
     }

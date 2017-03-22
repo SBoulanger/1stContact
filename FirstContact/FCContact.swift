@@ -25,19 +25,63 @@ public struct FCContact {
     var me : Bool! = false
     
     init(){
+        self.firstName = ""
+        self.lastName = ""
+        self.phoneNumber = ""
+        self.snapchat = ""
+        self.instagram = ""
+        self.email = ""
+        self.facebook = ""
+        self.twitter = ""
     }
     
     //Decode
     public init(dictionary: Dictionary<String, AnyObject>){
-        firstName = dictionary["firstName"] as? String
-        lastName = dictionary["lastName"] as? String
-        phoneNumber = dictionary["phoneNumber"] as? String
-        snapchat = dictionary["snapchat"] as? String
-        instagram = dictionary["instagram"] as? String
-        facebook = dictionary["facebook"] as? String
-        email = dictionary["email"] as? String
-        twitter = dictionary["twitter"] as? String
-        me = dictionary["me"] as? Bool
+        if ((dictionary["firstName"] as? String) != nil) {
+            firstName = dictionary["firstName"] as? String
+        } else {
+            firstName = ""
+        }
+        if ((dictionary["lastName"] as? String) != nil) {
+            lastName = dictionary["lastName"] as? String
+        } else {
+            lastName = ""
+        }
+        if ((dictionary["phoneNumber"] as? String) != nil) {
+            phoneNumber = dictionary["phoneNumber"] as? String
+        } else {
+            phoneNumber = ""
+        }
+        if ((dictionary["snapchat"] as? String) != nil) {
+            snapchat = dictionary["snapchat"] as? String
+        } else {
+            snapchat = ""
+        }
+        if ((dictionary["instagram"] as? String) != nil) {
+            instagram = dictionary["instagram"] as? String
+        } else {
+            instagram = ""
+        }
+        if ((dictionary["facebook"] as? String) != nil) {
+            facebook = dictionary["facebook"] as? String
+        } else {
+            facebook = ""
+        }
+        if ((dictionary["email"] as? String) != nil) {
+            email = dictionary["email"] as? String
+        } else {
+            email = ""
+        }
+        if ((dictionary["twitter"] as? String) != nil) {
+            twitter = dictionary["twitter"] as? String
+        } else {
+            twitter = ""
+        }
+        if ((dictionary["me"] as? Bool) != nil) {
+            me = dictionary["me"] as? Bool
+        } else {
+            me = false
+        }
     }
     
     //Encode

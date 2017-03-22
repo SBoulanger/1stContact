@@ -12,8 +12,8 @@ import Contacts
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FBSDKShareKit
-import TwitterKit
-import Fabric
+//import TwitterKit
+//import Fabric
 import MMCardView
 /*
  First name
@@ -92,7 +92,7 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
     var textfieldarray: [UITextField]!
     var filledarray: [Bool]!
     var contact: FCContact!
-    var globalTwitter: Twitter!
+    //var globalTwitter: Twitter!
     /*init(contact:CNContact)
     {
         print("hello")
@@ -106,7 +106,7 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
     
     
     var dataHub: DataHub!
-    var globalSession: TWTRSession!
+    //var globalSession: TWTRSession!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -164,7 +164,7 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
             } else {
                 print("NOT")
             }
-        
+  /*
             self.twitterB.isHidden = true
             self.twitterTF.isHidden = true
             
@@ -210,12 +210,12 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
                 
                 print("Twitter:\(dataHub.getContact().twitter)")
                 
-                
+ 
                 
                 
                 
 
-            }
+            }*/
         }
         
         
@@ -295,7 +295,7 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
             textFieldEmptyChange(sender: textfieldarray[i])
         }
     }
-    
+    /*
     func logouttwitter(sender: TWTRLogInButton){
         print("Twitter:\(dataHub.getContact().twitter)")
         Twitter.sharedInstance().sessionStore.logOutUserID(self.globalSession.userID)
@@ -332,6 +332,7 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
         sender.removeFromSuperview()
         print("Twitter:\(dataHub.getContact().twitter)")
     }
+    */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag: NSInteger = textField.tag + 1
         // Try to find next responder
