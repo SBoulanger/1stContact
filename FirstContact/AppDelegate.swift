@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //    }
         //}
         
-        self.dataHub = DataHub()
+        //self.dataHub = DataHub()
 
         
         
@@ -138,6 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         AWSMobileClient.sharedInstance.applicationDidBecomeActive(application)
+        self.dataHub = DataHub()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -203,6 +204,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             completion(false, nil)
         }
         return contacts
+    }
+    func showSimpleAlertWithTitle(_ title: String, message: String, cancelButtonTitle cancelTitle: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        let pushedViewControllers = (self.window?.rootViewController as! UINavigationController).viewControllers
+        let presentedViewController = pushedViewControllers[pushedViewControllers.count - 1]
+        DispatchQueue.main.async(execute: {
+            presentedViewController.present(alertController, animated: true, completion: nil)
+        })
     }
     
     

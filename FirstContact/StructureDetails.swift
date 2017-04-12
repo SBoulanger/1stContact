@@ -9,5 +9,5 @@
 import Foundation
 
 enum StructureDetails {
-    static let categories = ["Name","PhoneNumber","Email","Facebook","Instagram","Snapchat","Twitter"]
+    static let categories = ["firstName","lastName","phoneNumber","email","facebook","instagram","snapchat","twitter"]
 }

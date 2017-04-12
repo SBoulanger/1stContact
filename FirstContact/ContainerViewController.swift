@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSMobileHubHelper
 
 protocol ContainerViewControllerDelegate {
     func outerScrollViewShouldScroll() -> Bool
@@ -54,6 +55,8 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
         setupVerticalScrollView()
         setupHorizontalScrollView()
     }
+    
+    
     
     func setupVerticalScrollView() {
         middleVertScrollVc = VerticalScrollViewController.verticalScrollVcWith(middleVc,
@@ -142,7 +145,7 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //print(self.initialContentOffset.x)
         if self.initialContentOffset.x == 0.0 || self.initialContentOffset.x == 750.0 {
-            print(self.initialContentOffset)
+            //print(self.initialContentOffset)
         }
         if delegate != nil && !delegate!.outerScrollViewShouldScroll() && !directionLockDisabled {
             let newOffset = CGPoint(x: self.initialContentOffset.x, y: self.initialContentOffset.y)
@@ -150,7 +153,7 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
             // directional lock, that allows you to scroll in only one direction at any given time
             self.scrollView!.setContentOffset(newOffset, animated:  false)
         }
-        print(self.initialContentOffset.y)
+        //print(self.initialContentOffset.y)
     }
     
 }

@@ -129,7 +129,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                     contactInfoArray = getContactInfo(info: info)
                     if contactInfoArray[0] != "nil" {
                         
-                        let newcontact = FCContact(first: contactInfoArray[0], last: contactInfoArray[1], phoneNumber: contactInfoArray[2], email: contactInfoArray[3], snapchat: contactInfoArray[4], instagram: contactInfoArray[5], facebook: contactInfoArray[6],twitter:contactInfoArray[7])
+                        let newcontact = FCContact(first: contactInfoArray[0], last: contactInfoArray[1], phoneNumber: contactInfoArray[2], email: contactInfoArray[3], snapchat: contactInfoArray[4], instagram: contactInfoArray[5], facebook: contactInfoArray[6])
                         print("created new contact")
                         qrcodedone = true
                         //create the send text message action

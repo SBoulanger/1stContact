@@ -23,6 +23,7 @@ public struct FCContact {
     var twitter : String! = ""
     var share: [Int]! = []
     var me : Bool! = false
+    var fcDictionary: [String:Any] = ["firstName":"","lastName":"","phoneNumber":"","email":"","facebook":"","instagram":"","snapchat":"","me":false]
     
     init(){
         self.firstName = ""
@@ -84,6 +85,10 @@ public struct FCContact {
         }
     }
     
+    public init(data: Data){
+        encodeJSON(data: data)
+    }
+    
     //Encode
     public func encode() -> Dictionary<String, AnyObject> {
         var dictionary : Dictionary = Dictionary<String, AnyObject>()
@@ -98,13 +103,45 @@ public struct FCContact {
         dictionary["me"] = me as AnyObject?
         return dictionary
     }
+    public mutating func encodeJSON(data: Data){
+        print("FCContact: encodeJSON(data: \(data))")
+        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+        if let dictionary = json as? [String: Any] {
+            for (key, value) in dictionary {
+                setValue(key: key, value: value)
+            }
+        }
+        
+    }
+    public func getDefaultJSONData() -> Data {
+        
+        let jsonObject : [String: Any] = self.getDefaultJSON()
+        print("Default .json is valid: \(JSONSerialization.isValidJSONObject(jsonObject))")
+        let data = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
+        return data!
+    }
+    public func getDefaultJSON() -> [String: Any] {
+        let jsonObject : [String: Any] = [
+            
+            "firstName": self.firstName,
+            "lastName" : self.lastName,
+            "phoneNumber": self.phoneNumber,
+            "email":self.email,
+            "snapchat":self.snapchat,
+            "instagram":self.instagram,
+            "facebook":self.facebook,
+            "me":self.me
+            
+        ]
+        return jsonObject
+    }
     
     init(contact:CNContact){
         firstName = contact.givenName
         lastName = contact.familyName
         phoneNumber = contact.phoneNumbers[0].label
     }
-    init(first:String,last:String,phoneNumber:String,email:String,snapchat:String,instagram:String,facebook:String,twitter:String){
+    init(first:String,last:String,phoneNumber:String,email:String,snapchat:String,instagram:String,facebook:String){
         firstName = first
         lastName = last
         self.phoneNumber = phoneNumber
@@ -112,7 +149,6 @@ public struct FCContact {
         self.snapchat = snapchat
         self.instagram = instagram
         self.facebook = facebook
-        self.twitter = twitter
     }
     func getField(fieldIndex:Int) -> String {
         switch fieldIndex {
@@ -139,6 +175,28 @@ public struct FCContact {
             return false
         }
         return true
+    }
+    mutating func setValue(key:String,value:Any){
+        switch key {
+        case "firstName":
+            self.firstName = value as! String
+        case "lastName":
+            self.lastName = value as! String
+        case "phoneNumber":
+            self.phoneNumber = value as! String
+        case "email":
+            self.email = value as! String
+        case "facebook":
+            self.facebook = value as! String
+        case "instagram":
+            self.instagram = value as! String
+        case "snapchat":
+            self.snapchat = value as! String
+        case "me":
+            self.me = value as! Bool
+        default:
+            print("default")
+        }
     }
     init?(cnContact: CNContact) {
         // name

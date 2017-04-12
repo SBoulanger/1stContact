@@ -67,6 +67,7 @@
 		91558EF11D90ABBB00AC5DBA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91558EF01D90ABBB00AC5DBA /* FBSDKShareKit.framework */; };
 		91558EF31D90ABC200AC5DBA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91558EF21D90ABC200AC5DBA /* FBSDKLoginKit.framework */; };
 		91558EF51D92900B00AC5DBA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91558EF41D92900B00AC5DBA /* Bolts.framework */; };
+		915D301F1E89F415000BDDC3 /* RemoteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D301E1E89F415000BDDC3 /* RemoteHandler.swift */; };
 		9174F3231E70A6600086C945 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9174F3221E70A6600086C945 /* camera.png */; };
 		9174F3251E70AA950086C945 /* camera_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9174F3241E70AA950086C945 /* camera_clear.png */; };
 		9176DE201C3CDBEF002EA833 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9176DE1F1C3CDBEF002EA833 /* AudioToolbox.framework */; };
@@ -214,6 +215,7 @@
 		91558EF01D90ABBB00AC5DBA /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		91558EF21D90ABC200AC5DBA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		91558EF41D92900B00AC5DBA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		915D301E1E89F415000BDDC3 /* RemoteHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteHandler.swift; sourceTree = "<group>"; };
 		9174F3221E70A6600086C945 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		9174F3241E70AA950086C945 /* camera_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_clear.png; sourceTree = "<group>"; };
 		9176DE1F1C3CDBEF002EA833 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -358,6 +360,7 @@
 				91D670201E6E7B4000AB1D6A /* FCNavigationButton.swift */,
 				91FEDBA41C9FA4E3000693AC /* StyleHeader.swift */,
 				9131C9971DA0D1550032C260 /* DataHub.swift */,
+				915D301E1E89F415000BDDC3 /* RemoteHandler.swift */,
 				91B2A8241BE2E466002DBF03 /* QRViewController.swift */,
 				914D553D1E7A359B0042812B /* UserPools */,
 				91476A611D6DE63E0059B532 /* FCContact.swift */,
@@ -873,6 +876,7 @@
 				911958C11D623FB20010AADA /* ContainerViewController.swift in Sources */,
 				914D55491E7A35CF0042812B /* UserPoolSignUpConfirmationViewController.swift in Sources */,
 				914D55471E7A35CF0042812B /* UserPoolMFAViewController.swift in Sources */,
+				915D301F1E89F415000BDDC3 /* RemoteHandler.swift in Sources */,
 				914D55031E72A8690042812B /* BasicCardCell.swift in Sources */,
 				914D550D1E7331EF0042812B /* StructureDetails.swift in Sources */,
 				91FEDBA51C9FA4E3000693AC /* StyleHeader.swift in Sources */,

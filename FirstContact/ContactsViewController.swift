@@ -43,7 +43,6 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewWillAppear(true)
         //self.navigationController?.navigationBarHidden = true
         self.navigationController?.navigationBar.barTintColor = UIColor.white
-        print("SettingView entered")
         //get contact history array
     }
     
@@ -69,6 +68,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
             strongSelf.setUpLogButton()
             //strongSelf.updateTheme()
         })
+        setUpLogButton()
 
         self.dataHub =  AppDelegate.getAppDelegate().dataHub
         
@@ -97,6 +97,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         homebutton.setUpLeftButton()
         print("CONTACTS")
         print(self.view.frame.size.height)
+        print(homebutton)
         self.view.addSubview(homebutton)
         
         //view.addSubview(historyTableView)
@@ -217,12 +218,12 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         }else {
             controller.contactIndex = getIndexOfContact(section: indexPath.section, row: indexPath.row)
         }
-        showSignInViewController()
+        //showSignInViewController()
         controller.contact = rowcontact
         //desect row to rid the grey tone
         tableView.deselectRow(at: indexPath, animated: false)
         //presents the view controller and shows the navigation bar so they can return back
-        //self.navigationController?.show(controller, sender: nil)
+        self.navigationController?.show(controller, sender: nil)
  
         //self.navigationController?.pushViewController(controller, animated: false)
     }
