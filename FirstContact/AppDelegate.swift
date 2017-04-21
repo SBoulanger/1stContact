@@ -16,6 +16,8 @@ import FBSDKCoreKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var dataLoaded : Bool! = false
+    
     var contactStore = CNContactStore()
     
     var contact: FCContact!
@@ -38,9 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let left = storyboard.instantiateViewController(withIdentifier: "left")
         let middle = storyboard.instantiateViewController(withIdentifier: "middle")
+        let left = storyboard.instantiateViewController(withIdentifier: "left")
         let right = storyboard.instantiateViewController(withIdentifier: "right")
         //let top = storyboard.instantiateViewController(withIdentifier: "top")
         let bottom = storyboard.instantiateViewController(withIdentifier: "bottom")
@@ -97,6 +98,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.makeKeyAndVisible()
             }
         }*/
+        //while (!self.dataLoaded){}
+        
+        
         return AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
         //return true
     }
@@ -143,6 +147,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    func setLoaded(loaded : Bool){
+        self.dataLoaded = loaded
     }
     class func getAppDelegate() -> AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate

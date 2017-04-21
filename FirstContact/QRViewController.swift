@@ -42,7 +42,7 @@ class QRViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        AppDelegate.getAppDelegate().dataHub = DataHub()
         let logo = UIImage(named: "FC_logo_white.png")
         let newim = ResizeImage(logo!, targetSize: CGSize(width: 40,height: 50))
         //let imageView = UIImageView(image:newim)

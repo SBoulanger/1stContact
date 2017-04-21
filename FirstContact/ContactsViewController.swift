@@ -105,13 +105,28 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     func handleLogout() {
         if (AWSIdentityManager.default().isLoggedIn) {
-            
-            
-            
             AWSIdentityManager.default().logout(completionHandler: {(result: Any?, error: Error?) in
                 //self.navigationController!.popToRootViewController(animated: false)
+                // Create the alert controller
+                let alertController = UIAlertController(title: "☄️", message: "Remove local data?", preferredStyle: .alert)
+                
+                // Create the actions
+                let okAction = UIAlertAction(title: "Remove", style: UIAlertActionStyle.default) {
+                    UIAlertAction in
+                    self.dataHub.wipeData()
+                }
+                let cancelAction = UIAlertAction(title: "Don't Remove", style: UIAlertActionStyle.cancel) {
+                    UIAlertAction in
+                    print("Don't Remove Pressed")
+                }
+                
+                // Add the actions
+                alertController.addAction(okAction)
+                alertController.addAction(cancelAction)
+                
+                // Present the controller
+                self.present(alertController, animated: true, completion: nil)
                 self.setUpLogButton()
-                print("LOGGED OUT")
             })
             // print("Logout Successful: \(signInProvider.getDisplayName)");
         } else {

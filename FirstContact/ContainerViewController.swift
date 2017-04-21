@@ -52,6 +52,7 @@ class ContainerViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setupVerticalScrollView()
         setupHorizontalScrollView()
     }

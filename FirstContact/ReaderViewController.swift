@@ -22,6 +22,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
     //var swipeView:UIView?
     var window: UIWindow?
     var contact: FCContact?
+    var newestContact: FCContact!
     
     var contactInfoArray = [String]()
 
@@ -36,9 +37,13 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
     let defaults = UserDefaults.standard
     var info : String!
     
+    var dataHub:DataHub!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Reader LOAD ---------")
+        print("Reader: INITIALIZATION")
+        self.dataHub = AppDelegate.getAppDelegate().dataHub
         initQRCaptureCamera()
         //let button = UIButton(frame: ufoImageView.frame)
         //ufoButton.backgroundColor = UIColor.clear
@@ -126,25 +131,57 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                 if !qrcodedone {
                     //get the info from the data string
                     print(info)
-                    contactInfoArray = getContactInfo(info: info)
+                    contactInfoArray = AppDelegate.getAppDelegate().dataHub.getContactInfo(info: info)
                     if contactInfoArray[0] != "nil" {
-                        
-                        let newcontact = FCContact(first: contactInfoArray[0], last: contactInfoArray[1], phoneNumber: contactInfoArray[2], email: contactInfoArray[3], snapchat: contactInfoArray[4], instagram: contactInfoArray[5], facebook: contactInfoArray[6])
-                        print("created new contact")
-                        qrcodedone = true
-                        //create the send text message action
-                        let actionHandler = {(action:UIAlertAction!) -> Void in
-                            print("add new contact")
-                            AppDelegate.getAppDelegate().dataHub.addContact(contact: newcontact)
-                            print("refreshed dataHub Contacts")
-                            self.qrcodedone = false
-                        }
-                        //ask if they will be sending their contact through a text
-                        
-                        if (self.contactInfoArray[0]+self.contactInfoArray[1] == ""){
-                            showMessage("🚀", title: "Want to add NO NAME to your Contacts?",actionHandler: actionHandler)
+                        if ((info.range(of: "remote")) != nil){
+                            var stringArray = contactInfoArray[0].components(separatedBy: ",")
+                            var shareIntArray: [Int]! = []
+                            for i in stringArray {
+                                shareIntArray.append(Int(i)!)
+                            }
+                            print("qrcodedone is now true")
+                            qrcodedone = true
+                            AppDelegate.getAppDelegate().dataHub.getAWSContent(url: contactInfoArray[1], share: shareIntArray) {
+                                let actionHandler = {(action:UIAlertAction!) -> Void in
+                                    self.qrcodedone = false
+                                    print("qrcodedone is now false ACTIONHANDLER")
+                                }
+                                print("if (self.newestContact != nil")
+                                if (self.newestContact != nil){
+                                    print("self.newestContact != nil")
+                                    if (self.newestContact.firstName + self.newestContact.lastName == ""){
+                                        print("showMessage()")
+                                        self.showMessage("🚀", title: "Want to add NO NAME to your Contacts?",actionHandler: actionHandler)
+                                    } else {
+                                        print("showMessage() 2")
+                                        self.showMessage("🚀", title: "Want to add \(self.newestContact.firstName!) \(self.newestContact.lastName!) to your contacts?",actionHandler: actionHandler)
+                                    }
+                                } else {
+                                    print("newestContact is not being ")
+                                }
+                                
+                            }
+                            
+                            
                         } else {
-                        showMessage("🚀", title: "Want to add \(self.contactInfoArray[0]) \(self.contactInfoArray[1]) to your contacts?",actionHandler: actionHandler)
+                            let newcontact = FCContact(first: contactInfoArray[0], last: contactInfoArray[1], phoneNumber: contactInfoArray[2], email: contactInfoArray[3], snapchat: contactInfoArray[4], instagram: contactInfoArray[5], facebook: contactInfoArray[6])
+                        
+                            print("created new contact")
+                            qrcodedone = true
+                            //create the send text message action
+                            let actionHandler = {(action:UIAlertAction!) -> Void in
+                                print("add new contact")
+                                AppDelegate.getAppDelegate().dataHub.addContact(contact: newcontact)
+                                print("refreshed dataHub Contacts")
+                                self.qrcodedone = false
+                            }
+                            //ask if they will be sending their contact through a text
+                        
+                            if (newcontact.firstName+newcontact.lastName == ""){
+                                showMessage("🚀", title: "Want to add NO NAME to your Contacts?",actionHandler: actionHandler)
+                            } else {
+                                showMessage("🚀", title: "Want to add \(newcontact.firstName) \(newcontact.lastName) to your contacts?",actionHandler: actionHandler)
+                            }
                         }
                     } else {
                         print("got nil when getting contact")
@@ -226,6 +263,8 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
     //creates the contact read to the phones contact list
     func createContact(_ first:String, last: String, number: String) -> CNMutableContact {
         let newContact = CNMutableContact()
+        
+        
         
         newContact.givenName = first
         newContact.familyName = last

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IrM-q6-HEc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IrM-q6-HEc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,37 +22,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTp-en-68V">
-                                <rect key="frame" x="16" y="117" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username or phone#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTp-en-68V">
+                                <rect key="frame" x="16" y="149" width="343" height="31"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APt-fX-2fz">
-                                <rect key="frame" x="16" y="178" width="343" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APt-fX-2fz">
+                                <rect key="frame" x="16" y="200" width="343" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aN0-Uy-Lnf">
-                                <rect key="frame" x="199" y="256" width="107" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create Account"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aN0-Uy-Lnf">
+                                <rect key="frame" x="56" y="291" width="132" height="30"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xla-L5-f3Y">
-                                <rect key="frame" x="130" y="302" width="115" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Forgot Password"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xla-L5-f3Y">
+                                <rect key="frame" x="187" y="291" width="132" height="30"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="15"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfX-Nd-pH1">
-                                <rect key="frame" x="111" y="256" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SignIn"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfX-Nd-pH1">
+                                <rect key="frame" x="56" y="250" width="263" height="36"/>
+                                <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
+                                <color key="tintColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="SignIn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUa-iK-Ogo">
+                                <rect key="frame" x="333" y="71" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="8Ao-Rf-qas"/>
+                                    <constraint firstAttribute="height" constant="35" id="Uym-ki-h5d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissX:" destination="qKv-bh-Kkm" eventType="touchUpInside" id="w1l-Mg-ToZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="APt-fX-2fz" firstAttribute="leading" secondItem="fci-PH-jRN" secondAttribute="leadingMargin" id="8aA-hR-YRG"/>
+                            <constraint firstItem="xla-L5-f3Y" firstAttribute="top" secondItem="KfX-Nd-pH1" secondAttribute="bottom" constant="20" id="APW-Aa-zkb"/>
+                            <constraint firstItem="KfX-Nd-pH1" firstAttribute="top" secondItem="APt-fX-2fz" secondAttribute="bottom" constant="20" id="FyK-RR-t4r"/>
+                            <constraint firstItem="aN0-Uy-Lnf" firstAttribute="leading" secondItem="fci-PH-jRN" secondAttribute="leadingMargin" constant="40" id="GjV-KY-QsM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xla-L5-f3Y" secondAttribute="trailing" constant="40" id="KEK-cV-BEk"/>
+                            <constraint firstItem="fTp-en-68V" firstAttribute="leading" secondItem="fci-PH-jRN" secondAttribute="leadingMargin" id="OGP-Ja-2iJ"/>
+                            <constraint firstItem="APt-fX-2fz" firstAttribute="trailing" secondItem="fci-PH-jRN" secondAttribute="trailingMargin" id="P1q-BY-dl8"/>
+                            <constraint firstItem="fTp-en-68V" firstAttribute="trailing" secondItem="fci-PH-jRN" secondAttribute="trailingMargin" id="PIP-Fc-PzI"/>
+                            <constraint firstAttribute="trailing" secondItem="WUa-iK-Ogo" secondAttribute="trailing" constant="7" id="RF7-0a-K8I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KfX-Nd-pH1" secondAttribute="trailing" constant="40" id="RgH-bQ-hY2"/>
+                            <constraint firstItem="WUa-iK-Ogo" firstAttribute="top" secondItem="r95-2D-IST" secondAttribute="bottom" constant="7" id="aiK-Kj-1J5"/>
+                            <constraint firstItem="APt-fX-2fz" firstAttribute="top" secondItem="fTp-en-68V" secondAttribute="bottom" constant="20" id="bq7-UR-BLC"/>
+                            <constraint firstItem="fTp-en-68V" firstAttribute="top" secondItem="r95-2D-IST" secondAttribute="bottom" constant="85" id="gZW-pg-ipN"/>
+                            <constraint firstItem="aN0-Uy-Lnf" firstAttribute="top" secondItem="KfX-Nd-pH1" secondAttribute="bottom" constant="20" id="yek-iF-BDh"/>
+                            <constraint firstItem="KfX-Nd-pH1" firstAttribute="leading" secondItem="fci-PH-jRN" secondAttribute="leadingMargin" constant="40" id="yss-AO-CIk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U9Q-Kf-Y3O"/>
                     <connections>

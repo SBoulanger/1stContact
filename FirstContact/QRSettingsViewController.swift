@@ -51,12 +51,6 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         homebutton.setUpRightButton()
         self.view.addSubview(homebutton)
         
-        /*for i in dataHub.share {
-            selectRow(tableView: mainTableView, at: IndexPath(row: i, section: 1))
-        }*/
-        //let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        //self.navigationController?.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -100,13 +94,6 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         }
         
         cell.selectionStyle = .none
-        
-        //cell.pressID.layer.masksToBounds = true
-        //cell.pressID.layer.cornerRadius = 0.5 * cell.pressID.bounds.size.width
-        
-        //cell.pressID.backgroundColor = UIColor.white
-        //cell.pressID.layer.borderColor = UIColor.green.cgColor
-        //cell.pressID.layer.borderWidth = 2
         return cell
     }
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -142,7 +129,7 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
                     selectedRows.append(i.row)
                 }
             }
-            print(selectedRows)
+            print("QRSettingsViewController: \(selectedRows)")
         }
         
         self.dataHub.setShare(nshare: selectedRows)
@@ -172,18 +159,6 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        /*let contactData = UserDefaults.standard.data(forKey: "contact")
-        contact = NSKeyedUnarchiver.unarchiveObject(with: contactData!) as! CNContact
-        
-        //if the qrcode has not been loaded yet
-        if qrCodeImage == nil {
-            //create the image
-            qrCodeView.image = generateCode()
-            displayQRCodeImage()
-        }*/
-
-        
-        
         let cell : CategoryRow = tableView.cellForRow(at: indexPath)! as! CategoryRow
         if indexPath.row == 0 && indexPath.section == 0{ //Basic
             deselectRow(tableView: tableView, at: IndexPath(row: 0, section: 1))
@@ -204,7 +179,7 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
                     selectedRows.append(i.row)
                 }
             }
-            print(selectedRows)
+            print("QRSettingsViewController: \(selectedRows)")
         }
         
         self.dataHub.setShare(nshare: selectedRows)
@@ -224,10 +199,5 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         tableView.deselectRow(at: index, animated: true)
         cell.layer.backgroundColor = UIColor.white.cgColor
     }
-    
-    func setNewQRCode(selected: Array<Int>){
-        print("hi")
-    }
-    
     
 }

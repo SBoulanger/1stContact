@@ -12,7 +12,8 @@ import Contacts
 
 //first last phone emial insta snap facebook
 
-public struct FCContact {
+public struct FCContact: Equatable {
+    private var id : Int! = 0
     var firstName : String! = ""
     var lastName : String! = ""
     var phoneNumber : String! = ""
@@ -26,6 +27,7 @@ public struct FCContact {
     var fcDictionary: [String:Any] = ["firstName":"","lastName":"","phoneNumber":"","email":"","facebook":"","instagram":"","snapchat":"","me":false]
     
     init(){
+        self.id = UUID().hashValue
         self.firstName = ""
         self.lastName = ""
         self.phoneNumber = ""
@@ -34,10 +36,17 @@ public struct FCContact {
         self.email = ""
         self.facebook = ""
         self.twitter = ""
+        
     }
     
     //Decode
     public init(dictionary: Dictionary<String, AnyObject>){
+        if ((dictionary["id"] as? Int) != nil) {
+           self.id = dictionary["id"] as? Int
+        } else {
+            print("NEW ID")
+            self.id = UUID().hashValue
+        }
         if ((dictionary["firstName"] as? String) != nil) {
             firstName = dictionary["firstName"] as? String
         } else {
@@ -101,6 +110,7 @@ public struct FCContact {
         dictionary["email"] = email as AnyObject?
         dictionary["twitter"] = twitter as AnyObject?
         dictionary["me"] = me as AnyObject?
+        dictionary["id"] = id as AnyObject?
         return dictionary
     }
     public mutating func encodeJSON(data: Data){
@@ -108,10 +118,25 @@ public struct FCContact {
         let json = try? JSONSerialization.jsonObject(with: data, options: [])
         if let dictionary = json as? [String: Any] {
             for (key, value) in dictionary {
+                print("key \(key) value \(value)")
                 setValue(key: key, value: value)
             }
         }
         
+    }
+    public mutating func encodeShareJSON(data: Data, share:[Int]){
+        print("FCContact: encodeShareJSON(data: share:\(share)")
+        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+        if let dictionary = json as? [String: Any] {
+            for (key, value) in dictionary {
+                for i in share {
+                    if key == getKey(index: i){
+                        print("key \(key) value \(value)")
+                        setValue(key: key, value: value)
+                    }
+                }
+            }
+        }
     }
     public func getDefaultJSONData() -> Data {
         
@@ -130,18 +155,21 @@ public struct FCContact {
             "snapchat":self.snapchat,
             "instagram":self.instagram,
             "facebook":self.facebook,
-            "me":self.me
+            "me":self.me,
+            "id":self.id
             
         ]
         return jsonObject
     }
     
     init(contact:CNContact){
+        id = UUID().hashValue
         firstName = contact.givenName
         lastName = contact.familyName
         phoneNumber = contact.phoneNumbers[0].label
     }
     init(first:String,last:String,phoneNumber:String,email:String,snapchat:String,instagram:String,facebook:String){
+        self.id = UUID().hashValue
         firstName = first
         lastName = last
         self.phoneNumber = phoneNumber
@@ -198,7 +226,30 @@ public struct FCContact {
             print("default")
         }
     }
+    func getKey(index:Int) -> String {
+        switch index {
+        case 0:
+            return "firstName"
+        case 1:
+            return "lastName"
+        case 2:
+            return "phoneNumber"
+        case 3:
+            return "email"
+        case 4:
+            return "facebook"
+        case 5:
+            return "instagram"
+        case 6:
+            return "snapchat"
+        case 7:
+            return "me"
+        default:
+            return "nil"
+        }
+    }
     init?(cnContact: CNContact) {
+        self.id = UUID().hashValue
         // name
         if cnContact.isKeyAvailable(CNContactGivenNameKey){
             self.firstName = cnContact.givenName
@@ -219,5 +270,8 @@ public struct FCContact {
                 self.phoneNumber = phone.stringValue as String
             }
         }
+    }
+    public static func ==(lhs: FCContact, rhs: FCContact) -> Bool{
+        return lhs.id == rhs.id
     }
 }

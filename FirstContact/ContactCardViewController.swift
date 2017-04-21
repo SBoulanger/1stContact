@@ -35,7 +35,7 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
         let homebutton = FCNavigationButton(x: Int(self.view.frame.size.width) - FCNavigationButton.SIZE/2, y: Int(self.view.frame.size.height) - FCNavigationButton.SIZE/2, image: UIImage(named:"QR_right.png")!)
         homebutton.addTarget(nil, action: #selector(downloadContact), for: UIControlEvents.touchUpInside)
         self.view.addSubview(homebutton)
-        
+        /*
         manager = AWSUserFileManager.defaultUserFileManager()
         didLoadAllContents = false
         print("RemoteHandler instance created")
@@ -50,7 +50,7 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
             print("asldkfhklajshdf;lkjas;ldkjf;lkasjdf;lkjsadkk ===========\n\n\n\n\n\n\n\n\n\\n")
         }
         
-        dataHub = AppDelegate.getAppDelegate().dataHub
+        // dataHub = AppDelegate.getAppDelegate().dataHub*/
         if contact.me == true {
             
         } else {
@@ -68,6 +68,7 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
         cardView.set(cards: arr)
         
         self.cardView.showStyle(style: .cover)
+        dataHub = AppDelegate.getAppDelegate().dataHub
 
     }
     fileprivate func refreshContents() {
@@ -102,13 +103,12 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
                     strongSelf.didLoadAllContents = true
                 }
                 strongSelf.marker = nextMarker
-                strongSelf.j += 1
             } else {
                 print("else")
                 //strongSelf.checkUserProtectedFolder()
             }
             //if strongSelf.j==2 {
-                strongSelf.downloadContact()
+                //strongSelf.downloadContact()
             //}
             //strongSelf.updateUserInterface()
 
@@ -148,7 +148,7 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
         }
     }
     func downloadContact(){
-        //DispatchQueue.main.async {
+        /*//DispatchQueue.main.async {
         print("download Contact")
         var end = self.contents?.count
          print("recent")
@@ -162,7 +162,12 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
             print("cached or dir.")
             }
          })
-        //}
+        //}*/
+        //dataHub.getAWSContent(url: "protected/us-east-1:6b06eac0-f0d5-4b90-8ceb-c5acb831971c/", share: <#[Int]#>)
+        //print(self.dataHub.contacts)
+        //AppDelegate.getAppDelegate().dataHub = DataHub()
+        AppDelegate.getAppDelegate().dataHub.uploadContact()
+        AppDelegate.getAppDelegate().dataHub.uploadContacts()
     }
     
     func generateCardInfo (cardCount:Int) -> [AnyObject] {

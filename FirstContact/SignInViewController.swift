@@ -29,12 +29,14 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = UIColor.white
         didSignInObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.default(), queue: OperationQueue.main, using: {(note: Notification) -> Void in
                 print("LOGGED IN: ----------------------------------------")
             })
         
         signInButton.addTarget(self, action: #selector(self.handleCustomSignIn), for: .touchUpInside)
+        signInButton.layer.cornerRadius = 3.0
         customCreateAccountButton.addTarget(self, action: #selector(self.handleUserPoolSignUp), for: .touchUpInside)
         customForgotPasswordButton.addTarget(self, action: #selector(self.handleUserPoolForgotPassword), for: .touchUpInside)
         
@@ -51,11 +53,15 @@ class SignInViewController: UIViewController {
             if error == nil {
                 print("Sign In Successful")
                 DispatchQueue.main.async(execute: {
+                    AppDelegate.getAppDelegate().dataHub.setUpAWS()
                     self.dismiss(animated: true, completion: nil)
                     //_ = self.navigationController?.popToRootViewController(animated: true)
                 })
             }
             print("result = \(result), error = \(error)")
         })
+    }
+    @IBAction func dismissX(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

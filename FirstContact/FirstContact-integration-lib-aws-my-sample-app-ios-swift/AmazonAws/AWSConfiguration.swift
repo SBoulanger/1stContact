@@ -16,13 +16,13 @@ import AWSCore
 
 
 // Cognito User Pools Identity Id
-let AWSCognitoUserPoolId: String = "us-east-1_bT8JDZRFW"
+let AWSCognitoUserPoolId: String = "us-east-1_I5z3YR1LK"
 
 // Cognito User Pools App Client Id
-let AWSCognitoUserPoolAppClientId: String = "4vsf216d0bdkqrndunc8c9pubc"
+let AWSCognitoUserPoolAppClientId: String = "2j2b44vkbrqh7qtgpfu087np0n"
 
 // Cognito User Pools Region
 let AWSCognitoUserPoolRegion: AWSRegionType = .USEast1
 
 // Cognito User Pools Client Secret
-let AWSCognitoUserPoolClientSecret: String = "1reaatjsmq8qo8qgtnvjdhgk74qloa5p6qctjpo6f857ocssb2ji"
+let AWSCognitoUserPoolClientSecret: String = "om3q97is91l0v28bn9dfknc96v5a0073k3bo6kaot71tshfk5gf"

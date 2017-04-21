@@ -15,7 +15,9 @@ import ObjectiveC
 
 class DataHub {
     var contact : FCContact!
-    var contacts : [FCContact]!
+    var contacts : [FCContact] = []
+    var localContacts : [FCContact] = []
+    var localContact : FCContact!
     var phonecontacts : [FCContact] = []
     let defaults = UserDefaults.standard
     var code : String!
@@ -25,19 +27,35 @@ class DataHub {
     var share : [Int] = []
 
     
+
+    
     fileprivate var prefix: String!
     fileprivate var manager: AWSUserFileManager!
     fileprivate var contents: [AWSContent]?
     fileprivate var didLoadAllContents: Bool!
     fileprivate var marker: String?
+    
+    fileprivate let CONTACT_FILE_DIRECTORY = "protected"
+    fileprivate let CONTACTS_FILE_DIRECTORY = "private"
+    
     init(){
-        
         print("DataHub: INITIALIZATION")
         self.contact = FCContact()
         self.contacts = []
+        //print(AWSIdentityManager.default().identityId!)
+    
+        
+        //Set up AWS Settings
+        //VVVV do not understand why it workd in method but not in init()
         setUpAWS()
-        self.code = generateString(contact: self.contact,share:self.share)
+        
+        if (AWSIdentityManager.default().isLoggedIn){
+            self.code = generateRemoteString(share: self.share)
+        } else {
+            self.code = generateDirectString(contact: self.contact,share:self.share)
+        }
         self.contactInfo = getContactInfo(info: code)
+        
         if defaults.array(forKey: "share") == nil {
             defaults.set([], forKey: "share")
             self.share = []
@@ -45,12 +63,14 @@ class DataHub {
             self.share = defaults.array(forKey: "share") as! [Int]
         }
         self.createAlphArrays(contacts: self.contacts)
-        saveContact()
-        saveContacts()
-        
-        uploadTestContacts()
-        uploadTestContact()
-        
+    }
+
+    func syncData(){
+        for c in localContacts {
+            if (!self.contacts.contains(c)){
+                self.contacts.append(c)
+            }
+        }
     }
     func setUpAWS(){
         print("DataHub: setUpAWS()")
@@ -62,39 +82,47 @@ class DataHub {
             print("DataHub: AWS is logged in")
             let userId = AWSIdentityManager.default().identityId!
             prefix = "\(UserFilesPrivateDirectoryName)/\(userId)/"
+            print("PREFIX "+prefix)
             marker = nil
             loadAWSContent()
         } else {
-            print("DataHub: User is not logged In")
-            let contactDictionaryData = defaults.data(forKey: "contactDictionary")
-            if contactDictionaryData == nil {
-                self.contact = FCContact()
-            } else {
-                let contactDictionary = NSKeyedUnarchiver.unarchiveObject(with: contactDictionaryData!) as! Dictionary<String, AnyObject>
-                self.contact = FCContact(dictionary: contactDictionary)
-            }
-            let contactsDictionaryData = defaults.data(forKey: "contactsDictArray")
-            if contactsDictionaryData != nil {
-                let contactsDictionary = NSKeyedUnarchiver.unarchiveObject(with: contactsDictionaryData!) as! [Dictionary<String, AnyObject>]
-                if contactsDictionary.count == 0 {
-                    contacts = []
-                }
-                for i in contactsDictionary {
-                    self.contacts.append(FCContact(dictionary: i ))
-                }
-            } else {
-                self.contacts = []
-            }
-            defaults.synchronize()
+            getLocalData()
         }
     }
+    func getLocalData(){
+        let contactDictionaryData = defaults.data(forKey: "contactDictionary")
+        if contactDictionaryData == nil {
+            self.localContact = FCContact()
+        } else {
+            let contactDictionary = NSKeyedUnarchiver.unarchiveObject(with: contactDictionaryData!) as! Dictionary<String, AnyObject>
+            self.localContact = FCContact(dictionary: contactDictionary)
+        }
+        let contactsDictionaryData = defaults.data(forKey: "contactsDictArray")
+        if contactsDictionaryData != nil {
+            let contactsDictionary = NSKeyedUnarchiver.unarchiveObject(with: contactsDictionaryData!) as! [Dictionary<String, AnyObject>]
+            if contactsDictionary.count == 0 {
+                self.localContacts = []
+            }
+            for i in contactsDictionary {
+                self.localContacts.append(FCContact(dictionary: i ))
+            }
+        } else {
+            self.localContacts = []
+        }
+        defaults.synchronize()
+    }
+    
+    public func wipeData(){
+        self.contact = FCContact()
+        self.contacts = []
+        saveContact()
+        refreshContacts()
+    }
+    
     public func refreshData(){
         self.contact = FCContact()
         self.contacts = []
         setUpAWS()
-        saveContact()
-        saveContacts()
-        
     }
     
     fileprivate func refreshContents() {
@@ -119,43 +147,84 @@ class DataHub {
                 }
                 strongSelf.marker = nextMarker
             } else {
+                strongSelf.saveContact()
+                strongSelf.refreshContacts()
                 print("DataHub: Contents is empty")
             }
             strongSelf.downloadContents()
         })
     }
     
+    func downloadContents(){
+        print("DataHub: downloadContents()")
+        self.contents?.forEach({ (content: AWSContent) in
+            print("Content: \(content)")
+            print("key - \(content.key)")
+            print("cached = \(content.isCached)")
+            if !content.isDirectory {
+                if (content.key.range(of: ".json") != nil){
+                    print("content is .json")
+                    if !content.isCached {
+                        downloadContent(content, pinOnCompletion: false)
+                    } else {
+                        downloadContactContacts(content: content, data: content.cachedData)
+                    }
+                }
+            }
+        })
+    }
+    
+    func downloadContactContacts(content: AWSContent, data: Data){
+        if (content.key.range(of: "contact.json") != nil){
+            self.downloadContact(data: data)
+        } else if (content.key.range(of: "contacts.json") != nil){
+            self.downloadContacts(data: data)
+        }
+    }
+    
+    func downloadContact(data: Data){
+        self.contact.encodeJSON(data: data)
+        saveContact()
+    }
+    func downloadContacts(data: Data){
+        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+        print("DataHub: json of incoming contacts: \(json)")
+        if let contacts = json as? [[String: Any]] {
+            //print("DataHub: contacts downloaded = \(contacts)")
+            for contact in contacts {
+                var fc = FCContact()
+                for (key, value) in contact {
+                    fc.setValue(key: key, value: value)
+                }
+                self.contacts.append(fc)
+            }
+        }
+        self.refreshContacts()
+    }
+    
     fileprivate func downloadContent(_ content: AWSContent, pinOnCompletion: Bool) {
         print("DataHub: downloadContent(content: \(content), pinOnCompletion: \(pinOnCompletion)")
         content.download(with: .ifNewerExists, pinOnCompletion: pinOnCompletion, progressBlock: {[weak self] (content: AWSContent, progress: Progress) in
             guard let strongSelf = self else { return }
-        }){[weak self] (content: AWSContent?, data: Data?, error: Error?) in
+            }, completionHandler: {[weak self] (content: AWSContent?, data: Data?, error: Error?) in
             guard let strongSelf = self else { return }
-            if (content?.key.range(of: "contact.json") != nil){
-                strongSelf.contact.encodeJSON(data: data!)
-            } else if (content?.key.range(of: "contacts.json") != nil){
-                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                print("DataHub: json of incoming contacts: \(json)")
-                if let contacts = json as? [[String: Any]] {
-                    print("DataHub: contacts downloaded = \(contacts)")
-                    for contact in contacts {
-                        var fc = FCContact()
-                        for (key, value) in contact {
-                            fc.setValue(key: key, value: value)
-                        }
-                        strongSelf.contacts.append(fc)
-                    }
+                if (content != nil && data != nil){
+                    strongSelf.downloadContactContacts(content: content!, data: data!)
+                } else {
+                    print("FAILLLL NIL FOUND IN DATA OR CONTENT")
                 }
-            }
             if let error = error {
                 print("Failed to download a content from a server. \(error)")
-                AppDelegate.getAppDelegate().showMessage("Failed up download contact info")
+                //AppDelegate.getAppDelegate().showMessage("Failed up download contact info")
             }
-        }
+            strongSelf.getLocalData()
+            strongSelf.syncData()
+        })
     }
-    fileprivate func uploadWithData(data: NSData, forKey key: String) {
+    fileprivate func uploadWithData(data: NSData, forKey key: String, prefix: String) {
         let manager = AWSUserFileManager.defaultUserFileManager()
         let localContent = manager.localContent(with: data as Data, key: prefix + key)
+        print(prefix+key)
         localContent.uploadWithPin(
             onCompletion: false,
             progressBlock: {[weak self](content: AWSLocalContent, progress: Progress) -> Void in
@@ -187,10 +256,12 @@ class DataHub {
         return contactsJson
     }
     func uploadContacts(){
-        uploadWithData(data: getDefaultContactsJSONData() as NSData, forKey: "contacts.json")
+        uploadWithData(data: getDefaultContactsJSONData() as NSData, forKey: "contacts.json", prefix: prefix)
     }
     func uploadContact(){
-        uploadWithData(data: self.contact.getDefaultJSONData() as NSData, forKey: "contact.json")
+        uploadWithData(data: self.contact.getDefaultJSONData() as NSData, forKey: "contact.json", prefix: prefix)
+        let userId = AWSIdentityManager.default().identityId!
+        uploadWithData(data: self.contact.getDefaultJSONData() as NSData, forKey: "contact.json", prefix:"\(CONTACT_FILE_DIRECTORY)/\(userId)/")
     }
     func uploadTestContacts(){
         let f = FCContact(first: "Maya", last: "Eastman", phoneNumber: "8055555555", email: "mayaeastman@gmail.com", snapchat: "mayaeast", instagram: "mayaeast", facebook: "facebookEastman")
@@ -202,21 +273,6 @@ class DataHub {
         let f = FCContact(first: "Samuel", last: "Boulanger", phoneNumber: "8054555360", email: "samuelrdboulanger@gmail.com", snapchat: "sboulanger", instagram: "sboulanger", facebook: "facebook")
         self.contact = f
         uploadContact()
-    }
-    
-    func downloadContents(){
-        print("DataHub: downloadContents()")
-        self.contents?.forEach({ (content: AWSContent) in
-            print("Content: \(content)")
-            print("key - \(content.key)")
-            print("cached = \(content.isCached)")
-            if !content.isDirectory {
-                if (content.key.range(of: ".json") != nil){
-                    print("content is .json")
-                    downloadContent(content, pinOnCompletion: false)
-                }
-            }
-        })
     }
     
     func getPhoneContacts() {
@@ -247,7 +303,11 @@ class DataHub {
         
     }
     func generateContactInfo(){
-        self.code = generateString(contact: self.contact,share:self.share)
+        if (AWSIdentityManager.default().isLoggedIn){
+            self.code = generateRemoteString(share: self.share)
+        } else {
+            self.code = generateDirectString(contact: self.contact,share:self.share)
+        }
         self.contactInfo = getContactInfo(info: code)
     }
     
@@ -255,7 +315,11 @@ class DataHub {
         print("updateContact")
         self.contact = contact
         self.contactInfo = getContactInfo(info: code)
-        self.code = generateString(contact: self.contact,share:self.share)
+        if (AWSIdentityManager.default().isLoggedIn){
+            self.code = generateRemoteString(share: self.share)
+        } else {
+            self.code = generateDirectString(contact: self.contact,share:self.share)
+        }
         
         let containerview = AppDelegate.getAppDelegate().window?.rootViewController as! ContainerViewController
         let navConview = containerview.rightVc
@@ -339,7 +403,7 @@ class DataHub {
     func deleteContact(contactAt: Int){
         //remove from local instanceup
         var tempContacts = self.contacts
-        tempContacts?.remove(at: contactAt)
+        tempContacts.remove(at: contactAt)
         //create data from local instance
         self.contacts = tempContacts
         saveContacts()
@@ -384,8 +448,10 @@ class DataHub {
     }
     
     
-    func generateString(contact: FCContact,share:[Int]) -> String {
+    func generateDirectString(contact: FCContact,share:[Int]) -> String {
+        print("generateDirectString(contact,share)")
         var string = "FirstContact/*"
+        string += "direct/*"
         if share.contains(0){string += contact.firstName}
         string += "/*"
         if share.contains(0){string += contact.lastName}
@@ -402,31 +468,157 @@ class DataHub {
         string += "/*"
         if share.contains(6){string += contact.twitter}
         string += "/*"
-        print("return generate string")
         return string
+    }
+    func generateRemoteString(share: [Int]) -> String {
+        print("DataHub: generateRemoteString(share)")
+        var string = "FirstContact/*"
+        string += "remote/*"
+        for i in share {
+            string += "\(i),"
+        }
+        if share.count != 0 {
+            string.remove(at: string.index(before: string.endIndex))
+        }
+        string += "/*"
+        string += "\(CONTACT_FILE_DIRECTORY)/\(AWSIdentityManager.default().identityId!)/"
+        string += "/*"
+        return string
+    }
+    func getAWSContent(url:String,share:[Int],completionHandler: @escaping (() -> Void)) {
+        print("DataHub: loadAWSContent()")
+        manager.listAvailableContents(withPrefix: url, marker: marker, completionHandler: {[weak self] (contents: [AWSContent]?, nextMarker: String?, error: Error?) in
+            guard let strongSelf = self else { return }
+            if let error = error {
+                print("Failed to load the list of contents. \(error)")
+            }
+            if let contents = contents, contents.count > 0 {
+                if let nextMarker = nextMarker, !nextMarker.isEmpty {
+                    strongSelf.didLoadAllContents = false
+                } else {
+                    strongSelf.didLoadAllContents = true
+                }
+                strongSelf.marker = nextMarker
+            } else {
+                print("DataHub: Contents is empty")
+            }
+            print("DataHub: downloadRemoteContents(remoteContents, share)")
+            strongSelf.downloadRemoteContents(remoteContents: contents!,share:share){
+                print("completionHandler()")
+                completionHandler()
+            }
+        })
+    }
+    
+    func downloadRemoteContents(remoteContents: [AWSContent],share:[Int],completionHandler: @escaping (() -> Void)){
+        print("DataHub: downloadContents()")
+        print(remoteContents)
+        remoteContents.forEach({ (content: AWSContent) in
+            print("Content: \(content)")
+            print("key - \(content.key)")
+            print("cached = \(content.isCached)")
+            if !content.isDirectory {
+                if (content.key.range(of: "contact.json") != nil){
+                    if !content.isCached {
+                        print("downloadOtherContent called from downloadRemoteContents")
+                        downloadOtherContent(content, pinOnCompletion: false, share:share){completionHandler()}
+                    } else {
+                        print("downloadOther called from downloadRemoteContents")
+                        downloadOther(content: content, data: content.cachedData,share:share)
+                        completionHandler()
+                    }
+                }
+            }
+        })
+    }
+    fileprivate func downloadOtherContent(_ content: AWSContent, pinOnCompletion: Bool,share:[Int], completionHandler: @escaping (() -> Void)) {
+        print("DataHub: downloadContent(content: \(content), pinOnCompletion: \(pinOnCompletion)")
+        content.download(with: .ifNewerExists, pinOnCompletion: pinOnCompletion, progressBlock: {[weak self] (content: AWSContent, progress: Progress) in
+            guard let strongSelf = self else { return }
+            }, completionHandler: {[weak self] (content: AWSContent?, data: Data?, error: Error?) in
+                guard let strongSelf = self else { return }
+                if (content != nil){
+                    strongSelf.downloadOther(content: content!, data: data!, share:share)
+                }
+                if let error = error {
+                    print("Failed to download a content from a server. \(error)")
+                    //AppDelegate.getAppDelegate().showMessage("Failed up download contact info")
+                }
+                strongSelf.getLocalData()
+                strongSelf.syncData()
+                completionHandler()
+        })
+    }
+    
+    func downloadOther(content: AWSContent, data: Data, share: [Int]){
+        var fc = FCContact()
+        fc.encodeShareJSON(data: data,share:share)
+        self.contacts.append(fc)
+
+        //ask if they will be sending their contact through a text
+        let containerview = AppDelegate.getAppDelegate().window?.rootViewController as! ContainerViewController
+        let midview = containerview.middleVertScrollVc
+        let navReadview = midview?.bottomVc
+        //var arrayViewRead   = navReadview?.childViewControllers
+        //let readview    = arrayViewRead?[0] as! ReaderViewController
+        let readview = navReadview as! ReaderViewController
+        print("readview.newestContact = fc")
+        readview.newestContact = fc
+        
+        self.refreshContacts()
     }
     
     func getContactInfo(info:String) -> [String]{
+        print("DataHub: getContactInfo(info)")
         let check = info.range(of: "FirstContact/*")
         print("is a first contact string \(check)")
         //make sure the code scanned a FirstContact Code
         if check == nil {
             return ["nil"]
-        }
-        else {
+        } else {
             //populate the contactInfoArray
-            let removeRange = (info.startIndex ..< (check?.upperBound)!)
+            var removeRange = (info.startIndex ..< (check?.upperBound)!)
             let nString = info.replacingCharacters(in: removeRange, with: "")
-            return recursiveGetValues(nString,contactInfoArray: [])
+            var remCheck = nString.range(of: "remote/*")
+            if remCheck == nil {
+                let direCheck = nString.range(of: "direct/*")
+                if direCheck == nil {
+                    return ["nil"]
+                }
+                removeRange = (nString.startIndex ..< (direCheck?.upperBound)!)
+                let fString = nString.replacingCharacters(in: removeRange, with: "")
+                return recursiveGetValues(fString, contactInfoArray: [])
+            } else {
+                removeRange = (nString.startIndex ..< (remCheck?.upperBound)!)
+                let sString = nString.replacingCharacters(in: removeRange, with: "")
+                let shareRange = sString.range(of: "/*")
+                removeRange = (sString.startIndex ..< (shareRange?.upperBound)!)
+                
+                
+                let shareString = sString.substring(to: (shareRange?.lowerBound)!)
+                
+                
+                let fString = sString.replacingCharacters(in: removeRange, with: "")
+                return [shareString,getRemoteValues(info: fString)]
+            }
         }
+    }
+    
+    func getRemoteValues(info:String) -> String {
+        print("DataHub: getRemoteValues(info)")
+        let range = info.range(of: "/*")
+        if range == nil { return "nil" }
+        let startIndex = range?.lowerBound
+        return info.substring(to: startIndex!)
     }
     //recursively gets the values in a formatted string
     func recursiveGetValues(_ string:String,contactInfoArray:[String]) -> [String]{
+        print("recursiveGetValues(string:String,contactInfoArray:[String])->[String]")
         var newcontactArray = contactInfoArray
         let range = string.range(of: "/*")
         if range == nil {
             newcontactArray.append(string)
-            print(contactInfoArray)
+            print("DataHub: \(contactInfoArray)")
             return newcontactArray
         }
         let startIndex = range?.lowerBound
