@@ -37,9 +37,10 @@ class EmailCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         super.awakeFromNib()
         
     }
-    func setUpView(){
+    func setUpView(pcontact: FCContact, index: Int){
         self.dataHub = AppDelegate.getAppDelegate().dataHub
-        
+        self.contact = pcontact
+        self.contactIndex = index
         print(contact)
         
         self.titleLabel.text = contact.email

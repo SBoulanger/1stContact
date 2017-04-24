@@ -25,7 +25,7 @@ class RemoteHandler : UIViewController{
         manager = AWSUserFileManager.defaultUserFileManager()
         didLoadAllContents = false
         print("RemoteHandler instance created")
-        if (AWSIdentityManager.default().isLoggedIn) {
+        if (AWSSignInManager.sharedInstance().isLoggedIn) {
             let userId = AWSIdentityManager.default().identityId!
             prefix = "\(UserFilesPrivateDirectoryName)/\(userId)/"
             refreshContents()

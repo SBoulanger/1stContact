@@ -24,27 +24,35 @@ class NameCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
     var contactIndex: Int!
     
     public static func cellIdentifier() -> String {
+        print("NameCardCell: cellIdentifier")
         return "NameCard"
     }
     
     override func awakeFromNib() {
+        print("NameCardCell: awakeFromNib()")
                 
         self.firstNameTextField.delegate = self
         self.lastNameTextField.delegate = self
         
         self.saveButton.layer.cornerRadius = 3.0
         
+        self.dataHub = AppDelegate.getAppDelegate().dataHub
+
         super.awakeFromNib()
     }
-    func setUpView(){
-        self.dataHub = AppDelegate.getAppDelegate().dataHub
+    func setUpView(pcontact: FCContact, index: Int){
+        print("NameCardCell: setUpView()")
+        print("--------- contact being set up ------------")
+        print(pcontact)
+        print("--------------------------------------------")
+        self.contact = pcontact
+        self.contactIndex = index
+        self.firstNameTitle.text = self.contact.firstName + " " + self.contact.lastName
         
-        print(contact)
+        print(self.contact)
         
-        self.firstNameTitle.text = contact.firstName + " " + contact.lastName
-        
-        self.firstNameTextField.text = contact.firstName
-        self.lastNameTextField.text = contact.lastName
+        self.firstNameTextField.text = self.contact.firstName
+        self.lastNameTextField.text = self.contact.lastName
         
         self.firstNameTextField.addTarget(self, action: #selector(self.checkEdited), for: UIControlEvents.editingChanged)
         self.lastNameTextField.addTarget(self, action: #selector(self.checkEdited), for: UIControlEvents.editingChanged)
@@ -64,7 +72,7 @@ class NameCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         return false // We do not want UITextField to insert line-breaks.
     }
     func checkEdited(sender:UITextField!){
-        print("checkEdited")
+        //print("NameCardCell: checkEdited")
         if firstNameTextField.text != contact.firstName || lastNameTextField.text != contact.lastName {
                 self.saveButton.isHidden = false
         } else {
@@ -72,18 +80,18 @@ class NameCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         }
     }
     @IBAction func saveButtonPressed(_ sender: Any) {
-        print("SaveButtonPressed")
+        print("NameCardCell: SaveButtonPressed")
         self.contact.firstName = firstNameTextField.text
         self.contact.lastName = lastNameTextField.text
         
         if self.contact.me == true {
-            dataHub.updateContact(contact: contact)
+            dataHub.updateContact(contact: self.contact)
         }else{
             var tempcontacts = dataHub.getContacts()
-            tempcontacts[contactIndex] = contact
+            tempcontacts[contactIndex] = self.contact
             dataHub.updateContacts(contacts: tempcontacts)
         }
-        self.firstNameTitle.text = contact.firstName + " " + contact.lastName
+        self.firstNameTitle.text = self.contact.firstName + " " + self.contact.lastName
         textFieldShouldReturn(self.firstNameTextField)
         textFieldShouldReturn(self.lastNameTextField)
         saveButton.isHidden = true

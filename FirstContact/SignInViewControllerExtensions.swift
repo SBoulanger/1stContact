@@ -15,6 +15,8 @@
 import Foundation
 import AWSCognitoIdentityProvider
 import AWSMobileHubHelper
+import AWSCognitoUserPoolsSignIn
+
 
 // Extension containing methods which call different operations on Cognito User Pools (Sign In, Sign Up, Forgot Password)
 extension SignInViewController {

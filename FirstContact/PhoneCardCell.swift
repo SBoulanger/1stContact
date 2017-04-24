@@ -33,11 +33,17 @@ class PhoneCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         self.titleLabel.text = "Phone Number"
         self.phoneTextField.delegate = self
         
+        print("awakeFromNib")
+        
         super.awakeFromNib()
         
     }
-    func setUpView(){
+    func setUpView(pcontact:FCContact, index: Int){
         self.dataHub = AppDelegate.getAppDelegate().dataHub
+        
+        self.contact = pcontact
+        self.contactIndex = index
+        print("setUpView")
         
         print(contact)
         

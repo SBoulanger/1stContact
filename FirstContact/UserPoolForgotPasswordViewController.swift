@@ -16,6 +16,7 @@ import Foundation
 import UIKit
 import AWSCognitoIdentityProvider
 import AWSMobileHubHelper
+import AWSCognitoUserPoolsSignIn
 
 class UserPoolForgotPasswordViewController: UIViewController {
     

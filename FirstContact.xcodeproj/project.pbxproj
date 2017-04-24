@@ -15,6 +15,22 @@
 		911958C11D623FB20010AADA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911958C01D623FB20010AADA /* ContainerViewController.swift */; };
 		911958C31D623FB70010AADA /* VerticalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911958C21D623FB70010AADA /* VerticalScrollViewController.swift */; };
 		9119B0071D423979000F962B /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9119B0061D423979000F962B /* ContactView.swift */; };
+		912ADC941EAAF4DC001751C4 /* Sdk in Resources */ = {isa = PBXBuildFile; fileRef = 912ADC931EAAF4DC001751C4 /* Sdk */; };
+		912ADC961EAAF5FB001751C4 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC951EAAF5FB001751C4 /* AWSCore.framework */; };
+		912ADC971EAAF5FB001751C4 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC951EAAF5FB001751C4 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		912ADC9A1EAAF610001751C4 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC991EAAF610001751C4 /* AWSS3.framework */; };
+		912ADC9B1EAAF610001751C4 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC991EAAF610001751C4 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		912ADC9D1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9C1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework */; };
+		912ADC9E1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9C1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		912ADCA01EAAF73D001751C4 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9F1EAAF73D001751C4 /* AWSCognito.framework */; };
+		912ADCA11EAAF73D001751C4 /* AWSCognito.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9F1EAAF73D001751C4 /* AWSCognito.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		912ADCA71EAAFD15001751C4 /* AWSCognitoUserPoolsSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADCA31EAAFD15001751C4 /* AWSCognitoUserPoolsSignIn.framework */; };
+		912ADCA81EAAFD15001751C4 /* AWSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912ADCA41EAAFD15001751C4 /* AWSConfiguration.swift */; };
+		912ADCA91EAAFD15001751C4 /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912ADCA51EAAFD15001751C4 /* AWSMobileClient.swift */; };
+		912ADCAA1EAAFD15001751C4 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADCA61EAAFD15001751C4 /* AWSMobileHubHelper.framework */; };
+		912ADCAC1EAAFE08001751C4 /* UserPoolsIdentityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912ADCAB1EAAFE08001751C4 /* UserPoolsIdentityProfile.swift */; };
+		912ADCAF1EAB10D1001751C4 /* SendContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912ADCAE1EAB10D1001751C4 /* SendContactViewController.swift */; };
+		912ADCB11EAB10F3001751C4 /* SendContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912ADCB01EAB10F3001751C4 /* SendContact.storyboard */; };
 		912B393D1BBCD1FC00B7A5D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912B393C1BBCD1FC00B7A5D1 /* AppDelegate.swift */; };
 		912B393F1BBCD1FC00B7A5D1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912B393E1BBCD1FC00B7A5D1 /* WelcomeViewController.swift */; };
 		912B39421BBCD1FC00B7A5D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912B39401BBCD1FC00B7A5D1 /* Main.storyboard */; };
@@ -44,16 +60,6 @@
 		914D551D1E77EC540042812B /* InstagramCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914D551C1E77EC540042812B /* InstagramCardCell.xib */; };
 		914D551F1E77EF1A0042812B /* Instagram-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 914D551E1E77EF1A0042812B /* Instagram-logo.png */; };
 		914D55211E77EF230042812B /* snapchat_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 914D55201E77EF230042812B /* snapchat_logo.png */; };
-		914D55231E78BC250042812B /* FirstContact-integration-lib-aws-my-sample-app-ios-swift in Resources */ = {isa = PBXBuildFile; fileRef = 914D55221E78BC250042812B /* FirstContact-integration-lib-aws-my-sample-app-ios-swift */; };
-		914D55271E78BD2A0042812B /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914D55241E78BD2A0042812B /* AWSCognitoIdentityProvider.framework */; };
-		914D55281E78BD2A0042812B /* AWSCognitoIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 914D55241E78BD2A0042812B /* AWSCognitoIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		914D55291E78BD2A0042812B /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914D55251E78BD2A0042812B /* AWSCore.framework */; };
-		914D552A1E78BD2A0042812B /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 914D55251E78BD2A0042812B /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		914D552B1E78BD2A0042812B /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914D55261E78BD2A0042812B /* AWSS3.framework */; };
-		914D552C1E78BD2A0042812B /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 914D55261E78BD2A0042812B /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		914D55341E78BDE50042812B /* AWSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914D55311E78BDE50042812B /* AWSConfiguration.swift */; };
-		914D55351E78BDE50042812B /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914D55321E78BDE50042812B /* AWSMobileClient.swift */; };
-		914D55361E78BDE50042812B /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914D55331E78BDE50042812B /* AWSMobileHubHelper.framework */; };
 		914D55381E79AFF10042812B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914D55371E79AFF10042812B /* SignInViewController.swift */; };
 		914D553C1E79B0680042812B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914D553B1E79B0680042812B /* SignIn.storyboard */; };
 		914D55451E7A35CF0042812B /* SignInViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914D553E1E7A35CF0042812B /* SignInViewControllerExtensions.swift */; };
@@ -68,6 +74,17 @@
 		91558EF31D90ABC200AC5DBA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91558EF21D90ABC200AC5DBA /* FBSDKLoginKit.framework */; };
 		91558EF51D92900B00AC5DBA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91558EF41D92900B00AC5DBA /* Bolts.framework */; };
 		915D301F1E89F415000BDDC3 /* RemoteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D301E1E89F415000BDDC3 /* RemoteHandler.swift */; };
+		917351071EAD50BA0009171E /* deleteBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 917351061EAD50BA0009171E /* deleteBackButton.png */; };
+		917351091EAD52090009171E /* delete-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 917351081EAD52090009171E /* delete-512.png */; };
+		9173510B1EAD58920009171E /* CircledUp2-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9173510A1EAD58920009171E /* CircledUp2-50.png */; };
+		9173510D1EAD58990009171E /* Delete-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9173510C1EAD58990009171E /* Delete-50.png */; };
+		9173510F1EAD589E0009171E /* Email-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9173510E1EAD589E0009171E /* Email-50.png */; };
+		917351111EAD58A30009171E /* Instagram-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 917351101EAD58A30009171E /* Instagram-50.png */; };
+		917351131EAD58A90009171E /* Phone-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 917351121EAD58A90009171E /* Phone-50.png */; };
+		917351151EAD58AE0009171E /* Snapchat-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 917351141EAD58AE0009171E /* Snapchat-50.png */; };
+		917351171EAD59980009171E /* Back-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 917351161EAD59980009171E /* Back-50.png */; };
+		917351191EAD5A630009171E /* Back-50-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 917351181EAD5A630009171E /* Back-50-red.png */; };
+		9173511B1EAD61900009171E /* Info-50-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9173511A1EAD61900009171E /* Info-50-2.png */; };
 		9174F3231E70A6600086C945 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9174F3221E70A6600086C945 /* camera.png */; };
 		9174F3251E70AA950086C945 /* camera_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9174F3241E70AA950086C945 /* camera_clear.png */; };
 		9176DE201C3CDBEF002EA833 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9176DE1F1C3CDBEF002EA833 /* AudioToolbox.framework */; };
@@ -130,15 +147,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		914D552D1E78BD2A0042812B /* Embed Frameworks */ = {
+		912ADC981EAAF5FB001751C4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				914D55281E78BD2A0042812B /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
-				914D552A1E78BD2A0042812B /* AWSCore.framework in Embed Frameworks */,
-				914D552C1E78BD2A0042812B /* AWSS3.framework in Embed Frameworks */,
+				912ADC9B1EAAF610001751C4 /* AWSS3.framework in Embed Frameworks */,
+				912ADC9E1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
+				912ADCA11EAAF73D001751C4 /* AWSCognito.framework in Embed Frameworks */,
+				912ADC971EAAF5FB001751C4 /* AWSCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +178,18 @@
 		911958C01D623FB20010AADA /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		911958C21D623FB70010AADA /* VerticalScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalScrollViewController.swift; sourceTree = "<group>"; };
 		9119B0061D423979000F962B /* ContactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		912ADC931EAAF4DC001751C4 /* Sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sdk; sourceTree = "<group>"; };
+		912ADC951EAAF5FB001751C4 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = FirstContact/Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
+		912ADC991EAAF610001751C4 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = FirstContact/Sdk/Aws/AWSS3.framework; sourceTree = "<group>"; };
+		912ADC9C1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognitoIdentityProvider.framework; path = FirstContact/Sdk/Aws/AWSCognitoIdentityProvider.framework; sourceTree = "<group>"; };
+		912ADC9F1EAAF73D001751C4 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = FirstContact/Sdk/Aws/extras/AWSCognito.framework; sourceTree = "<group>"; };
+		912ADCA31EAAFD15001751C4 /* AWSCognitoUserPoolsSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCognitoUserPoolsSignIn.framework; sourceTree = "<group>"; };
+		912ADCA41EAAFD15001751C4 /* AWSConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfiguration.swift; sourceTree = "<group>"; };
+		912ADCA51EAAFD15001751C4 /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
+		912ADCA61EAAFD15001751C4 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		912ADCAB1EAAFE08001751C4 /* UserPoolsIdentityProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPoolsIdentityProfile.swift; sourceTree = "<group>"; };
+		912ADCAE1EAB10D1001751C4 /* SendContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendContactViewController.swift; sourceTree = "<group>"; };
+		912ADCB01EAB10F3001751C4 /* SendContact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SendContact.storyboard; sourceTree = "<group>"; };
 		912B39391BBCD1FC00B7A5D1 /* FirstContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		912B393C1BBCD1FC00B7A5D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		912B393E1BBCD1FC00B7A5D1 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -195,13 +225,6 @@
 		914D551C1E77EC540042812B /* InstagramCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramCardCell.xib; sourceTree = "<group>"; };
 		914D551E1E77EF1A0042812B /* Instagram-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instagram-logo.png"; sourceTree = "<group>"; };
 		914D55201E77EF230042812B /* snapchat_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snapchat_logo.png; sourceTree = "<group>"; };
-		914D55221E78BC250042812B /* FirstContact-integration-lib-aws-my-sample-app-ios-swift */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "FirstContact-integration-lib-aws-my-sample-app-ios-swift"; sourceTree = "<group>"; };
-		914D55241E78BD2A0042812B /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognitoIdentityProvider.framework; path = "FirstContact/FirstContact-integration-lib-aws-my-sample-app-ios-swift/Sdk/Aws/AWSCognitoIdentityProvider.framework"; sourceTree = "<group>"; };
-		914D55251E78BD2A0042812B /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "FirstContact/FirstContact-integration-lib-aws-my-sample-app-ios-swift/Sdk/Aws/AWSCore.framework"; sourceTree = "<group>"; };
-		914D55261E78BD2A0042812B /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = "FirstContact/FirstContact-integration-lib-aws-my-sample-app-ios-swift/Sdk/Aws/AWSS3.framework"; sourceTree = "<group>"; };
-		914D55311E78BDE50042812B /* AWSConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfiguration.swift; sourceTree = "<group>"; };
-		914D55321E78BDE50042812B /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
-		914D55331E78BDE50042812B /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
 		914D55371E79AFF10042812B /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		914D553B1E79B0680042812B /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		914D553E1E7A35CF0042812B /* SignInViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -216,6 +239,17 @@
 		91558EF21D90ABC200AC5DBA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		91558EF41D92900B00AC5DBA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		915D301E1E89F415000BDDC3 /* RemoteHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteHandler.swift; sourceTree = "<group>"; };
+		917351061EAD50BA0009171E /* deleteBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteBackButton.png; sourceTree = "<group>"; };
+		917351081EAD52090009171E /* delete-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-512.png"; sourceTree = "<group>"; };
+		9173510A1EAD58920009171E /* CircledUp2-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CircledUp2-50.png"; sourceTree = "<group>"; };
+		9173510C1EAD58990009171E /* Delete-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-50.png"; sourceTree = "<group>"; };
+		9173510E1EAD589E0009171E /* Email-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email-50.png"; sourceTree = "<group>"; };
+		917351101EAD58A30009171E /* Instagram-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Instagram-50.png"; sourceTree = "<group>"; };
+		917351121EAD58A90009171E /* Phone-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Phone-50.png"; sourceTree = "<group>"; };
+		917351141EAD58AE0009171E /* Snapchat-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Snapchat-50.png"; sourceTree = "<group>"; };
+		917351161EAD59980009171E /* Back-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-50.png"; sourceTree = "<group>"; };
+		917351181EAD5A630009171E /* Back-50-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-50-red.png"; sourceTree = "<group>"; };
+		9173511A1EAD61900009171E /* Info-50-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info-50-2.png"; sourceTree = "<group>"; };
 		9174F3221E70A6600086C945 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		9174F3241E70AA950086C945 /* camera_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_clear.png; sourceTree = "<group>"; };
 		9176DE1F1C3CDBEF002EA833 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -268,24 +302,26 @@
 			files = (
 				91558EF51D92900B00AC5DBA /* Bolts.framework in Frameworks */,
 				9176DE301C3CDC67002EA833 /* libsqlite3.tbd in Frameworks */,
+				912ADC9A1EAAF610001751C4 /* AWSS3.framework in Frameworks */,
+				912ADC961EAAF5FB001751C4 /* AWSCore.framework in Frameworks */,
 				91558EEF1D90ABAE00AC5DBA /* FBSDKCoreKit.framework in Frameworks */,
-				914D55271E78BD2A0042812B /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				9176DE2E1C3CDC5B002EA833 /* libz.tbd in Frameworks */,
 				9176DE2C1C3CDC42002EA833 /* SystemConfiguration.framework in Frameworks */,
 				91558EF31D90ABC200AC5DBA /* FBSDKLoginKit.framework in Frameworks */,
+				912ADCAA1EAAFD15001751C4 /* AWSMobileHubHelper.framework in Frameworks */,
+				912ADC9D1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				91558EF11D90ABBB00AC5DBA /* FBSDKShareKit.framework in Frameworks */,
 				9176DE281C3CDC2C002EA833 /* Security.framework in Frameworks */,
 				9176DE261C3CDC20002EA833 /* QuartzCore.framework in Frameworks */,
-				914D55361E78BDE50042812B /* AWSMobileHubHelper.framework in Frameworks */,
 				9176DE241C3CDC14002EA833 /* CoreLocation.framework in Frameworks */,
 				912B396F1BBE199300B7A5D1 /* CoreGraphics.framework in Frameworks */,
+				912ADCA01EAAF73D001751C4 /* AWSCognito.framework in Frameworks */,
 				9176DE221C3CDBFA002EA833 /* CFNetwork.framework in Frameworks */,
 				9176DE201C3CDBEF002EA833 /* AudioToolbox.framework in Frameworks */,
-				914D552B1E78BD2A0042812B /* AWSS3.framework in Frameworks */,
+				912ADCA71EAAFD15001751C4 /* AWSCognitoUserPoolsSignIn.framework in Frameworks */,
 				91797C8B1BD4C230005FB5F2 /* AddressBookUI.framework in Frameworks */,
 				91797C891BD4C227005FB5F2 /* AddressBook.framework in Frameworks */,
 				CA19A7F157AB4D89879A0E62 /* Pods_FirstContact.framework in Frameworks */,
-				914D55291E78BD2A0042812B /* AWSCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,12 +356,24 @@
 			name = old;
 			sourceTree = "<group>";
 		};
+		912ADCA21EAAFD15001751C4 /* AmazonAws */ = {
+			isa = PBXGroup;
+			children = (
+				912ADCA31EAAFD15001751C4 /* AWSCognitoUserPoolsSignIn.framework */,
+				912ADCA41EAAFD15001751C4 /* AWSConfiguration.swift */,
+				912ADCA51EAAFD15001751C4 /* AWSMobileClient.swift */,
+				912ADCA61EAAFD15001751C4 /* AWSMobileHubHelper.framework */,
+			);
+			path = AmazonAws;
+			sourceTree = "<group>";
+		};
 		912B39301BBCD1FC00B7A5D1 = {
 			isa = PBXGroup;
 			children = (
-				914D55241E78BD2A0042812B /* AWSCognitoIdentityProvider.framework */,
-				914D55251E78BD2A0042812B /* AWSCore.framework */,
-				914D55261E78BD2A0042812B /* AWSS3.framework */,
+				912ADC9F1EAAF73D001751C4 /* AWSCognito.framework */,
+				912ADC9C1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework */,
+				912ADC991EAAF610001751C4 /* AWSS3.framework */,
+				912ADC951EAAF5FB001751C4 /* AWSCore.framework */,
 				910BDBC11DBEBF51001186EB /* Podfile */,
 				910BDBC21DBEBF51001186EB /* Podfile.lock */,
 				910BDBBF1DBEBF32001186EB /* FirstContact.xcworkspace */,
@@ -353,6 +401,8 @@
 			children = (
 				912B39401BBCD1FC00B7A5D1 /* Main.storyboard */,
 				912B393C1BBCD1FC00B7A5D1 /* AppDelegate.swift */,
+				912ADCAE1EAB10D1001751C4 /* SendContactViewController.swift */,
+				912ADCB01EAB10F3001751C4 /* SendContact.storyboard */,
 				914D55371E79AFF10042812B /* SignInViewController.swift */,
 				914D553B1E79B0680042812B /* SignIn.storyboard */,
 				911958C01D623FB20010AADA /* ContainerViewController.swift */,
@@ -372,11 +422,12 @@
 				914AFB3A1D7CDF0100A876AB /* ContactViewController.swift */,
 				914D550C1E7331EF0042812B /* StructureDetails.swift */,
 				91F6934B1DB7C82F00943465 /* SettingsViewController.swift */,
+				917351081EAD52090009171E /* delete-512.png */,
 				9136CE4C1D668AB20047A3F0 /* CategoryRow.swift */,
-				914D55301E78BDE50042812B /* AmazonAws */,
+				912ADCA21EAAFD15001751C4 /* AmazonAws */,
+				912ADC931EAAF4DC001751C4 /* Sdk */,
 				9117DC301DA31CD8009BEB33 /* old */,
 				912B39431BBCD1FC00B7A5D1 /* Assets.xcassets */,
-				914D55221E78BC250042812B /* FirstContact-integration-lib-aws-my-sample-app-ios-swift */,
 				918AD5C71E6E4B4300A28B10 /* img */,
 				912B39451BBCD1FC00B7A5D1 /* LaunchScreen.storyboard */,
 				912B39481BBCD1FC00B7A5D1 /* Info.plist */,
@@ -437,17 +488,6 @@
 			name = ContactCardViewInfo;
 			sourceTree = "<group>";
 		};
-		914D55301E78BDE50042812B /* AmazonAws */ = {
-			isa = PBXGroup;
-			children = (
-				914D55311E78BDE50042812B /* AWSConfiguration.swift */,
-				914D55321E78BDE50042812B /* AWSMobileClient.swift */,
-				914D55331E78BDE50042812B /* AWSMobileHubHelper.framework */,
-			);
-			name = AmazonAws;
-			path = "FirstContact-integration-lib-aws-my-sample-app-ios-swift/AmazonAws";
-			sourceTree = "<group>";
-		};
 		914D553D1E7A359B0042812B /* UserPools */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +498,7 @@
 				914D55421E7A35CF0042812B /* UserPoolSignUpConfirmationViewController.swift */,
 				914D55431E7A35CF0042812B /* UserPoolSignUpViewController.swift */,
 				914D55441E7A35CF0042812B /* UserPools.storyboard */,
+				912ADCAB1EAAFE08001751C4 /* UserPoolsIdentityProfile.swift */,
 			);
 			name = UserPools;
 			sourceTree = "<group>";
@@ -465,7 +506,17 @@
 		918AD5C71E6E4B4300A28B10 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				9173511A1EAD61900009171E /* Info-50-2.png */,
+				917351181EAD5A630009171E /* Back-50-red.png */,
+				917351161EAD59980009171E /* Back-50.png */,
+				917351141EAD58AE0009171E /* Snapchat-50.png */,
+				917351121EAD58A90009171E /* Phone-50.png */,
+				917351101EAD58A30009171E /* Instagram-50.png */,
+				9173510E1EAD589E0009171E /* Email-50.png */,
+				9173510C1EAD58990009171E /* Delete-50.png */,
+				9173510A1EAD58920009171E /* CircledUp2-50.png */,
 				918AD5C81E6E4B4300A28B10 /* ContactHistoryIcon.png */,
+				917351061EAD50BA0009171E /* deleteBackButton.png */,
 				9174F3221E70A6600086C945 /* camera.png */,
 				9174F3241E70AA950086C945 /* camera_clear.png */,
 				918AD5C91E6E4B4300A28B10 /* Einstein_1_JPEG.jpg */,
@@ -530,8 +581,8 @@
 				73DD526A9E19BBA82C189EFA /* [CP] Embed Pods Frameworks */,
 				FEE9274A2429FA3F04962AE2 /* [CP] Copy Pods Resources */,
 				91F342951DBC517800C3AC69 /* ShellScript */,
-				914D552D1E78BD2A0042812B /* Embed Frameworks */,
-				914D552E1E78BD5F0042812B /* ShellScript */,
+				912ADC981EAAF5FB001751C4 /* Embed Frameworks */,
+				912ADCAD1EAAFE54001751C4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -641,19 +692,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				9174F3251E70AA950086C945 /* camera_clear.png in Resources */,
+				912ADC941EAAF4DC001751C4 /* Sdk in Resources */,
 				914D551F1E77EF1A0042812B /* Instagram-logo.png in Resources */,
 				914D55091E72C39E0042812B /* NameCardCell.xib in Resources */,
 				91D6701F1E6E70C400AB1D6A /* List.png in Resources */,
+				917351091EAD52090009171E /* delete-512.png in Resources */,
 				918AD5DC1E6E4B4300A28B10 /* FC_icon_draft3.png in Resources */,
 				914D55211E77EF230042812B /* snapchat_logo.png in Resources */,
+				9173510D1EAD58990009171E /* Delete-50.png in Resources */,
 				918DD5CB1E6D6403006AA0ED /* Images.xcassets in Resources */,
 				918AD5DF1E6E4B4300A28B10 /* FC_STEP2a.png in Resources */,
 				918AD5D91E6E4B4300A28B10 /* Einstein_1_JPEG.jpg in Resources */,
+				917351191EAD5A630009171E /* Back-50-red.png in Resources */,
 				918AD5DA1E6E4B4300A28B10 /* FC_icon.png in Resources */,
 				91D6701D1E6E70BC00AB1D6A /* QR_right.png in Resources */,
 				918AD5E71E6E4B4300A28B10 /* XExitButtonImage_press.png in Resources */,
 				914D55071E72B4260042812B /* BasicCardCell.xib in Resources */,
 				912B39471BBCD1FC00B7A5D1 /* LaunchScreen.storyboard in Resources */,
+				9173510F1EAD589E0009171E /* Email-50.png in Resources */,
 				918AD5D81E6E4B4300A28B10 /* ContactHistoryIcon.png in Resources */,
 				914D551D1E77EC540042812B /* InstagramCardCell.xib in Resources */,
 				918AD5E61E6E4B4300A28B10 /* XExitButtonImage.png in Resources */,
@@ -661,22 +717,29 @@
 				914D551B1E77EC3D0042812B /* SnapchatCardCell.xib in Resources */,
 				918AD5E31E6E4B4300A28B10 /* twtr-icn-logo-white.png in Resources */,
 				910BDBC41DBEBF51001186EB /* Podfile in Resources */,
+				917351171EAD59980009171E /* Back-50.png in Resources */,
 				918AD5E21E6E4B4300A28B10 /* SettingsButton.png in Resources */,
 				914D553C1E79B0680042812B /* SignIn.storyboard in Resources */,
+				917351151EAD58AE0009171E /* Snapchat-50.png in Resources */,
 				918AD5E11E6E4B4300A28B10 /* ListLogo.png in Resources */,
 				914D55131E77E65A0042812B /* EmailCardCell.xib in Resources */,
+				912ADCB11EAB10F3001751C4 /* SendContact.storyboard in Resources */,
 				910BDBC51DBEBF51001186EB /* Podfile.lock in Resources */,
 				912B39421BBCD1FC00B7A5D1 /* Main.storyboard in Resources */,
 				918AD5DE1E6E4B4300A28B10 /* FC_STEP1.png in Resources */,
-				914D55231E78BC250042812B /* FirstContact-integration-lib-aws-my-sample-app-ios-swift in Resources */,
 				914D55111E7368630042812B /* PhoneCardCell.xib in Resources */,
 				91D6701B1E6E70B600AB1D6A /* User.png in Resources */,
+				9173510B1EAD58920009171E /* CircledUp2-50.png in Resources */,
 				914D554B1E7A35CF0042812B /* UserPools.storyboard in Resources */,
 				918AD5E01E6E4B4300A28B10 /* FC_STEP2b.png in Resources */,
 				910BDBC01DBEBF32001186EB /* FirstContact.xcworkspace in Resources */,
 				9174F3231E70A6600086C945 /* camera.png in Resources */,
 				91D670191E6E70A900AB1D6A /* QR_left.png in Resources */,
+				917351071EAD50BA0009171E /* deleteBackButton.png in Resources */,
+				9173511B1EAD61900009171E /* Info-50-2.png in Resources */,
 				918AD5E41E6E4B4300A28B10 /* twtr-icn-logo-white@2x.png in Resources */,
+				917351131EAD58A90009171E /* Phone-50.png in Resources */,
+				917351111EAD58A30009171E /* Instagram-50.png in Resources */,
 				910BDBC61DBEBF51001186EB /* Pods in Resources */,
 				918AD5DB1E6E4B4300A28B10 /* FC_icon_clear_empty.png in Resources */,
 				918AD5DD1E6E4B4300A28B10 /* FC_logo_white.png in Resources */,
@@ -790,7 +853,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirstContactUITests/Pods-FirstContactUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		914D552E1E78BD5F0042812B /* ShellScript */ = {
+		912ADCAD1EAAFE54001751C4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -869,9 +932,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9136CE4B1D6689910047A3F0 /* QRSettingsViewController.swift in Sources */,
-				914D55341E78BDE50042812B /* AWSConfiguration.swift in Sources */,
 				914D55461E7A35CF0042812B /* UserPoolForgotPasswordViewController.swift in Sources */,
-				914D55351E78BDE50042812B /* AWSMobileClient.swift in Sources */,
 				914AFB3B1D7CDF0100A876AB /* ContactViewController.swift in Sources */,
 				911958C11D623FB20010AADA /* ContainerViewController.swift in Sources */,
 				914D55491E7A35CF0042812B /* UserPoolSignUpConfirmationViewController.swift in Sources */,
@@ -883,10 +944,13 @@
 				91B2A8271BE321C9002DBF03 /* InstructionViewContoller.swift in Sources */,
 				9119B0071D423979000F962B /* ContactView.swift in Sources */,
 				914D55451E7A35CF0042812B /* SignInViewControllerExtensions.swift in Sources */,
+				912ADCAF1EAB10D1001751C4 /* SendContactViewController.swift in Sources */,
 				914D55381E79AFF10042812B /* SignInViewController.swift in Sources */,
 				914D55481E7A35CF0042812B /* UserPoolNewPasswordViewController.swift in Sources */,
 				914D55191E77EC2D0042812B /* InstagramCardCell.swift in Sources */,
 				91F6934C1DB7C82F00943465 /* SettingsViewController.swift in Sources */,
+				912ADCA81EAAFD15001751C4 /* AWSConfiguration.swift in Sources */,
+				912ADCAC1EAAFE08001751C4 /* UserPoolsIdentityProfile.swift in Sources */,
 				914D550B1E72C3B70042812B /* NameCardCell.swift in Sources */,
 				911958C31D623FB70010AADA /* VerticalScrollViewController.swift in Sources */,
 				91EAC6B91BF1547B00161413 /* ReaderViewController.swift in Sources */,
@@ -895,6 +959,7 @@
 				914D554A1E7A35CF0042812B /* UserPoolSignUpViewController.swift in Sources */,
 				91D670211E6E7B4000AB1D6A /* FCNavigationButton.swift in Sources */,
 				914D55171E77EC0C0042812B /* SnapchatCardCell.swift in Sources */,
+				912ADCA91EAAFD15001751C4 /* AWSMobileClient.swift in Sources */,
 				91476A621D6DE63E0059B532 /* FCContact.swift in Sources */,
 				914D55151E77E66B0042812B /* EmailCardCell.swift in Sources */,
 				91B2A8251BE2E466002DBF03 /* QRViewController.swift in Sources */,
@@ -1059,6 +1124,9 @@
 					"$(PROJECT_DIR)/FirstContact",
 					"$(PROJECT_DIR)/FirstContact/FirstContact-integration-lib-aws-my-sample-app-ios-swift/Sdk/Aws",
 					"$(PROJECT_DIR)/FirstContact/FirstContact-integration-lib-aws-my-sample-app-ios-swift/AmazonAws",
+					"$(PROJECT_DIR)/FirstContact/Sdk/Aws",
+					"$(PROJECT_DIR)/FirstContact/Sdk/Aws/extras",
+					"$(PROJECT_DIR)/FirstContact/AmazonAws",
 				);
 				INFOPLIST_FILE = FirstContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1082,6 +1150,9 @@
 					"$(PROJECT_DIR)/FirstContact",
 					"$(PROJECT_DIR)/FirstContact/FirstContact-integration-lib-aws-my-sample-app-ios-swift/Sdk/Aws",
 					"$(PROJECT_DIR)/FirstContact/FirstContact-integration-lib-aws-my-sample-app-ios-swift/AmazonAws",
+					"$(PROJECT_DIR)/FirstContact/Sdk/Aws",
+					"$(PROJECT_DIR)/FirstContact/Sdk/Aws/extras",
+					"$(PROJECT_DIR)/FirstContact/AmazonAws",
 				);
 				INFOPLIST_FILE = FirstContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

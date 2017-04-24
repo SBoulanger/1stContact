@@ -10,11 +10,11 @@ import UIKit
 import Contacts
 import FBSDKLoginKit
 import FBSDKCoreKit
-//import Fabric
-//import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var didInit : Bool! = false
     
     var dataLoaded : Bool! = false
     
@@ -37,8 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let oauthSigning = TWTROAuthSigning(authConfig:twitter.authConfig, authSession:twitter.sessionStore.session() as! TWTRSession)
         
         //SNAPCHAT
-
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let middle = storyboard.instantiateViewController(withIdentifier: "middle")
         let left = storyboard.instantiateViewController(withIdentifier: "left")
@@ -55,51 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = snapContainer
         self.container = snapContainer
         self.window?.makeKeyAndVisible()
-        
-        
-        let defaults = UserDefaults.standard
-/*
-        var contactdata = defaults.data(forKey: "contactDictionary")
-        var contactdictionary = NSKeyedUnarchiver.unarchiveObject(with: contactdata)
-        var contact = */
-        
-        //AppDelegate.getAppDelegate().requestForAccess{ (granted) -> Void in
-        //    if granted {
-        //        self.dataHub = DataHub()
-        //    }
-        //}
-        
-        //self.dataHub = DataHub()
-
-        
-        
-        //check if a contact has been selected yet
-        //let firstTime = defaults.bool(forKey: "notFirstTime")
-        //goes to welcome screen if it has not been selected
-        //if firstTime == false {
-        //dataHub.getPhoneContacts()
-        //defaults.set(true, forKey: "notFirstTime")
-        //}
-        /*if contactSelected == false {
-            //make the WelcomeViewController the rootViewController
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let rootController = storyboard.instantiateViewControllerWithIdentifier("WelcomeNavigationController") as! UINavigationController
-            print(rootController)
-            self.window?.rootViewController? = rootController
-            self.window?.makeKeyAndVisible()
-        }*/
-        //goes to welcome screen if Settings have been changed and no access to contacts
-        /*AppDelegate.getAppDelegate().requestForAccess{ (granted) -> Void in
-            if !granted {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let rootController = storyboard.instantiateViewController(withIdentifier: "WelcomeNavigationController") as! UINavigationController
-                print(rootController)
-                self.window?.rootViewController? = rootController
-                self.window?.makeKeyAndVisible()
-            }
-        }*/
-        //while (!self.dataLoaded){}
-        
         
         return AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
         //return true
@@ -141,8 +94,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if (!didInit){
+            self.dataHub = DataHub()
+        }
+        didInit = true
         AWSMobileClient.sharedInstance.applicationDidBecomeActive(application)
-        self.dataHub = DataHub()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -222,7 +178,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             presentedViewController.present(alertController, animated: true, completion: nil)
         })
     }
-    
+    func ResizeImage(_ image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
     
     
     

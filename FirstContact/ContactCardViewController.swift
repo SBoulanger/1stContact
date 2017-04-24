@@ -32,32 +32,15 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homebutton = FCNavigationButton(x: Int(self.view.frame.size.width) - FCNavigationButton.SIZE/2, y: Int(self.view.frame.size.height) - FCNavigationButton.SIZE/2, image: UIImage(named:"QR_right.png")!)
-        homebutton.addTarget(nil, action: #selector(downloadContact), for: UIControlEvents.touchUpInside)
-        self.view.addSubview(homebutton)
-        /*
-        manager = AWSUserFileManager.defaultUserFileManager()
-        didLoadAllContents = false
-        print("RemoteHandler instance created")
-        if (AWSIdentityManager.default().isLoggedIn) {
-            let userId = AWSIdentityManager.default().identityId!
-            prefix = "\(UserFilesPrivateDirectoryName)/\(userId)/"
-            marker = nil
-            //refreshContents()
-            //updateUserInterface()
-            loadMoreContents()
-            //downloadContact()
-            print("asldkfhklajshdf;lkjas;ldkjf;lkasjdf;lkjsadkk ===========\n\n\n\n\n\n\n\n\n\\n")
-        }
+        print("ContactCardVC:viewDidLoad")
         
-        // dataHub = AppDelegate.getAppDelegate().dataHub*/
         if contact.me == true {
             
         } else {
             
         }
         
-        cardView.registerCardCell(c: BasicCardCell.classForCoder(), nib: UINib.init(nibName: "BasicCardCell", bundle: nil))
+        //cardView.registerCardCell(c: BasicCardCell.classForCoder(), nib: UINib.init(nibName: "BasicCardCell", bundle: nil))
         cardView.registerCardCell(c: NameCardCell.classForCoder(), nib: UINib.init(nibName: "NameCardCell", bundle:nil))
         cardView.registerCardCell(c: PhoneCardCell.classForCoder(), nib: UINib.init(nibName:"PhoneCardCell", bundle:nil))
         cardView.registerCardCell(c: EmailCardCell.classForCoder(), nib: UINib.init(nibName:"EmailCardCell", bundle:nil))
@@ -71,110 +54,14 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
         dataHub = AppDelegate.getAppDelegate().dataHub
 
     }
-    fileprivate func refreshContents() {
-        marker = nil
-        loadMoreContents()
-    }
     
-    fileprivate func loadMoreContents() {
-        print("LOAD MORE CONTENT ENTERED")
 
-        print(prefix)
-        print(marker)
-        manager.listAvailableContents(withPrefix: prefix, marker: marker, completionHandler: {[weak self] (contents: [AWSContent]?, nextMarker: String?, error: Error?) in
-            guard let strongSelf = self else { return }
-            if let error = error {
-                //strongSelf.showSimpleAlertWithTitle("Error", message: "Failed to load the list of contents.", cancelButtonTitle: "OK")
-                print("Failed to load the list of contents. \(error)")
-            }
-            if let contents = contents, contents.count > 0 {
-                strongSelf.contents = contents
-                
-                print("-------------------------------------------------------------------------------")
-                print("-----------------------------------CONTENT-------------------------------------")
-                print("-------------------------------------------------------------------------------")
-                print(contents)
-                print("-------------------------------------------------------------------------------")
-                print("-------------------------------------------------------------------------------")
-                print("-------------------------------------------------------------------------------")
-                if let nextMarker = nextMarker, !nextMarker.isEmpty {
-                    strongSelf.didLoadAllContents = false
-                } else {
-                    strongSelf.didLoadAllContents = true
-                }
-                strongSelf.marker = nextMarker
-            } else {
-                print("else")
-                //strongSelf.checkUserProtectedFolder()
-            }
-            //if strongSelf.j==2 {
-                //strongSelf.downloadContact()
-            //}
-            //strongSelf.updateUserInterface()
-
-        })
-
-        print("listAvailableContents done")
-
-        
-        
-        print("loadMoreContents end")
-    }
-    fileprivate func downloadContent(_ content: AWSContent, pinOnCompletion: Bool) {
-        content.download(with: .ifNewerExists, pinOnCompletion: pinOnCompletion, progressBlock: {[weak self] (content: AWSContent, progress: Progress) in
-            guard let strongSelf = self else { return }
-            //if strongSelf.contents!.contains( where: {$0 == content} ) {
-                //strongSelf.tableView.reloadData()
-            //}
-            }) {[weak self] (content: AWSContent?, data: Data?, error: Error?) in
-            guard let strongSelf = self else { return }
-                if (content?.key.range(of: ".json") != nil){
-                    print("is .json")
-                    print("HEHEHEHHEHEHEHEHEHHEH;fldja;lf jl;djfl;kja;f")
-                    var cont = FCContact()
-                    print("data")
-                    print(data)
-                    print("contact")
-                    print(cont)
-                    cont.encodeJSON(data: data!)
-                    print("WOKRED")
-                    print(cont)
-                }
-            if let error = error {
-                print("Failed to download a content from a server. \(error)")
-                //strongSelf.showSimpleAlertWithTitle("Error", message: "Failed to download a content from a server.", cancelButtonTitle: "OK")
-            }
-            //strongSelf.updateUserInterface()
-        }
-    }
-    func downloadContact(){
-        /*//DispatchQueue.main.async {
-        print("download Contact")
-        var end = self.contents?.count
-         print("recent")
-         self.contents?.forEach({ (content: AWSContent) in
-         print("CONTENT")
-         //print(self.content)
-         if !content.isCached && !content.isDirectory {
-            print("not cached or dir")
-            downloadContent(content, pinOnCompletion: false)
-         } else {
-            print("cached or dir.")
-            }
-         })
-        //}*/
-        //dataHub.getAWSContent(url: "protected/us-east-1:6b06eac0-f0d5-4b90-8ceb-c5acb831971c/", share: <#[Int]#>)
-        //print(self.dataHub.contacts)
-        //AppDelegate.getAppDelegate().dataHub = DataHub()
-        AppDelegate.getAppDelegate().dataHub.uploadContact()
-        AppDelegate.getAppDelegate().dataHub.uploadContacts()
-    }
     
     func generateCardInfo (cardCount:Int) -> [AnyObject] {
+        print("ContactCardVC: generateCardInfo")
         var arr = [AnyObject]()
-        let xibName = ["NameCard","BasicCard","PhoneCard","EmailCard","InstagramCard","SnapchatCard"]
+        let xibName = ["NameCard","PhoneCard","EmailCard","InstagramCard","SnapchatCard"]
         
-        //for i in 1...cardCount {
         for i in 0...xibName.count-1 {
             arr.append(xibName[i] as AnyObject)
         }
@@ -184,7 +71,18 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
     }
     
     func cardView(collectionView:UICollectionView,item:AnyObject,indexPath:IndexPath) -> UICollectionViewCell {
-        print("cardView entered with \(item), path: \(indexPath)")
+        
+        if self.contact.me == true {
+            self.contact = dataHub.getContact()
+        } else if (self.contactIndex != nil){
+            self.contact = dataHub.getContacts()[self.contactIndex]
+        }
+        print("ContactCardVC: cardView(collectionView:,item:,idexPath)")
+        print("------ contact getting passed -------")
+        print(self.contact)
+        print("--------------------------------------")
+        
+        print("\nCardView entered with \(item), path: \(indexPath)\n")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item as! String, for: indexPath )
         switch cell {
         case let c as BasicCardCell:
@@ -193,28 +91,28 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
             c.titleLabel.text = "Name"
             c.contact = self.contact //create mutator
             c.contactIndex = self.contactIndex //create mutator
-            c.setUpView()
+            c.setUpView(pcontact: self.contact, index: self.contactIndex)
             
         case let c as PhoneCardCell:
             c.titleLabel.text = "Phone Number"
             c.contact = self.contact
             c.contactIndex = self.contactIndex
-            c.setUpView()
+            c.setUpView(pcontact: self.contact, index: self.contactIndex)
         case let c as EmailCardCell:
             c.titleLabel.text = "Email"
             c.contact = self.contact
             c.contactIndex = self.contactIndex
-            c.setUpView()
+            c.setUpView(pcontact: self.contact,index: self.contactIndex)
         case let c as InstagramCardCell:
             c.titleLabel.text = "Instagram"
             c.contact = self.contact
             c.contactIndex = self.contactIndex
-            c.setUpView()
+            c.setUpView(pcontact: self.contact, index: self.contactIndex)
         case let c as SnapchatCardCell:
             c.titleLabel.text = "Snapchat"
             c.contact = self.contact
             c.contactIndex = self.contactIndex
-            c.setUpView()
+            c.setUpView(pcontact: self.contact, index: self.contactIndex)
             //let v = Int(arc4random_uniform(5))+1
             //c.imgV.image = UIImage.init(named: "image\(v)")
 /*

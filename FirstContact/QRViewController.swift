@@ -23,6 +23,7 @@ class QRViewController: UIViewController  {
     
     fileprivate var manager: AWSUserFileManager!
     fileprivate var contents: [AWSContent]?
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     fileprivate var didLoadAllContents: Bool!
     fileprivate var marker: String?
     
@@ -39,35 +40,38 @@ class QRViewController: UIViewController  {
     
     var prefix: String!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"CircledUp2-50.png"), style: .plain, target: self, action: #selector(showSendViewController))
+
+        self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 20.0)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppDelegate.getAppDelegate().dataHub = DataHub()
         let logo = UIImage(named: "FC_logo_white.png")
-        let newim = ResizeImage(logo!, targetSize: CGSize(width: 40,height: 50))
-        //let imageView = UIImageView(image:newim)
+        let newim = AppDelegate.getAppDelegate().ResizeImage(logo!, targetSize: CGSize(width: 40,height: 50))
         let camButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 50))
-        camButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -2, bottom: 0, right: -2)
+        camButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
         camButton.setImage(newim, for: .normal)
         
+        
+        navigationController!.navigationBar.titleTextAttributes =
+            ([NSFontAttributeName: UIFont(name: "KohinoorBangla-Light", size: 23)!,
+              NSForegroundColorAttributeName: UIColor.green])
+        self.navigationController?.navigationBar.tintColor = UIColor.green
+        
         self.navigationItem.titleView = camButton
-        //let camButton = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 30))
-        //camButton.setImage(UIImage(named:"camera_clear.png"), for: .normal)
-        //camButton.layer.cornerRadius = 3.5
-        //camButton.layer.borderWidth = 0.25
-        //camButton.layer.borderColor = UIColor.lightGray.cgColor
-        //camButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 1.5, bottom: 1, right: 1.5)
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
         camButton.addTarget(nil, action: #selector(AppDelegate.getAppDelegate().container.moveDown), for: .touchUpInside)
-        
-        //let camBarButton = UIBarButtonItem(customView: camButton)
-        //self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(17.0, 17.0, 55.0, 55.0)
 
-        //let camButton = UIBarButtonItem(image: ResizeImage(UIImage(named:"camera.png")!,targetSize: CGSize(width: 10,height:10)), style: UIBarButtonItemStyle.plain, target: nil, action: #selector(AppDelegate.getAppDelegate().container.moveDown))
-        //self.navigationItem.rightBarButtonItem = camBarButton
         self.dataHub =  AppDelegate.getAppDelegate().dataHub
-        
+        if (AWSSignInManager.sharedInstance().isLoggedIn){
+            self.startSpinning()
+        } else {
+            self.loadingSpinner.isHidden = true
+        }
         print("QRViewController viewDidLoad() entered...")
-        
         
         let rightButton = FCNavigationButton(x: Int(self.view.bounds.width) - FCNavigationButton.SIZE/2, y: Int(self.view.frame.size.height) - FCNavigationButton.SIZE/2, image: UIImage(named: "User.png")! )
         print(Int((self.navigationController?.navigationBar.frame.size.height)!))
@@ -83,26 +87,32 @@ class QRViewController: UIViewController  {
             print("qrCodeImage NIL")
             generateNewImage()
         }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"CircledUp2-50.png"), style: .plain, target: self, action: #selector(showSendViewController))
+        self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 20.0)
         self.view.addSubview(rightButton)
         self.view.addSubview(leftButton)
         contact.getDefaultJSON()
         //setUpAWSContent()
 
     }
-    func setUpAWSContent(){
-        manager = AWSUserFileManager.defaultUserFileManager()
-        didLoadAllContents = false
-        print("RemoteHandler instance created")
-        if (AWSIdentityManager.default().isLoggedIn) {
-            print("is Logged In")
-            let userId = AWSIdentityManager.default().identityId!
-            prefix = "\(UserFilesPrivateDirectoryName)/\(userId)/"
-            refreshContents()
-            //updateUserInterface()
-            loadMoreContents()
-            //downloadContact()
-        }
-        
+    
+    func startSpinning() {
+        loadingSpinner.isHidden = false
+        AppDelegate.getAppDelegate().container.view.isUserInteractionEnabled = false
+        loadingSpinner.startAnimating()
+    }
+    
+    func stopSpinning() {
+        AppDelegate.getAppDelegate().container.view.isUserInteractionEnabled = true
+        loadingSpinner.stopAnimating()
+        loadingSpinner.isHidden = true
+    }
+    func showSendViewController() {
+        let sendSB = UIStoryboard(name: "SendContact", bundle: nil)
+        print(sendSB)
+        let sendVC = sendSB.instantiateInitialViewController()! as UIViewController
+        sendVC.modalPresentationStyle = .popover
+        self.navigationController?.present(sendVC, animated: true, completion: nil)
     }
     fileprivate func refreshContents() {
         marker = nil
@@ -163,32 +173,6 @@ class QRViewController: UIViewController  {
     func generateNewImage(){
         qrCodeView.image = generateCode()
         displayQRCodeImage()
-    }
-    
-    func ResizeImage(_ image: UIImage, targetSize: CGSize) -> UIImage {
-        let size = image.size
-        
-        let widthRatio  = targetSize.width  / image.size.width
-        let heightRatio = targetSize.height / image.size.height
-        
-        // Figure out what our orientation is, and use that to form the rectangle
-        var newSize: CGSize
-        if(widthRatio > heightRatio) {
-            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-        } else {
-            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
-        }
-        
-        // This is the rect that we've calculated out and this is what is actually used below
-        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-        
-        // Actually do the resizing to the rect using the ImageContext stuff
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.draw(in: rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage!
     }
     
     //sizes the image

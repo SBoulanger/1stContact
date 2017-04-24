@@ -11,9 +11,8 @@ import UIKit
 import AVFoundation
 import Contacts
 import ContactsUI
-import MessageUI
 
-class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDelegate, MFMessageComposeViewControllerDelegate {
+class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     //@IBOutlet weak var backButton: UIButton!
     var captureSession:AVCaptureSession?
@@ -47,6 +46,10 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
         initQRCaptureCamera()
         //let button = UIButton(frame: ufoImageView.frame)
         //ufoButton.backgroundColor = UIColor.clear
+        let logo = UIImage(named: "FC_logo_white.png")
+        let newim = AppDelegate.getAppDelegate().ResizeImage(logo!, targetSize: CGSize(width: 40,height: 50))
+        ufoButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
+        ufoButton.setImage(newim, for: .normal)
         ufoButton.addTarget(nil, action: #selector(AppDelegate.getAppDelegate().container.moveUp), for: UIControlEvents.touchUpInside)
         //self.view.addSubview(button)
     }
@@ -205,38 +208,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
         print("barCodeObject")
         qrCodeFrameView?.frame = barCodeObject.bounds
     }
-    func messageComposeViewController(_ controller: MFMessageComposeViewController,
-        didFinishWith result: MessageComposeResult){
-            /*This method is called when the user taps one of the buttons to dismiss the message composition interface. Your implementation of this method should dismiss the view controller and perform any additional actions needed to process the sending of the message. The result parameter lets you know whether the user chose to cancel or send the message or whether sending the message failed.*/
-            self.dismiss(animated: true, completion: nil)
-    }
-    //creates the text message and presents the view for the user to send
-    func sendTextMessage(_ recipients:[String],body:String,contact: FCContact) {
-            print("sendTextMessage() entered")
-            if MFMessageComposeViewController.canSendAttachments() {
-                print("MFMessageComposeViewController can send attactments")
-                let controller = MFMessageComposeViewController()
-                controller.messageComposeDelegate = self
-                controller.recipients = recipients
-                controller.body = body
-                let contactData = getVCard([contact.encode()])
-                controller.addAttachmentData(contactData, typeIdentifier: "Apple Vcard", filename: "contact.vcard")
 
-                self.present(controller, animated: false, completion: nil)
-                
-            }
-            else {
-                print("message cant send")
-            }
-        print("send text message done")
-    }
-    //gets the message that will be sent with the text
-    func createMessage(_ first:String, last: String, number: String) -> String {
-        
-        let string = "\"The miracle is this: the more we share the more we have.\" -Leonard Nimoy 🖖"
-        
-        return string
-    }
     
     //shows the alert message when a qrcode was successfully read
     func showMessage(_ message: String, title: String, actionHandler: @escaping (_ accessGranted: UIAlertAction) -> Void) {
@@ -279,27 +251,6 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
             AppDelegate.getAppDelegate().showMessage("Could not save Contact.")
         }
         return newContact
-    }
-    
-    //MOVE
-    //gets the card that will be sent over text
-    func getVCard(_ contacts:[Dictionary<String, AnyObject>]) -> Data {
-        var data:Data
-        data = Data()
-        var cncontactsV = [CNContact]()
-        do {
-            for i in contacts {
-                var contact = CNMutableContact()
-                contact.givenName = i["firstName"] as! String
-                contact.familyName = i["lastName"] as! String
-                var phoneNumber = [CNLabeledValue(label: CNLabelPhoneNumberMain, value: CNPhoneNumber(stringValue: i["phoneNumber"] as! String) )]
-                contact.phoneNumbers = phoneNumber
-            }
-            try data = CNContactVCardSerialization.data(with: cncontactsV as! [CNContact])
-        } catch {
-            print("\(error)")
-        }
-        return data
     }
     
     

@@ -31,9 +31,10 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         self.view.backgroundColor = UIColor.white
-        didSignInObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.default(), queue: OperationQueue.main, using: {(note: Notification) -> Void in
+        /*didSignInObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn, object: AWSIdentityManager.default(), queue: OperationQueue.main, using: {(note: Notification) -> Void in
                 print("LOGGED IN: ----------------------------------------")
             })
+         */
         
         signInButton.addTarget(self, action: #selector(self.handleCustomSignIn), for: .touchUpInside)
         signInButton.layer.cornerRadius = 3.0
@@ -48,7 +49,7 @@ class SignInViewController: UIViewController {
         }, completion: nil)
     }
     func handleLoginWithSignInProvider(_ signInProvider: AWSSignInProvider) {
-        AWSIdentityManager.default().login(signInProvider: signInProvider, completionHandler: {(result: Any?, error: Error?) in
+        AWSSignInManager.sharedInstance().login(signInProviderKey: signInProvider.identityProviderName, completionHandler: {(result: Any?, authState:AWSIdentityManagerAuthState, error: Error?) in
             // If no error reported by SignInProvider, discard the sign-in view controller.
             if error == nil {
                 print("Sign In Successful")

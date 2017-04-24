@@ -41,7 +41,10 @@ class InstagramCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         super.awakeFromNib()
         
     }
-    func setUpView(){
+    func setUpView(pcontact: FCContact, index: Int){
+        
+        self.contact = pcontact
+        self.contactIndex = index
         self.dataHub = AppDelegate.getAppDelegate().dataHub
         
         print(contact)

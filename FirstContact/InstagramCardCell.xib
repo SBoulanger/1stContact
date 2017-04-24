@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,27 +18,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="290" height="357"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Instagram-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="W5Y-u8-WUC">
-                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="W5Y-u8-WUC">
+                        <rect key="frame" x="15" y="15" width="30" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="JPv-hr-V8d"/>
-                            <constraint firstAttribute="width" constant="50" id="t88-9j-qSe"/>
+                            <constraint firstAttribute="height" constant="30" id="JPv-hr-V8d"/>
+                            <constraint firstAttribute="width" constant="30" id="t88-9j-qSe"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX3-sD-vhK">
-                        <rect key="frame" x="124" y="25" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX3-sD-vhK">
+                        <rect key="frame" x="229" y="10" width="41" height="24"/>
                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88m-iV-Lzo">
-                        <rect key="frame" x="14" y="83" width="65" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88m-iV-Lzo">
+                        <rect key="frame" x="8" y="70" width="65" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9D-I0-bVF">
-                        <rect key="frame" x="29" y="135" width="233" height="40"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9D-I0-bVF">
+                        <rect key="frame" x="8" y="97" width="274" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="GuJ-Gm-dXJ"/>
                         </constraints>
@@ -46,8 +46,8 @@
                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="25"/>
                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                     </textField>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-Yl-gLx">
-                        <rect key="frame" x="40" y="177" width="206" height="38"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-Yl-gLx">
+                        <rect key="frame" x="30" y="152" width="230" height="40"/>
                         <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,8 +58,8 @@
                             <action selector="saveButtonPress:" destination="Vhn-C0-G6S" eventType="touchUpInside" id="gtO-PN-rLH"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajB-QL-Edw">
-                        <rect key="frame" x="40" y="234" width="206" height="40"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajB-QL-Edw">
+                        <rect key="frame" x="30" y="202" width="230" height="35"/>
                         <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="lun-6K-UC0"/>
@@ -82,10 +82,10 @@
                 <constraint firstItem="ajB-QL-Edw" firstAttribute="top" secondItem="AUT-Yl-gLx" secondAttribute="bottom" constant="10" id="EHh-Le-xjC"/>
                 <constraint firstItem="AUT-Yl-gLx" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="30" id="Jcu-0T-prv"/>
                 <constraint firstItem="88m-iV-Lzo" firstAttribute="top" secondItem="W5Y-u8-WUC" secondAttribute="bottom" constant="25" id="KnJ-8r-Pj8"/>
-                <constraint firstItem="W5Y-u8-WUC" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="5" id="MX9-hH-hh5"/>
+                <constraint firstItem="W5Y-u8-WUC" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="15" id="MX9-hH-hh5"/>
                 <constraint firstItem="l9D-I0-bVF" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="8" id="QVx-Oc-I5z"/>
                 <constraint firstAttribute="trailing" secondItem="AUT-Yl-gLx" secondAttribute="trailing" constant="30" id="aRF-So-BB3"/>
-                <constraint firstItem="W5Y-u8-WUC" firstAttribute="top" secondItem="Vhn-C0-G6S" secondAttribute="top" constant="5" id="bdZ-3W-yLO"/>
+                <constraint firstItem="W5Y-u8-WUC" firstAttribute="top" secondItem="Vhn-C0-G6S" secondAttribute="top" constant="15" id="bdZ-3W-yLO"/>
                 <constraint firstItem="AUT-Yl-gLx" firstAttribute="centerX" secondItem="Vhn-C0-G6S" secondAttribute="centerX" id="erK-t6-qIL"/>
                 <constraint firstItem="ajB-QL-Edw" firstAttribute="leading" secondItem="Vhn-C0-G6S" secondAttribute="leading" constant="30" id="gkw-EO-SQz"/>
                 <constraint firstItem="l9D-I0-bVF" firstAttribute="top" secondItem="88m-iV-Lzo" secondAttribute="bottom" constant="10" id="h45-GB-rrX"/>
@@ -105,6 +105,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Instagram-logo.png" width="512" height="512"/>
+        <image name="Instagram-50.png" width="50" height="50"/>
     </resources>
 </document>

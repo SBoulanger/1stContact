@@ -40,7 +40,15 @@ class SnapchatCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         super.awakeFromNib()
         
     }
-    func setUpView(){
+    func setUpView(pcontact: FCContact, index: Int){
+        
+        self.contact = pcontact
+        self.contactIndex = index
+        print("SnapchatCardCell: setUpView()")
+        print("------------- card being set up ---------")
+        print(self.contact)
+        print("----------------------------------")
+        
         self.dataHub = AppDelegate.getAppDelegate().dataHub
         
         print(contact)
@@ -81,6 +89,11 @@ class SnapchatCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         print("SaveButtonPressed")
         self.contact.snapchat = snapchatTextField.text
         
+        print("---------------- contact being saved ---------------------")
+        print(self.contact)
+        print("--------------------------------")
+        
+        print(self.contact)
         if self.contact.me == true {
             dataHub.updateContact(contact: contact)
         }else{

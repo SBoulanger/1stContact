@@ -108,7 +108,6 @@ public struct FCContact: Equatable {
         dictionary["instagram"] = instagram as AnyObject?
         dictionary["facebook"] = facebook as AnyObject?
         dictionary["email"] = email as AnyObject?
-        dictionary["twitter"] = twitter as AnyObject?
         dictionary["me"] = me as AnyObject?
         dictionary["id"] = id as AnyObject?
         return dictionary
@@ -220,6 +219,8 @@ public struct FCContact: Equatable {
             self.instagram = value as! String
         case "snapchat":
             self.snapchat = value as! String
+        case "id":
+            self.id = value as! Int
         case "me":
             self.me = value as! Bool
         default:

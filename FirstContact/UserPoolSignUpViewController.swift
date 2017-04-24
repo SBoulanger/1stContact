@@ -14,8 +14,9 @@
 
 import Foundation
 import UIKit
-import AWSMobileHubHelper
 import AWSCognitoIdentityProvider
+import AWSMobileHubHelper
+import AWSCognitoUserPoolsSignIn
 
 class UserPoolSignUpViewController: UIViewController {
     

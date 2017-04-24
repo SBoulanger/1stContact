@@ -26,7 +26,8 @@ class DataHub {
     var contactStore = CNContactStore()
     var share : [Int] = []
 
-    
+    var contactsVC : ContactsViewController!
+    var qrVC : QRViewController!
 
     
     fileprivate var prefix: String!
@@ -41,15 +42,16 @@ class DataHub {
     init(){
         print("DataHub: INITIALIZATION")
         self.contact = FCContact()
+        self.contact.me = true
         self.contacts = []
-        //print(AWSIdentityManager.default().identityId!)
-    
+        
+        setUpViews()
         
         //Set up AWS Settings
         //VVVV do not understand why it workd in method but not in init()
         setUpAWS()
         
-        if (AWSIdentityManager.default().isLoggedIn){
+        if (AWSSignInManager.sharedInstance().isLoggedIn){
             self.code = generateRemoteString(share: self.share)
         } else {
             self.code = generateDirectString(contact: self.contact,share:self.share)
@@ -64,6 +66,16 @@ class DataHub {
         }
         self.createAlphArrays(contacts: self.contacts)
     }
+    func setUpViews(){
+        let containerview = AppDelegate.getAppDelegate().window?.rootViewController as! ContainerViewController
+        let navConview = containerview.rightVc
+        let navQRview  = containerview.middleVc
+        var arrayViewCon   = navConview?.childViewControllers
+        var arrayViewQR    = navQRview?.childViewControllers
+        
+        self.contactsVC    = arrayViewCon?[0] as! ContactsViewController
+        self.qrVC     = arrayViewQR?[0]  as! QRViewController
+    }
 
     func syncData(){
         for c in localContacts {
@@ -74,11 +86,11 @@ class DataHub {
     }
     func setUpAWS(){
         print("DataHub: setUpAWS()")
-        
+                
         didLoadAllContents = false
         manager = AWSUserFileManager.defaultUserFileManager()
         
-        if (AWSIdentityManager.default().isLoggedIn){
+        if (AWSSignInManager.sharedInstance().isLoggedIn){
             print("DataHub: AWS is logged in")
             let userId = AWSIdentityManager.default().identityId!
             prefix = "\(UserFilesPrivateDirectoryName)/\(userId)/"
@@ -147,6 +159,7 @@ class DataHub {
                 }
                 strongSelf.marker = nextMarker
             } else {
+                
                 strongSelf.saveContact()
                 strongSelf.refreshContacts()
                 print("DataHub: Contents is empty")
@@ -167,7 +180,9 @@ class DataHub {
                     if !content.isCached {
                         downloadContent(content, pinOnCompletion: false)
                     } else {
-                        downloadContactContacts(content: content, data: content.cachedData)
+                        content.removeLocal()
+                        downloadContent(content, pinOnCompletion: false)
+                        //downloadContactContacts(content: content, data: content.cachedData)
                     }
                 }
             }
@@ -175,6 +190,7 @@ class DataHub {
     }
     
     func downloadContactContacts(content: AWSContent, data: Data){
+        print("downloadContactContacts(content: AWSContent, data: Data")
         if (content.key.range(of: "contact.json") != nil){
             self.downloadContact(data: data)
         } else if (content.key.range(of: "contacts.json") != nil){
@@ -183,7 +199,9 @@ class DataHub {
     }
     
     func downloadContact(data: Data){
+        print("downloadContact(data: Data)")
         self.contact.encodeJSON(data: data)
+        self.contact.me = true
         saveContact()
     }
     func downloadContacts(data: Data){
@@ -237,6 +255,7 @@ class DataHub {
                     print("Failed to upload an object. error = \(error)")
                 } else {
                     print("Object upload complete. error = \(error)")
+                    strongSelf.qrVC.stopSpinning()
                 }
         })
     }
@@ -259,6 +278,7 @@ class DataHub {
         uploadWithData(data: getDefaultContactsJSONData() as NSData, forKey: "contacts.json", prefix: prefix)
     }
     func uploadContact(){
+        print("uploadContact()")
         uploadWithData(data: self.contact.getDefaultJSONData() as NSData, forKey: "contact.json", prefix: prefix)
         let userId = AWSIdentityManager.default().identityId!
         uploadWithData(data: self.contact.getDefaultJSONData() as NSData, forKey: "contact.json", prefix:"\(CONTACT_FILE_DIRECTORY)/\(userId)/")
@@ -303,7 +323,7 @@ class DataHub {
         
     }
     func generateContactInfo(){
-        if (AWSIdentityManager.default().isLoggedIn){
+        if (AWSSignInManager.sharedInstance().isLoggedIn){
             self.code = generateRemoteString(share: self.share)
         } else {
             self.code = generateDirectString(contact: self.contact,share:self.share)
@@ -315,23 +335,14 @@ class DataHub {
         print("updateContact")
         self.contact = contact
         self.contactInfo = getContactInfo(info: code)
-        if (AWSIdentityManager.default().isLoggedIn){
+        if (AWSSignInManager.sharedInstance().isLoggedIn){
             self.code = generateRemoteString(share: self.share)
         } else {
             self.code = generateDirectString(contact: self.contact,share:self.share)
         }
         
-        let containerview = AppDelegate.getAppDelegate().window?.rootViewController as! ContainerViewController
-        let navConview = containerview.rightVc
-        let navQRview  = containerview.middleVc
-        var arrayViewCon   = navConview?.childViewControllers
-        var arrayViewQR    = navQRview?.childViewControllers
-        
-        let conview    = arrayViewCon?[0] as! ContactsViewController
-        let qrview     = arrayViewQR?[0]  as! QRViewController
-        
-        qrview.generateNewImage()
-        conview.refresh()
+        self.qrVC.generateNewImage()
+        self.contactsVC.refresh()
         
         saveContact()
     }
@@ -410,7 +421,8 @@ class DataHub {
     }
     
     func saveContact(){
-        if (AWSIdentityManager.default().isLoggedIn){
+        print("DataHub: saveContact()")
+        if (AWSSignInManager.sharedInstance().isLoggedIn){
             uploadContact()
         }
         let dictionaryContact = self.contact.encode()
@@ -422,7 +434,7 @@ class DataHub {
     func saveContacts(){
         print("savecontacts")
         
-        if (AWSIdentityManager.default().isLoggedIn){
+        if (AWSSignInManager.sharedInstance().isLoggedIn){
             uploadContacts()
         }
 
@@ -524,8 +536,10 @@ class DataHub {
                         downloadOtherContent(content, pinOnCompletion: false, share:share){completionHandler()}
                     } else {
                         print("downloadOther called from downloadRemoteContents")
-                        downloadOther(content: content, data: content.cachedData,share:share)
-                        completionHandler()
+                        content.removeLocal()
+                        downloadOtherContent(content, pinOnCompletion: false, share:share){completionHandler()}
+                        //downloadOther(content: content, data: content.cachedData,share:share)
+                        //completionHandler()
                     }
                 }
             }

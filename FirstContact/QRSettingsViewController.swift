@@ -31,7 +31,6 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         
         self.dataHub = AppDelegate.getAppDelegate().dataHub
         print(dataHub.share)
-
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         
@@ -56,8 +55,6 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
     func numberOfSections(in tableView: UITableView) -> Int {
         return categories.count
     }
-    
-
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return categories[section]
