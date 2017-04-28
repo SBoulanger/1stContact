@@ -12,8 +12,9 @@ import Contacts
 
 //first last phone emial insta snap facebook
 
-public struct FCContact: Equatable {
-    private var id : Int! = 0
+public struct FCContact: Equatable, Hashable {
+    var id : Int! = 0
+    public var hashValue: Int { get { return id.hashValue } }
     var firstName : String! = ""
     var lastName : String! = ""
     var phoneNumber : String! = ""
@@ -21,10 +22,9 @@ public struct FCContact: Equatable {
     var instagram : String! = ""
     var facebook: String! = ""
     var email : String! = ""
-    var twitter : String! = ""
+    //var twitter : String! = ""
     var share: [Int]! = []
     var me : Bool! = false
-    var fcDictionary: [String:Any] = ["firstName":"","lastName":"","phoneNumber":"","email":"","facebook":"","instagram":"","snapchat":"","me":false]
     
     init(){
         self.id = UUID().hashValue
@@ -35,7 +35,7 @@ public struct FCContact: Equatable {
         self.instagram = ""
         self.email = ""
         self.facebook = ""
-        self.twitter = ""
+        //self.twitter = ""
         
     }
     
@@ -72,7 +72,7 @@ public struct FCContact: Equatable {
         } else {
             instagram = ""
         }
-        if ((dictionary["facebook"] as? String) != nil) {
+        if ((dictionary["facebook"] as? [String:Any]) != nil) {
             facebook = dictionary["facebook"] as? String
         } else {
             facebook = ""
@@ -82,11 +82,13 @@ public struct FCContact: Equatable {
         } else {
             email = ""
         }
+        /*
         if ((dictionary["twitter"] as? String) != nil) {
             twitter = dictionary["twitter"] as? String
         } else {
             twitter = ""
         }
+         */
         if ((dictionary["me"] as? Bool) != nil) {
             me = dictionary["me"] as? Bool
         } else {
@@ -186,7 +188,7 @@ public struct FCContact: Equatable {
         case 4: return self.facebook
         case 5: return self.instagram
         case 6: return self.snapchat
-        case 7: return self.twitter
+        //case 7: return self.twitter
         default:
             return ""
         }
@@ -273,6 +275,9 @@ public struct FCContact: Equatable {
         }
     }
     public static func ==(lhs: FCContact, rhs: FCContact) -> Bool{
+        print(lhs.id)
+        print(rhs.id)
         return lhs.id == rhs.id
     }
 }
+

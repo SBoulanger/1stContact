@@ -58,11 +58,11 @@ open class CardCell:UICollectionViewCell{
             self.addGestureRecognizer(pangesture!)
         }
         
-        self.setShadow(offset: CGSize(width: 0, height: -2), radius: 8, opacity: 0.5)
+        self.setShadow(offset: CGSize(width: 0, height: -1.5), radius: 8, opacity: 0.5)
         
         self.layer.shadowRadius = 1.0
         self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.cornerRadius = 8.0
+        self.layer.cornerRadius = 1.0
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.borderWidth = 1.0
         self.backgroundColor = UIColor.white

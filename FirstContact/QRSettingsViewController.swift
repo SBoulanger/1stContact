@@ -19,9 +19,9 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
     
     @IBOutlet weak var mainTableView: UITableView!
     
-    var array0 = ["Basic","Social","Custom +"]
+    var array0 = ["Basic","Social"]
     
-    var array1 = ["Name","Phone Number","Email","Facebook","Instagram","Snapchat","Twitter"]
+    var array1 = ["Name","Phone Number","Email","Facebook","Instagram","Snapchat"]
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -33,7 +33,8 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         print(dataHub.share)
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
-        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"Info-50-2.png"), style: .plain, target: self, action: #selector(showSettingsViewController))
+        self.navigationItem.leftBarButtonItem?.imageInsets = UIEdgeInsetsMake(15.0, 0.0, 15.0, 20.0)
         
         self.mainTableView.dataSource = self
         self.mainTableView.delegate = self
@@ -60,6 +61,12 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         return categories[section]
     }
     
+    func showSettingsViewController() {
+        let sendSB = UIStoryboard(name: "Settings", bundle: nil)
+        let sendVC = sendSB.instantiateInitialViewController()! as UIViewController
+        sendVC.modalPresentationStyle = .popover
+        self.navigationController?.present(sendVC, animated: true, completion: nil)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0){
@@ -116,7 +123,7 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
             selectRow(tableView: tableView, at: IndexPath(row: 3, section: 1))
             selectRow(tableView: tableView, at: IndexPath(row: 4, section: 1))
             selectRow(tableView: tableView, at: IndexPath(row: 5, section: 1))
-            selectRow(tableView: tableView, at: IndexPath(row: 6, section: 1))
+            //selectRow(tableView: tableView, at: IndexPath(row: 6, section: 1))
         }
         var selectedRowsIndexPath = tableView.indexPathsForSelectedRows
         var selectedRows = [Int]()
@@ -166,7 +173,7 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
             deselectRow(tableView: tableView, at: IndexPath(row: 3, section: 1))
             deselectRow(tableView: tableView, at: IndexPath(row: 4, section: 1))
             deselectRow(tableView: tableView, at: IndexPath(row: 5, section: 1))
-            deselectRow(tableView: tableView, at: IndexPath(row: 6, section: 1))
+            //deselectRow(tableView: tableView, at: IndexPath(row: 6, section: 1))
         }
         var selectedRowsIndexPath = tableView.indexPathsForSelectedRows
         var selectedRows = [Int]()

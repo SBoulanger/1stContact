@@ -44,12 +44,15 @@
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="25"/>
-                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEj-P7-BTp">
-                        <rect key="frame" x="40" y="152" width="210" height="40"/>
+                        <rect key="frame" x="20" y="152" width="250" height="30"/>
                         <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="MHv-qC-gMU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="20"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Save">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,13 +69,13 @@
                 <constraint firstAttribute="trailing" secondItem="F3q-xv-RJ9" secondAttribute="trailing" constant="8" id="7eu-dl-QAD"/>
                 <constraint firstItem="uSn-tT-5E2" firstAttribute="leading" secondItem="Si3-d6-3XQ" secondAttribute="leading" constant="8" id="8X5-vC-MKp"/>
                 <constraint firstItem="kmc-U5-46i" firstAttribute="leading" secondItem="Si3-d6-3XQ" secondAttribute="leading" constant="15" id="9si-Yi-6nW"/>
-                <constraint firstAttribute="trailing" secondItem="GEj-P7-BTp" secondAttribute="trailing" constant="40" id="HBq-T2-0PI"/>
+                <constraint firstAttribute="trailing" secondItem="GEj-P7-BTp" secondAttribute="trailing" constant="20" id="HBq-T2-0PI"/>
                 <constraint firstItem="F3q-xv-RJ9" firstAttribute="top" secondItem="uSn-tT-5E2" secondAttribute="bottom" constant="10" id="OT4-2U-ipZ"/>
                 <constraint firstItem="uSn-tT-5E2" firstAttribute="top" secondItem="kmc-U5-46i" secondAttribute="bottom" constant="25" id="PRu-MG-5xA"/>
                 <constraint firstItem="kmc-U5-46i" firstAttribute="top" secondItem="Si3-d6-3XQ" secondAttribute="top" constant="15" id="aBf-Nk-MyO"/>
                 <constraint firstItem="GEj-P7-BTp" firstAttribute="top" secondItem="F3q-xv-RJ9" secondAttribute="bottom" constant="15" id="aU6-Hj-VN1"/>
                 <constraint firstItem="F3q-xv-RJ9" firstAttribute="leading" secondItem="Si3-d6-3XQ" secondAttribute="leading" constant="8" id="eXx-C7-edd"/>
-                <constraint firstItem="GEj-P7-BTp" firstAttribute="leading" secondItem="Si3-d6-3XQ" secondAttribute="leading" constant="40" id="gke-xv-Cfp"/>
+                <constraint firstItem="GEj-P7-BTp" firstAttribute="leading" secondItem="Si3-d6-3XQ" secondAttribute="leading" constant="20" id="gke-xv-Cfp"/>
                 <constraint firstItem="GEj-P7-BTp" firstAttribute="centerX" secondItem="Si3-d6-3XQ" secondAttribute="centerX" id="odZ-Wf-dFG"/>
             </constraints>
             <size key="customSize" width="95" height="158"/>

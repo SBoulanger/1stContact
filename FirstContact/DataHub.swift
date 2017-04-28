@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Contacts
 import AWSMobileHubHelper
+import FBSDKLoginKit
+//import CryptoSwift
 
 import ObjectiveC
 
@@ -48,7 +50,6 @@ class DataHub {
         setUpViews()
         
         //Set up AWS Settings
-        //VVVV do not understand why it workd in method but not in init()
         setUpAWS()
         
         if (AWSSignInManager.sharedInstance().isLoggedIn){
@@ -78,11 +79,22 @@ class DataHub {
     }
 
     func syncData(){
-        for c in localContacts {
-            if (!self.contacts.contains(c)){
+        print("DataHub: syncData()")
+        print("localContacts:\(localContacts)")
+        print("contacts:\(contacts)")
+        /*for c in localContacts {
+            if (!self.contacts.contains(where: { $0.id == c.id })){
                 self.contacts.append(c)
             }
+        }*/
+        self.contacts = localContacts + contacts
+        var alreadyThere = Set<FCContact>()
+        let uniqueContacts = contacts.flatMap { (tcontact) -> FCContact? in
+            guard !alreadyThere.contains(tcontact) else { return nil }
+            alreadyThere.insert(tcontact)
+            return tcontact
         }
+        self.updateContacts(contacts: uniqueContacts)
     }
     func setUpAWS(){
         print("DataHub: setUpAWS()")
@@ -121,12 +133,20 @@ class DataHub {
         } else {
             self.localContacts = []
         }
+        if (!AWSSignInManager.sharedInstance().isLoggedIn){
+            self.contact = localContact
+            self.contacts = localContacts
+        }
         defaults.synchronize()
+    }
+    func refreshQRImage(){
+        self.qrVC.generateNewImage()
     }
     
     public func wipeData(){
         self.contact = FCContact()
         self.contacts = []
+        removeFbData()
         saveContact()
         refreshContacts()
     }
@@ -147,6 +167,7 @@ class DataHub {
         manager.listAvailableContents(withPrefix: prefix, marker: marker, completionHandler: {[weak self] (contents: [AWSContent]?, nextMarker: String?, error: Error?) in
             guard let strongSelf = self else { return }
             if let error = error {
+                self?.qrVC.stopSpinning()
                 print("Failed to load the list of contents. \(error)")
             }
             if let contents = contents, contents.count > 0 {
@@ -253,6 +274,8 @@ class DataHub {
                 guard let strongSelf = self else { return }
                 if let error = error {
                     print("Failed to upload an object. error = \(error)")
+                    
+                    strongSelf.qrVC.stopSpinning()
                 } else {
                     print("Object upload complete. error = \(error)")
                     strongSelf.qrVC.stopSpinning()
@@ -319,7 +342,7 @@ class DataHub {
         })
         self.createAlphArrays(contacts: self.contacts)
         
-        print("TWITTER:\(getContact().twitter)")
+        //print("TWITTER:\(getContact().twitter)")
         
     }
     func generateContactInfo(){
@@ -332,7 +355,7 @@ class DataHub {
     }
     
     func updateContact(contact:FCContact){
-        print("updateContact")
+        print("DataHub: updateContact(contact: FCContact)")
         self.contact = contact
         self.contactInfo = getContactInfo(info: code)
         if (AWSSignInManager.sharedInstance().isLoggedIn){
@@ -478,8 +501,9 @@ class DataHub {
         string += "/*"
         if share.contains(5){string += contact.snapchat}
         string += "/*"
-        if share.contains(6){string += contact.twitter}
-        string += "/*"
+        //if share.contains(6){string += contact.twitter}
+        //string += "/*"
+        
         return string
     }
     func generateRemoteString(share: [Int]) -> String {
@@ -617,6 +641,12 @@ class DataHub {
             }
         }
     }
+    func removeFbData() {
+        //Remove FB Data
+        let fbManager = FBSDKLoginManager()
+        fbManager.logOut()
+        FBSDKAccessToken.setCurrent(nil)
+    }
     
     func getRemoteValues(info:String) -> String {
         print("DataHub: getRemoteValues(info)")
@@ -660,6 +690,9 @@ class DataHub {
         }
     }
 
+    
+}
+extension String {
     
 }
 extension String {

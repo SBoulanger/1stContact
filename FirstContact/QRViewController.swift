@@ -114,61 +114,7 @@ class QRViewController: UIViewController  {
         sendVC.modalPresentationStyle = .popover
         self.navigationController?.present(sendVC, animated: true, completion: nil)
     }
-    fileprivate func refreshContents() {
-        marker = nil
-        loadMoreContents()
-    }
     
-    func downloadContact(){
-        print(contents)
-        var end = contents?.count
-        for var i in 0...end!{
-            contents?[0].download(with: .ifNewerExists, pinOnCompletion: false, progressBlock: nil, completionHandler: {[weak self] (content: AWSContent?, data: Data?, error:Error?) in
-                
-                if (content?.key.range(of: ".json") != nil){
-                    print("HEHEHEHHEHEHEHEHEHHEH;fldja;lf jl;djfl;kja;f")
-                    var cont = FCContact()
-                    cont.encodeJSON(data: data!)
-                    print("WOKRED")
-                }
-            })
-        }
-    }
-    
-    fileprivate func loadMoreContents() {
-        print("LOAD MORE CONTENT ENTERED")
-        print(prefix)
-        print(marker)
-        manager.listAvailableContents(withPrefix: prefix, marker: marker, completionHandler: {[weak self] (contents: [AWSContent]?, nextMarker: String?, error: Error?) in
-            guard let strongSelf = self else { return }
-            if let error = error {
-                //strongSelf.showSimpleAlertWithTitle("Error", message: "Failed to load the list of contents.", cancelButtonTitle: "OK")
-                print("Failed to load the list of contents. \(error)")
-            }
-            if let contents = contents, contents.count > 0 {
-                strongSelf.contents = contents
-                print("-------------------------------------------------------------------------------")
-                print("-----------------------------------CONTENT-------------------------------------")
-                print("-------------------------------------------------------------------------------")
-                print(contents)
-                print("-------------------------------------------------------------------------------")
-                print("-------------------------------------------------------------------------------")
-                print("-------------------------------------------------------------------------------")
-                if let nextMarker = nextMarker, !nextMarker.isEmpty {
-                    strongSelf.didLoadAllContents = false
-                } else {
-                    strongSelf.didLoadAllContents = true
-                }
-                strongSelf.marker = nextMarker
-            } else {
-                print("else")
-                //strongSelf.checkUserProtectedFolder()
-            }
-            //strongSelf.updateUserInterface()
-        })
-        print("listAvailableContents done")
-        print("loadMoreContents end")
-    }
 
     func generateNewImage(){
         qrCodeView.image = generateCode()

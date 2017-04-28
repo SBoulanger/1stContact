@@ -44,7 +44,7 @@
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="25"/>
-                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-Yl-gLx">
                         <rect key="frame" x="30" y="152" width="230" height="40"/>
@@ -96,6 +96,7 @@
             </constraints>
             <size key="customSize" width="95" height="158"/>
             <connections>
+                <outlet property="goButton" destination="ajB-QL-Edw" id="8d8-CS-swY"/>
                 <outlet property="instagramTextField" destination="l9D-I0-bVF" id="Wdq-pW-g3R"/>
                 <outlet property="logoView" destination="W5Y-u8-WUC" id="zdb-1B-u3O"/>
                 <outlet property="saveButton" destination="AUT-Yl-gLx" id="DoZ-6h-cZy"/>

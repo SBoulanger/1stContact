@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var didInit : Bool! = false
     
+    private let KEY : String! = "key14fc39en31cr1ja9en0j511jsline"
+    
     var dataLoaded : Bool! = false
     
     var contactStore = CNContactStore()
@@ -203,8 +205,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return newImage!
     }
-    
-    
-    
+    func getKey() -> String {
+        return self.KEY
+    }
+
 }
 

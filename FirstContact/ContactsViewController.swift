@@ -112,6 +112,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 // Present the controller
                 self.present(alertController, animated: true, completion: nil)
+                self.dataHub.refreshQRImage()
                 self.setUpLogButton()
             })
             // print("Logout Successful: \(signInProvider.getDisplayName)");

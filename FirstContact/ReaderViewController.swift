@@ -46,12 +46,12 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
         initQRCaptureCamera()
         //let button = UIButton(frame: ufoImageView.frame)
         //ufoButton.backgroundColor = UIColor.clear
-        let logo = UIImage(named: "FC_logo_white.png")
-        let newim = AppDelegate.getAppDelegate().ResizeImage(logo!, targetSize: CGSize(width: 40,height: 50))
-        ufoButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
-        ufoButton.setImage(newim, for: .normal)
+        //let logo = UIImage(named: "FC_logo_white.png")
+        //let newim = AppDelegate.getAppDelegate().ResizeImage(logo!, targetSize: CGSize(width: 40,height: 50))
+        //ufoButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
+        //ufoButton.setImage(newim, for: .normal)
         ufoButton.addTarget(nil, action: #selector(AppDelegate.getAppDelegate().container.moveUp), for: UIControlEvents.touchUpInside)
-        //self.view.addSubview(button)
+        self.view.addSubview(ufoButton)
     }
     
     func initQRCaptureCamera(){

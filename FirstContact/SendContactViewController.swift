@@ -43,6 +43,7 @@ class SendContactViewController : UIViewController, UITextFieldDelegate,MFMessag
         
         self.navigationController?.navigationBar.isHidden = true
         self.numberField.isUserInteractionEnabled = false
+        self.deleteButton.isHidden = true
         
         self.dataHub = AppDelegate.getAppDelegate().dataHub
         

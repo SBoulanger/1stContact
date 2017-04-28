@@ -19,7 +19,7 @@ class EmailCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     
-    
+    var controller : ContactCardViewController!
     
     var dataHub: DataHub!
     var contact: FCContact!
@@ -37,10 +37,9 @@ class EmailCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         super.awakeFromNib()
         
     }
-    func setUpView(pcontact: FCContact, index: Int){
+    func setUpView(controller: ContactCardViewController){
         self.dataHub = AppDelegate.getAppDelegate().dataHub
-        self.contact = pcontact
-        self.contactIndex = index
+        self.controller = controller
         print(contact)
         
         self.titleLabel.text = contact.email
@@ -49,6 +48,7 @@ class EmailCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         
         self.emailTextField.addTarget(self, action: #selector(self.checkEdited), for: UIControlEvents.editingChanged)
         self.saveButton.isHidden = true
+        self.saveButton.layer.cornerRadius = 3.5
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -86,6 +86,7 @@ class EmailCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         self.titleLabel.text = contact.email
         textFieldShouldReturn(self.emailTextField)
         saveButton.isHidden = true
+        controller.updateCells()
         
     }
     

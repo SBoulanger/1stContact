@@ -44,15 +44,15 @@
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="25"/>
-                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-HA-QVH">
-                        <rect key="frame" x="30" y="152" width="230" height="35"/>
+                        <rect key="frame" x="20" y="152" width="250" height="30"/>
                         <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="35" id="cA8-YI-rWD"/>
+                            <constraint firstAttribute="height" constant="30" id="cA8-YI-rWD"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="20"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Save">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,12 +62,12 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKr-RE-LMw">
-                        <rect key="frame" x="30" y="197" width="230" height="35"/>
+                        <rect key="frame" x="20" y="192" width="250" height="30"/>
                         <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="35" id="23G-9R-Mqh"/>
+                            <constraint firstAttribute="height" constant="30" id="23G-9R-Mqh"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="20"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Go">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,21 +84,22 @@
                 <constraint firstItem="vpz-1Z-G6w" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="8" id="H5R-x6-eof"/>
                 <constraint firstAttribute="trailing" secondItem="DMp-Qo-sEy" secondAttribute="trailing" constant="8" id="L7Q-aN-6So"/>
                 <constraint firstItem="vpz-1Z-G6w" firstAttribute="top" secondItem="0ZU-5X-f9A" secondAttribute="bottom" constant="25" id="Loe-Fy-NQu"/>
-                <constraint firstItem="8sS-HA-QVH" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="30" id="NaT-H2-pIJ"/>
+                <constraint firstItem="8sS-HA-QVH" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="20" id="NaT-H2-pIJ"/>
                 <constraint firstItem="DMp-Qo-sEy" firstAttribute="top" secondItem="vpz-1Z-G6w" secondAttribute="bottom" constant="10" id="Pdd-cJ-Rx9"/>
                 <constraint firstItem="DMp-Qo-sEy" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="8" id="Y8m-pr-WNr"/>
-                <constraint firstAttribute="trailing" secondItem="XKr-RE-LMw" secondAttribute="trailing" constant="30" id="cCV-G3-bZn"/>
+                <constraint firstAttribute="trailing" secondItem="XKr-RE-LMw" secondAttribute="trailing" constant="20" id="cCV-G3-bZn"/>
                 <constraint firstItem="0ZU-5X-f9A" firstAttribute="top" secondItem="Q42-r3-T3W" secondAttribute="top" constant="15" id="eQn-jo-ZQY"/>
                 <constraint firstItem="XKr-RE-LMw" firstAttribute="top" secondItem="8sS-HA-QVH" secondAttribute="bottom" constant="10" id="fP4-li-M33"/>
-                <constraint firstItem="XKr-RE-LMw" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="30" id="hs5-w1-qtd"/>
+                <constraint firstItem="XKr-RE-LMw" firstAttribute="leading" secondItem="Q42-r3-T3W" secondAttribute="leading" constant="20" id="hs5-w1-qtd"/>
                 <constraint firstAttribute="trailing" secondItem="gK4-Fj-blk" secondAttribute="trailing" constant="20" id="iRp-d0-MoC"/>
-                <constraint firstAttribute="trailing" secondItem="8sS-HA-QVH" secondAttribute="trailing" constant="30" id="j7h-dv-wAu"/>
+                <constraint firstAttribute="trailing" secondItem="8sS-HA-QVH" secondAttribute="trailing" constant="20" id="j7h-dv-wAu"/>
                 <constraint firstItem="gK4-Fj-blk" firstAttribute="top" secondItem="Q42-r3-T3W" secondAttribute="top" constant="10" id="nCd-92-ft9"/>
                 <constraint firstItem="8sS-HA-QVH" firstAttribute="top" secondItem="DMp-Qo-sEy" secondAttribute="bottom" constant="15" id="xUv-M6-2ML"/>
                 <constraint firstItem="8sS-HA-QVH" firstAttribute="centerX" secondItem="Q42-r3-T3W" secondAttribute="centerX" id="yyN-ha-MSq"/>
             </constraints>
             <size key="customSize" width="95" height="158"/>
             <connections>
+                <outlet property="goButton" destination="XKr-RE-LMw" id="bvm-g2-g3z"/>
                 <outlet property="logoView" destination="0ZU-5X-f9A" id="S9a-PG-aLk"/>
                 <outlet property="saveButton" destination="8sS-HA-QVH" id="w3F-x0-rh6"/>
                 <outlet property="snapchatTextField" destination="DMp-Qo-sEy" id="aj3-nQ-QWc"/>

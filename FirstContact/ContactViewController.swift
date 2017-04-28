@@ -5,7 +5,7 @@
 //  Created by Samuel Boulanger on 9/4/16.
 //  Copyright © 2016 Samuel Boulanger. All rights reserved.
 //
-
+/*
 import Foundation
 import UIKit
 import Contacts
@@ -154,7 +154,7 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
             self.facebookTF.isHidden = true
             let accesstocken = FBSDKAccessToken.current()
             if((FBSDKAccessToken.current()) != nil){
-                FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).start(completionHandler: { (connection, result, error) -> Void in
+                FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id,name"]).start(completionHandler: { (connection, result, error) -> Void in
                     if (error == nil){
                         var result1 = result as! Dictionary<String,String>
                         self.contact.facebook = result1["id"]
@@ -490,5 +490,5 @@ class ContactViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-    
+   */
 

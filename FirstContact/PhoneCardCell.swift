@@ -18,7 +18,7 @@ class PhoneCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var phoneTextField: UITextField!
     
-
+    var controller : ContactCardViewController!
     
     var dataHub: DataHub!
     var contact: FCContact!
@@ -38,12 +38,14 @@ class PhoneCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         super.awakeFromNib()
         
     }
-    func setUpView(pcontact:FCContact, index: Int){
+    func setUpView(controller: ContactCardViewController){
         self.dataHub = AppDelegate.getAppDelegate().dataHub
         
-        self.contact = pcontact
-        self.contactIndex = index
+        self.controller = controller
+        
         print("setUpView")
+        
+        self.saveButton.layer.cornerRadius = 3.5
         
         print(contact)
         
@@ -90,6 +92,7 @@ class PhoneCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         self.titleLabel.text = contact.phoneNumber
         textFieldShouldReturn(self.phoneTextField)
         saveButton.isHidden = true
+        controller.updateCells()
 
     }
     

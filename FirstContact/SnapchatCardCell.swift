@@ -19,7 +19,8 @@ class SnapchatCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
     
     @IBOutlet weak var snapchatTextField: UITextField!
     
-    
+    @IBOutlet weak var goButton: UIButton!
+    var controller : ContactCardViewController!
     
     var dataHub: DataHub!
     var contact: FCContact!
@@ -40,10 +41,10 @@ class SnapchatCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         super.awakeFromNib()
         
     }
-    func setUpView(pcontact: FCContact, index: Int){
+    func setUpView(controller: ContactCardViewController){
         
-        self.contact = pcontact
-        self.contactIndex = index
+        self.controller = controller
+        
         print("SnapchatCardCell: setUpView()")
         print("------------- card being set up ---------")
         print(self.contact)
@@ -59,6 +60,8 @@ class SnapchatCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         
         self.snapchatTextField.addTarget(self, action: #selector(self.checkEdited), for: UIControlEvents.editingChanged)
         self.saveButton.isHidden = true
+        self.saveButton.layer.cornerRadius = 3.5
+        self.goButton.layer.cornerRadius = 3.5
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -104,6 +107,7 @@ class SnapchatCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         self.titleLabel.text = contact.snapchat
         textFieldShouldReturn(self.snapchatTextField)
         saveButton.isHidden = true
+        controller.updateCells()
         
     }
 

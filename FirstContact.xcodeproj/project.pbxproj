@@ -113,6 +113,11 @@
 		918AD5E61E6E4B4300A28B10 /* XExitButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 918AD5D61E6E4B4300A28B10 /* XExitButtonImage.png */; };
 		918AD5E71E6E4B4300A28B10 /* XExitButtonImage_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 918AD5D71E6E4B4300A28B10 /* XExitButtonImage_press.png */; };
 		918DD5CB1E6D6403006AA0ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918DD5CA1E6D6403006AA0ED /* Images.xcassets */; };
+		918EB5091EAE8D6B00499468 /* FacebookCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EB5081EAE8D6B00499468 /* FacebookCardCell.swift */; };
+		918EB50B1EAE8D8B00499468 /* FacebookCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 918EB50A1EAE8D8B00499468 /* FacebookCardCell.xib */; };
+		918EB50D1EAE8EFB00499468 /* Facebook-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 918EB50C1EAE8EFB00499468 /* Facebook-50.png */; };
+		918EB5111EB02F9E00499468 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918EB5101EB02F9E00499468 /* Settings.storyboard */; };
+		918F2EA71EB1718F00740CBD /* Trash-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F2EA61EB1718F00740CBD /* Trash-50.png */; };
 		919FF3821D2B36CC00594092 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FF3811D2B36CC00594092 /* PopUpView.swift */; };
 		91B2A8251BE2E466002DBF03 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2A8241BE2E466002DBF03 /* QRViewController.swift */; };
 		91B2A8271BE321C9002DBF03 /* InstructionViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2A8261BE321C9002DBF03 /* InstructionViewContoller.swift */; };
@@ -278,6 +283,11 @@
 		918AD5D61E6E4B4300A28B10 /* XExitButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XExitButtonImage.png; sourceTree = "<group>"; };
 		918AD5D71E6E4B4300A28B10 /* XExitButtonImage_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XExitButtonImage_press.png; sourceTree = "<group>"; };
 		918DD5CA1E6D6403006AA0ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		918EB5081EAE8D6B00499468 /* FacebookCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookCardCell.swift; sourceTree = "<group>"; };
+		918EB50A1EAE8D8B00499468 /* FacebookCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookCardCell.xib; sourceTree = "<group>"; };
+		918EB50C1EAE8EFB00499468 /* Facebook-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-50.png"; sourceTree = "<group>"; };
+		918EB5101EB02F9E00499468 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../Settings.storyboard; sourceTree = "<group>"; };
+		918F2EA61EB1718F00740CBD /* Trash-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trash-50.png"; sourceTree = "<group>"; };
 		919FF3811D2B36CC00594092 /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		91B2A8241BE2E466002DBF03 /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		91B2A8261BE321C9002DBF03 /* InstructionViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewContoller.swift; sourceTree = "<group>"; };
@@ -400,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				912B39401BBCD1FC00B7A5D1 /* Main.storyboard */,
+				918EB5101EB02F9E00499468 /* Settings.storyboard */,
 				912B393C1BBCD1FC00B7A5D1 /* AppDelegate.swift */,
 				912ADCAE1EAB10D1001751C4 /* SendContactViewController.swift */,
 				912ADCB01EAB10F3001751C4 /* SendContact.storyboard */,
@@ -408,6 +419,7 @@
 				911958C01D623FB20010AADA /* ContainerViewController.swift */,
 				914D54FF1E72A7370042812B /* ContactCardViewInfo */,
 				91D670201E6E7B4000AB1D6A /* FCNavigationButton.swift */,
+				914D55041E72A9D20042812B /* ContactCardViewController.swift */,
 				91FEDBA41C9FA4E3000693AC /* StyleHeader.swift */,
 				9131C9971DA0D1550032C260 /* DataHub.swift */,
 				915D301E1E89F415000BDDC3 /* RemoteHandler.swift */,
@@ -418,7 +430,6 @@
 				91EAC6B81BF1547B00161413 /* ReaderViewController.swift */,
 				9136CE4A1D6689910047A3F0 /* QRSettingsViewController.swift */,
 				91FEDBA21C9F93B4000693AC /* ContactsViewController.swift */,
-				914D55041E72A9D20042812B /* ContactCardViewController.swift */,
 				914AFB3A1D7CDF0100A876AB /* ContactViewController.swift */,
 				914D550C1E7331EF0042812B /* StructureDetails.swift */,
 				91F6934B1DB7C82F00943465 /* SettingsViewController.swift */,
@@ -480,6 +491,8 @@
 				914D55101E7368630042812B /* PhoneCardCell.xib */,
 				914D55141E77E66B0042812B /* EmailCardCell.swift */,
 				914D55121E77E65A0042812B /* EmailCardCell.xib */,
+				918EB5081EAE8D6B00499468 /* FacebookCardCell.swift */,
+				918EB50A1EAE8D8B00499468 /* FacebookCardCell.xib */,
 				914D55161E77EC0C0042812B /* SnapchatCardCell.swift */,
 				914D551A1E77EC3D0042812B /* SnapchatCardCell.xib */,
 				914D55181E77EC2D0042812B /* InstagramCardCell.swift */,
@@ -506,6 +519,8 @@
 		918AD5C71E6E4B4300A28B10 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				918F2EA61EB1718F00740CBD /* Trash-50.png */,
+				918EB50C1EAE8EFB00499468 /* Facebook-50.png */,
 				9173511A1EAD61900009171E /* Info-50-2.png */,
 				917351181EAD5A630009171E /* Back-50-red.png */,
 				917351161EAD59980009171E /* Back-50.png */,
@@ -715,14 +730,18 @@
 				918AD5E61E6E4B4300A28B10 /* XExitButtonImage.png in Resources */,
 				912B39441BBCD1FC00B7A5D1 /* Assets.xcassets in Resources */,
 				914D551B1E77EC3D0042812B /* SnapchatCardCell.xib in Resources */,
+				918EB5111EB02F9E00499468 /* Settings.storyboard in Resources */,
 				918AD5E31E6E4B4300A28B10 /* twtr-icn-logo-white.png in Resources */,
 				910BDBC41DBEBF51001186EB /* Podfile in Resources */,
+				918EB50D1EAE8EFB00499468 /* Facebook-50.png in Resources */,
+				918EB50B1EAE8D8B00499468 /* FacebookCardCell.xib in Resources */,
 				917351171EAD59980009171E /* Back-50.png in Resources */,
 				918AD5E21E6E4B4300A28B10 /* SettingsButton.png in Resources */,
 				914D553C1E79B0680042812B /* SignIn.storyboard in Resources */,
 				917351151EAD58AE0009171E /* Snapchat-50.png in Resources */,
 				918AD5E11E6E4B4300A28B10 /* ListLogo.png in Resources */,
 				914D55131E77E65A0042812B /* EmailCardCell.xib in Resources */,
+				918F2EA71EB1718F00740CBD /* Trash-50.png in Resources */,
 				912ADCB11EAB10F3001751C4 /* SendContact.storyboard in Resources */,
 				910BDBC51DBEBF51001186EB /* Podfile.lock in Resources */,
 				912B39421BBCD1FC00B7A5D1 /* Main.storyboard in Resources */,
@@ -957,6 +976,7 @@
 				919FF3821D2B36CC00594092 /* PopUpView.swift in Sources */,
 				9136CE4D1D668AB20047A3F0 /* CategoryRow.swift in Sources */,
 				914D554A1E7A35CF0042812B /* UserPoolSignUpViewController.swift in Sources */,
+				918EB5091EAE8D6B00499468 /* FacebookCardCell.swift in Sources */,
 				91D670211E6E7B4000AB1D6A /* FCNavigationButton.swift in Sources */,
 				914D55171E77EC0C0042812B /* SnapchatCardCell.swift in Sources */,
 				912ADCA91EAAFD15001751C4 /* AWSMobileClient.swift in Sources */,

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nA5-p5-ixB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="Mb9-Sf-bl6">
+            <objects>
+                <viewController id="k8i-Yc-Cbe" customClass="SettingsViewController" customModule="FirstContact" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kpm-Kx-Fou"/>
+                        <viewControllerLayoutGuide type="bottom" id="PdX-4L-hDm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nc8-Jz-iQl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1stContact" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg0-w4-lVt">
+                                <rect key="frame" x="36" y="144" width="303" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bfh-W3-pfI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="50"/>
+                                <color key="textColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ke5-kK-xOl">
+                                <rect key="frame" x="147" y="283.5" width="80" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="SQr-mg-gf8"/>
+                                    <constraint firstAttribute="width" constant="80" id="iu2-dQ-KqS"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-3" minY="0.0" maxX="-3" maxY="0.0"/>
+                                <state key="normal" image="FC_icon_clear_empty.png"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Thanks to Icons8.com!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x14-Sh-rCi">
+                                <rect key="frame" x="16" y="623" width="226" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="pgC-aT-gBQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                                <color key="textColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYI-cy-4pD">
+                                <rect key="frame" x="251.5" y="620" width="97.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="44k-ht-j07"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
+                                <state key="normal" title="Icons8.com">
+                                    <color key="titleColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="icon8ButtonPressed:" destination="k8i-Yc-Cbe" eventType="touchUpInside" id="eI8-JT-TcS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzW-YJ-phK">
+                                <rect key="frame" x="334" y="72" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="RGI-TY-YQL"/>
+                                    <constraint firstAttribute="height" constant="25" id="bzU-Ve-cEw"/>
+                                </constraints>
+                                <state key="normal" image="Delete-50.png">
+                                    <color key="titleColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitPressed:" destination="k8i-Yc-Cbe" eventType="touchUpInside" id="vyR-kB-5jA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PdX-4L-hDm" firstAttribute="top" secondItem="eYI-cy-4pD" secondAttribute="bottom" constant="17" id="3S5-Wf-wM3"/>
+                            <constraint firstItem="TzW-YJ-phK" firstAttribute="trailing" secondItem="Nc8-Jz-iQl" secondAttribute="trailingMargin" id="3Ti-k7-oh9"/>
+                            <constraint firstItem="Ke5-kK-xOl" firstAttribute="centerY" secondItem="Nc8-Jz-iQl" secondAttribute="centerY" id="7kr-G4-9ND"/>
+                            <constraint firstItem="Ke5-kK-xOl" firstAttribute="centerX" secondItem="Nc8-Jz-iQl" secondAttribute="centerX" id="Fmy-PD-Nb5"/>
+                            <constraint firstItem="TzW-YJ-phK" firstAttribute="top" secondItem="kpm-Kx-Fou" secondAttribute="bottom" constant="8" id="GV1-zF-mWP"/>
+                            <constraint firstItem="x14-Sh-rCi" firstAttribute="leading" secondItem="Nc8-Jz-iQl" secondAttribute="leadingMargin" id="MWb-Qi-xWF"/>
+                            <constraint firstItem="cg0-w4-lVt" firstAttribute="top" secondItem="kpm-Kx-Fou" secondAttribute="bottom" constant="80" id="TxM-nK-6Lw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eYI-cy-4pD" secondAttribute="trailing" constant="10" id="ZeQ-9U-mog"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cg0-w4-lVt" secondAttribute="trailing" constant="20" id="dfp-Eo-f5H"/>
+                            <constraint firstItem="PdX-4L-hDm" firstAttribute="top" secondItem="x14-Sh-rCi" secondAttribute="bottom" constant="20" id="h3V-3H-lSa"/>
+                            <constraint firstItem="eYI-cy-4pD" firstAttribute="leading" secondItem="x14-Sh-rCi" secondAttribute="trailing" constant="10" id="m3x-7o-hBG"/>
+                            <constraint firstItem="cg0-w4-lVt" firstAttribute="leading" secondItem="Nc8-Jz-iQl" secondAttribute="leadingMargin" constant="20" id="pA6-zX-Ybv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gfg-qz-A4c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQh-eN-LOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1112.8" y="124.58770614692655"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Te6-14-aiF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nA5-p5-ixB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sM7-bf-2S8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k8i-Yc-Cbe" kind="relationship" relationship="rootViewController" id="FWF-0r-7sz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQI-tq-XrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.59999999999999" y="124.58770614692655"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Delete-50.png" width="50" height="50"/>
+        <image name="FC_icon_clear_empty.png" width="1248" height="1248"/>
+    </resources>
+</document>

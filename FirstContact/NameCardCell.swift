@@ -17,6 +17,8 @@ class NameCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     
+    var controller : ContactCardViewController!
+    
     @IBOutlet weak var saveButton: UIButton!
     
     var dataHub: DataHub!
@@ -34,19 +36,19 @@ class NameCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         self.firstNameTextField.delegate = self
         self.lastNameTextField.delegate = self
         
-        self.saveButton.layer.cornerRadius = 3.0
+        self.saveButton.layer.cornerRadius = 3.5
         
         self.dataHub = AppDelegate.getAppDelegate().dataHub
 
         super.awakeFromNib()
     }
-    func setUpView(pcontact: FCContact, index: Int){
+    func setUpView(controller: ContactCardViewController){
         print("NameCardCell: setUpView()")
         print("--------- contact being set up ------------")
-        print(pcontact)
+        print(contact)
         print("--------------------------------------------")
-        self.contact = pcontact
-        self.contactIndex = index
+        self.controller = controller
+        self.titleLabel.text = ""
         self.firstNameTitle.text = self.contact.firstName + " " + self.contact.lastName
         
         print(self.contact)
@@ -95,6 +97,7 @@ class NameCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         textFieldShouldReturn(self.firstNameTextField)
         textFieldShouldReturn(self.lastNameTextField)
         saveButton.isHidden = true
+        controller.updateCells()
     }
 
 }

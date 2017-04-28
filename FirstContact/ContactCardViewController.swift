@@ -24,6 +24,16 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
     fileprivate var didLoadAllContents: Bool!
     fileprivate var marker: String?
     
+    var nameCardCell : NameCardCell!
+    var phoneCardCell: PhoneCardCell!
+    var emailCardCell: EmailCardCell!
+    var facebookCardCell: FacebookCardCell!
+    var instagramCardCell: InstagramCardCell!
+    var snapchatCardCell: SnapchatCardCell!
+    
+    
+    var cellArray : [CardCell]!
+    
     var contact: FCContact!
     var contactIndex: Int!
     var dataHub: DataHub!
@@ -44,23 +54,67 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
         cardView.registerCardCell(c: NameCardCell.classForCoder(), nib: UINib.init(nibName: "NameCardCell", bundle:nil))
         cardView.registerCardCell(c: PhoneCardCell.classForCoder(), nib: UINib.init(nibName:"PhoneCardCell", bundle:nil))
         cardView.registerCardCell(c: EmailCardCell.classForCoder(), nib: UINib.init(nibName:"EmailCardCell", bundle:nil))
+        cardView.registerCardCell(c: FacebookCardCell.classForCoder(), nib: UINib.init(nibName:"FacebookCardCell", bundle:nil))
         cardView.registerCardCell(c: InstagramCardCell.classForCoder(), nib: UINib.init(nibName:"InstagramCardCell", bundle:nil))
         cardView.registerCardCell(c: SnapchatCardCell.classForCoder(), nib: UINib.init(nibName:"SnapchatCardCell", bundle:nil))
         cardView.cardDataSource = self
-        let arr = self.generateCardInfo(cardCount: 5)
+        let arr = self.generateCardInfo(cardCount: 6)
         cardView.set(cards: arr)
         
+        if (!self.contact.me){
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"Trash-50.png"), style: .plain, target: self, action: #selector(deleteContactPressed))
+            //t l b r
+            self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(13.0, 8.0, 13.0, 14.0)
+            //UIEdg
+        }
         self.cardView.showStyle(style: .cover)
         dataHub = AppDelegate.getAppDelegate().dataHub
+        
+        //cellArray = [nameCardCell,phoneCardCell,emailCardCell,instagramCardCell,snapchatCardCell]
 
     }
-    
+    func deleteContactPressed(){
+        let actionHandler = {(action:UIAlertAction!) -> Void in
+            self.dataHub.deleteContact(contactAt: self.contactIndex)
+            self.dataHub.refreshContacts()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        let alertController = UIAlertController(title: title, message: "Are you sure you want to delete?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let dismissHandler = {(action:UIAlertAction!) -> Void in
+            print("Not Sure")
+        }
+        
+        let dismissAction = UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: dismissHandler)
+        let sendAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: actionHandler)
+        
+        alertController.addAction(dismissAction)
+        alertController.addAction(sendAction)
+        
+        print("qrcode set to not done")
+        
+        present(alertController, animated: true, completion: nil)
 
+    }
+    func updateCells(){
+        if self.contact.me == true {
+            self.contact = dataHub.getContact()
+        } else if (self.contactIndex != nil){
+            self.contact = dataHub.getContacts()[self.contactIndex]
+        }
+        nameCardCell.contact = self.contact
+        phoneCardCell.contact = self.contact
+        emailCardCell.contact = self.contact
+        instagramCardCell.contact = self.contact
+        snapchatCardCell.contact = self.contact
+        
+    }
+    
     
     func generateCardInfo (cardCount:Int) -> [AnyObject] {
         print("ContactCardVC: generateCardInfo")
         var arr = [AnyObject]()
-        let xibName = ["NameCard","PhoneCard","EmailCard","InstagramCard","SnapchatCard"]
+        let xibName = ["NameCard","PhoneCard","EmailCard","FacebookCard","InstagramCard","SnapchatCard"]
         
         for i in 0...xibName.count-1 {
             arr.append(xibName[i] as AnyObject)
@@ -71,18 +125,14 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
     }
     
     func cardView(collectionView:UICollectionView,item:AnyObject,indexPath:IndexPath) -> UICollectionViewCell {
+        print("ContactCardVC: cardView(collectionView:,item:,indexPath:)")
         
         if self.contact.me == true {
             self.contact = dataHub.getContact()
         } else if (self.contactIndex != nil){
             self.contact = dataHub.getContacts()[self.contactIndex]
         }
-        print("ContactCardVC: cardView(collectionView:,item:,idexPath)")
-        print("------ contact getting passed -------")
-        print(self.contact)
-        print("--------------------------------------")
         
-        print("\nCardView entered with \(item), path: \(indexPath)\n")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item as! String, for: indexPath )
         switch cell {
         case let c as BasicCardCell:
@@ -91,28 +141,38 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
             c.titleLabel.text = "Name"
             c.contact = self.contact //create mutator
             c.contactIndex = self.contactIndex //create mutator
-            c.setUpView(pcontact: self.contact, index: self.contactIndex)
-            
+            c.setUpView(controller:self)
+            self.nameCardCell = c
         case let c as PhoneCardCell:
             c.titleLabel.text = "Phone Number"
+            self.phoneCardCell = c
             c.contact = self.contact
             c.contactIndex = self.contactIndex
-            c.setUpView(pcontact: self.contact, index: self.contactIndex)
+            c.setUpView(controller: self)
         case let c as EmailCardCell:
             c.titleLabel.text = "Email"
+            self.emailCardCell = c
             c.contact = self.contact
             c.contactIndex = self.contactIndex
-            c.setUpView(pcontact: self.contact,index: self.contactIndex)
+            c.setUpView(controller: self)
+        case let c as FacebookCardCell:
+            c.titleLabel.text = "Facebook"
+            self.facebookCardCell = c
+            c.contact = self.contact
+            c.contactIndex = self.contactIndex
+            c.setUpView(controller: self)
         case let c as InstagramCardCell:
             c.titleLabel.text = "Instagram"
             c.contact = self.contact
             c.contactIndex = self.contactIndex
-            c.setUpView(pcontact: self.contact, index: self.contactIndex)
+            self.instagramCardCell = c
+            c.setUpView(controller: self)
         case let c as SnapchatCardCell:
             c.titleLabel.text = "Snapchat"
             c.contact = self.contact
             c.contactIndex = self.contactIndex
-            c.setUpView(pcontact: self.contact, index: self.contactIndex)
+            self.snapchatCardCell = c
+            c.setUpView(controller: self)
             //let v = Int(arc4random_uniform(5))+1
             //c.imgV.image = UIImage.init(named: "image\(v)")
 /*

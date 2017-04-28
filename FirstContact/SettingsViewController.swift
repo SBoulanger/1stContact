@@ -16,6 +16,16 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
     }
-    
+    @IBAction func exitPressed(_ sender: Any) { self.dismiss(animated: true, completion: nil)}
+
+    @IBAction func icon8ButtonPressed(_ sender: Any) {
+        if let url = URL(string: "https://icons8.com") {
+            UIApplication.shared.open(url, options: [:]) {
+                boolean in
+                print(boolean)
+            }
+        }
+    }
 }

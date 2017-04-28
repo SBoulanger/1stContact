@@ -55,6 +55,7 @@ class SignInViewController: UIViewController {
                 print("Sign In Successful")
                 DispatchQueue.main.async(execute: {
                     AppDelegate.getAppDelegate().dataHub.setUpAWS()
+                    AppDelegate.getAppDelegate().dataHub.contactsVC.setUpLogButton()
                     self.dismiss(animated: true, completion: nil)
                     //_ = self.navigationController?.popToRootViewController(animated: true)
                 })

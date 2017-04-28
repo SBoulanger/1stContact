@@ -426,7 +426,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BrD-sT-2Qt">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="850"/>
+                                        <rect key="frame" x="0.0" y="-178" width="600" height="850"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="twitter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQO-Vy-NlG">
                                                 <rect key="frame" x="21" y="545" width="42" height="21"/>

@@ -19,7 +19,9 @@ class InstagramCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
     
     @IBOutlet weak var instagramTextField: UITextField!
     
+    var controller : ContactCardViewController!
     
+    @IBOutlet weak var goButton: UIButton!
     
     var dataHub: DataHub!
     var contact: FCContact!
@@ -41,10 +43,10 @@ class InstagramCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         super.awakeFromNib()
         
     }
-    func setUpView(pcontact: FCContact, index: Int){
+    func setUpView(controller: ContactCardViewController){
         
-        self.contact = pcontact
-        self.contactIndex = index
+        self.controller = controller
+        
         self.dataHub = AppDelegate.getAppDelegate().dataHub
         
         print(contact)
@@ -55,6 +57,9 @@ class InstagramCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         
         self.instagramTextField.addTarget(self, action: #selector(self.checkEdited), for: UIControlEvents.editingChanged)
         self.saveButton.isHidden = true
+        self.saveButton.layer.cornerRadius = 3.5
+        self.goButton.layer.cornerRadius = 3.5
+        
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -96,6 +101,7 @@ class InstagramCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         self.titleLabel.text = contact.instagram
         textFieldShouldReturn(self.instagramTextField)
         saveButton.isHidden = true
+        controller.updateCells()
         
     }
     @IBAction func goButtonPressed(_ sender: Any) {
