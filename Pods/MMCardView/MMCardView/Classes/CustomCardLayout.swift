@@ -27,9 +27,10 @@ class CardLayoutAttributes: UICollectionViewLayoutAttributes {
 class CustomCardLayout: UICollectionViewLayout {
     fileprivate var insertPath = [IndexPath]()
     fileprivate var deletePath = [IndexPath]()
-    fileprivate var attributeList:[CardLayoutAttributes]!
+    fileprivate var attributeList = [CardLayoutAttributes]()
     fileprivate var bottomShowSet = [Int]()
     fileprivate var _selectIdx = -1
+        
     var showStyle:SequenceStyle = .normal {
         didSet {
             self.collectionView?.performBatchUpdates({
@@ -101,11 +102,17 @@ class CustomCardLayout: UICollectionViewLayout {
         }
     }
     
+    func updateCellSize() {
+        self.cellSize.width  = self.collectionView!.frame.width
+        self.cellSize.height = self.collectionView!.bounds.height * BottomPercent
+    }
+    
     override func prepare() {
         super.prepare()
-        self.attributeList = self.generateAttributeList()
+        self.attributeList.removeAll()
+        self.attributeList += self.generateAttributeList()
     }
-        
+    
     fileprivate func generateAttributeList() -> [CardLayoutAttributes] {
 
         var arr = [CardLayoutAttributes]()
@@ -140,7 +147,7 @@ class CustomCardLayout: UICollectionViewLayout {
                 if index <= shitIdx && (index >= shitIdx-2) || index == 0{
                     attribute.frame = CGRect(x: currentFrame.origin.x, y: self.collectionView!.contentOffset.y, width: cellSize.width, height: cellSize.height)
                 } else if index <= shitIdx-2 && currentFrame.maxY > self.collectionView!.contentOffset.y{
-                    currentFrame.origin.y -= (currentFrame.maxY - self.collectionView!.contentOffset.y)
+                    currentFrame.origin.y -= (currentFrame.maxY - self.collectionView!.contentOffset.y )
                     attribute.frame = currentFrame
                 }else {
                     attribute.frame = currentFrame
@@ -191,7 +198,7 @@ class CustomCardLayout: UICollectionViewLayout {
             min = 0
             max = selectIdx + half + abs(selectIdx-half)
         } else if selectIdx + half > count {
-            min = count - 2*half
+            min = count - 2 * half
             max = count
         }
         

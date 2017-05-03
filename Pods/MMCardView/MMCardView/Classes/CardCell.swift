@@ -51,22 +51,13 @@ open class CardCell:UICollectionViewCell{
         super.awakeFromNib()
         self.layer.speed = 0.8
 
-        
         if pangesture == nil {
             pangesture = UIPanGestureRecognizer(target: self,action: #selector(CardCell.pan(rec:)))
             pangesture!.delegate = self
             self.addGestureRecognizer(pangesture!)
         }
         
-        self.setShadow(offset: CGSize(width: 0, height: -1.5), radius: 8, opacity: 0.5)
-        
-        self.layer.shadowRadius = 1.0
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.cornerRadius = 1.0
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 1.0
-        self.backgroundColor = UIColor.white
-        
+        self.setShadow(offset: CGSize(width: 0, height: -2), radius: 8, opacity: 0.5)
     }
 
     open override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {

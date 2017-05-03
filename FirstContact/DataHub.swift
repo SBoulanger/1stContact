@@ -82,11 +82,6 @@ class DataHub {
         print("DataHub: syncData()")
         print("localContacts:\(localContacts)")
         print("contacts:\(contacts)")
-        /*for c in localContacts {
-            if (!self.contacts.contains(where: { $0.id == c.id })){
-                self.contacts.append(c)
-            }
-        }*/
         self.contacts = localContacts + contacts
         var alreadyThere = Set<FCContact>()
         let uniqueContacts = contacts.flatMap { (tcontact) -> FCContact? in

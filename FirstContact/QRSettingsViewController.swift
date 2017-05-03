@@ -33,9 +33,9 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         print(dataHub.share)
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"Info-50-2.png"), style: .plain, target: self, action: #selector(showSettingsViewController))
-        self.navigationItem.leftBarButtonItem?.imageInsets = UIEdgeInsetsMake(15.0, 0.0, 15.0, 20.0)
-        
+
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"Info-50-2.png")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showSettingsViewController))
+        self.navigationItem.leftBarButtonItem?.imageInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 20.0)
         self.mainTableView.dataSource = self
         self.mainTableView.delegate = self
         

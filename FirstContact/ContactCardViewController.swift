@@ -9,8 +9,9 @@
 import Foundation
 import MMCardView
 import UIKit
+import Contacts
+import ContactsUI
 import AWSMobileHubHelper
-
 import ObjectiveC
 
 class ContactCardViewController: UIViewController, CardCollectionViewDataSource {
@@ -38,11 +39,17 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
     var contactIndex: Int!
     var dataHub: DataHub!
     var j = 0
+    var store : CNContactStore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("ContactCardVC:viewDidLoad")
+        
+        store = CNContactStore()
+        checkContactsAccess()
+        
+        //let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "86tp0696zhckjv", clientSecret: "dfgJhwunGSVi0FJX", state: "", permissions: ["r_basicprofile"], redirectUrl: "https://github.com/tonyli508/LinkedinSwift"))
         
         if contact.me == true {
             
@@ -62,9 +69,16 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
         cardView.set(cards: arr)
         
         if (!self.contact.me){
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"Trash-50.png"), style: .plain, target: self, action: #selector(deleteContactPressed))
+            let trash = UIBarButtonItem(image: UIImage(named:"Trash-50.png"), style: .plain, target: self, action: #selector(deleteContactPressed))
+            let download = UIBarButtonItem(image:UIImage(named:"Download-50.png"), style: .plain, target: self, action: #selector(downloadContactToContactBook))
+
+            trash.imageInsets = UIEdgeInsetsMake(13.0, 8.0, 13.0, 14.0)
+            download.imageInsets = UIEdgeInsetsMake(13.0, 8.0, 13.0, 14.0)
+            
+            //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"Trash-50.png"), style: .plain, target: self, action: #selector(deleteContactPressed))
+            self.navigationItem.rightBarButtonItems = [trash, download]
             //t l b r
-            self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(13.0, 8.0, 13.0, 14.0)
+            //self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(13.0, 8.0, 13.0, 14.0)
             //UIEdg
         }
         self.cardView.showStyle(style: .cover)
@@ -72,6 +86,26 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
         
         //cellArray = [nameCardCell,phoneCardCell,emailCardCell,instagramCardCell,snapchatCardCell]
 
+    }
+    func downloadContactToContactBook(){
+        let actionHandler = {(action:UIAlertAction!) -> Void in
+            self.saveContact()
+        }
+        let alertController = UIAlertController(title: title, message: "You want to add contact to AddressBook?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let dismissHandler = {(action:UIAlertAction!) -> Void in
+            print("Not Sure")
+        }
+        
+        let dismissAction = UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: dismissHandler)
+        let sendAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: actionHandler)
+        
+        alertController.addAction(dismissAction)
+        alertController.addAction(sendAction)
+        
+        print("qrcode set to not done")
+        
+        present(alertController, animated: true, completion: nil)
     }
     func deleteContactPressed(){
         let actionHandler = {(action:UIAlertAction!) -> Void in
@@ -254,6 +288,62 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    private func checkContactsAccess() {
+        switch CNContactStore.authorizationStatus(for: .contacts) {
+        // Update our UI if the user has granted access to their Contacts
+        case .authorized:
+            print("authorized")
+            
+        // Prompt the user for access to Contacts if there is no definitive answer
+        case .notDetermined :
+            self.requestContactsAccess()
+            
+        // Display a message if the user has denied or restricted access to Contacts
+        case .denied,
+             .restricted:
+            let alert = UIAlertController(title: "Privacy Warning!",
+                                          message: "Permission was not granted for Contacts.",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    private func requestContactsAccess() {
+        
+        store.requestAccess(for: .contacts) {granted, error in
+            if granted {
+                DispatchQueue.main.async() {
+                    print("granted")
+                    return
+                }
+            }
+        }
+    }
+    func saveContact(){
+        do{
+            let contact = CNMutableContact()
+            contact.givenName = self.contact.firstName
+            contact.familyName = self.contact.lastName
+            contact.phoneNumbers = [CNLabeledValue(
+                label:CNLabelPhoneNumberiPhone,
+                value:CNPhoneNumber(stringValue:self.contact.phoneNumber))]
+            
+            let workEmail = CNLabeledValue(label:CNLabelWork, value: self.contact.email as NSString)
+            contact.emailAddresses = [workEmail]
+            
+            
+            let saveRequest = CNSaveRequest()
+            saveRequest.add(contact, toContainerWithIdentifier:nil)
+            try store.execute(saveRequest)
+            print("saved")
+            
+        }
+            
+        catch{
+            print("error")
+        }
     }
 
 }

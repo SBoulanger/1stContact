@@ -9,6 +9,7 @@ target 'FirstContact' do
   pod 'BEMCheckBox'
   # Pods for FirstContact
   pod 'MMCardView'
+  #pod 'LinkedinSwift'
 
   target 'FirstContactTests' do
     inherit! :search_paths

@@ -118,9 +118,11 @@
 		918EB50D1EAE8EFB00499468 /* Facebook-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 918EB50C1EAE8EFB00499468 /* Facebook-50.png */; };
 		918EB5111EB02F9E00499468 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918EB5101EB02F9E00499468 /* Settings.storyboard */; };
 		918F2EA71EB1718F00740CBD /* Trash-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F2EA61EB1718F00740CBD /* Trash-50.png */; };
+		919ADE2A1EB7E045007C9CC2 /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919ADE291EB7E045007C9CC2 /* linkedin-sdk.framework */; };
 		919FF3821D2B36CC00594092 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FF3811D2B36CC00594092 /* PopUpView.swift */; };
 		91B2A8251BE2E466002DBF03 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2A8241BE2E466002DBF03 /* QRViewController.swift */; };
 		91B2A8271BE321C9002DBF03 /* InstructionViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2A8261BE321C9002DBF03 /* InstructionViewContoller.swift */; };
+		91BA03DB1EB444BF00EBB371 /* Download-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BA03DA1EB444BF00EBB371 /* Download-50.png */; };
 		91D670191E6E70A900AB1D6A /* QR_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D670181E6E70A900AB1D6A /* QR_left.png */; };
 		91D6701B1E6E70B600AB1D6A /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6701A1E6E70B600AB1D6A /* User.png */; };
 		91D6701D1E6E70BC00AB1D6A /* QR_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6701C1E6E70BC00AB1D6A /* QR_right.png */; };
@@ -288,9 +290,11 @@
 		918EB50C1EAE8EFB00499468 /* Facebook-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook-50.png"; sourceTree = "<group>"; };
 		918EB5101EB02F9E00499468 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../Settings.storyboard; sourceTree = "<group>"; };
 		918F2EA61EB1718F00740CBD /* Trash-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trash-50.png"; sourceTree = "<group>"; };
+		919ADE291EB7E045007C9CC2 /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "linkedin-sdk.framework"; path = "FirstContact/linkedin-sdk.framework"; sourceTree = "<group>"; };
 		919FF3811D2B36CC00594092 /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		91B2A8241BE2E466002DBF03 /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		91B2A8261BE321C9002DBF03 /* InstructionViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewContoller.swift; sourceTree = "<group>"; };
+		91BA03DA1EB444BF00EBB371 /* Download-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Download-50.png"; sourceTree = "<group>"; };
 		91D670181E6E70A900AB1D6A /* QR_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QR_left.png; sourceTree = "<group>"; };
 		91D6701A1E6E70B600AB1D6A /* User.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User.png; sourceTree = "<group>"; };
 		91D6701C1E6E70BC00AB1D6A /* QR_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QR_right.png; sourceTree = "<group>"; };
@@ -332,6 +336,7 @@
 				91797C8B1BD4C230005FB5F2 /* AddressBookUI.framework in Frameworks */,
 				91797C891BD4C227005FB5F2 /* AddressBook.framework in Frameworks */,
 				CA19A7F157AB4D89879A0E62 /* Pods_FirstContact.framework in Frameworks */,
+				919ADE2A1EB7E045007C9CC2 /* linkedin-sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,8 +389,9 @@
 				912ADC9C1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework */,
 				912ADC991EAAF610001751C4 /* AWSS3.framework */,
 				912ADC951EAAF5FB001751C4 /* AWSCore.framework */,
-				910BDBC11DBEBF51001186EB /* Podfile */,
+				919ADE291EB7E045007C9CC2 /* linkedin-sdk.framework */,
 				910BDBC21DBEBF51001186EB /* Podfile.lock */,
+				910BDBC11DBEBF51001186EB /* Podfile */,
 				910BDBBF1DBEBF32001186EB /* FirstContact.xcworkspace */,
 				912B393B1BBCD1FC00B7A5D1 /* FirstContact */,
 				912B39501BBCD1FC00B7A5D1 /* FirstContactTests */,
@@ -419,7 +425,6 @@
 				911958C01D623FB20010AADA /* ContainerViewController.swift */,
 				914D54FF1E72A7370042812B /* ContactCardViewInfo */,
 				91D670201E6E7B4000AB1D6A /* FCNavigationButton.swift */,
-				914D55041E72A9D20042812B /* ContactCardViewController.swift */,
 				91FEDBA41C9FA4E3000693AC /* StyleHeader.swift */,
 				9131C9971DA0D1550032C260 /* DataHub.swift */,
 				915D301E1E89F415000BDDC3 /* RemoteHandler.swift */,
@@ -483,6 +488,7 @@
 		914D54FF1E72A7370042812B /* ContactCardViewInfo */ = {
 			isa = PBXGroup;
 			children = (
+				914D55041E72A9D20042812B /* ContactCardViewController.swift */,
 				914D55021E72A8690042812B /* BasicCardCell.swift */,
 				914D55061E72B4260042812B /* BasicCardCell.xib */,
 				914D550A1E72C3B70042812B /* NameCardCell.swift */,
@@ -520,6 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				918F2EA61EB1718F00740CBD /* Trash-50.png */,
+				91BA03DA1EB444BF00EBB371 /* Download-50.png */,
 				918EB50C1EAE8EFB00499468 /* Facebook-50.png */,
 				9173511A1EAD61900009171E /* Info-50-2.png */,
 				917351181EAD5A630009171E /* Back-50-red.png */,
@@ -743,6 +750,7 @@
 				914D55131E77E65A0042812B /* EmailCardCell.xib in Resources */,
 				918F2EA71EB1718F00740CBD /* Trash-50.png in Resources */,
 				912ADCB11EAB10F3001751C4 /* SendContact.storyboard in Resources */,
+				91BA03DB1EB444BF00EBB371 /* Download-50.png in Resources */,
 				910BDBC51DBEBF51001186EB /* Podfile.lock in Resources */,
 				912B39421BBCD1FC00B7A5D1 /* Main.storyboard in Resources */,
 				918AD5DE1E6E4B4300A28B10 /* FC_STEP1.png in Resources */,
@@ -794,7 +802,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		20004324984ACD920D5A680D /* [CP] Embed Pods Frameworks */ = {
@@ -839,7 +847,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		73DD526A9E19BBA82C189EFA /* [CP] Embed Pods Frameworks */ = {
@@ -910,7 +918,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EBD88F1AB12C0CFC4873E2CC /* [CP] Copy Pods Resources */ = {
@@ -1139,6 +1147,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XZ8Q5F7CF9;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FirstContact",
@@ -1165,6 +1174,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XZ8Q5F7CF9;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FirstContact",

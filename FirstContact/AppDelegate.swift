@@ -34,6 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //Fabric.with([Twitter.self])
         // Override point for customization after application launch.
+        
+        //let linkedInHelper = LinkedInSwiftHelper
+        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         //let twitter = Twitter.sharedInstance()
         //let oauthSigning = TWTROAuthSigning(authConfig:twitter.authConfig, authSession:twitter.sessionStore.session() as! TWTRSession)

@@ -233,6 +233,15 @@ public class CardView: UIView {
             custom.selectIdx = index
         }
     }
+
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        if let layout = collectionView.collectionViewLayout as? CustomCardLayout {
+            layout.updateCellSize()
+            layout.invalidateLayout()
+        }
+    }
+
 }
 
 extension CardView:UICollectionViewDelegate {

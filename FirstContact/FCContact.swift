@@ -190,6 +190,7 @@ public struct FCContact: Equatable, Hashable {
         case 6: return self.snapchat
         //case 7: return self.twitter
         default:
+            print("default")
             return ""
         }
     }

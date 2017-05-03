@@ -139,7 +139,7 @@ class SendContactViewController : UIViewController, UITextFieldDelegate,MFMessag
             controller.recipients = recipients
             controller.body = body
             let contactData = getVCard(contact.encode(),share:dataHub.share)
-            controller.addAttachmentData(contactData, typeIdentifier: "Apple Vcard", filename: "contact.vcard")
+            controller.addAttachmentData(contactData, typeIdentifier: "Apple Vcard", filename: "\(contact.id*13).vcf")
             
             self.present(controller, animated: false, completion: nil)
             

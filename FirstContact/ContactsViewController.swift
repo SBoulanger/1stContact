@@ -11,6 +11,7 @@ import UIKit
 import Contacts
 import ContactsUI
 import AWSMobileHubHelper
+import FBSDKLoginKit
 
 class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CNContactViewControllerDelegate {
     
@@ -106,12 +107,18 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
                     print("Don't Remove Pressed")
                 }
                 
+                
+                
                 // Add the actions
                 alertController.addAction(okAction)
                 alertController.addAction(cancelAction)
                 
                 // Present the controller
                 self.present(alertController, animated: true, completion: nil)
+                
+                //log out of facebook
+                FBSDKLoginManager().logOut()
+                
                 self.dataHub.refreshQRImage()
                 self.setUpLogButton()
             })
