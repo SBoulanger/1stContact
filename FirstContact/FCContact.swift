@@ -22,6 +22,7 @@ public struct FCContact: Equatable, Hashable {
     var instagram : String! = ""
     var facebook: String! = ""
     var email : String! = ""
+    var linkedin : String! = ""
     //var twitter : String! = ""
     var share: [Int]! = []
     var me : Bool! = false
@@ -35,6 +36,7 @@ public struct FCContact: Equatable, Hashable {
         self.instagram = ""
         self.email = ""
         self.facebook = ""
+        self.linkedin = ""
         //self.twitter = ""
         
     }
@@ -82,13 +84,11 @@ public struct FCContact: Equatable, Hashable {
         } else {
             email = ""
         }
-        /*
-        if ((dictionary["twitter"] as? String) != nil) {
-            twitter = dictionary["twitter"] as? String
+        if ((dictionary["linkedin"] as? String) != nil) {
+            linkedin = dictionary["linkedin"] as? String
         } else {
-            twitter = ""
+            linkedin = ""
         }
-         */
         if ((dictionary["me"] as? Bool) != nil) {
             me = dictionary["me"] as? Bool
         } else {
@@ -110,6 +110,7 @@ public struct FCContact: Equatable, Hashable {
         dictionary["instagram"] = instagram as AnyObject?
         dictionary["facebook"] = facebook as AnyObject?
         dictionary["email"] = email as AnyObject?
+        dictionary["linkedin"] = linkedin as AnyObject?
         dictionary["me"] = me as AnyObject?
         dictionary["id"] = id as AnyObject?
         return dictionary
@@ -120,7 +121,11 @@ public struct FCContact: Equatable, Hashable {
         if let dictionary = json as? [String: Any] {
             for (key, value) in dictionary {
                 print("key \(key) value \(value)")
-                setValue(key: key, value: value)
+                if (value as? String == nil && key != "me" && key != "id"){
+                    setValue(key: key, value: "")
+                } else {
+                    setValue(key: key, value: value)
+                }
             }
         }
         
@@ -133,7 +138,11 @@ public struct FCContact: Equatable, Hashable {
                 for i in share {
                     if key == getKey(index: i){
                         print("key \(key) value \(value)")
-                        setValue(key: key, value: value)
+                        if (value as? String == nil && key != "me" && key != "id"){
+                            setValue(key: key, value: "")
+                        } else {
+                            setValue(key: key, value: value)
+                        }
                     }
                 }
             }
@@ -149,15 +158,16 @@ public struct FCContact: Equatable, Hashable {
     public func getDefaultJSON() -> [String: Any] {
         let jsonObject : [String: Any] = [
             
-            "firstName": self.firstName,
-            "lastName" : self.lastName,
-            "phoneNumber": self.phoneNumber,
-            "email":self.email,
-            "snapchat":self.snapchat,
-            "instagram":self.instagram,
-            "facebook":self.facebook,
-            "me":self.me,
-            "id":self.id
+            "firstName": (self.firstName != nil ? self.firstName : ""),
+            "lastName" : (self.lastName != nil ? self.lastName : ""),
+            "phoneNumber": (self.phoneNumber != nil ? self.phoneNumber : ""),
+            "email": (self.email != nil ? self.email : ""),
+            "snapchat": (self.snapchat != nil ? self.snapchat : ""),
+            "instagram": (self.instagram != nil ? self.instagram : ""),
+            "facebook": (self.facebook != nil ? self.facebook : ""),
+            "linkedin": (self.linkedin != nil ? self.linkedin : ""),
+            "me": (self.me != nil ? self.me : false),
+            "id": (self.id != nil ? self.id : UUID().hashValue)
             
         ]
         return jsonObject
@@ -169,7 +179,7 @@ public struct FCContact: Equatable, Hashable {
         lastName = contact.familyName
         phoneNumber = contact.phoneNumbers[0].label
     }
-    init(first:String,last:String,phoneNumber:String,email:String,snapchat:String,instagram:String,facebook:String){
+    init(first:String,last:String,phoneNumber:String,email:String,snapchat:String,instagram:String,facebook:String,linkedin:String){
         self.id = UUID().hashValue
         firstName = first
         lastName = last
@@ -178,6 +188,7 @@ public struct FCContact: Equatable, Hashable {
         self.snapchat = snapchat
         self.instagram = instagram
         self.facebook = facebook
+        self.linkedin = linkedin
     }
     func getField(fieldIndex:Int) -> String {
         switch fieldIndex {
@@ -188,7 +199,7 @@ public struct FCContact: Equatable, Hashable {
         case 4: return self.facebook
         case 5: return self.instagram
         case 6: return self.snapchat
-        //case 7: return self.twitter
+        case 7: return self.linkedin
         default:
             print("default")
             return ""
@@ -222,6 +233,8 @@ public struct FCContact: Equatable, Hashable {
             self.instagram = value as! String
         case "snapchat":
             self.snapchat = value as! String
+        case "linkedin":
+            self.linkedin = value as! String
         case "id":
             self.id = value as! Int
         case "me":
@@ -247,6 +260,8 @@ public struct FCContact: Equatable, Hashable {
         case 6:
             return "snapchat"
         case 7:
+            return "linkedin"
+        case 8:
             return "me"
         default:
             return "nil"

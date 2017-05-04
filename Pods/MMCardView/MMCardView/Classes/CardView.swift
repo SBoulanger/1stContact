@@ -36,7 +36,7 @@ public class CardView: UIView {
         c.translatesAutoresizingMaskIntoConstraints = false
         c.delegate = self
         c.dataSource = self
-        c.backgroundColor = UIColor.clear
+        c.backgroundColor = UIColor.white
         return c
     }()
     

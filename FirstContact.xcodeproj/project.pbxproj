@@ -75,7 +75,6 @@
 		91558EF51D92900B00AC5DBA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91558EF41D92900B00AC5DBA /* Bolts.framework */; };
 		915D301F1E89F415000BDDC3 /* RemoteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915D301E1E89F415000BDDC3 /* RemoteHandler.swift */; };
 		917351071EAD50BA0009171E /* deleteBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 917351061EAD50BA0009171E /* deleteBackButton.png */; };
-		917351091EAD52090009171E /* delete-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 917351081EAD52090009171E /* delete-512.png */; };
 		9173510B1EAD58920009171E /* CircledUp2-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9173510A1EAD58920009171E /* CircledUp2-50.png */; };
 		9173510D1EAD58990009171E /* Delete-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9173510C1EAD58990009171E /* Delete-50.png */; };
 		9173510F1EAD589E0009171E /* Email-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9173510E1EAD589E0009171E /* Email-50.png */; };
@@ -119,6 +118,11 @@
 		918EB5111EB02F9E00499468 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918EB5101EB02F9E00499468 /* Settings.storyboard */; };
 		918F2EA71EB1718F00740CBD /* Trash-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F2EA61EB1718F00740CBD /* Trash-50.png */; };
 		919ADE2A1EB7E045007C9CC2 /* linkedin-sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 919ADE291EB7E045007C9CC2 /* linkedin-sdk.framework */; };
+		919ADE2D1EBA46E5007C9CC2 /* LinkedInWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919ADE2C1EBA46E5007C9CC2 /* LinkedInWebView.swift */; };
+		919ADE2F1EBA48DC007C9CC2 /* LinkedInWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 919ADE2E1EBA48DC007C9CC2 /* LinkedInWebView.storyboard */; };
+		919ADE311EBA7168007C9CC2 /* LinkedinCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919ADE301EBA7168007C9CC2 /* LinkedinCardCell.swift */; };
+		919ADE331EBA7188007C9CC2 /* LinkedinCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919ADE321EBA7188007C9CC2 /* LinkedinCardCell.xib */; };
+		919ADE351EBAA1C2007C9CC2 /* LinkedIn-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 919ADE341EBAA1C2007C9CC2 /* LinkedIn-50.png */; };
 		919FF3821D2B36CC00594092 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FF3811D2B36CC00594092 /* PopUpView.swift */; };
 		91B2A8251BE2E466002DBF03 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2A8241BE2E466002DBF03 /* QRViewController.swift */; };
 		91B2A8271BE321C9002DBF03 /* InstructionViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2A8261BE321C9002DBF03 /* InstructionViewContoller.swift */; };
@@ -247,7 +251,6 @@
 		91558EF41D92900B00AC5DBA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		915D301E1E89F415000BDDC3 /* RemoteHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteHandler.swift; sourceTree = "<group>"; };
 		917351061EAD50BA0009171E /* deleteBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteBackButton.png; sourceTree = "<group>"; };
-		917351081EAD52090009171E /* delete-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-512.png"; sourceTree = "<group>"; };
 		9173510A1EAD58920009171E /* CircledUp2-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CircledUp2-50.png"; sourceTree = "<group>"; };
 		9173510C1EAD58990009171E /* Delete-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-50.png"; sourceTree = "<group>"; };
 		9173510E1EAD589E0009171E /* Email-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email-50.png"; sourceTree = "<group>"; };
@@ -291,6 +294,11 @@
 		918EB5101EB02F9E00499468 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../Settings.storyboard; sourceTree = "<group>"; };
 		918F2EA61EB1718F00740CBD /* Trash-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trash-50.png"; sourceTree = "<group>"; };
 		919ADE291EB7E045007C9CC2 /* linkedin-sdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "linkedin-sdk.framework"; path = "FirstContact/linkedin-sdk.framework"; sourceTree = "<group>"; };
+		919ADE2C1EBA46E5007C9CC2 /* LinkedInWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedInWebView.swift; path = ../LinkedInWebView.swift; sourceTree = "<group>"; };
+		919ADE2E1EBA48DC007C9CC2 /* LinkedInWebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LinkedInWebView.storyboard; sourceTree = "<group>"; };
+		919ADE301EBA7168007C9CC2 /* LinkedinCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedinCardCell.swift; sourceTree = "<group>"; };
+		919ADE321EBA7188007C9CC2 /* LinkedinCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinkedinCardCell.xib; sourceTree = "<group>"; };
+		919ADE341EBAA1C2007C9CC2 /* LinkedIn-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LinkedIn-50.png"; path = "../LinkedIn-50.png"; sourceTree = "<group>"; };
 		919FF3811D2B36CC00594092 /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		91B2A8241BE2E466002DBF03 /* QRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		91B2A8261BE321C9002DBF03 /* InstructionViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewContoller.swift; sourceTree = "<group>"; };
@@ -417,6 +425,8 @@
 			children = (
 				912B39401BBCD1FC00B7A5D1 /* Main.storyboard */,
 				918EB5101EB02F9E00499468 /* Settings.storyboard */,
+				919ADE2E1EBA48DC007C9CC2 /* LinkedInWebView.storyboard */,
+				919ADE2C1EBA46E5007C9CC2 /* LinkedInWebView.swift */,
 				912B393C1BBCD1FC00B7A5D1 /* AppDelegate.swift */,
 				912ADCAE1EAB10D1001751C4 /* SendContactViewController.swift */,
 				912ADCB01EAB10F3001751C4 /* SendContact.storyboard */,
@@ -438,7 +448,6 @@
 				914AFB3A1D7CDF0100A876AB /* ContactViewController.swift */,
 				914D550C1E7331EF0042812B /* StructureDetails.swift */,
 				91F6934B1DB7C82F00943465 /* SettingsViewController.swift */,
-				917351081EAD52090009171E /* delete-512.png */,
 				9136CE4C1D668AB20047A3F0 /* CategoryRow.swift */,
 				912ADCA21EAAFD15001751C4 /* AmazonAws */,
 				912ADC931EAAF4DC001751C4 /* Sdk */,
@@ -503,6 +512,8 @@
 				914D551A1E77EC3D0042812B /* SnapchatCardCell.xib */,
 				914D55181E77EC2D0042812B /* InstagramCardCell.swift */,
 				914D551C1E77EC540042812B /* InstagramCardCell.xib */,
+				919ADE301EBA7168007C9CC2 /* LinkedinCardCell.swift */,
+				919ADE321EBA7188007C9CC2 /* LinkedinCardCell.xib */,
 			);
 			name = ContactCardViewInfo;
 			sourceTree = "<group>";
@@ -525,6 +536,7 @@
 		918AD5C71E6E4B4300A28B10 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				919ADE341EBAA1C2007C9CC2 /* LinkedIn-50.png */,
 				918F2EA61EB1718F00740CBD /* Trash-50.png */,
 				91BA03DA1EB444BF00EBB371 /* Download-50.png */,
 				918EB50C1EAE8EFB00499468 /* Facebook-50.png */,
@@ -714,11 +726,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9174F3251E70AA950086C945 /* camera_clear.png in Resources */,
+				919ADE331EBA7188007C9CC2 /* LinkedinCardCell.xib in Resources */,
 				912ADC941EAAF4DC001751C4 /* Sdk in Resources */,
 				914D551F1E77EF1A0042812B /* Instagram-logo.png in Resources */,
 				914D55091E72C39E0042812B /* NameCardCell.xib in Resources */,
 				91D6701F1E6E70C400AB1D6A /* List.png in Resources */,
-				917351091EAD52090009171E /* delete-512.png in Resources */,
 				918AD5DC1E6E4B4300A28B10 /* FC_icon_draft3.png in Resources */,
 				914D55211E77EF230042812B /* snapchat_logo.png in Resources */,
 				9173510D1EAD58990009171E /* Delete-50.png in Resources */,
@@ -739,8 +751,10 @@
 				914D551B1E77EC3D0042812B /* SnapchatCardCell.xib in Resources */,
 				918EB5111EB02F9E00499468 /* Settings.storyboard in Resources */,
 				918AD5E31E6E4B4300A28B10 /* twtr-icn-logo-white.png in Resources */,
+				919ADE2F1EBA48DC007C9CC2 /* LinkedInWebView.storyboard in Resources */,
 				910BDBC41DBEBF51001186EB /* Podfile in Resources */,
 				918EB50D1EAE8EFB00499468 /* Facebook-50.png in Resources */,
+				919ADE351EBAA1C2007C9CC2 /* LinkedIn-50.png in Resources */,
 				918EB50B1EAE8D8B00499468 /* FacebookCardCell.xib in Resources */,
 				917351171EAD59980009171E /* Back-50.png in Resources */,
 				918AD5E21E6E4B4300A28B10 /* SettingsButton.png in Resources */,
@@ -995,8 +1009,10 @@
 				9131C9981DA0D1550032C260 /* DataHub.swift in Sources */,
 				912B393F1BBCD1FC00B7A5D1 /* WelcomeViewController.swift in Sources */,
 				914D550F1E7365DB0042812B /* PhoneCardCell.swift in Sources */,
+				919ADE311EBA7168007C9CC2 /* LinkedinCardCell.swift in Sources */,
 				912B393D1BBCD1FC00B7A5D1 /* AppDelegate.swift in Sources */,
 				91FEDBA31C9F93B4000693AC /* ContactsViewController.swift in Sources */,
+				919ADE2D1EBA46E5007C9CC2 /* LinkedInWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

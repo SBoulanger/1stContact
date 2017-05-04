@@ -167,7 +167,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                             
                             
                         } else {
-                            let newcontact = FCContact(first: contactInfoArray[0], last: contactInfoArray[1], phoneNumber: contactInfoArray[2], email: contactInfoArray[3], snapchat: contactInfoArray[4], instagram: contactInfoArray[5], facebook: contactInfoArray[6])
+                            let newcontact = FCContact(first: contactInfoArray[0], last: contactInfoArray[1], phoneNumber: contactInfoArray[2], email: contactInfoArray[3], snapchat: contactInfoArray[4], instagram: contactInfoArray[5], facebook: contactInfoArray[6], linkedin: contactInfoArray[7])
                         
                             print("created new contact")
                             qrcodedone = true

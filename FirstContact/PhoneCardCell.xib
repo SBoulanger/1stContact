@@ -63,6 +63,7 @@
                     </button>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="RbY-gS-NBj" secondAttribute="trailing" constant="8" id="2BU-oV-r4c"/>
                 <constraint firstAttribute="trailing" secondItem="lgZ-pJ-RBf" secondAttribute="trailing" constant="20" id="5cb-wC-aGB"/>

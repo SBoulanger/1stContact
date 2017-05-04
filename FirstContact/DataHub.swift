@@ -279,6 +279,7 @@ class DataHub {
     }
     public func getDefaultContactsJSONData() -> Data {
         let jsonObject = self.getDefaultContactsJSON()
+        print(jsonObject)
         print("Default .json is valid: \(JSONSerialization.isValidJSONObject(jsonObject))")
         let data = try? JSONSerialization.data(withJSONObject: jsonObject, options: [])
         return data!
@@ -301,6 +302,7 @@ class DataHub {
         let userId = AWSIdentityManager.default().identityId!
         uploadWithData(data: self.contact.getDefaultJSONData() as NSData, forKey: "contact.json", prefix:"\(CONTACT_FILE_DIRECTORY)/\(userId)/")
     }
+    /*
     func uploadTestContacts(){
         let f = FCContact(first: "Maya", last: "Eastman", phoneNumber: "8055555555", email: "mayaeastman@gmail.com", snapchat: "mayaeast", instagram: "mayaeast", facebook: "facebookEastman")
         self.contacts = [FCContact(),f]
@@ -312,7 +314,7 @@ class DataHub {
         self.contact = f
         uploadContact()
     }
-    
+    */
     func getPhoneContacts() {
         do {
             let contactsFetchRequest = CNContactFetchRequest(keysToFetch: [CNContactGivenNameKey as CNKeyDescriptor, CNContactFamilyNameKey as CNKeyDescriptor, CNContactImageDataKey as CNKeyDescriptor, CNContactImageDataAvailableKey as CNKeyDescriptor, CNContactPhoneNumbersKey as CNKeyDescriptor, CNContactEmailAddressesKey as CNKeyDescriptor])
@@ -336,8 +338,6 @@ class DataHub {
             }
         })
         self.createAlphArrays(contacts: self.contacts)
-        
-        //print("TWITTER:\(getContact().twitter)")
         
     }
     func generateContactInfo(){
@@ -496,8 +496,8 @@ class DataHub {
         string += "/*"
         if share.contains(5){string += contact.snapchat}
         string += "/*"
-        //if share.contains(6){string += contact.twitter}
-        //string += "/*"
+        if share.contains(6){string += contact.linkedin}
+        string += "/*"
         
         return string
     }

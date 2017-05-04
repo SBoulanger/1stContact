@@ -67,8 +67,8 @@
     _on = NO;
     _hideBox = NO;
     _onTintColor = [UIColor colorWithRed:0 green:122.0/255.0 blue:255/255 alpha:1];
-    _onFillColor = [UIColor clearColor];
-    _offFillColor = [UIColor clearColor];
+    _onFillColor = [UIColor whiteColor];
+    _offFillColor = [UIColor whiteColor];
     _onCheckColor = [UIColor colorWithRed:0 green:122.0/255.0 blue:255/255 alpha:1];
     _tintColor = [UIColor lightGrayColor];
     _lineWidth = 2.0;
@@ -76,7 +76,7 @@
     _minimumTouchSize = CGSizeMake(44, 44);
     _onAnimationType = BEMAnimationTypeStroke;
     _offAnimationType = BEMAnimationTypeStroke;
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor whiteColor];
     
     [self initPathManager];
     [self initAnimationManager];
@@ -294,7 +294,7 @@
     self.checkMarkLayer.path = [self.pathManager pathForCheckMark].CGPath;
     self.checkMarkLayer.strokeColor = self.onCheckColor.CGColor;
     self.checkMarkLayer.lineWidth = self.lineWidth;
-    self.checkMarkLayer.fillColor = [UIColor clearColor].CGColor;
+    self.checkMarkLayer.fillColor = [UIColor whiteColor].CGColor;
     self.checkMarkLayer.lineCap = kCALineCapRound;
     self.checkMarkLayer.lineJoin = kCALineJoinRound;
     

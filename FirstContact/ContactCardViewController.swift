@@ -31,7 +31,9 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
     var facebookCardCell: FacebookCardCell!
     var instagramCardCell: InstagramCardCell!
     var snapchatCardCell: SnapchatCardCell!
+    var linkedinCardCell: LinkedinCardCell!
     
+    var success : Bool!
     
     var cellArray : [CardCell]!
     
@@ -44,18 +46,14 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         print("ContactCardVC:viewDidLoad")
         
         store = CNContactStore()
         checkContactsAccess()
         
         //let linkedinHelper = LinkedinSwiftHelper(configuration: LinkedinSwiftConfiguration(clientId: "86tp0696zhckjv", clientSecret: "dfgJhwunGSVi0FJX", state: "", permissions: ["r_basicprofile"], redirectUrl: "https://github.com/tonyli508/LinkedinSwift"))
-        
-        if contact.me == true {
-            
-        } else {
-            
-        }
+
         
         //cardView.registerCardCell(c: BasicCardCell.classForCoder(), nib: UINib.init(nibName: "BasicCardCell", bundle: nil))
         cardView.registerCardCell(c: NameCardCell.classForCoder(), nib: UINib.init(nibName: "NameCardCell", bundle:nil))
@@ -64,16 +62,20 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
         cardView.registerCardCell(c: FacebookCardCell.classForCoder(), nib: UINib.init(nibName:"FacebookCardCell", bundle:nil))
         cardView.registerCardCell(c: InstagramCardCell.classForCoder(), nib: UINib.init(nibName:"InstagramCardCell", bundle:nil))
         cardView.registerCardCell(c: SnapchatCardCell.classForCoder(), nib: UINib.init(nibName:"SnapchatCardCell", bundle:nil))
+        cardView.registerCardCell(c: LinkedinCardCell.classForCoder(), nib: UINib.init(nibName:"LinkedinCardCell", bundle:nil))
         cardView.cardDataSource = self
         let arr = self.generateCardInfo(cardCount: 6)
         cardView.set(cards: arr)
         
         if (!self.contact.me){
-            let trash = UIBarButtonItem(image: UIImage(named:"Trash-50.png"), style: .plain, target: self, action: #selector(deleteContactPressed))
-            let download = UIBarButtonItem(image:UIImage(named:"Download-50.png"), style: .plain, target: self, action: #selector(downloadContactToContactBook))
+            let trashimage = AppDelegate.getAppDelegate().ResizeImage(UIImage(named:"Trash-50.png")!, targetSize: CGSize(width: 26, height: 26))
+            let trash = UIBarButtonItem(image: trashimage, style: .plain, target: self, action: #selector(deleteContactPressed))
+            
+            let downloadimage = AppDelegate.getAppDelegate().ResizeImage(UIImage(named:"Download-50.png")!, targetSize: CGSize(width: 26, height: 26))
+            let download = UIBarButtonItem(image:downloadimage, style: .plain, target: self, action: #selector(downloadContactToContactBook))
 
-            trash.imageInsets = UIEdgeInsetsMake(13.0, 8.0, 13.0, 14.0)
-            download.imageInsets = UIEdgeInsetsMake(13.0, 8.0, 13.0, 14.0)
+            //trash.imageInsets = UIEdgeInsetsMake(13.0, 8.0, 13.0, 14.0)
+            //download.imageInsets = UIEdgeInsetsMake(13.0, 8.0, 13.0, 14.0)
             
             //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"Trash-50.png"), style: .plain, target: self, action: #selector(deleteContactPressed))
             self.navigationItem.rightBarButtonItems = [trash, download]
@@ -141,14 +143,14 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
         emailCardCell.contact = self.contact
         instagramCardCell.contact = self.contact
         snapchatCardCell.contact = self.contact
-        
+        linkedinCardCell.contact = self.contact
     }
     
     
     func generateCardInfo (cardCount:Int) -> [AnyObject] {
         print("ContactCardVC: generateCardInfo")
         var arr = [AnyObject]()
-        let xibName = ["NameCard","PhoneCard","EmailCard","FacebookCard","InstagramCard","SnapchatCard"]
+        let xibName = ["NameCard","PhoneCard","EmailCard","FacebookCard","InstagramCard","SnapchatCard","LinkedinCard"]
         
         for i in 0...xibName.count-1 {
             arr.append(xibName[i] as AnyObject)
@@ -173,6 +175,7 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
             c.titleLabel.text = "BasicCardCell"
         case let c as NameCardCell:
             c.titleLabel.text = "Name"
+            print(self.contact)
             c.contact = self.contact //create mutator
             c.contactIndex = self.contactIndex //create mutator
             c.setUpView(controller:self)
@@ -207,6 +210,13 @@ class ContactCardViewController: UIViewController, CardCollectionViewDataSource 
             c.contactIndex = self.contactIndex
             self.snapchatCardCell = c
             c.setUpView(controller: self)
+        case let c as LinkedinCardCell:
+            c.titleLabel.text = "LinkedIn"
+            c.contact = self.contact
+            c.contactIndex = self.contactIndex
+            self.linkedinCardCell = c
+            c.setUpView(controller: self)
+            
             //let v = Int(arc4random_uniform(5))+1
             //c.imgV.image = UIImage.init(named: "image\(v)")
 /*

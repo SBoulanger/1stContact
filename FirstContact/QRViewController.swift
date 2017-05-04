@@ -42,9 +42,10 @@ class QRViewController: UIViewController  {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"CircledUp2-50.png"), style: .plain, target: self, action: #selector(showSendViewController))
+        let circleImage = AppDelegate.getAppDelegate().ResizeImage(UIImage(named:"CircledUp2-50.png")!, targetSize: CGSize(width: 24, height: 24))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: circleImage, style: .plain, target: self, action: #selector(showSendViewController))
 
-        self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 20.0)
+        //self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 20.0)
     }
     
     override func viewDidLoad() {
@@ -87,8 +88,8 @@ class QRViewController: UIViewController  {
             print("qrCodeImage NIL")
             generateNewImage()
         }
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"CircledUp2-50.png"), style: .plain, target: self, action: #selector(showSendViewController))
-        self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 20.0)
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"CircledUp2-50.png"), style: .plain, target: self, action: #selector(showSendViewController))
+        //self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 20.0)
         self.view.addSubview(rightButton)
         self.view.addSubview(leftButton)
         contact.getDefaultJSON()

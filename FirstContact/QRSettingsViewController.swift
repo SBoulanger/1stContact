@@ -21,7 +21,7 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
     
     var array0 = ["Basic","Social"]
     
-    var array1 = ["Name","Phone Number","Email","Facebook","Instagram","Snapchat"]
+    var array1 = ["Name","Phone Number","Email","Facebook","Instagram","Snapchat","LinkedIn"]
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -34,8 +34,10 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
 
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"Info-50-2.png")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showSettingsViewController))
-        self.navigationItem.leftBarButtonItem?.imageInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 20.0)
+        let infoImage = AppDelegate.getAppDelegate().ResizeImage(UIImage(named:"Info-50-2.png")!, targetSize: CGSize(width: 24, height: 24))
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: infoImage.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showSettingsViewController))
+        //self.navigationItem.leftBarButtonItem?.imageInsets = UIEdgeInsetsMake(10.0, 0.0, 10.0, 20.0)
         self.mainTableView.dataSource = self
         self.mainTableView.delegate = self
         

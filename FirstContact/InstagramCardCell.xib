@@ -47,8 +47,11 @@
                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-Yl-gLx">
-                        <rect key="frame" x="30" y="152" width="230" height="40"/>
-                        <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="30" y="152" width="230" height="35"/>
+                        <color key="backgroundColor" red="0.050980392156862744" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="BM5-7v-vEY"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="20"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Save">
@@ -59,7 +62,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajB-QL-Edw">
-                        <rect key="frame" x="30" y="202" width="230" height="35"/>
+                        <rect key="frame" x="30" y="197" width="230" height="35"/>
                         <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="lun-6K-UC0"/>
@@ -75,6 +78,7 @@
                     </button>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="AUT-Yl-gLx" firstAttribute="top" secondItem="l9D-I0-bVF" secondAttribute="bottom" constant="15" id="2Jw-yT-SS6"/>
                 <constraint firstItem="ajB-QL-Edw" firstAttribute="centerX" secondItem="Vhn-C0-G6S" secondAttribute="centerX" id="4fd-mX-vrG"/>

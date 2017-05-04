@@ -14,12 +14,39 @@ import FBSDKLoginKit
 import FBSDKShareKit
 
 
-class FacebookCardCell: CardCell, CardCellProtocol {
+class FacebookCardCell: CardCell, CardCellProtocol, FBSDKLoginButtonDelegate {
+    /*!
+     @abstract Sent to the delegate when the button was used to login.
+     @param loginButton the sender
+     @param result The results of the login
+     @param error The error (if any) from the login
+     */
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        print("didCompleteWith result")
+        if((FBSDKAccessToken.current()) != nil){
+            self.logoutButton.isHidden = false
+            self.fbButton.isHidden = true
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    var result1 = result as! Dictionary<String,String>
+                    self.contact.facebook = result1["id"]
+                    self.dataHub.updateContact(contact: self.contact)
+                    self.fbButton.isHidden = true
+                    self.logoutButton.isHidden = false
+                    self.goButton.isHidden = false
+                }else{
+                    print("Error: \(String(describing: error))")
+                }
+            })
+        }
+    }
+
     
     
     @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     @IBOutlet weak var fbLabel: UILabel!
         
@@ -48,6 +75,7 @@ class FacebookCardCell: CardCell, CardCellProtocol {
     func setUpView(controller: ContactCardViewController){
         
         print("FACEBOOK CELL ENTERED")
+        fbButton.delegate = self
         self.titleLabel.text = ""
         print(self.contact.facebook)
         self.controller = controller
@@ -57,7 +85,10 @@ class FacebookCardCell: CardCell, CardCellProtocol {
         
         if (self.contact.me){
             fbLabel.isHidden = true
+
             if((FBSDKAccessToken.current()) != nil){
+                self.logoutButton.isHidden = false
+                self.fbButton.isHidden = true
                 FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).start(completionHandler: { (connection, result, error) -> Void in
                     if (error == nil){
                         var result1 = result as! Dictionary<String,String>
@@ -68,11 +99,18 @@ class FacebookCardCell: CardCell, CardCellProtocol {
                     }
                 })
             } else {
+                self.logoutButton.isHidden = true
+                self.fbButton.isHidden = false
+                if (contact.facebook != ""){
+                    self.logoutButton.isHidden = false
+                    self.fbButton.isHidden = true
+                }
                 print("FacebooCardCell: Not logged in, no AccessToken")
             }
         } else {
             fbButton.isHidden = true
-            fbLabel.layer.borderColor = UIColor(colorLiteralRed: 45/255, green: 68/255, blue: 134/255, alpha: 1.0).cgColor
+            logoutButton.isHidden = true
+            fbLabel.layer.borderColor = UIColor(colorLiteralRed: 45/255, green: 68/255, blue: 136/255, alpha: 1.0).cgColor
             fbLabel.layer.borderWidth = 1.5
             fbLabel.backgroundColor = UIColor.white
             fbLabel.layer.cornerRadius = 3.5
@@ -81,7 +119,7 @@ class FacebookCardCell: CardCell, CardCellProtocol {
             } else {
                 fbLabel.text = "Facebook connected 👍"
             }
-            fbLabel.textColor = UIColor(colorLiteralRed: 45/255, green: 68/255, blue: 134/255, alpha: 1.0)
+            fbLabel.textColor = UIColor(colorLiteralRed: 45/255, green: 68/255, blue: 136/255, alpha: 1.0)
         }
         if (self.contact.facebook != ""){
             goButton.isHidden = false
@@ -89,6 +127,14 @@ class FacebookCardCell: CardCell, CardCellProtocol {
             goButton.isHidden = true
         }
         
+    }
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        removeFbData()
+        self.contact.facebook = ""
+        self.dataHub.updateContact(contact: self.contact)
+        self.logoutButton.isHidden = true
+        self.fbButton.isHidden = false
+        self.goButton.isHidden = true
     }
     
     @IBAction func goButtonPressed(_ sender: Any) {
@@ -98,10 +144,17 @@ class FacebookCardCell: CardCell, CardCellProtocol {
             UIApplication.shared.openURL(fbUrl!)
             
         } else {
-            //redirect to safari because the user doesn't have Instagram
-            UIApplication.shared.openURL(URL(string: "http://facebook.com/")!)
+            //redirect to safari because the user doesn't have Facebook
+            UIApplication.shared.openURL(URL(string: "http://facebook.com/"+self.contact.facebook)!)
         }
         
+    }
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("loginButtonDidLogOut")
+    }
+    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
+        print("loginButtonWillLogin")
+        return true
     }
     
     

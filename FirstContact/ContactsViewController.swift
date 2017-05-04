@@ -217,6 +217,9 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         if indexPath.row == 0 && indexPath.section == 0  {
             rowcontact = dataHub.getContact()
             rowcontact.me = true
+            dataHub.updateContact(contact: rowcontact)
+            print("rowcontact selected, set to me = true")
+            print(rowcontact)
         }else{
             rowcontact = self.dataHub.getContacts()[getIndexOfContact(section: indexPath.section, row: indexPath.row)]
             controller.contactIndex = getIndexOfContact(section: indexPath.section, row: indexPath.row)
