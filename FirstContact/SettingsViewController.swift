@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import AWSCognitoIdentityProvider
+import AWSMobileHubHelper
 
 class SettingsViewController: UIViewController {
     

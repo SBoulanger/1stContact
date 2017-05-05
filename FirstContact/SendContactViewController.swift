@@ -47,6 +47,8 @@ class SendContactViewController : UIViewController, UITextFieldDelegate,MFMessag
         
         self.dataHub = AppDelegate.getAppDelegate().dataHub
         
+        self.numberField.addTarget(self, action: #selector(editNumber), for: .editingChanged)
+        
         keyBoard = [zeroButton,oneButton,twoButton,threeButton,fourButton,fiveButton,sixButton,sevenButton,eightButton,nineButton]
         
         for i in 0..<keyBoard.count {
@@ -64,50 +66,59 @@ class SendContactViewController : UIViewController, UITextFieldDelegate,MFMessag
     @IBAction func oneButtonPressed(_ sender: Any) {
         self.numberField.text?.append("1")
         checkToHideDel()
+        editNumber(sender: self.numberField)
     }
     @IBAction func twoButtonPressed(_ sender: Any) {
         self.numberField.text?.append("2")
         checkToHideDel()
+        editNumber(sender: self.numberField)
     }
     @IBAction func threeButtonPressed(_ sender: Any) {
         self.numberField.text?.append("3")
         checkToHideDel()
+        editNumber(sender: self.numberField)
     }
     
     @IBAction func fourButtonPressed(_ sender: Any) {
         self.numberField.text?.append("4")
         checkToHideDel()
+        editNumber(sender: self.numberField)
     }
     
     @IBAction func fiveButtonPressed(_ sender: Any) {
         self.numberField.text?.append("5")
         checkToHideDel()
+        editNumber(sender: self.numberField)
     }
     
     @IBAction func sixButtonPressed(_ sender: Any) {
         self.numberField.text?.append("6")
         checkToHideDel()
+        editNumber(sender: self.numberField)
     }
     
     @IBAction func sevenButtonPressed(_ sender: Any) {
         self.numberField.text?.append("7")
         checkToHideDel()
+        editNumber(sender: self.numberField)
     }
     
     @IBAction func eightButtonPressed(_ sender: Any) {
         self.numberField.text?.append("8")
         checkToHideDel()
+        editNumber(sender: self.numberField)
     }
     
     @IBAction func nineButtonPressed(_ sender: Any) {
         self.numberField.text?.append("9")
         checkToHideDel()
+        editNumber(sender: self.numberField)
     }
     
     @IBAction func zeroButtonPressed(_ sender: Any) {
         self.numberField.text?.append("0")
         checkToHideDel()
-
+        editNumber(sender: self.numberField)
     }
     func checkToHideDel(){
         if self.numberField.text == "" {
@@ -203,9 +214,13 @@ class SendContactViewController : UIViewController, UITextFieldDelegate,MFMessag
         }
         return data
     }
-    
-    
-    
+    func editNumber(sender: UITextField){
+        if (sender.text?.characters.count)! > 0 {
+            var editor : String! = sender.text
+            editor = String(editor.characters.filter { "01234567890".characters.contains($0) })
+            sender.text = AppDelegate.getAppDelegate().formatNumber(number: editor!)
+        }
+    }
     
     
 }

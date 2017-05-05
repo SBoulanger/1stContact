@@ -691,9 +691,9 @@ extension String {
     
 }
 extension String {
-    var isAlphanumeric: Bool {
+    var isnumeric: Bool {
         for chr in self.characters {
-            if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z") ) {
+            if ((chr >= "a" && chr <= "z") && (chr >= "A" && chr <= "Z") ) {
                 return false
             }
         }

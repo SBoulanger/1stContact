@@ -208,9 +208,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return newImage!
     }
+    func formatNumber(number:String) -> String{
+        var str = number
+        var newString = ""
+        var index:String.Index!
+        
+        print(number)
+        
+        if (str.characters.count < 4){
+            return number
+        }
+ 
+        
+        if (str.characters.count < 7){
+            index = str.index(str.startIndex, offsetBy:3)
+            var areaCode = str.substring(to: index)
+            var endrange = str.substring(from:index)
+            newString = newString + "(" + areaCode + ") " + endrange
+            return newString
+        }
+        
+        
+        if (str.characters.count < 11){
+            index = str.index(str.startIndex, offsetBy:3)
+            var areaCode = str.substring(to:index)
+            var nindex = str.index(index, offsetBy:3)
+            var first = str[index..<nindex]
+            var end = str.substring(from: nindex)
+            newString = "(" + areaCode + ") " + first + "-" + end
+            return newString
+        }
+        return str
+    }
     func getKey() -> String {
         return self.KEY
     }
+    func showMessage(controller: UIViewController, message: String, title: String, actionHandler: @escaping (_ accessGranted: UIAlertAction) -> Void, dismissHandler:@escaping (_ accessGranted: UIAlertAction) -> Void) {
+        print("showMessage() class called")
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let dismissAction = UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: dismissHandler)
+        let sendAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: actionHandler)
+        
+        alertController.addAction(dismissAction)
+        alertController.addAction(sendAction)
+        
+        print("qrcode set to not done")
+        
+        DispatchQueue.main.async(execute: {
+            controller.present(alertController, animated: true, completion: nil)
+        })
+    }
 
 }
+
+
+
 

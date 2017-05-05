@@ -32,6 +32,7 @@ class PhoneCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         
         self.titleLabel.text = "Phone Number"
         self.phoneTextField.delegate = self
+        self.phoneTextField.addTarget(self, action: #selector(editNumber), for: .editingChanged)
         
         print("awakeFromNib")
         
@@ -94,6 +95,13 @@ class PhoneCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
         saveButton.isHidden = true
         controller.updateCells()
 
+    }
+    func editNumber(sender: UITextField){
+        if (sender.text?.characters.count)! > 0 {
+            var editor : String! = sender.text
+            editor = String(editor.characters.filter { "01234567890".characters.contains($0) })
+            sender.text = AppDelegate.getAppDelegate().formatNumber(number: editor!)
+        }
     }
     
 }

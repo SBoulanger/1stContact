@@ -37,7 +37,6 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
     var info : String!
     
     var dataHub:DataHub!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,6 +112,10 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         
+        let dismissHandler = {(action:UIAlertAction!) -> Void in
+            self.qrcodedone = false
+        }
+        
         //make sure there is something found
         if metadataObjects == nil || metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
@@ -154,10 +157,10 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                                     print("self.newestContact != nil")
                                     if (self.newestContact.firstName + self.newestContact.lastName == ""){
                                         print("showMessage()")
-                                        self.showMessage("🚀", title: "Want to add NO NAME to your Contacts?",actionHandler: actionHandler)
+                                        AppDelegate.getAppDelegate().showMessage(controller: self, message:"🚀", title: "Want to add NO NAME to your Contacts?",actionHandler: actionHandler, dismissHandler: dismissHandler)
                                     } else {
                                         print("showMessage() 2")
-                                        self.showMessage("🚀", title: "Want to add \(self.newestContact.firstName!) \(self.newestContact.lastName!) to your contacts?",actionHandler: actionHandler)
+                                        AppDelegate.getAppDelegate().showMessage(controller:self,message:"🚀", title: "Want to add \(self.newestContact.firstName!) \(self.newestContact.lastName!) to your contacts?",actionHandler: actionHandler, dismissHandler: dismissHandler)
                                     }
                                 } else {
                                     print("newestContact is not being ")
@@ -181,9 +184,9 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                             //ask if they will be sending their contact through a text
                         
                             if (newcontact.firstName+newcontact.lastName == ""){
-                                showMessage("🚀", title: "Want to add NO NAME to your Contacts?",actionHandler: actionHandler)
+                                AppDelegate.getAppDelegate().showMessage(controller:self,message:"🚀", title: "Want to add NO NAME to your Contacts?",actionHandler: actionHandler, dismissHandler: dismissHandler)
                             } else {
-                                showMessage("🚀", title: "Want to add \(newcontact.firstName) \(newcontact.lastName) to your contacts?",actionHandler: actionHandler)
+                                AppDelegate.getAppDelegate().showMessage(controller:self,message:"🚀", title: "Want to add \(newcontact.firstName) \(newcontact.lastName) to your contacts?",actionHandler: actionHandler, dismissHandler: dismissHandler)
                             }
                         }
                     } else {
@@ -211,7 +214,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
 
     
     //shows the alert message when a qrcode was successfully read
-    func showMessage(_ message: String, title: String, actionHandler: @escaping (_ accessGranted: UIAlertAction) -> Void) {
+    /*func showMessage(_ message: String, title: String, actionHandler: @escaping (_ accessGranted: UIAlertAction) -> Void) {
         print("showMessage() class called")
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -230,7 +233,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
         
         present(alertController, animated: true, completion: nil)
     }
-    
+    */
     //MOVE
     //creates the contact read to the phones contact list
     func createContact(_ first:String, last: String, number: String) -> CNMutableContact {

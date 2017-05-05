@@ -72,10 +72,56 @@ extension SignInViewController: AWSCognitoIdentityPasswordAuthentication {
     func didCompleteStepWithError(_ error: Error?) {
         if let error = error as? NSError {
             DispatchQueue.main.async(execute: {
-                UIAlertView(title: error.userInfo["__type"] as? String,
-                    message: error.userInfo["message"] as? String,
-                    delegate: nil,
-                    cancelButtonTitle: "Ok").show()
+                
+                let inputtext : String!
+                if (self.toggleButton.titleLabel?.text != "Username"){
+                    inputtext = self.customUserIdField.text
+                } else {
+                    var string : String!
+                    string = self.phoneNumberField.text
+                    inputtext = self.countryCodeField.text! + String(string.characters.filter { "01234567890".characters.contains($0) })
+                }
+                
+                if error.code == 26 {
+                    let actionHandler = {(action:UIAlertAction!) -> Void in
+                        let pool = AWSCognitoIdentityUserPool.init(forKey: AWSCognitoUserPoolsSignInProviderKey)
+                        let user = pool.getUser(inputtext)
+                        user.resendConfirmationCode().continueWith(block: {[weak self] (task: AWSTask<AWSCognitoIdentityUserResendConfirmationCodeResponse>) -> AnyObject? in
+                            guard let _ = self else { return nil }
+                            DispatchQueue.main.async(execute: {
+                                if let error = task.error as? NSError {
+                                    UIAlertView(title: error.userInfo["__type"] as? String,
+                                                message: error.userInfo["message"] as? String,
+                                                delegate: nil,
+                                                cancelButtonTitle: "Ok").show()
+                                } else if let result = task.result as AWSCognitoIdentityUserResendConfirmationCodeResponse! {
+                                    UIAlertView(title: "Code Resent",
+                                                message: "Code resent to \(String(describing: result.codeDeliveryDetails?.destination!))",
+                                        delegate: nil,
+                                        cancelButtonTitle: "Ok").show()
+                                    if (user.confirmedStatus != AWSCognitoIdentityUserStatus.confirmed) {
+                                        let sb = UIStoryboard.init(name: "UserPools", bundle: nil)
+                                        let vc = sb.instantiateViewController(withIdentifier: "SignUpConfirmation") as! UserPoolSignUpConfirmationViewController
+                                        vc.sentTo = result.codeDeliveryDetails?.destination
+                                        vc.user = user
+                                        self?.navigationController?.pushViewController(vc, animated: true)
+                                    }
+                                }
+                            })
+                            return nil
+                        })
+                    }
+                    let dismissHandler = {(action:UIAlertAction!) -> Void in
+                        print("Dismiss")
+                    }
+                    AppDelegate.getAppDelegate().showMessage(controller:self,message:"Not confirmed yet: Send new code?", title: "📲❓",actionHandler: actionHandler, dismissHandler: dismissHandler)
+                } else {
+                
+                    UIAlertView(title: error.userInfo["__type"] as? String,
+                                message: error.userInfo["message"] as? String,
+                                delegate: nil,
+                                cancelButtonTitle: "Ok").show()
+                }
             })
         }
     }
@@ -84,8 +130,16 @@ extension SignInViewController: AWSCognitoIdentityPasswordAuthentication {
 // Extension to adopt the `AWSCognitoUserPoolsSignInHandler` protocol
 extension SignInViewController: AWSCognitoUserPoolsSignInHandler {
     func handleUserPoolSignInFlowStart() {
+        let inputtext : String!
+        if (toggleButton.titleLabel?.text != "Username"){
+            inputtext = self.customUserIdField.text
+        } else {
+            var string : String!
+            string = self.phoneNumberField.text
+            inputtext = self.countryCodeField.text! + String(string.characters.filter { "01234567890".characters.contains($0) })
+        }
         // check if both username and password fields are provided
-        guard let username = self.customUserIdField.text, !username.isEmpty,
+        guard let username = inputtext, !inputtext.isEmpty,
             let password = self.customPasswordField.text, !password.isEmpty else {
                 DispatchQueue.main.async(execute: {
                     UIAlertView(title: "Missing UserName / Password",

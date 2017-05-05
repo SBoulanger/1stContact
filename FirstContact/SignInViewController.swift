@@ -22,10 +22,11 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var customCreateAccountButton: UIButton!
+    @IBOutlet weak var countryCodeField: UITextField!
     
+    @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var phoneNumberField: UITextField!
     var didSignInObserver: AnyObject!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,8 @@ class SignInViewController: UIViewController {
                 print("LOGGED IN: ----------------------------------------")
             })
          */
+        phoneNumberField.addTarget(self, action: #selector(editNumber), for: .editingChanged)
+        countryCodeField.addTarget(self, action: #selector(editCountry), for: .editingChanged)
         
         signInButton.addTarget(self, action: #selector(self.handleCustomSignIn), for: .touchUpInside)
         signInButton.layer.cornerRadius = 3.0
@@ -47,6 +50,10 @@ class SignInViewController: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
             self.view.alpha = 0.90
         }, completion: nil)
+        self.customUserIdField.isHidden = true
+        self.phoneNumberField.isHidden = false
+        self.countryCodeField.isHidden = false
+        self.toggleButton.setTitle("Username", for: .normal)
     }
     func handleLoginWithSignInProvider(_ signInProvider: AWSSignInProvider) {
         AWSSignInManager.sharedInstance().login(signInProviderKey: signInProvider.identityProviderName, completionHandler: {(result: Any?, authState:AWSIdentityManagerAuthState, error: Error?) in
@@ -63,7 +70,35 @@ class SignInViewController: UIViewController {
             print("result = \(result), error = \(error)")
         })
     }
+    @IBAction func toggleButtonPressed(_ sender: Any) {
+        if (toggleButton.titleLabel?.text == "Username"){
+            self.customUserIdField.isHidden = false
+            self.phoneNumberField.isHidden = true
+            self.countryCodeField.isHidden = true
+            self.toggleButton.setTitle("Phone Number", for: .normal)
+        } else {
+            self.phoneNumberField.isHidden = false
+            self.countryCodeField.isHidden = false
+            self.customUserIdField.isHidden = true
+            self.toggleButton.setTitle("Username", for: .normal)
+        }
+        
+    }
     @IBAction func dismissX(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    func editNumber(sender: UITextField){
+        if (sender.text?.characters.count)! > 0 {
+            var editor : String! = sender.text
+            editor = String(editor.characters.filter { "01234567890".characters.contains($0) })
+            sender.text = AppDelegate.getAppDelegate().formatNumber(number: editor!)
+        }
+    }
+    func editCountry(sender: UITextField){
+        if (sender.text?.characters.count)! > 0 {
+            var editor : String! = sender.text
+            editor = String(editor.characters.filter { "01234567890".characters.contains($0) })
+            sender.text = "+" + editor
+        }
     }
 }

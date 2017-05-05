@@ -22,14 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username or phone#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTp-en-68V">
-                                <rect key="frame" x="16" y="149" width="343" height="31"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTp-en-68V">
+                                <rect key="frame" x="16" y="128" width="343" height="31"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APt-fX-2fz">
-                                <rect key="frame" x="16" y="200" width="343" height="30"/>
+                                <rect key="frame" x="16" y="201" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -49,13 +49,45 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfX-Nd-pH1">
-                                <rect key="frame" x="56" y="250" width="263" height="36"/>
+                                <rect key="frame" x="56" y="251" width="263" height="36"/>
                                 <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
                                 <color key="tintColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="SignIn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4FF-u9-33E">
+                                <rect key="frame" x="69" y="129" width="237" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Khp-k5-B2B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="+#" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gAW-xb-Yo1">
+                                <rect key="frame" x="16" y="129" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="J24-Ls-jp4"/>
+                                    <constraint firstAttribute="height" constant="30" id="RYR-6Q-mIR"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNU-F8-OLJ">
+                                <rect key="frame" x="274" y="168" width="85" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="EP4-vB-mtm"/>
+                                    <constraint firstAttribute="height" constant="25" id="Vgm-iG-DE6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="13"/>
+                                <state key="normal" title="Username">
+                                    <color key="titleColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleButtonPressed:" destination="qKv-bh-Kkm" eventType="touchUpInside" id="buV-cJ-d9K"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUa-iK-Ogo">
                                 <rect key="frame" x="343" y="71" width="25" height="25"/>
@@ -73,30 +105,40 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4FF-u9-33E" firstAttribute="top" secondItem="r95-2D-IST" secondAttribute="bottom" constant="65" id="0Kg-cF-Klc"/>
+                            <constraint firstItem="4FF-u9-33E" firstAttribute="leading" secondItem="gAW-xb-Yo1" secondAttribute="trailing" constant="8" id="6hc-P5-Lrl"/>
                             <constraint firstItem="APt-fX-2fz" firstAttribute="leading" secondItem="fci-PH-jRN" secondAttribute="leadingMargin" id="8aA-hR-YRG"/>
                             <constraint firstItem="xla-L5-f3Y" firstAttribute="top" secondItem="KfX-Nd-pH1" secondAttribute="bottom" constant="20" id="APW-Aa-zkb"/>
                             <constraint firstItem="KfX-Nd-pH1" firstAttribute="top" secondItem="APt-fX-2fz" secondAttribute="bottom" constant="20" id="FyK-RR-t4r"/>
                             <constraint firstItem="aN0-Uy-Lnf" firstAttribute="leading" secondItem="fci-PH-jRN" secondAttribute="leadingMargin" constant="40" id="GjV-KY-QsM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xla-L5-f3Y" secondAttribute="trailing" constant="40" id="KEK-cV-BEk"/>
+                            <constraint firstItem="gAW-xb-Yo1" firstAttribute="leading" secondItem="fci-PH-jRN" secondAttribute="leadingMargin" id="KW3-e6-rjO"/>
+                            <constraint firstItem="gAW-xb-Yo1" firstAttribute="top" secondItem="r95-2D-IST" secondAttribute="bottom" constant="65" id="Lcw-Sp-bsA"/>
+                            <constraint firstItem="RNU-F8-OLJ" firstAttribute="trailing" secondItem="fci-PH-jRN" secondAttribute="trailingMargin" id="M1k-Lt-1kB"/>
                             <constraint firstItem="fTp-en-68V" firstAttribute="leading" secondItem="fci-PH-jRN" secondAttribute="leadingMargin" id="OGP-Ja-2iJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4FF-u9-33E" secondAttribute="trailing" constant="53" id="Odh-s2-SGX"/>
                             <constraint firstItem="APt-fX-2fz" firstAttribute="trailing" secondItem="fci-PH-jRN" secondAttribute="trailingMargin" id="P1q-BY-dl8"/>
+                            <constraint firstItem="APt-fX-2fz" firstAttribute="top" secondItem="RNU-F8-OLJ" secondAttribute="bottom" constant="8" id="PDB-Qs-oZw"/>
                             <constraint firstItem="fTp-en-68V" firstAttribute="trailing" secondItem="fci-PH-jRN" secondAttribute="trailingMargin" id="PIP-Fc-PzI"/>
                             <constraint firstAttribute="trailing" secondItem="WUa-iK-Ogo" secondAttribute="trailing" constant="7" id="RF7-0a-K8I"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KfX-Nd-pH1" secondAttribute="trailing" constant="40" id="RgH-bQ-hY2"/>
+                            <constraint firstItem="RNU-F8-OLJ" firstAttribute="top" secondItem="fTp-en-68V" secondAttribute="bottom" constant="8" id="Z1n-WJ-fTJ"/>
                             <constraint firstItem="WUa-iK-Ogo" firstAttribute="top" secondItem="r95-2D-IST" secondAttribute="bottom" constant="7" id="aiK-Kj-1J5"/>
-                            <constraint firstItem="APt-fX-2fz" firstAttribute="top" secondItem="fTp-en-68V" secondAttribute="bottom" constant="20" id="bq7-UR-BLC"/>
-                            <constraint firstItem="fTp-en-68V" firstAttribute="top" secondItem="r95-2D-IST" secondAttribute="bottom" constant="85" id="gZW-pg-ipN"/>
+                            <constraint firstItem="fTp-en-68V" firstAttribute="top" secondItem="r95-2D-IST" secondAttribute="bottom" constant="65" id="gZW-pg-ipN"/>
                             <constraint firstItem="aN0-Uy-Lnf" firstAttribute="top" secondItem="KfX-Nd-pH1" secondAttribute="bottom" constant="20" id="yek-iF-BDh"/>
                             <constraint firstItem="KfX-Nd-pH1" firstAttribute="leading" secondItem="fci-PH-jRN" secondAttribute="leadingMargin" constant="40" id="yss-AO-CIk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U9Q-Kf-Y3O"/>
                     <connections>
+                        <outlet property="countryCodeField" destination="gAW-xb-Yo1" id="Dgc-9f-eIt"/>
                         <outlet property="customCreateAccountButton" destination="aN0-Uy-Lnf" id="gvk-fD-XMu"/>
                         <outlet property="customForgotPasswordButton" destination="xla-L5-f3Y" id="WhP-cX-eEN"/>
                         <outlet property="customPasswordField" destination="APt-fX-2fz" id="f8b-7Q-6pc"/>
                         <outlet property="customUserIdField" destination="fTp-en-68V" id="bDd-H5-Zh0"/>
+                        <outlet property="phoneNumberField" destination="4FF-u9-33E" id="wM8-ZC-cdQ"/>
                         <outlet property="signInButton" destination="KfX-Nd-pH1" id="AKW-Rj-dhU"/>
+                        <outlet property="toggleButton" destination="RNU-F8-OLJ" id="Kfk-JJ-eaF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjZ-W5-SSo" userLabel="First Responder" sceneMemberID="firstResponder"/>

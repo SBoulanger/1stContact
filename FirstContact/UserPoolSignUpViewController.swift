@@ -18,7 +18,7 @@ import AWSCognitoIdentityProvider
 import AWSMobileHubHelper
 import AWSCognitoUserPoolsSignIn
 
-class UserPoolSignUpViewController: UIViewController {
+class UserPoolSignUpViewController: UIViewController, UITextFieldDelegate {
     
     var pool: AWSCognitoIdentityUserPool?
     var sentTo: String?
@@ -27,11 +27,14 @@ class UserPoolSignUpViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var countrycode: UITextField!
     @IBOutlet weak var email: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pool = AWSCognitoIdentityUserPool.init(forKey: AWSCognitoUserPoolsSignInProviderKey)
+        self.phone.addTarget(self, action: #selector(editNumber), for: .editingChanged)
+        self.countrycode.addTarget(self, action: #selector(editCountry), for: .editingChanged)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,11 +57,35 @@ class UserPoolSignUpViewController: UIViewController {
         
         var attributes = [AWSCognitoIdentityUserAttributeType]()
         
+        let finalcountryCodeValue : String!
+        if let countryCodeValue = countrycode.text, !countryCodeValue.isEmpty {
+            if countryCodeValue.range(of: "+") == nil {
+                
+                finalcountryCodeValue = "+" + countryCodeValue
+            } else {
+                finalcountryCodeValue = countryCodeValue
+            }
+        } else {
+            UIAlertView(title: "Invalid Format",
+                        message: "Country Code is required for phone number.",
+                        delegate: nil,
+                        cancelButtonTitle: "Ok").show()
+            return
+        }
+        
+        
         if let phoneValue = self.phone.text, !phoneValue.isEmpty {
             let phone = AWSCognitoIdentityUserAttributeType()
             phone?.name = "phone_number"
-            phone?.value = phoneValue
+            let finalphoneValue = String(phoneValue.characters.filter { "01234567890".characters.contains($0) })
+            phone?.value = finalcountryCodeValue + finalphoneValue
             attributes.append(phone!)
+        } else {
+            UIAlertView(title: "Missing Required Fields",
+                        message: "Email is required for registration.",
+                        delegate: nil,
+                        cancelButtonTitle: "Ok").show()
+            return
         }
         
         if let emailValue = self.email.text, !emailValue.isEmpty {
@@ -84,6 +111,7 @@ class UserPoolSignUpViewController: UIViewController {
                     // handle the case where user has to confirm his identity via email / SMS
                     if (result.user.confirmedStatus != AWSCognitoIdentityUserStatus.confirmed) {
                         strongSelf.sentTo = result.codeDeliveryDetails?.destination
+                        print(result.codeDeliveryDetails?.destination)
                         strongSelf.performSegue(withIdentifier: "SignUpConfirmSegue", sender:sender)
                     } else {
                         UIAlertView(title: "Registration Complete",
@@ -93,9 +121,23 @@ class UserPoolSignUpViewController: UIViewController {
                         _ = strongSelf.navigationController?.popToRootViewController(animated: true)
                     }
                 }
-                
             })
             return nil
+        }
+    }
+    
+    func editNumber(sender: UITextField){
+        if (sender.text?.characters.count)! > 0 {
+            var editor : String! = sender.text
+            editor = String(editor.characters.filter { "01234567890".characters.contains($0) })
+            sender.text = AppDelegate.getAppDelegate().formatNumber(number: editor!)
+        }
+    }
+    func editCountry(sender: UITextField){
+        if (sender.text?.characters.count)! > 0 {
+            var editor : String! = sender.text
+            editor = String(editor.characters.filter { "01234567890".characters.contains($0) })
+            sender.text = "+" + editor
         }
     }
 
