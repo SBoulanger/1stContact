@@ -6,6 +6,8 @@
 //  Copyright © 2017 Samuel Boulanger. All rights reserved.
 //
 
+//TODO throw snap alert doesnt work
+
 import Foundation
 import MMCardView
 
@@ -118,11 +120,14 @@ class SnapchatCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
                 UIApplication.shared.openURL(snapchatUrl!)
                 print("")
             } else {
-                throwUpSnapchatAlert()
+                var aCon = UIAlertController(title: "🆘", message: "There was an error", preferredStyle: UIAlertControllerStyle.alert)
+                let dismissaction = UIAlertAction()
+                aCon.addAction(dismissaction)
             }
         }catch {
-            print("caught")
-            throwUpSnapchatAlert()
+            var aCon = UIAlertController(title: "🆘", message: "There was an error", preferredStyle: UIAlertControllerStyle.alert)
+            let dismissaction = UIAlertAction()
+            aCon.addAction(dismissaction)
         }
     }
 }

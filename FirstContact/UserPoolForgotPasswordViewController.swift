@@ -20,6 +20,7 @@ import AWSCognitoUserPoolsSignIn
 
 class UserPoolForgotPasswordViewController: UIViewController {
     
+    @IBOutlet weak var forgotPassButton: UIButton!
     var pool: AWSCognitoIdentityUserPool?
     var user: AWSCognitoIdentityUser?
     
@@ -29,6 +30,9 @@ class UserPoolForgotPasswordViewController: UIViewController {
     
     @IBOutlet weak var toggleButton: UIButton!
     @IBAction func onForgotPassword(_ sender: AnyObject) {
+        
+        
+        
         
         let inputtext : String!
         if (toggleButton.titleLabel?.text != "Username"){
@@ -73,6 +77,7 @@ class UserPoolForgotPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.forgotPassButton.layer.cornerRadius = 3.0
         self.userName.isHidden = true
         self.phoneNumberField.isHidden = false
         self.phoneNumberField.addTarget(self, action: #selector(editNumber), for: .editingChanged)

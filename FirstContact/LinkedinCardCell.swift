@@ -31,7 +31,7 @@ class LinkedinCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
     var contactIndex: Int!
     
     var loginSucces = false
-    
+    let linkedInURL = "linkedin://"
     var lidelegate : ContactCardViewController!
     
     public static func cellIdentifier() -> String {
@@ -64,6 +64,7 @@ class LinkedinCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
                 signInButton.isHidden = true
             }
         } else {
+            signInButton.isHidden = true
             signOutButton.isHidden = true
             linkedInLabel.layer.borderColor = UIColor(colorLiteralRed: 13/255, green: 102/255, blue: 169/255, alpha: 1.0).cgColor
             linkedInLabel.layer.borderWidth = 1.5
@@ -75,7 +76,6 @@ class LinkedinCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
                 linkedInLabel.text = "LinkedIn linked 👍"
             }
             linkedInLabel.textColor = UIColor(colorLiteralRed: 13/255, green: 102/255, blue: 169/255, alpha: 1.0)
-
         }
         if (self.contact.linkedin != ""){
             goButton.isHidden = false
@@ -139,14 +139,18 @@ class LinkedinCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
     }
     @IBAction func goButtonPressed(_ sender: Any) {
        do {
-            let snapchatUrl = URL(string:"linkedin://in/samuel-boulanger-ba945b133")
-            if UIApplication.shared.canOpenURL(snapchatUrl!){
-                UIApplication.shared.openURL(snapchatUrl!)
+            print(linkedInURL)
+            print(self.contact.linkedin)
+            let linkedURL = URL(string:linkedInURL+self.contact.linkedin)
+            if linkedURL != nil && UIApplication.shared.canOpenURL(linkedURL!){
+                UIApplication.shared.openURL(linkedURL!)
             } else {
-                throwUpInstagramAlert()
+                UIApplication.shared.openURL(URL(string: "http://linkedin.com/"+self.contact.linkedin)!)
             }
         }catch {
-            throwUpInstagramAlert()
+            var aCon = UIAlertController(title: "🆘", message: "There was an error", preferredStyle: UIAlertControllerStyle.alert)
+            let dismissaction = UIAlertAction()
+            aCon.addAction(dismissaction)
         }
  
     }

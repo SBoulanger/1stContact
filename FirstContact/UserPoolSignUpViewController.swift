@@ -30,8 +30,10 @@ class UserPoolSignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var countrycode: UITextField!
     @IBOutlet weak var email: UITextField!
     
+    @IBOutlet weak var signUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.signUpButton.layer.cornerRadius = 3.5
         self.pool = AWSCognitoIdentityUserPool.init(forKey: AWSCognitoUserPoolsSignInProviderKey)
         self.phone.addTarget(self, action: #selector(editNumber), for: .editingChanged)
         self.countrycode.addTarget(self, action: #selector(editCountry), for: .editingChanged)
@@ -82,7 +84,7 @@ class UserPoolSignUpViewController: UIViewController, UITextFieldDelegate {
             attributes.append(phone!)
         } else {
             UIAlertView(title: "Missing Required Fields",
-                        message: "Email is required for registration.",
+                        message: "Phone Number is required for registration.",
                         delegate: nil,
                         cancelButtonTitle: "Ok").show()
             return

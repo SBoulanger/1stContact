@@ -110,10 +110,14 @@ class InstagramCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
             if UIApplication.shared.canOpenURL(snapchatUrl!){
                 UIApplication.shared.openURL(snapchatUrl!)
             } else {
-                throwUpInstagramAlert()
+                var aCon = UIAlertController(title: "🆘", message: "There was an error", preferredStyle: UIAlertControllerStyle.alert)
+                let dismissaction = UIAlertAction()
+                aCon.addAction(dismissaction)
             }
         }catch {
-            throwUpInstagramAlert()
+            var aCon = UIAlertController(title: "🆘", message: "There was an error", preferredStyle: UIAlertControllerStyle.alert)
+            let dismissaction = UIAlertAction()
+            aCon.addAction(dismissaction)
         }
     }
     

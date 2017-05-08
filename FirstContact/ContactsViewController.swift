@@ -50,6 +50,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func refresh(){
         historyTableView.reloadData()
+        setUpLogButton()
     }
     
     override func viewDidLoad() {
@@ -104,6 +105,9 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
                 let cancelAction = UIAlertAction(title: "Don't Remove", style: UIAlertActionStyle.cancel) {
                     UIAlertAction in
+                    var contact = FCContact()
+                    contact.me = true
+                    self.dataHub.updateContact(contact: contact)
                     print("Don't Remove Pressed")
                 }
                 
@@ -117,6 +121,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
                 self.present(alertController, animated: true, completion: nil)
                 
                 //log out of facebook
+                //if (FBSDKLoginManager().i)
                 FBSDKLoginManager().logOut()
                 
                 self.dataHub.refreshQRImage()
@@ -124,7 +129,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
             })
             // print("Logout Successful: \(signInProvider.getDisplayName)");
         } else {
-            assert(false)
+            print("not logged in?")
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -142,7 +147,7 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
                     array.append("@")
                 }
                 else {
-                    array.append(String(dataHub.getSortedAArrays()[i][0].firstName.characters.first!))
+                    array.append(String(dataHub.getSortedAArrays()[i][0].firstName.uppercased().characters.first!))
                 }
             }
         }

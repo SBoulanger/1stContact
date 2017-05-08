@@ -67,6 +67,9 @@ class DataHub {
         }
         self.createAlphArrays(contacts: self.contacts)
     }
+    func getManager() -> AWSUserFileManager{
+        return self.manager
+    }
     func setUpViews(){
         let containerview = AppDelegate.getAppDelegate().window?.rootViewController as! ContainerViewController
         let navConview = containerview.rightVc
@@ -80,8 +83,8 @@ class DataHub {
 
     func syncData(){
         print("DataHub: syncData()")
-        print("localContacts:\(localContacts)")
-        print("contacts:\(contacts)")
+        print("localContacts:\(self.localContacts)")
+        print("contacts:\(self.contacts)")
         self.contacts = localContacts + contacts
         var alreadyThere = Set<FCContact>()
         let uniqueContacts = contacts.flatMap { (tcontact) -> FCContact? in
@@ -109,6 +112,7 @@ class DataHub {
         }
     }
     func getLocalData(){
+        self.localContacts = []
         let contactDictionaryData = defaults.data(forKey: "contactDictionary")
         if contactDictionaryData == nil {
             self.localContact = FCContact()
@@ -343,6 +347,7 @@ class DataHub {
     func generateContactInfo(){
         if (AWSSignInManager.sharedInstance().isLoggedIn){
             self.code = generateRemoteString(share: self.share)
+            print(self.code)
         } else {
             self.code = generateDirectString(contact: self.contact,share:self.share)
         }
@@ -430,16 +435,20 @@ class DataHub {
         self.refreshContacts()
     }
     func deleteContact(contactAt: Int){
+        manager.clearCache()
         //remove from local instanceup
-        var tempContacts = self.contacts
-        tempContacts.remove(at: contactAt)
+        //var tempContacts = self.contacts
+        self.contacts.remove(at: contactAt)
         //create data from local instance
-        self.contacts = tempContacts
-        saveContacts()
+        //self.contacts = tempContacts
+        print(self.contacts)
+        //print(tempContacts)
+        self.updateContacts(contacts: self.contacts)
     }
     
     func saveContact(){
         print("DataHub: saveContact()")
+        manager.clearCache()
         if (AWSSignInManager.sharedInstance().isLoggedIn){
             uploadContact()
         }
@@ -451,16 +460,18 @@ class DataHub {
     
     func saveContacts(){
         print("savecontacts")
-        
+        manager.clearCache()
         if (AWSSignInManager.sharedInstance().isLoggedIn){
             uploadContacts()
         }
 
         var dictionaryContacts = [Dictionary<String, AnyObject>]()
-        for i in contacts {
+        for i in self.contacts {
+            print(i)
             dictionaryContacts.append(i.encode())
         }
         let dataContacts = NSKeyedArchiver.archivedData(withRootObject: dictionaryContacts)
+        print(dictionaryContacts)
         defaults.set(dataContacts, forKey: "contactsDictArray")
         
         defaults.synchronize()
@@ -514,16 +525,20 @@ class DataHub {
         string += "/*"
         string += "\(CONTACT_FILE_DIRECTORY)/\(AWSIdentityManager.default().identityId!)/"
         string += "/*"
+        print(string)
         return string
     }
     func getAWSContent(url:String,share:[Int],completionHandler: @escaping (() -> Void)) {
         print("DataHub: loadAWSContent()")
+        print(share)
         manager.listAvailableContents(withPrefix: url, marker: marker, completionHandler: {[weak self] (contents: [AWSContent]?, nextMarker: String?, error: Error?) in
             guard let strongSelf = self else { return }
+            strongSelf.contents = contents
             if let error = error {
                 print("Failed to load the list of contents. \(error)")
             }
             if let contents = contents, contents.count > 0 {
+                
                 if let nextMarker = nextMarker, !nextMarker.isEmpty {
                     strongSelf.didLoadAllContents = false
                 } else {
@@ -542,7 +557,8 @@ class DataHub {
     }
     
     func downloadRemoteContents(remoteContents: [AWSContent],share:[Int],completionHandler: @escaping (() -> Void)){
-        print("DataHub: downloadContents()")
+        print("DataHub: downloadRemoteContents()")
+        print(share)
         print(remoteContents)
         remoteContents.forEach({ (content: AWSContent) in
             print("Content: \(content)")
@@ -566,6 +582,7 @@ class DataHub {
     }
     fileprivate func downloadOtherContent(_ content: AWSContent, pinOnCompletion: Bool,share:[Int], completionHandler: @escaping (() -> Void)) {
         print("DataHub: downloadContent(content: \(content), pinOnCompletion: \(pinOnCompletion)")
+        print(share)
         content.download(with: .ifNewerExists, pinOnCompletion: pinOnCompletion, progressBlock: {[weak self] (content: AWSContent, progress: Progress) in
             guard let strongSelf = self else { return }
             }, completionHandler: {[weak self] (content: AWSContent?, data: Data?, error: Error?) in
@@ -632,6 +649,8 @@ class DataHub {
                 
                 
                 let fString = sString.replacingCharacters(in: removeRange, with: "")
+                print("SHARE STRING")
+                print(shareString)
                 return [shareString,getRemoteValues(info: fString)]
             }
         }

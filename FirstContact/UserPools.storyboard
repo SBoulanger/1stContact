@@ -271,6 +271,7 @@
                         <outlet property="email" destination="NnZ-Nu-h8W" id="Y3N-ph-etQ"/>
                         <outlet property="password" destination="LAT-XP-02o" id="WII-es-tUa"/>
                         <outlet property="phone" destination="d1d-wB-OkR" id="qKg-MJ-hgY"/>
+                        <outlet property="signUpButton" destination="1HX-ux-FXU" id="MJ5-mf-SEY"/>
                         <outlet property="userName" destination="JQi-lF-vg6" id="q8u-0K-BvB"/>
                         <segue destination="oYn-kQ-Tog" kind="show" identifier="SignUpConfirmSegue" id="XMJ-lN-8F5"/>
                     </connections>
@@ -408,6 +409,7 @@
                     <navigationItem key="navigationItem" id="ze1-65-hn0"/>
                     <connections>
                         <outlet property="codeSentTo" destination="dCy-jd-gSd" id="rBw-DZ-6BB"/>
+                        <outlet property="confirmButton" destination="dDY-CE-z9n" id="pSQ-yl-YPl"/>
                         <outlet property="confirmationCode" destination="25L-eg-Bjt" id="hpa-iL-xQk"/>
                         <outlet property="userName" destination="GAZ-6v-qX9" id="lrq-i6-znK"/>
                     </connections>
@@ -532,6 +534,7 @@
                     <navigationItem key="navigationItem" id="wcH-Ol-TbY"/>
                     <connections>
                         <outlet property="countryCodeField" destination="Ohg-7P-Bcf" id="7so-oI-BDt"/>
+                        <outlet property="forgotPassButton" destination="kV7-Fv-gSa" id="h7t-hG-5iN"/>
                         <outlet property="phoneNumberField" destination="70o-dk-Rbe" id="UkZ-KN-RT0"/>
                         <outlet property="toggleButton" destination="0hT-hn-jKd" id="QbA-Gp-4Cx"/>
                         <outlet property="userName" destination="CLv-tS-SbV" id="tP7-i3-B9Y"/>

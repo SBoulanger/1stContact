@@ -54,6 +54,22 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         self.view.addSubview(homebutton)
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        for i in dataHub.share {
+            if (i == 1  || i == 0 ){
+                selectRow(tableView: mainTableView, at: IndexPath(row: 0, section: 1))
+            } else {
+                selectRow(tableView: mainTableView, at: IndexPath(row: i-1, section: 1))
+            }
+        }
+        if dataHub.share.contains(0) && dataHub.share.contains(1) && dataHub.share.contains(2) && dataHub.share.contains(3) {
+            selectRow(tableView: mainTableView, at: IndexPath(row: 0, section: 0))
+        }
+        if dataHub.share.contains(4) && dataHub.share.contains(5) && dataHub.share.contains(6) && dataHub.share.contains(7) {
+            selectRow(tableView: mainTableView, at: IndexPath(row: 1, section: 0))
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return categories.count
@@ -89,9 +105,9 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
         } else {
             cell.cellLabel.text = array1[(indexPath as NSIndexPath).row]
             if (indexPath as NSIndexPath).row == 0 {
-                cell.cellValue.text = dataHub.contact.getField(fieldIndex: (indexPath as NSIndexPath).row) + " " + dataHub.contact.getField(fieldIndex: (indexPath as NSIndexPath).row + 1)
+                cell.cellValue.text = dataHub.getContact().getField(fieldIndex: (indexPath as NSIndexPath).row) + " " + dataHub.contact.getField(fieldIndex: (indexPath as NSIndexPath).row + 1)
             } else if (indexPath as NSIndexPath).row != 0 {
-                cell.cellValue.text = dataHub.contact.getField(fieldIndex: (indexPath as NSIndexPath).row + 1)
+                cell.cellValue.text = dataHub.getContact().getField(fieldIndex: (indexPath as NSIndexPath).row + 1)
             }
             if dataHub.share.contains((indexPath as NSIndexPath).row) {
                 tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition(rawValue: Int(tableView.contentOffset.y))!)
@@ -125,14 +141,21 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
             selectRow(tableView: tableView, at: IndexPath(row: 3, section: 1))
             selectRow(tableView: tableView, at: IndexPath(row: 4, section: 1))
             selectRow(tableView: tableView, at: IndexPath(row: 5, section: 1))
-            //selectRow(tableView: tableView, at: IndexPath(row: 6, section: 1))
+            selectRow(tableView: tableView, at: IndexPath(row: 6, section: 1))
         }
         var selectedRowsIndexPath = tableView.indexPathsForSelectedRows
         var selectedRows = [Int]()
         if selectedRowsIndexPath != nil {
             for i in selectedRowsIndexPath! {
+                print("setting share")
+                print(i)
                 if i.section != 0 {
-                    selectedRows.append(i.row)
+                    if i.row == 0 {
+                        selectedRows.append(0)
+                        selectedRows.append(1)
+                    } else {
+                        selectedRows.append(i.row + 1)
+                    }
                 }
             }
             print("QRSettingsViewController: \(selectedRows)")
@@ -175,21 +198,26 @@ class QRSettingsViewController: UIViewController, UITableViewDataSource,UITableV
             deselectRow(tableView: tableView, at: IndexPath(row: 3, section: 1))
             deselectRow(tableView: tableView, at: IndexPath(row: 4, section: 1))
             deselectRow(tableView: tableView, at: IndexPath(row: 5, section: 1))
-            //deselectRow(tableView: tableView, at: IndexPath(row: 6, section: 1))
+            deselectRow(tableView: tableView, at: IndexPath(row: 6, section: 1))
         }
         var selectedRowsIndexPath = tableView.indexPathsForSelectedRows
         var selectedRows = [Int]()
         if selectedRowsIndexPath != nil {
             for i in selectedRowsIndexPath! {
                 if i.section != 0 {
-                    selectedRows.append(i.row)
+                    if i.row == 0 {
+                        selectedRows.append(0)
+                        selectedRows.append(1)
+                    } else {
+                        selectedRows.append(i.row + 1)
+                    }
                 }
             }
             print("QRSettingsViewController: \(selectedRows)")
         }
         
         self.dataHub.setShare(nshare: selectedRows)
-        self.dataHub.contact.share = selectedRows
+        //self.dataHub.contact.share = selectedRows
         self.dataHub.generateContactInfo()
         
         var conview = AppDelegate.getAppDelegate().window?.rootViewController as! ContainerViewController

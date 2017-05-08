@@ -260,6 +260,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             controller.present(alertController, animated: true, completion: nil)
         })
     }
+    func showDismissMessage(controller: UIViewController, message: String, title: String, dismissHandler:@escaping (_ accessGranted: UIAlertAction) -> Void) {
+        print("showMessage() class called")
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let dismissAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: dismissHandler)
+        
+        alertController.addAction(dismissAction)
+        
+        print("qrcode set to not done")
+        
+        DispatchQueue.main.async(execute: {
+            controller.present(alertController, animated: true, completion: nil)
+        })
+    }
 
 }
 

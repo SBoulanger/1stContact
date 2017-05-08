@@ -26,8 +26,10 @@ class UserPoolSignUpConfirmationViewController : UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var confirmationCode: UITextField!
     
+    @IBOutlet weak var confirmButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.confirmButton.layer.cornerRadius = 3.0
         self.userName.text = self.user!.username;
     }
     

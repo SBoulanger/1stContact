@@ -40,28 +40,6 @@
                                 <inset key="imageEdgeInsets" minX="-3" minY="0.0" maxX="-3" maxY="0.0"/>
                                 <state key="normal" image="FC_icon_clear_empty.png"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Thanks to Icons8.com!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x14-Sh-rCi">
-                                <rect key="frame" x="16" y="623" width="226" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="pgC-aT-gBQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
-                                <color key="textColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYI-cy-4pD">
-                                <rect key="frame" x="251.5" y="620" width="97.5" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="44k-ht-j07"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
-                                <state key="normal" title="Icons8.com">
-                                    <color key="titleColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="icon8ButtonPressed:" destination="k8i-Yc-Cbe" eventType="touchUpInside" id="eI8-JT-TcS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzW-YJ-phK">
                                 <rect key="frame" x="334" y="72" width="25" height="25"/>
                                 <constraints>
@@ -75,28 +53,284 @@
                                     <action selector="exitPressed:" destination="k8i-Yc-Cbe" eventType="touchUpInside" id="vyR-kB-5jA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bP-af-gaG">
+                                <rect key="frame" x="21" y="462" width="62.5" height="24"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                                <color key="textColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rep-6J-Vez">
+                                <rect key="frame" x="289" y="617" width="70" height="30"/>
+                                <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Pzp-dT-Lv7"/>
+                                    <constraint firstAttribute="height" constant="30" id="n9B-WG-gkG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="k8i-Yc-Cbe" eventType="touchUpInside" id="fiG-oy-ZN5"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGe-Cp-tVF">
+                                <rect key="frame" x="8" y="487" width="359" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="vsx-jc-UvZ"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PdX-4L-hDm" firstAttribute="top" secondItem="eYI-cy-4pD" secondAttribute="bottom" constant="17" id="3S5-Wf-wM3"/>
+                            <constraint firstItem="cGe-Cp-tVF" firstAttribute="leading" secondItem="Nc8-Jz-iQl" secondAttribute="leading" constant="8" id="3Oh-6o-CtX"/>
                             <constraint firstItem="TzW-YJ-phK" firstAttribute="trailing" secondItem="Nc8-Jz-iQl" secondAttribute="trailingMargin" id="3Ti-k7-oh9"/>
                             <constraint firstItem="Ke5-kK-xOl" firstAttribute="centerY" secondItem="Nc8-Jz-iQl" secondAttribute="centerY" id="7kr-G4-9ND"/>
                             <constraint firstItem="Ke5-kK-xOl" firstAttribute="centerX" secondItem="Nc8-Jz-iQl" secondAttribute="centerX" id="Fmy-PD-Nb5"/>
                             <constraint firstItem="TzW-YJ-phK" firstAttribute="top" secondItem="kpm-Kx-Fou" secondAttribute="bottom" constant="8" id="GV1-zF-mWP"/>
-                            <constraint firstItem="x14-Sh-rCi" firstAttribute="leading" secondItem="Nc8-Jz-iQl" secondAttribute="leadingMargin" id="MWb-Qi-xWF"/>
                             <constraint firstItem="cg0-w4-lVt" firstAttribute="top" secondItem="kpm-Kx-Fou" secondAttribute="bottom" constant="80" id="TxM-nK-6Lw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eYI-cy-4pD" secondAttribute="trailing" constant="10" id="ZeQ-9U-mog"/>
+                            <constraint firstItem="Rep-6J-Vez" firstAttribute="trailing" secondItem="Nc8-Jz-iQl" secondAttribute="trailingMargin" id="WfF-KA-EjU"/>
+                            <constraint firstItem="cGe-Cp-tVF" firstAttribute="top" secondItem="6bP-af-gaG" secondAttribute="bottom" constant="1" id="a6d-J4-1By"/>
+                            <constraint firstItem="Rep-6J-Vez" firstAttribute="top" secondItem="cGe-Cp-tVF" secondAttribute="bottom" id="dXD-W4-Kn9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cg0-w4-lVt" secondAttribute="trailing" constant="20" id="dfp-Eo-f5H"/>
-                            <constraint firstItem="PdX-4L-hDm" firstAttribute="top" secondItem="x14-Sh-rCi" secondAttribute="bottom" constant="20" id="h3V-3H-lSa"/>
-                            <constraint firstItem="eYI-cy-4pD" firstAttribute="leading" secondItem="x14-Sh-rCi" secondAttribute="trailing" constant="10" id="m3x-7o-hBG"/>
+                            <constraint firstItem="PdX-4L-hDm" firstAttribute="top" secondItem="Rep-6J-Vez" secondAttribute="bottom" constant="20" id="nLF-9c-5SS"/>
                             <constraint firstItem="cg0-w4-lVt" firstAttribute="leading" secondItem="Nc8-Jz-iQl" secondAttribute="leadingMargin" constant="20" id="pA6-zX-Ybv"/>
+                            <constraint firstItem="6bP-af-gaG" firstAttribute="leading" secondItem="Nc8-Jz-iQl" secondAttribute="leadingMargin" constant="5" id="wAe-fm-b3X"/>
+                            <constraint firstAttribute="trailing" secondItem="cGe-Cp-tVF" secondAttribute="trailing" constant="8" id="wla-4D-wcE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gfg-qz-A4c"/>
+                    <connections>
+                        <outlet property="goButton" destination="Rep-6J-Vez" id="unQ-u6-zsX"/>
+                        <outlet property="settingsPicker" destination="cGe-Cp-tVF" id="a1z-Lt-XaV"/>
+                        <segue destination="8On-s4-YLa" kind="push" identifier="change password" id="WaD-kR-tgp"/>
+                        <segue destination="qxg-mL-Y8f" kind="push" identifier="acknowledgments" id="V76-yV-l21"/>
+                        <segue destination="ggs-Ed-hVb" kind="push" identifier="delete account" id="vwa-br-FIv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQh-eN-LOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1112.8" y="124.58770614692655"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="Kki-2g-xYG">
+            <objects>
+                <viewController id="8On-s4-YLa" customClass="ChangePasswordViewController" customModule="FirstContact" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zji-XP-P5w"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cqn-lU-PYK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TJV-Oo-yJK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xBt-KE-bQM">
+                                <rect key="frame" x="16" y="227" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="quC-Ko-lkY"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Old Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BaH-Yn-kbX">
+                                <rect key="frame" x="16" y="143" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1bX-ik-VQC"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Old Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NT-2b-7fT">
+                                <rect key="frame" x="135" y="104" width="105" height="24"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
+                                <color key="textColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjt-er-nPJ">
+                                <rect key="frame" x="131" y="188" width="113" height="24"/>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
+                                <color key="textColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdY-CP-toi">
+                                <rect key="frame" x="166" y="83" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUW-4o-GaI">
+                                <rect key="frame" x="26" y="272" width="323" height="30"/>
+                                <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xWT-hy-B7S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeButtonPressed:" destination="8On-s4-YLa" eventType="touchUpInside" id="zzp-1B-Qfc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NUW-4o-GaI" firstAttribute="top" secondItem="xBt-KE-bQM" secondAttribute="bottom" constant="15" id="0X4-cf-0lH"/>
+                            <constraint firstItem="3NT-2b-7fT" firstAttribute="top" secondItem="zji-XP-P5w" secondAttribute="bottom" constant="40" id="5Cd-Hg-RYd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BaH-Yn-kbX" secondAttribute="trailing" id="5a0-hL-nRg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NUW-4o-GaI" secondAttribute="trailing" constant="10" id="JRu-89-AsW"/>
+                            <constraint firstItem="xBt-KE-bQM" firstAttribute="leading" secondItem="TJV-Oo-yJK" secondAttribute="leadingMargin" id="K0P-u6-xhU"/>
+                            <constraint firstItem="xBt-KE-bQM" firstAttribute="top" secondItem="Qjt-er-nPJ" secondAttribute="bottom" constant="15" id="K0d-ov-bdL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xBt-KE-bQM" secondAttribute="trailing" id="YVO-4Q-ncd"/>
+                            <constraint firstItem="NUW-4o-GaI" firstAttribute="leading" secondItem="TJV-Oo-yJK" secondAttribute="leadingMargin" constant="10" id="apI-if-AhY"/>
+                            <constraint firstItem="Qjt-er-nPJ" firstAttribute="top" secondItem="BaH-Yn-kbX" secondAttribute="bottom" constant="15" id="t2e-Aw-xO0"/>
+                            <constraint firstItem="BaH-Yn-kbX" firstAttribute="top" secondItem="3NT-2b-7fT" secondAttribute="bottom" constant="15" id="t6T-Cm-zBq"/>
+                            <constraint firstItem="BaH-Yn-kbX" firstAttribute="leading" secondItem="TJV-Oo-yJK" secondAttribute="leadingMargin" id="zhP-M8-CMS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zas-6C-lp6"/>
+                    <connections>
+                        <outlet property="changeButton" destination="NUW-4o-GaI" id="vnh-Ff-xPf"/>
+                        <outlet property="newPassField" destination="xBt-KE-bQM" id="OOH-wV-yk9"/>
+                        <outlet property="oldPassField" destination="BaH-Yn-kbX" id="hkW-ae-iZ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcd-YL-hXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="125"/>
+        </scene>
+        <!--Thanks View Controller-->
+        <scene sceneID="lQc-dI-woy">
+            <objects>
+                <viewController id="qxg-mL-Y8f" customClass="ThanksViewController" customModule="FirstContact" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bvE-hY-6Qj"/>
+                        <viewControllerLayoutGuide type="bottom" id="voY-Jm-PkV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XoW-L2-Qhc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special Thanks to Icons8.com!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBh-hd-hjz">
+                                <rect key="frame" x="16" y="255" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CJK-Wb-7HI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                                <color key="textColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV9-ii-Pzn">
+                                <rect key="frame" x="138" y="315" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BDC-b2-fj7"/>
+                                    <constraint firstAttribute="width" constant="100" id="Rmw-k6-gIg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
+                                <state key="normal" title="Icons8.com">
+                                    <color key="titleColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="iconButtonPressed:" destination="qxg-mL-Y8f" eventType="touchUpInside" id="jOA-Qz-kTs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqY-3v-nxh">
+                                <rect key="frame" x="147.5" y="72" width="80" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="9RV-F4-cSd"/>
+                                    <constraint firstAttribute="height" constant="100" id="nLl-7D-gc4"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-3" minY="0.0" maxX="-3" maxY="0.0"/>
+                                <state key="normal" image="FC_icon_clear_empty.png"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oBh-hd-hjz" firstAttribute="top" secondItem="dqY-3v-nxh" secondAttribute="bottom" constant="83" id="FyR-gJ-bkr"/>
+                            <constraint firstItem="oBh-hd-hjz" firstAttribute="leading" secondItem="XoW-L2-Qhc" secondAttribute="leadingMargin" id="J9S-Ql-dBz"/>
+                            <constraint firstItem="dqY-3v-nxh" firstAttribute="centerX" secondItem="XoW-L2-Qhc" secondAttribute="centerX" id="JGu-pK-kSS"/>
+                            <constraint firstItem="oBh-hd-hjz" firstAttribute="centerX" secondItem="XoW-L2-Qhc" secondAttribute="centerX" id="L8r-rl-CPy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oBh-hd-hjz" secondAttribute="trailing" id="Oum-kx-NKx"/>
+                            <constraint firstItem="dqY-3v-nxh" firstAttribute="top" secondItem="bvE-hY-6Qj" secondAttribute="bottom" constant="8" id="VAY-Wi-6In"/>
+                            <constraint firstItem="cV9-ii-Pzn" firstAttribute="top" secondItem="oBh-hd-hjz" secondAttribute="bottom" constant="30" id="qkl-OS-z8Q"/>
+                            <constraint firstItem="cV9-ii-Pzn" firstAttribute="centerX" secondItem="XoW-L2-Qhc" secondAttribute="centerX" id="rfd-Yu-NmN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mPd-dm-a1N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hbt-LH-BSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="813"/>
+        </scene>
+        <!--Delete User View Controller-->
+        <scene sceneID="X2C-pu-lAx">
+            <objects>
+                <viewController id="ggs-Ed-hVb" customClass="DeleteUserViewController" customModule="FirstContact" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DJo-XS-6qP"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Yz-6s-kNL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YkK-0Z-5hc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2s-xs-XZg">
+                                <rect key="frame" x="137" y="283.5" width="100" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.092421955149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="381-KZ-h5O"/>
+                                    <constraint firstAttribute="height" constant="100" id="6oh-G9-aUQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="ggs-Ed-hVb" eventType="touchUpInside" id="qgZ-hW-yZP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGh-eG-ObL">
+                                <rect key="frame" x="147" y="72" width="80" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3Dg-q7-cMO"/>
+                                    <constraint firstAttribute="width" constant="80" id="kg1-uN-bAW"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-3" minY="0.0" maxX="-3" maxY="0.0"/>
+                                <state key="normal" image="FC_icon_clear_empty.png"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete your account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwY-3T-Cuf">
+                                <rect key="frame" x="16" y="223.5" width="343" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="z8e-qa-F9t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                                <color key="textColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uGh-eG-ObL" firstAttribute="top" secondItem="DJo-XS-6qP" secondAttribute="bottom" constant="8" id="9sg-pb-Jj1"/>
+                            <constraint firstItem="P2s-xs-XZg" firstAttribute="centerX" secondItem="YkK-0Z-5hc" secondAttribute="centerX" id="bmz-yc-T2E"/>
+                            <constraint firstItem="PwY-3T-Cuf" firstAttribute="leading" secondItem="YkK-0Z-5hc" secondAttribute="leadingMargin" id="fIb-BV-faA"/>
+                            <constraint firstItem="PwY-3T-Cuf" firstAttribute="centerX" secondItem="YkK-0Z-5hc" secondAttribute="centerX" id="fvz-Jn-OTc"/>
+                            <constraint firstItem="P2s-xs-XZg" firstAttribute="top" secondItem="PwY-3T-Cuf" secondAttribute="bottom" constant="35" id="jGE-o6-ZIY"/>
+                            <constraint firstItem="uGh-eG-ObL" firstAttribute="centerX" secondItem="YkK-0Z-5hc" secondAttribute="centerX" id="tNM-1g-ht7"/>
+                            <constraint firstItem="P2s-xs-XZg" firstAttribute="centerY" secondItem="YkK-0Z-5hc" secondAttribute="centerY" id="v8o-ub-0FV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PwY-3T-Cuf" secondAttribute="trailing" id="xH3-Cq-TaC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cTH-6C-1gh"/>
+                    <connections>
+                        <outlet property="deleteButton" destination="P2s-xs-XZg" id="SLH-27-cCs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SkM-eQ-pp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1113" y="813"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Te6-14-aiF">

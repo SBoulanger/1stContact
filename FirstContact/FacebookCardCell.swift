@@ -75,6 +75,10 @@ class FacebookCardCell: CardCell, CardCellProtocol, FBSDKLoginButtonDelegate {
     func setUpView(controller: ContactCardViewController){
         
         print("FACEBOOK CELL ENTERED")
+        goButton.layer.cornerRadius = 3.0
+        logoutButton.layer.cornerRadius = 3.0
+        fbLabel.layer.cornerRadius = 3.0
+        fbButton.layer.cornerRadius = 3.0
         fbButton.delegate = self
         self.titleLabel.text = ""
         print(self.contact.facebook)
@@ -139,7 +143,7 @@ class FacebookCardCell: CardCell, CardCellProtocol, FBSDKLoginButtonDelegate {
     
     @IBAction func goButtonPressed(_ sender: Any) {
         let fbUrl = URL(string: (FBURL + self.contact.facebook))
-        if UIApplication.shared.canOpenURL(fbUrl!)
+        if fbUrl != nil && UIApplication.shared.canOpenURL(fbUrl!)
         {
             UIApplication.shared.openURL(fbUrl!)
             

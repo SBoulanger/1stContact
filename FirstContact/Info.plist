@@ -2,6 +2,50 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AWS</key>
+	<dict>
+		<key>Cognito</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>Region</key>
+				<string>us-east-1</string>
+			</dict>
+		</dict>
+		<key>CredentialsProvider</key>
+		<dict>
+			<key>CognitoIdentity</key>
+			<dict>
+				<key>Default</key>
+				<dict>
+					<key>PoolId</key>
+					<string>us-east-1:c8e429fd-702b-449b-86fd-1625a2cdba10</string>
+					<key>Region</key>
+					<string>us-east-1</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>IdentityManager</key>
+		<dict>
+			<key>Default</key>
+			<dict/>
+		</dict>
+		<key>MobileHub</key>
+		<dict>
+			<key>ProjectClientId</key>
+			<string>MobileHub 2892eab9-94b1-4229-920d-5128d9457d85 aws-my-sample-app-ios-swift-v0.13</string>
+		</dict>
+		<key>UserFileManager</key>
+		<dict>
+			<key>Default</key>
+			<dict>
+				<key>Region</key>
+				<string>us-east-1</string>
+				<key>S3Bucket</key>
+				<string>firstcontact-userfiles-mobilehub-834365698</string>
+			</dict>
+		</dict>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -21,7 +65,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.1.2</string>
+	<string>3.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -59,10 +103,15 @@
 	<string>1095985637117757</string>
 	<key>FacebookDisplayName</key>
 	<string>FirstContact</string>
+	<key>LIAppId</key>
+	<string>5151226</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>fbauth2</string>
+		<string>instagram</string>
+		<string>snapchat</string>
 		<string>linkedin</string>
+		<string>fb</string>
+		<string>fbauth2</string>
 		<string>linkedin-sdk2</string>
 		<string>linkedin-sdk</string>
 	</array>
@@ -89,51 +138,5 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>LIAppId</key>
-	<string>5151226</string>
-	<key>AWS</key>
-	<dict>
-		<key>UserFileManager</key>
-		<dict>
-			<key>Default</key>
-			<dict>
-				<key>S3Bucket</key>
-				<string>firstcontact-userfiles-mobilehub-834365698</string>
-				<key>Region</key>
-				<string>us-east-1</string>
-			</dict>
-		</dict>
-		<key>Cognito</key>
-		<dict>
-			<key>Default</key>
-			<dict>
-				<key>Region</key>
-				<string>us-east-1</string>
-			</dict>
-		</dict>
-		<key>IdentityManager</key>
-		<dict>
-			<key>Default</key>
-			<dict/>
-		</dict>
-		<key>CredentialsProvider</key>
-		<dict>
-			<key>CognitoIdentity</key>
-			<dict>
-				<key>Default</key>
-				<dict>
-					<key>PoolId</key>
-					<string>us-east-1:c8e429fd-702b-449b-86fd-1625a2cdba10</string>
-					<key>Region</key>
-					<string>us-east-1</string>
-				</dict>
-			</dict>
-		</dict>
-		<key>MobileHub</key>
-		<dict>
-			<key>ProjectClientId</key>
-			<string>MobileHub 2892eab9-94b1-4229-920d-5128d9457d85 aws-my-sample-app-ios-swift-v0.13</string>
-		</dict>
-	</dict>
 </dict>
 </plist>

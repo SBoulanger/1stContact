@@ -42,6 +42,9 @@
 		9131C9981DA0D1550032C260 /* DataHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9131C9971DA0D1550032C260 /* DataHub.swift */; };
 		9136CE4B1D6689910047A3F0 /* QRSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9136CE4A1D6689910047A3F0 /* QRSettingsViewController.swift */; };
 		9136CE4D1D668AB20047A3F0 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9136CE4C1D668AB20047A3F0 /* CategoryRow.swift */; };
+		9146EE3A1EBEEBE300C837C5 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146EE391EBEEBE300C837C5 /* ChangePasswordViewController.swift */; };
+		9146EE3C1EBF127600C837C5 /* ThanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146EE3B1EBF127600C837C5 /* ThanksViewController.swift */; };
+		9146EE3E1EBF17BA00C837C5 /* DeleteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146EE3D1EBF17BA00C837C5 /* DeleteUserViewController.swift */; };
 		91476A621D6DE63E0059B532 /* FCContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91476A611D6DE63E0059B532 /* FCContact.swift */; };
 		914AFB3B1D7CDF0100A876AB /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AFB3A1D7CDF0100A876AB /* ContactViewController.swift */; };
 		914D55031E72A8690042812B /* BasicCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914D55021E72A8690042812B /* BasicCardCell.swift */; };
@@ -218,6 +221,9 @@
 		9131C9971DA0D1550032C260 /* DataHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHub.swift; sourceTree = "<group>"; };
 		9136CE4A1D6689910047A3F0 /* QRSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRSettingsViewController.swift; sourceTree = "<group>"; };
 		9136CE4C1D668AB20047A3F0 /* CategoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		9146EE391EBEEBE300C837C5 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		9146EE3B1EBF127600C837C5 /* ThanksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThanksViewController.swift; sourceTree = "<group>"; };
+		9146EE3D1EBF17BA00C837C5 /* DeleteUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteUserViewController.swift; sourceTree = "<group>"; };
 		91476A611D6DE63E0059B532 /* FCContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCContact.swift; sourceTree = "<group>"; };
 		914AFB3A1D7CDF0100A876AB /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		914D55021E72A8690042812B /* BasicCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCardCell.swift; sourceTree = "<group>"; };
@@ -425,9 +431,12 @@
 			children = (
 				912B39401BBCD1FC00B7A5D1 /* Main.storyboard */,
 				918EB5101EB02F9E00499468 /* Settings.storyboard */,
+				9146EE3D1EBF17BA00C837C5 /* DeleteUserViewController.swift */,
 				919ADE2E1EBA48DC007C9CC2 /* LinkedInWebView.storyboard */,
 				919ADE2C1EBA46E5007C9CC2 /* LinkedInWebView.swift */,
 				912B393C1BBCD1FC00B7A5D1 /* AppDelegate.swift */,
+				9146EE3B1EBF127600C837C5 /* ThanksViewController.swift */,
+				9146EE391EBEEBE300C837C5 /* ChangePasswordViewController.swift */,
 				912ADCAE1EAB10D1001751C4 /* SendContactViewController.swift */,
 				912ADCB01EAB10F3001751C4 /* SendContact.storyboard */,
 				914D55371E79AFF10042812B /* SignInViewController.swift */,
@@ -982,6 +991,7 @@
 				914D55031E72A8690042812B /* BasicCardCell.swift in Sources */,
 				914D550D1E7331EF0042812B /* StructureDetails.swift in Sources */,
 				91FEDBA51C9FA4E3000693AC /* StyleHeader.swift in Sources */,
+				9146EE3C1EBF127600C837C5 /* ThanksViewController.swift in Sources */,
 				91B2A8271BE321C9002DBF03 /* InstructionViewContoller.swift in Sources */,
 				9119B0071D423979000F962B /* ContactView.swift in Sources */,
 				914D55451E7A35CF0042812B /* SignInViewControllerExtensions.swift in Sources */,
@@ -989,6 +999,7 @@
 				914D55381E79AFF10042812B /* SignInViewController.swift in Sources */,
 				914D55481E7A35CF0042812B /* UserPoolNewPasswordViewController.swift in Sources */,
 				914D55191E77EC2D0042812B /* InstagramCardCell.swift in Sources */,
+				9146EE3E1EBF17BA00C837C5 /* DeleteUserViewController.swift in Sources */,
 				91F6934C1DB7C82F00943465 /* SettingsViewController.swift in Sources */,
 				912ADCA81EAAFD15001751C4 /* AWSConfiguration.swift in Sources */,
 				912ADCAC1EAAFE08001751C4 /* UserPoolsIdentityProfile.swift in Sources */,
@@ -999,6 +1010,7 @@
 				9136CE4D1D668AB20047A3F0 /* CategoryRow.swift in Sources */,
 				914D554A1E7A35CF0042812B /* UserPoolSignUpViewController.swift in Sources */,
 				918EB5091EAE8D6B00499468 /* FacebookCardCell.swift in Sources */,
+				9146EE3A1EBEEBE300C837C5 /* ChangePasswordViewController.swift in Sources */,
 				91D670211E6E7B4000AB1D6A /* FCNavigationButton.swift in Sources */,
 				914D55171E77EC0C0042812B /* SnapchatCardCell.swift in Sources */,
 				912ADCA91EAAFD15001751C4 /* AWSMobileClient.swift in Sources */,
@@ -1175,7 +1187,7 @@
 				);
 				INFOPLIST_FILE = FirstContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SBApps.FirstContact;
+				PRODUCT_BUNDLE_IDENTIFIER = FirstContact;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -1202,7 +1214,7 @@
 				);
 				INFOPLIST_FILE = FirstContact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SBApps.FirstContact;
+				PRODUCT_BUNDLE_IDENTIFIER = FirstContact;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;

@@ -137,7 +137,7 @@ public struct FCContact: Equatable, Hashable {
             for (key, value) in dictionary {
                 for i in share {
                     if key == getKey(index: i){
-                        print("key \(key) value \(value)")
+                        print("key \(key) value \(value) index \(i)")
                         if (value as? String == nil && key != "me" && key != "id"){
                             setValue(key: key, value: "")
                         } else {
@@ -179,7 +179,7 @@ public struct FCContact: Equatable, Hashable {
         lastName = contact.familyName
         phoneNumber = contact.phoneNumbers[0].label
     }
-    init(first:String,last:String,phoneNumber:String,email:String,snapchat:String,instagram:String,facebook:String,linkedin:String){
+    init(first:String,last:String,phoneNumber:String,email:String,facebook:String,instagram:String,snapchat:String,linkedin:String){
         self.id = UUID().hashValue
         firstName = first
         lastName = last

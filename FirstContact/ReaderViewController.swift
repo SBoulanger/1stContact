@@ -36,6 +36,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
     let defaults = UserDefaults.standard
     var info : String!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     var dataHub:DataHub!
     
     override func viewDidLoad() {
@@ -49,6 +50,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
         //let newim = AppDelegate.getAppDelegate().ResizeImage(logo!, targetSize: CGSize(width: 40,height: 50))
         //ufoButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
         //ufoButton.setImage(newim, for: .normal)
+        self.spinner.isHidden = true
         ufoButton.addTarget(nil, action: #selector(AppDelegate.getAppDelegate().container.moveUp), for: UIControlEvents.touchUpInside)
         self.view.addSubview(ufoButton)
     }
@@ -140,27 +142,42 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                     contactInfoArray = AppDelegate.getAppDelegate().dataHub.getContactInfo(info: info)
                     if contactInfoArray[0] != "nil" {
                         if ((info.range(of: "remote")) != nil){
+                            print("STRING ARRAY \(contactInfoArray[0])")
+                            if (contactInfoArray[0] == nil || contactInfoArray[0] == ""){
+                                let alertController = UIAlertController(title: "ε", message: "No share settings selected...", preferredStyle: UIAlertControllerStyle.alert)
+                                let dismissAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+                                alertController.addAction(dismissAction)
+                                present(alertController, animated: true, completion: nil)
+                                self.qrcodedone = false
+                                return
+                            }
                             var stringArray = contactInfoArray[0].components(separatedBy: ",")
+                            print(stringArray)
+                            
                             var shareIntArray: [Int]! = []
                             for i in stringArray {
+                                print(i)
                                 shareIntArray.append(Int(i)!)
                             }
                             print("qrcodedone is now true")
                             qrcodedone = true
+                            AppDelegate.getAppDelegate().dataHub.getManager().clearCache()
+                            self.startSpinning()
+                            print("here")
                             AppDelegate.getAppDelegate().dataHub.getAWSContent(url: contactInfoArray[1], share: shareIntArray) {
+                                //self.stopSpinning()
                                 let actionHandler = {(action:UIAlertAction!) -> Void in
                                     self.qrcodedone = false
-                                    print("qrcodedone is now false ACTIONHANDLER")
                                 }
                                 print("if (self.newestContact != nil")
                                 if (self.newestContact != nil){
                                     print("self.newestContact != nil")
                                     if (self.newestContact.firstName + self.newestContact.lastName == ""){
                                         print("showMessage()")
-                                        AppDelegate.getAppDelegate().showMessage(controller: self, message:"🚀", title: "Want to add NO NAME to your Contacts?",actionHandler: actionHandler, dismissHandler: dismissHandler)
+                                        AppDelegate.getAppDelegate().showDismissMessage(controller: self, message: "NO NAME was added to your contacts", title: "🚀", dismissHandler: dismissHandler)
                                     } else {
                                         print("showMessage() 2")
-                                        AppDelegate.getAppDelegate().showMessage(controller:self,message:"🚀", title: "Want to add \(self.newestContact.firstName!) \(self.newestContact.lastName!) to your contacts?",actionHandler: actionHandler, dismissHandler: dismissHandler)
+                                       AppDelegate.getAppDelegate().showDismissMessage(controller: self, message: "\(self.newestContact.firstName) \(self.newestContact.lastName) was added to your contacts", title: "🚀", dismissHandler: dismissHandler)
                                     }
                                 } else {
                                     print("newestContact is not being ")
@@ -170,7 +187,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                             
                             
                         } else {
-                            let newcontact = FCContact(first: contactInfoArray[0], last: contactInfoArray[1], phoneNumber: contactInfoArray[2], email: contactInfoArray[3], snapchat: contactInfoArray[4], instagram: contactInfoArray[5], facebook: contactInfoArray[6], linkedin: contactInfoArray[7])
+                            let newcontact = FCContact(first: contactInfoArray[0], last: contactInfoArray[1], phoneNumber: contactInfoArray[2], email: contactInfoArray[3],facebook: contactInfoArray[4],  instagram: contactInfoArray[5],snapchat: contactInfoArray[6],linkedin: contactInfoArray[7])
                         
                             print("created new contact")
                             qrcodedone = true
@@ -186,7 +203,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                             if (newcontact.firstName+newcontact.lastName == ""){
                                 AppDelegate.getAppDelegate().showMessage(controller:self,message:"🚀", title: "Want to add NO NAME to your Contacts?",actionHandler: actionHandler, dismissHandler: dismissHandler)
                             } else {
-                                AppDelegate.getAppDelegate().showMessage(controller:self,message:"🚀", title: "Want to add \(newcontact.firstName) \(newcontact.lastName) to your contacts?",actionHandler: actionHandler, dismissHandler: dismissHandler)
+                                AppDelegate.getAppDelegate().showMessage(controller:self,message:"🚀", title: "Want to add \(newcontact.firstName!) \(newcontact.lastName!) to your contacts?",actionHandler: actionHandler, dismissHandler: dismissHandler)
                             }
                         }
                     } else {
@@ -199,7 +216,6 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                     }
                     self.qrcodedone = true
                 }
-                print("qrcode not done")
                 
             }
             else {
@@ -256,7 +272,6 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
         return newContact
     }
     
-    
     func getContactInfo(info:String) -> [String]{
         let check = info.range(of: "FirstContact/*")
         print("is a first contact string \(check)")
@@ -271,6 +286,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
             return recursiveGetValues(nString,contactInfoArray: [])
         }
     }
+ 
     //recursively gets the values in a formatted string
     func recursiveGetValues(_ string:String,contactInfoArray:[String]) -> [String]{
         var newcontactArray = contactInfoArray
@@ -286,6 +302,14 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
         let removeRange = (string.startIndex ..< (range?.upperBound)!)
         
         return recursiveGetValues(string.replacingCharacters(in: removeRange, with: ""), contactInfoArray:newcontactArray)
+    }
+    func startSpinning(){
+        self.spinner.isHidden = false
+        self.spinner.startAnimating()
+    }
+    func stopSpinning(){
+        self.spinner.isHidden = true
+        self.spinner.stopAnimating()
     }
     
     

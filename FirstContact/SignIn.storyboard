@@ -75,10 +75,10 @@
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNU-F8-OLJ">
-                                <rect key="frame" x="274" y="168" width="85" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNU-F8-OLJ">
+                                <rect key="frame" x="253" y="168" width="106" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="EP4-vB-mtm"/>
+                                    <constraint firstAttribute="width" constant="100" id="EP4-vB-mtm"/>
                                     <constraint firstAttribute="height" constant="25" id="Vgm-iG-DE6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="13"/>
