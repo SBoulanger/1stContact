@@ -32,16 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //var rootController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //Fabric.with([Twitter.self])
         // Override point for customization after application launch.
         
-        //let linkedInHelper = LinkedInSwiftHelper
-        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        //let twitter = Twitter.sharedInstance()
-        //let oauthSigning = TWTROAuthSigning(authConfig:twitter.authConfig, authSession:twitter.sessionStore.session() as! TWTRSession)
         
-        //SNAPCHAT
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let middle = storyboard.instantiateViewController(withIdentifier: "middle")
         let left = storyboard.instantiateViewController(withIdentifier: "left")
@@ -63,10 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //return true
     }
     
-    
-    /*func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(app, didFinishLaunchingWithOptions: options)
-    }*/
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         if (url.scheme == "fb1095985637117757"){
             return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
@@ -74,15 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return AWSMobileClient.sharedInstance.withApplication(application, withURL: url, withSourceApplication: sourceApplication, withAnnotation: annotation)
         }
     }
-    /*func application(app: UIApplication, openURL url: URL, options: [String : AnyObject]) -> Bool {
-        /*if Twitter.sharedInstance().application(app, open:url, options: options) {
-            return true
-        }*/
-        
-        // If you handle other (non Twitter Kit) URLs elsewhere in your app, return true. Otherwise
-        return true
-    }*/
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -99,11 +81,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        AWSMobileClient.sharedInstance.applicationDidBecomeActive(application)
         if (!didInit){
             self.dataHub = DataHub()
         }
         didInit = true
-        AWSMobileClient.sharedInstance.applicationDidBecomeActive(application)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -212,29 +194,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var str = number
         var newString = ""
         var index:String.Index!
-        
-        print(number)
-        
         if (str.characters.count < 4){
             return number
         }
- 
-        
         if (str.characters.count < 7){
             index = str.index(str.startIndex, offsetBy:3)
-            var areaCode = str.substring(to: index)
-            var endrange = str.substring(from:index)
+            let areaCode = str.substring(to: index)
+            let endrange = str.substring(from:index)
             newString = newString + "(" + areaCode + ") " + endrange
             return newString
         }
-        
-        
         if (str.characters.count < 11){
             index = str.index(str.startIndex, offsetBy:3)
-            var areaCode = str.substring(to:index)
-            var nindex = str.index(index, offsetBy:3)
-            var first = str[index..<nindex]
-            var end = str.substring(from: nindex)
+            let areaCode = str.substring(to:index)
+            let nindex = str.index(index, offsetBy:3)
+            let first = str[index..<nindex]
+            let end = str.substring(from: nindex)
             newString = "(" + areaCode + ") " + first + "-" + end
             return newString
         }

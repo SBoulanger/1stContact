@@ -177,7 +177,7 @@ class ReaderViewController : UIViewController, AVCaptureMetadataOutputObjectsDel
                                         AppDelegate.getAppDelegate().showDismissMessage(controller: self, message: "NO NAME was added to your contacts", title: "🚀", dismissHandler: dismissHandler)
                                     } else {
                                         print("showMessage() 2")
-                                       AppDelegate.getAppDelegate().showDismissMessage(controller: self, message: "\(self.newestContact.firstName) \(self.newestContact.lastName) was added to your contacts", title: "🚀", dismissHandler: dismissHandler)
+                                       AppDelegate.getAppDelegate().showDismissMessage(controller: self, message: "\(self.newestContact.firstName!) \(self.newestContact.lastName!) was added to your contacts", title: "🚀", dismissHandler: dismissHandler)
                                     }
                                 } else {
                                     print("newestContact is not being ")

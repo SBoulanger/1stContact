@@ -166,7 +166,7 @@ class SendContactViewController : UIViewController, UITextFieldDelegate,MFMessag
         var string = ""
         
         if share.contains(4){
-            string += "Facebook: https://www.facebook.com/\(contact.facebook)"
+            string += "Facebook: https://www.facebook.com/\(contact.facebook!)\n"
         }
         if share.contains(5){
             string += "Instagram : \(contact.instagram!)\n"
@@ -175,7 +175,7 @@ class SendContactViewController : UIViewController, UITextFieldDelegate,MFMessag
             string += "Snapchat : \(contact.snapchat!)\n"
         }
         if share.contains(7){
-            string += "LinkedIn: https://www.linkedin.com/\(contact.linkedin)"
+            string += "LinkedIn: https://www.linkedin.com/\(contact.linkedin!)\n"
         }
         
         //string += "\"The miracle is this: the more we share the more we have.\" -Leonard Nimoy 🖖\n"

@@ -6,7 +6,7 @@ target 'FirstContact' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   #pod 'Fabric'
   #pod 'TwitterKit'
-  pod 'BEMCheckBox'
+  #pod 'BEMCheckBox'
   # Pods for FirstContact
   pod 'MMCardView'
   #pod 'LinkedinSwift'

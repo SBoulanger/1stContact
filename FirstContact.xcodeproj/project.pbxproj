@@ -11,18 +11,12 @@
 		910BDBC01DBEBF32001186EB /* FirstContact.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 910BDBBF1DBEBF32001186EB /* FirstContact.xcworkspace */; };
 		910BDBC41DBEBF51001186EB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 910BDBC11DBEBF51001186EB /* Podfile */; };
 		910BDBC51DBEBF51001186EB /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 910BDBC21DBEBF51001186EB /* Podfile.lock */; };
-		910BDBC61DBEBF51001186EB /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 910BDBC31DBEBF51001186EB /* Pods */; };
 		911958C11D623FB20010AADA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911958C01D623FB20010AADA /* ContainerViewController.swift */; };
 		911958C31D623FB70010AADA /* VerticalScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911958C21D623FB70010AADA /* VerticalScrollViewController.swift */; };
 		9119B0071D423979000F962B /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9119B0061D423979000F962B /* ContactView.swift */; };
-		912ADC941EAAF4DC001751C4 /* Sdk in Resources */ = {isa = PBXBuildFile; fileRef = 912ADC931EAAF4DC001751C4 /* Sdk */; };
-		912ADC961EAAF5FB001751C4 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC951EAAF5FB001751C4 /* AWSCore.framework */; };
 		912ADC971EAAF5FB001751C4 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC951EAAF5FB001751C4 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		912ADC9A1EAAF610001751C4 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC991EAAF610001751C4 /* AWSS3.framework */; };
 		912ADC9B1EAAF610001751C4 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC991EAAF610001751C4 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		912ADC9D1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9C1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework */; };
 		912ADC9E1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9C1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		912ADCA01EAAF73D001751C4 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9F1EAAF73D001751C4 /* AWSCognito.framework */; };
 		912ADCA11EAAF73D001751C4 /* AWSCognito.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9F1EAAF73D001751C4 /* AWSCognito.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		912ADCA71EAAFD15001751C4 /* AWSCognitoUserPoolsSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADCA31EAAFD15001751C4 /* AWSCognitoUserPoolsSignIn.framework */; };
 		912ADCA81EAAFD15001751C4 /* AWSConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912ADCA41EAAFD15001751C4 /* AWSConfiguration.swift */; };
@@ -110,8 +104,6 @@
 		918AD5E01E6E4B4300A28B10 /* FC_STEP2b.png in Resources */ = {isa = PBXBuildFile; fileRef = 918AD5D01E6E4B4300A28B10 /* FC_STEP2b.png */; };
 		918AD5E11E6E4B4300A28B10 /* ListLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 918AD5D11E6E4B4300A28B10 /* ListLogo.png */; };
 		918AD5E21E6E4B4300A28B10 /* SettingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 918AD5D21E6E4B4300A28B10 /* SettingsButton.png */; };
-		918AD5E31E6E4B4300A28B10 /* twtr-icn-logo-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 918AD5D31E6E4B4300A28B10 /* twtr-icn-logo-white.png */; };
-		918AD5E41E6E4B4300A28B10 /* twtr-icn-logo-white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 918AD5D41E6E4B4300A28B10 /* twtr-icn-logo-white@2x.png */; };
 		918AD5E61E6E4B4300A28B10 /* XExitButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 918AD5D61E6E4B4300A28B10 /* XExitButtonImage.png */; };
 		918AD5E71E6E4B4300A28B10 /* XExitButtonImage_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 918AD5D71E6E4B4300A28B10 /* XExitButtonImage_press.png */; };
 		918DD5CB1E6D6403006AA0ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918DD5CA1E6D6403006AA0ED /* Images.xcassets */; };
@@ -130,6 +122,10 @@
 		91B2A8251BE2E466002DBF03 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2A8241BE2E466002DBF03 /* QRViewController.swift */; };
 		91B2A8271BE321C9002DBF03 /* InstructionViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B2A8261BE321C9002DBF03 /* InstructionViewContoller.swift */; };
 		91BA03DB1EB444BF00EBB371 /* Download-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BA03DA1EB444BF00EBB371 /* Download-50.png */; };
+		91CA182B1EC006680058BA8E /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9F1EAAF73D001751C4 /* AWSCognito.framework */; };
+		91CA182C1EC0066B0058BA8E /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC9C1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework */; };
+		91CA182D1EC0066E0058BA8E /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC991EAAF610001751C4 /* AWSS3.framework */; };
+		91CA182E1EC006720058BA8E /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912ADC951EAAF5FB001751C4 /* AWSCore.framework */; };
 		91D670191E6E70A900AB1D6A /* QR_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D670181E6E70A900AB1D6A /* QR_left.png */; };
 		91D6701B1E6E70B600AB1D6A /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6701A1E6E70B600AB1D6A /* User.png */; };
 		91D6701D1E6E70BC00AB1D6A /* QR_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6701C1E6E70BC00AB1D6A /* QR_right.png */; };
@@ -329,21 +325,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				91558EF51D92900B00AC5DBA /* Bolts.framework in Frameworks */,
+				91CA182B1EC006680058BA8E /* AWSCognito.framework in Frameworks */,
+				91CA182D1EC0066E0058BA8E /* AWSS3.framework in Frameworks */,
+				91CA182E1EC006720058BA8E /* AWSCore.framework in Frameworks */,
+				91CA182C1EC0066B0058BA8E /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				9176DE301C3CDC67002EA833 /* libsqlite3.tbd in Frameworks */,
-				912ADC9A1EAAF610001751C4 /* AWSS3.framework in Frameworks */,
-				912ADC961EAAF5FB001751C4 /* AWSCore.framework in Frameworks */,
 				91558EEF1D90ABAE00AC5DBA /* FBSDKCoreKit.framework in Frameworks */,
 				9176DE2E1C3CDC5B002EA833 /* libz.tbd in Frameworks */,
 				9176DE2C1C3CDC42002EA833 /* SystemConfiguration.framework in Frameworks */,
 				91558EF31D90ABC200AC5DBA /* FBSDKLoginKit.framework in Frameworks */,
 				912ADCAA1EAAFD15001751C4 /* AWSMobileHubHelper.framework in Frameworks */,
-				912ADC9D1EAAF627001751C4 /* AWSCognitoIdentityProvider.framework in Frameworks */,
 				91558EF11D90ABBB00AC5DBA /* FBSDKShareKit.framework in Frameworks */,
 				9176DE281C3CDC2C002EA833 /* Security.framework in Frameworks */,
 				9176DE261C3CDC20002EA833 /* QuartzCore.framework in Frameworks */,
 				9176DE241C3CDC14002EA833 /* CoreLocation.framework in Frameworks */,
 				912B396F1BBE199300B7A5D1 /* CoreGraphics.framework in Frameworks */,
-				912ADCA01EAAF73D001751C4 /* AWSCognito.framework in Frameworks */,
 				9176DE221C3CDBFA002EA833 /* CFNetwork.framework in Frameworks */,
 				9176DE201C3CDBEF002EA833 /* AudioToolbox.framework in Frameworks */,
 				912ADCA71EAAFD15001751C4 /* AWSCognitoUserPoolsSignIn.framework in Frameworks */,
@@ -622,10 +618,11 @@
 				912B39361BBCD1FC00B7A5D1 /* Frameworks */,
 				912B39371BBCD1FC00B7A5D1 /* Resources */,
 				73DD526A9E19BBA82C189EFA /* [CP] Embed Pods Frameworks */,
-				FEE9274A2429FA3F04962AE2 /* [CP] Copy Pods Resources */,
 				91F342951DBC517800C3AC69 /* ShellScript */,
 				912ADC981EAAF5FB001751C4 /* Embed Frameworks */,
 				912ADCAD1EAAFE54001751C4 /* ShellScript */,
+				91CA182A1EC0011F0058BA8E /* ShellScript */,
+				5BC446A53B35EDB12A1AEDAE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -736,7 +733,6 @@
 			files = (
 				9174F3251E70AA950086C945 /* camera_clear.png in Resources */,
 				919ADE331EBA7188007C9CC2 /* LinkedinCardCell.xib in Resources */,
-				912ADC941EAAF4DC001751C4 /* Sdk in Resources */,
 				914D551F1E77EF1A0042812B /* Instagram-logo.png in Resources */,
 				914D55091E72C39E0042812B /* NameCardCell.xib in Resources */,
 				91D6701F1E6E70C400AB1D6A /* List.png in Resources */,
@@ -759,7 +755,6 @@
 				912B39441BBCD1FC00B7A5D1 /* Assets.xcassets in Resources */,
 				914D551B1E77EC3D0042812B /* SnapchatCardCell.xib in Resources */,
 				918EB5111EB02F9E00499468 /* Settings.storyboard in Resources */,
-				918AD5E31E6E4B4300A28B10 /* twtr-icn-logo-white.png in Resources */,
 				919ADE2F1EBA48DC007C9CC2 /* LinkedInWebView.storyboard in Resources */,
 				910BDBC41DBEBF51001186EB /* Podfile in Resources */,
 				918EB50D1EAE8EFB00499468 /* Facebook-50.png in Resources */,
@@ -787,10 +782,8 @@
 				91D670191E6E70A900AB1D6A /* QR_left.png in Resources */,
 				917351071EAD50BA0009171E /* deleteBackButton.png in Resources */,
 				9173511B1EAD61900009171E /* Info-50-2.png in Resources */,
-				918AD5E41E6E4B4300A28B10 /* twtr-icn-logo-white@2x.png in Resources */,
 				917351131EAD58A90009171E /* Phone-50.png in Resources */,
 				917351111EAD58A30009171E /* Instagram-50.png in Resources */,
-				910BDBC61DBEBF51001186EB /* Pods in Resources */,
 				918AD5DB1E6E4B4300A28B10 /* FC_icon_clear_empty.png in Resources */,
 				918AD5DD1E6E4B4300A28B10 /* FC_logo_white.png in Resources */,
 			);
@@ -873,6 +866,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		5BC446A53B35EDB12A1AEDAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirstContact/Pods-FirstContact-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		73DD526A9E19BBA82C189EFA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -909,12 +917,26 @@
 			files = (
 			);
 			inputPaths = (
+				"",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
+		};
+		91CA182A1EC0011F0058BA8E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\n    FRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\n    FRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\n    echo \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\n    EXTRACTED_ARCHS=()\n\n    for ARCH in $ARCHS\n    do\n        echo \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\n        lipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\n        EXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\n    done\n\n    echo \"Merging extracted architectures: ${ARCHS}\"\n    lipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\n    rm \"${EXTRACTED_ARCHS[@]}\"\n\n    echo \"Replacing original executable with thinned version\"\n    rm \"$FRAMEWORK_EXECUTABLE_PATH\"\n    mv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
 		};
 		91F342951DBC517800C3AC69 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -957,21 +979,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirstContactTests/Pods-FirstContactTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FEE9274A2429FA3F04962AE2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FirstContact/Pods-FirstContact-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1175,7 +1182,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XZ8Q5F7CF9;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FirstContact",
@@ -1202,7 +1209,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XZ8Q5F7CF9;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FirstContact",
