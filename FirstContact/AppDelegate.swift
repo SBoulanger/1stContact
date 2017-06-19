@@ -10,9 +10,11 @@ import UIKit
 import Contacts
 import FBSDKLoginKit
 import FBSDKCoreKit
+import AWSCognitoIdentityProvider
+import AWSCognito
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInteractiveAuthenticationDelegate {
     
     var didInit : Bool! = false
     
@@ -48,6 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                                               rightVC: right,
                                                                               /*topVC: top,*/
                                                                               bottomVC: bottom)
+        
+        
         
         self.window?.rootViewController = snapContainer
         self.container = snapContainer

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import MMCardView
 
 class InstagramCardCell: CardCell, CardCellProtocol, UITextFieldDelegate {
