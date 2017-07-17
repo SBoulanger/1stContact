@@ -52,7 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
                                                                               bottomVC: bottom)
         
         
-        
+        //let tutorial = storyboard.instantiateViewController(withIdentifier: "tutorial")
+
         self.window?.rootViewController = snapContainer
         self.container = snapContainer
         self.window?.makeKeyAndVisible()

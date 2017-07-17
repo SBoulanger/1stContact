@@ -94,7 +94,18 @@ class QRViewController: UIViewController  {
         self.view.addSubview(leftButton)
         contact.getDefaultJSON()
         //setUpAWSContent()
+        
+        if (!UserDefaults.standard.bool(forKey: "HasLaunchedOnce")) {
+            // This is the first launch ever
+            UserDefaults.standard.set(true, forKey: "HasLaunchedOnce")
+            UserDefaults.standard.synchronize()
+            
+            let tutorial = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tutorial")
+            
+            self.navigationController?.present(tutorial, animated: false, completion: nil)
 
+            
+        }
     }
     
     func startSpinning() {
