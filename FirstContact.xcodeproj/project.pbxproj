@@ -132,6 +132,12 @@
 		91D6701F1E6E70C400AB1D6A /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6701E1E6E70C400AB1D6A /* List.png */; };
 		91D670211E6E7B4000AB1D6A /* FCNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D670201E6E7B4000AB1D6A /* FCNavigationButton.swift */; };
 		91EAC6B91BF1547B00161413 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EAC6B81BF1547B00161413 /* ReaderViewController.swift */; };
+		91EAEBC61F1B3FDF0052C836 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EAEBC51F1B3FDF0052C836 /* TutorialController.swift */; };
+		91EAEBC81F1B40A10052C836 /* Simulator Screen Shot Jun 18, 2017, 8.55.41 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 91EAEBC71F1B40A10052C836 /* Simulator Screen Shot Jun 18, 2017, 8.55.41 PM.png */; };
+		91EAEBCC1F1B42180052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.00 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 91EAEBCB1F1B42180052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.00 PM.png */; };
+		91EAEBCE1F1B42250052C836 /* Simulator Screen Shot Jun 22, 2017, 12.31.46 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 91EAEBCD1F1B42250052C836 /* Simulator Screen Shot Jun 22, 2017, 12.31.46 AM.png */; };
+		91EAEBD01F1B424C0052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.34 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 91EAEBCF1F1B424C0052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.34 PM.png */; };
+		91EAEBD21F1B42600052C836 /* Simulator Screen Shot Jun 18, 2017, 9.32.13 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 91EAEBD11F1B42600052C836 /* Simulator Screen Shot Jun 18, 2017, 9.32.13 PM.png */; };
 		91F6934C1DB7C82F00943465 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F6934B1DB7C82F00943465 /* SettingsViewController.swift */; };
 		91FEDBA31C9F93B4000693AC /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FEDBA21C9F93B4000693AC /* ContactsViewController.swift */; };
 		91FEDBA51C9FA4E3000693AC /* StyleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FEDBA41C9FA4E3000693AC /* StyleHeader.swift */; };
@@ -312,6 +318,12 @@
 		91D670201E6E7B4000AB1D6A /* FCNavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCNavigationButton.swift; sourceTree = "<group>"; };
 		91D7D9591C87B7FE00CEFBC9 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		91EAC6B81BF1547B00161413 /* ReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+		91EAEBC51F1B3FDF0052C836 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
+		91EAEBC71F1B40A10052C836 /* Simulator Screen Shot Jun 18, 2017, 8.55.41 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Simulator Screen Shot Jun 18, 2017, 8.55.41 PM.png"; path = "../Simulator Screen Shot Jun 18, 2017, 8.55.41 PM.png"; sourceTree = "<group>"; };
+		91EAEBCB1F1B42180052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.00 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot Jun 18, 2017, 8.56.00 PM.png"; sourceTree = "<group>"; };
+		91EAEBCD1F1B42250052C836 /* Simulator Screen Shot Jun 22, 2017, 12.31.46 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot Jun 22, 2017, 12.31.46 AM.png"; sourceTree = "<group>"; };
+		91EAEBCF1F1B424C0052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.34 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot Jun 18, 2017, 8.56.34 PM.png"; sourceTree = "<group>"; };
+		91EAEBD11F1B42600052C836 /* Simulator Screen Shot Jun 18, 2017, 9.32.13 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot Jun 18, 2017, 9.32.13 PM.png"; sourceTree = "<group>"; };
 		91F6934B1DB7C82F00943465 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		91FEDBA21C9F93B4000693AC /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		91FEDBA41C9FA4E3000693AC /* StyleHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleHeader.swift; sourceTree = "<group>"; };
@@ -426,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				912B39401BBCD1FC00B7A5D1 /* Main.storyboard */,
+				91EAEBC51F1B3FDF0052C836 /* TutorialController.swift */,
 				918EB5101EB02F9E00499468 /* Settings.storyboard */,
 				9146EE3D1EBF17BA00C837C5 /* DeleteUserViewController.swift */,
 				919ADE2E1EBA48DC007C9CC2 /* LinkedInWebView.storyboard */,
@@ -541,7 +554,12 @@
 		918AD5C71E6E4B4300A28B10 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				91EAEBD11F1B42600052C836 /* Simulator Screen Shot Jun 18, 2017, 9.32.13 PM.png */,
+				91EAEBCD1F1B42250052C836 /* Simulator Screen Shot Jun 22, 2017, 12.31.46 AM.png */,
+				91EAEBCF1F1B424C0052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.34 PM.png */,
+				91EAEBCB1F1B42180052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.00 PM.png */,
 				919ADE341EBAA1C2007C9CC2 /* LinkedIn-50.png */,
+				91EAEBC71F1B40A10052C836 /* Simulator Screen Shot Jun 18, 2017, 8.55.41 PM.png */,
 				918F2EA61EB1718F00740CBD /* Trash-50.png */,
 				91BA03DA1EB444BF00EBB371 /* Download-50.png */,
 				918EB50C1EAE8EFB00499468 /* Facebook-50.png */,
@@ -742,10 +760,12 @@
 				918DD5CB1E6D6403006AA0ED /* Images.xcassets in Resources */,
 				918AD5DF1E6E4B4300A28B10 /* FC_STEP2a.png in Resources */,
 				918AD5D91E6E4B4300A28B10 /* Einstein_1_JPEG.jpg in Resources */,
+				91EAEBCE1F1B42250052C836 /* Simulator Screen Shot Jun 22, 2017, 12.31.46 AM.png in Resources */,
 				917351191EAD5A630009171E /* Back-50-red.png in Resources */,
 				918AD5DA1E6E4B4300A28B10 /* FC_icon.png in Resources */,
 				91D6701D1E6E70BC00AB1D6A /* QR_right.png in Resources */,
 				918AD5E71E6E4B4300A28B10 /* XExitButtonImage_press.png in Resources */,
+				91EAEBCC1F1B42180052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.00 PM.png in Resources */,
 				914D55071E72B4260042812B /* BasicCardCell.xib in Resources */,
 				912B39471BBCD1FC00B7A5D1 /* LaunchScreen.storyboard in Resources */,
 				9173510F1EAD589E0009171E /* Email-50.png in Resources */,
@@ -766,13 +786,16 @@
 				917351151EAD58AE0009171E /* Snapchat-50.png in Resources */,
 				918AD5E11E6E4B4300A28B10 /* ListLogo.png in Resources */,
 				914D55131E77E65A0042812B /* EmailCardCell.xib in Resources */,
+				91EAEBC81F1B40A10052C836 /* Simulator Screen Shot Jun 18, 2017, 8.55.41 PM.png in Resources */,
 				918F2EA71EB1718F00740CBD /* Trash-50.png in Resources */,
 				912ADCB11EAB10F3001751C4 /* SendContact.storyboard in Resources */,
 				91BA03DB1EB444BF00EBB371 /* Download-50.png in Resources */,
 				910BDBC51DBEBF51001186EB /* Podfile.lock in Resources */,
+				91EAEBD21F1B42600052C836 /* Simulator Screen Shot Jun 18, 2017, 9.32.13 PM.png in Resources */,
 				912B39421BBCD1FC00B7A5D1 /* Main.storyboard in Resources */,
 				918AD5DE1E6E4B4300A28B10 /* FC_STEP1.png in Resources */,
 				914D55111E7368630042812B /* PhoneCardCell.xib in Resources */,
+				91EAEBD01F1B424C0052C836 /* Simulator Screen Shot Jun 18, 2017, 8.56.34 PM.png in Resources */,
 				91D6701B1E6E70B600AB1D6A /* User.png in Resources */,
 				9173510B1EAD58920009171E /* CircledUp2-50.png in Resources */,
 				914D554B1E7A35CF0042812B /* UserPools.storyboard in Resources */,
@@ -996,6 +1019,7 @@
 				914D55471E7A35CF0042812B /* UserPoolMFAViewController.swift in Sources */,
 				915D301F1E89F415000BDDC3 /* RemoteHandler.swift in Sources */,
 				914D55031E72A8690042812B /* BasicCardCell.swift in Sources */,
+				91EAEBC61F1B3FDF0052C836 /* TutorialController.swift in Sources */,
 				914D550D1E7331EF0042812B /* StructureDetails.swift in Sources */,
 				91FEDBA51C9FA4E3000693AC /* StyleHeader.swift in Sources */,
 				9146EE3C1EBF127600C837C5 /* ThanksViewController.swift in Sources */,

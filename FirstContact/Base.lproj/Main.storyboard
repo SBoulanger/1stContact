@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IIN-V9-gQZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IIN-V9-gQZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -286,8 +286,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QPm-kR-7de">
                                 <rect key="frame" x="170" y="139" width="260" height="260"/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qMq-ey-5AX">
-                                <rect key="frame" x="282" y="281.5" width="37" height="37"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qMq-ey-5AX">
+                                <rect key="frame" x="453" y="458" width="37" height="37"/>
                                 <color key="color" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -310,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsg-Um-xx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3437" y="1620"/>
+            <point key="canvasLocation" x="3437" y="1633"/>
         </scene>
         <!--Contacts View Controller-->
         <scene sceneID="jvP-KV-RIs">
@@ -332,7 +332,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LWJ-iq-2YJ" id="hrX-In-QQo">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C76-Al-9D4">
@@ -370,7 +370,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWL-cD-0sn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6110" y="489"/>
+            <point key="canvasLocation" x="5597" y="-3"/>
         </scene>
         <!--Item-->
         <scene sceneID="AWw-J0-dYc">
@@ -815,7 +815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRP-vv-VcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6109" y="578"/>
+            <point key="canvasLocation" x="5258" y="-27"/>
         </scene>
         <!--Contact Card View Controller-->
         <scene sceneID="LQx-3c-f3v">
@@ -1093,7 +1093,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sSX-zJ-j44" id="r1l-F3-h71">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-d7-BgZ">
@@ -1189,7 +1189,268 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5v-qz-sI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5581" y="412"/>
+            <point key="canvasLocation" x="4517" y="-86"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="1ET-Md-Vra">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="4tS-rf-wf4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Etg-Hs-DJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2494" y="3708"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Lu9-lm-Plv">
+            <objects>
+                <viewController id="VLJ-wa-mFS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b0o-ZG-uHT"/>
+                        <viewControllerLayoutGuide type="bottom" id="bqn-7Z-fXt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zws-wA-AYF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simulator Screen Shot Jun 18, 2017, 8.55.41 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="EFB-Hj-lhq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="💫Share through text messages " textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="bOR-fl-Uv0">
+                                <rect key="frame" x="265" y="59" width="110" height="93"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="cc3-Ri-oNB"/>
+                                    <constraint firstAttribute="width" constant="110" id="yLp-YF-cxa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="💫Swipe up to use your camera" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D2X-pM-Ezx">
+                                <rect key="frame" x="112" y="602" width="150" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="5Tb-cX-HvW"/>
+                                    <constraint firstAttribute="height" constant="60" id="p4e-AO-VSn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="💫Scan here to share contact information" translatesAutoresizingMaskIntoConstraints="NO" id="vkc-m5-Mod">
+                                <rect key="frame" x="153" y="424" width="206" height="118"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="K8b-82-5wL"/>
+                                    <constraint firstAttribute="height" constant="113" id="hsm-4o-Pbd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vkc-m5-Mod" firstAttribute="trailing" secondItem="Zws-wA-AYF" secondAttribute="trailingMargin" id="6FN-F4-W71"/>
+                            <constraint firstItem="bqn-7Z-fXt" firstAttribute="top" secondItem="EFB-Hj-lhq" secondAttribute="bottom" id="7dQ-Mf-sL4"/>
+                            <constraint firstItem="EFB-Hj-lhq" firstAttribute="centerX" secondItem="Zws-wA-AYF" secondAttribute="centerX" id="CMq-DJ-6OG"/>
+                            <constraint firstItem="vkc-m5-Mod" firstAttribute="centerY" secondItem="Zws-wA-AYF" secondAttribute="centerY" constant="144" id="Cql-ua-led"/>
+                            <constraint firstItem="EFB-Hj-lhq" firstAttribute="top" secondItem="Zws-wA-AYF" secondAttribute="top" id="EcS-1M-FOx"/>
+                            <constraint firstAttribute="trailing" secondItem="EFB-Hj-lhq" secondAttribute="trailing" id="MfZ-DF-pIj"/>
+                            <constraint firstItem="D2X-pM-Ezx" firstAttribute="centerX" secondItem="Zws-wA-AYF" secondAttribute="centerX" id="bUP-Pe-jzr"/>
+                            <constraint firstAttribute="trailing" secondItem="bOR-fl-Uv0" secondAttribute="trailing" id="dAY-3E-zgo"/>
+                            <constraint firstItem="bqn-7Z-fXt" firstAttribute="top" secondItem="D2X-pM-Ezx" secondAttribute="bottom" constant="5" id="gV1-Uq-uZ0"/>
+                            <constraint firstItem="bOR-fl-Uv0" firstAttribute="top" secondItem="b0o-ZG-uHT" secondAttribute="bottom" constant="39" id="qof-Lb-RkG"/>
+                            <constraint firstItem="EFB-Hj-lhq" firstAttribute="leading" secondItem="Zws-wA-AYF" secondAttribute="leading" id="tKP-YB-5tI"/>
+                            <constraint firstItem="EFB-Hj-lhq" firstAttribute="centerY" secondItem="Zws-wA-AYF" secondAttribute="centerY" id="w9s-V3-weD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JSp-QP-LH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3501.5999999999999" y="3706.5967016491759"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XKo-CH-ySW">
+            <objects>
+                <viewController id="r1m-hP-3AO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="chQ-ni-orc"/>
+                        <viewControllerLayoutGuide type="bottom" id="wim-QZ-jw5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Oj-b6-ubQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simulator Screen Shot Jun 22, 2017, 12.31.46 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZKI-ki-ibn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="💫Enter Name, Number, Email and Social Media informaiton" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oTp-dw-ICq">
+                                <rect key="frame" x="129" y="63" width="240" height="92"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Q1T-Na-sbs"/>
+                                    <constraint firstAttribute="height" constant="92" id="j7F-hQ-s4n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wim-QZ-jw5" firstAttribute="top" secondItem="ZKI-ki-ibn" secondAttribute="bottom" id="RGs-fZ-f6c"/>
+                            <constraint firstAttribute="trailing" secondItem="oTp-dw-ICq" secondAttribute="trailing" constant="6" id="Urh-Ig-WnY"/>
+                            <constraint firstItem="ZKI-ki-ibn" firstAttribute="centerX" secondItem="2Oj-b6-ubQ" secondAttribute="centerX" id="a09-nJ-Dhd"/>
+                            <constraint firstItem="ZKI-ki-ibn" firstAttribute="centerY" secondItem="2Oj-b6-ubQ" secondAttribute="centerY" id="buB-SQ-fTa"/>
+                            <constraint firstItem="ZKI-ki-ibn" firstAttribute="top" secondItem="2Oj-b6-ubQ" secondAttribute="top" id="jEV-mQ-eV6"/>
+                            <constraint firstItem="oTp-dw-ICq" firstAttribute="top" secondItem="chQ-ni-orc" secondAttribute="bottom" constant="43" id="qxs-c5-Gco"/>
+                            <constraint firstAttribute="trailing" secondItem="ZKI-ki-ibn" secondAttribute="trailing" id="smK-iH-tqN"/>
+                            <constraint firstItem="ZKI-ki-ibn" firstAttribute="leading" secondItem="2Oj-b6-ubQ" secondAttribute="leading" id="wOZ-TS-NlU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y7W-E4-Ess" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4436" y="3706.5967016491759"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Ib-Fl-Phw">
+            <objects>
+                <viewController id="KRP-AP-lOz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ac-4D-nmR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dxu-ae-drU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R0A-sM-NMZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simulator Screen Shot Jun 18, 2017, 8.56.00 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-zT-rDV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="💫Select what you want to share" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zv6-ZQ-e9k">
+                                <rect key="frame" x="104" y="136" width="255" height="69"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="MB6-rx-DAM"/>
+                                    <constraint firstAttribute="width" constant="255" id="hKn-I0-5nB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eAo-zT-rDV" firstAttribute="centerX" secondItem="R0A-sM-NMZ" secondAttribute="centerX" id="Cda-MT-Y0I"/>
+                            <constraint firstItem="Zv6-ZQ-e9k" firstAttribute="trailing" secondItem="R0A-sM-NMZ" secondAttribute="trailingMargin" id="Eym-9h-JyR"/>
+                            <constraint firstAttribute="trailing" secondItem="eAo-zT-rDV" secondAttribute="trailing" id="Uuf-YF-QQw"/>
+                            <constraint firstItem="eAo-zT-rDV" firstAttribute="centerY" secondItem="R0A-sM-NMZ" secondAttribute="centerY" id="XKO-QM-3Xb"/>
+                            <constraint firstItem="eAo-zT-rDV" firstAttribute="leading" secondItem="R0A-sM-NMZ" secondAttribute="leading" id="XOT-5a-bfD"/>
+                            <constraint firstItem="Dxu-ae-drU" firstAttribute="top" secondItem="eAo-zT-rDV" secondAttribute="bottom" id="aY6-g7-Kkj"/>
+                            <constraint firstItem="eAo-zT-rDV" firstAttribute="top" secondItem="R0A-sM-NMZ" secondAttribute="top" id="b1I-XT-qsl"/>
+                            <constraint firstItem="Zv6-ZQ-e9k" firstAttribute="top" secondItem="5ac-4D-nmR" secondAttribute="bottom" constant="116" id="zjH-MF-wg3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMJ-rf-rWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5316" y="3703.8980509745129"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qjS-iY-C2g">
+            <objects>
+                <viewController id="3C8-Pk-jw6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kbz-7B-1V0"/>
+                        <viewControllerLayoutGuide type="bottom" id="bBa-yx-QCq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sbS-Aa-VoW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simulator Screen Shot Jun 18, 2017, 8.56.34 PM.png" translatesAutoresizingMaskIntoConstraints="NO" id="exl-5r-VFD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="💫You can also share your information through a text message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xWS-7r-S9x">
+                                <rect key="frame" x="67" y="39" width="240" height="93"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="572-v1-1u4"/>
+                                    <constraint firstAttribute="height" constant="93" id="e3g-Ww-mNb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xWS-7r-S9x" firstAttribute="centerX" secondItem="sbS-Aa-VoW" secondAttribute="centerX" id="3jl-aG-nkA"/>
+                            <constraint firstItem="exl-5r-VFD" firstAttribute="centerY" secondItem="sbS-Aa-VoW" secondAttribute="centerY" id="5qD-t9-epR"/>
+                            <constraint firstItem="exl-5r-VFD" firstAttribute="centerX" secondItem="sbS-Aa-VoW" secondAttribute="centerX" id="UGK-jz-pkx"/>
+                            <constraint firstItem="xWS-7r-S9x" firstAttribute="top" secondItem="Kbz-7B-1V0" secondAttribute="bottom" constant="19" id="VQF-nQ-CD5"/>
+                            <constraint firstItem="exl-5r-VFD" firstAttribute="leading" secondItem="sbS-Aa-VoW" secondAttribute="leading" id="bxb-um-Aab"/>
+                            <constraint firstItem="bBa-yx-QCq" firstAttribute="top" secondItem="exl-5r-VFD" secondAttribute="bottom" id="fJ8-tW-6Xr"/>
+                            <constraint firstAttribute="trailing" secondItem="exl-5r-VFD" secondAttribute="trailing" id="pDw-SP-UIb"/>
+                            <constraint firstItem="exl-5r-VFD" firstAttribute="top" secondItem="sbS-Aa-VoW" secondAttribute="top" id="xKy-z3-HbN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AqA-pK-Gxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6186.3999999999996" y="3700.2998500749627"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cnV-OX-GK7">
+            <objects>
+                <viewController id="jGb-UB-YAc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HCe-dd-yPg"/>
+                        <viewControllerLayoutGuide type="bottom" id="xf3-ju-Vwm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LVc-Cv-5OD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FC_icon_clear_empty.png" translatesAutoresizingMaskIntoConstraints="NO" id="Thw-4I-jPG">
+                                <rect key="frame" x="165" y="120" width="45" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Duw-Xn-adJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="hiB-oK-rlm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now get started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcV-eP-Ywy">
+                                <rect key="frame" x="102" y="215" width="170" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="i5T-Lq-QJr"/>
+                                    <constraint firstAttribute="width" constant="170" id="oLG-ux-Whh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="22"/>
+                                <color key="textColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itb-An-F1I">
+                                <rect key="frame" x="299" y="629" width="60" height="30"/>
+                                <color key="backgroundColor" red="0.040786473720000001" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="dVg-JU-KdU"/>
+                                    <constraint firstAttribute="height" constant="30" id="eKd-YF-cil"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorDevanagari-Light" family="Kohinoor Devanagari" pointSize="17"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xf3-ju-Vwm" firstAttribute="top" secondItem="Itb-An-F1I" secondAttribute="bottom" constant="8" id="CB3-f8-BFD"/>
+                            <constraint firstItem="RcV-eP-Ywy" firstAttribute="top" secondItem="Thw-4I-jPG" secondAttribute="bottom" constant="45" id="EVg-he-0ZG"/>
+                            <constraint firstItem="Thw-4I-jPG" firstAttribute="centerX" secondItem="LVc-Cv-5OD" secondAttribute="centerX" id="JXd-Fq-u3a"/>
+                            <constraint firstItem="Itb-An-F1I" firstAttribute="trailing" secondItem="LVc-Cv-5OD" secondAttribute="trailingMargin" id="mYt-D3-PRx"/>
+                            <constraint firstItem="Thw-4I-jPG" firstAttribute="top" secondItem="HCe-dd-yPg" secondAttribute="bottom" constant="100" id="nNJ-Nh-E9G"/>
+                            <constraint firstItem="RcV-eP-Ywy" firstAttribute="centerX" secondItem="LVc-Cv-5OD" secondAttribute="centerX" id="wrG-FD-IK1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWk-vj-Hv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6930.3999999999996" y="3697.6011994003002"/>
         </scene>
         <!--Item-->
         <scene sceneID="eIJ-5h-elD">
@@ -1241,5 +1502,9 @@
         <image name="FC_STEP2b.png" width="1024" height="1024"/>
         <image name="FC_icon_clear_empty.png" width="1248" height="1248"/>
         <image name="FC_icon_draft3.png" width="1024" height="1024"/>
+        <image name="Simulator Screen Shot Jun 18, 2017, 8.55.41 PM.png" width="1242" height="2208"/>
+        <image name="Simulator Screen Shot Jun 18, 2017, 8.56.00 PM.png" width="1242" height="2208"/>
+        <image name="Simulator Screen Shot Jun 18, 2017, 8.56.34 PM.png" width="1242" height="2208"/>
+        <image name="Simulator Screen Shot Jun 22, 2017, 12.31.46 AM.png" width="1242" height="2208"/>
     </resources>
 </document>
